@@ -24,77 +24,77 @@ roemisch = {
 
 # Einträge für die 8 Chassinat Bände.
 bandDict = {
-	1: {'id': 1, 'nummer': 1, 'freigegeben': False},
-	2: {'id': 2, 'nummer': 2, 'freigegeben': False},
-	3: {'id': 3, 'nummer': 3, 'freigegeben': False},
-	4: {'id': 4, 'nummer': 4, 'freigegeben': False},
-	5: {'id': 5, 'nummer': 5, 'freigegeben': True},
-	6: {'id': 6, 'nummer': 6, 'freigegeben': True},
-	7: {'id': 7, 'nummer': 7, 'freigegeben': False},
-	8: {'id': 8, 'nummer': 8, 'freigegeben': False}
+	1: {'uid': 1, 'nummer': 1, 'freigegeben': False},
+	2: {'uid': 2, 'nummer': 2, 'freigegeben': False},
+	3: {'uid': 3, 'nummer': 3, 'freigegeben': False},
+	4: {'uid': 4, 'nummer': 4, 'freigegeben': False},
+	5: {'uid': 5, 'nummer': 5, 'freigegeben': True},
+	6: {'uid': 6, 'nummer': 6, 'freigegeben': True},
+	7: {'uid': 7, 'nummer': 7, 'freigegeben': False},
+	8: {'uid': 8, 'nummer': 8, 'freigegeben': False}
 }
 band = []
 # Bislang 5 szenen genutzt, manuell übertragen.
 szene = [
-	{'id': 1, 'nummer':1, 'beschreibung':''},
-	{'id': 2, 'nummer':2, 'beschreibung':''},
-	{'id': 3, 'nummer':3, 'beschreibung':''},
-	{'id': 4, 'nummer':4, 'beschreibung':''},
-	{'id': 5, 'nummer':5, 'beschreibung':''},
+	{'uid': 1, 'nummer':1, 'beschreibung':''},
+	{'uid': 2, 'nummer':2, 'beschreibung':''},
+	{'uid': 3, 'nummer':3, 'beschreibung':''},
+	{'uid': 4, 'nummer':4, 'beschreibung':''},
+	{'uid': 5, 'nummer':5, 'beschreibung':''},
 ]
 # Stellenzuweisungen für Szenen.
 szene_has_stelle = [
-	{'szene_id': 1, 'stelle_id': 0},
-	{'szene_id': 2, 'stelle_id': 1},
-	{'szene_id': 3, 'stelle_id': 2},
-	{'szene_id': 4, 'stelle_id': 3},
-	{'szene_id': 5, 'stelle_id': 4},
+	{'uid_local': 1, 'uid_foreign': 0},
+	{'uid_local': 2, 'uid_foreign': 1},
+	{'uid_local': 3, 'uid_foreign': 2},
+	{'uid_local': 4, 'uid_foreign': 3},
+	{'uid_local': 5, 'uid_foreign': 4},
 ]
 # Eiträge: Stellen für Szenen.
 stelle = [
-	{'id': 0, 'band_id': 5, 'seite_start': 1, 'zeile_start': 11, 'seite_stop': 4, 'zeile_stop': 6, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
-	{'id': 1, 'band_id': 5, 'seite_start': 4, 'zeile_start': 6, 'seite_stop': 7, 'zeile_stop': 4, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
-	{'id': 2, 'band_id': 5, 'seite_start': 7, 'zeile_start': 7, 'seite_stop': 9, 'zeile_stop': 8, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
-	{'id': 3, 'band_id': 5, 'seite_start': 9, 'zeile_start': 10, 'seite_stop': 10, 'zeile_stop': 16, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
-	{'id': 4, 'band_id': 5, 'seite_start': 11, 'zeile_start': 4, 'seite_stop': 12, 'zeile_stop': 4, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
+	{'uid': 0, 'band_uid': 5, 'seite_start': 1, 'zeile_start': 11, 'seite_stop': 4, 'zeile_stop': 6, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
+	{'uid': 1, 'band_uid': 5, 'seite_start': 4, 'zeile_start': 6, 'seite_stop': 7, 'zeile_stop': 4, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
+	{'uid': 2, 'band_uid': 5, 'seite_start': 7, 'zeile_start': 7, 'seite_stop': 9, 'zeile_stop': 8, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
+	{'uid': 3, 'band_uid': 5, 'seite_start': 9, 'zeile_start': 10, 'seite_stop': 10, 'zeile_stop': 16, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
+	{'uid': 4, 'band_uid': 5, 'seite_start': 11, 'zeile_start': 4, 'seite_stop': 12, 'zeile_stop': 4, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
 ]
 formularDict = {}
 formular = []
 suffixe = {}
 formular_has_literatur = [
-	{'formular_id': 1, 'literatur_id': 1, 'detail': '14, n. 51'},
-	{'formular_id': 2, 'literatur_id': 1, 'detail': '14, n. 51'},
-	{'formular_id': 3, 'literatur_id': 1, 'detail': '14, n. 51'},
-	{'formular_id': 4, 'literatur_id': 1, 'detail': '14, n. 51'},
-	{'formular_id': 4, 'literatur_id': 2, 'detail': '10 (38.), u. n. 40*'},
-	{'formular_id': 5, 'literatur_id': 1, 'detail': '14, n. 51'},
-	{'formular_id': 6, 'literatur_id': 1, 'detail': '14, n. 51'},
-	{'formular_id': 6, 'literatur_id': 4, 'detail': '309, n. 11'},
-	{'formular_id': 6, 'literatur_id': 5, 'detail': '515, n. 135'},
-	{'formular_id': 6, 'literatur_id': 3, 'detail': '145, n. 676'},
-	{'formular_id': 7, 'literatur_id': 1, 'detail': '14, n. 51'},
-	{'formular_id': 7, 'literatur_id': 3, 'detail': '145, n. 676'},
-	{'formular_id': 8, 'literatur_id': 1, 'detail': '14, n. 51'},
-	{'formular_id': 8, 'literatur_id': 3, 'detail': '145, n. 676'},
-	{'formular_id': 9, 'literatur_id': 1, 'detail': '14, n. 51'},
-	{'formular_id': 9, 'literatur_id': 3, 'detail': '145, n. 676'},
-	{'formular_id': 10, 'literatur_id': 1, 'detail': '14, n. 51'},
-	{'formular_id': 10, 'literatur_id': 3, 'detail': '145, n. 676'},
-	{'formular_id': 11, 'literatur_id': 1, 'detail': '14, n. 51'},
-	{'formular_id': 11, 'literatur_id': 3, 'detail': '145, n. 676'},
-	{'formular_id': 12, 'literatur_id': 1, 'detail': '14, n. 51'},
-	{'formular_id': 13, 'literatur_id': 1, 'detail': '14, n. 51'},
-	{'formular_id': 14, 'literatur_id': 1, 'detail': '14, n. 51'},
-	{'formular_id': 15, 'literatur_id': 1, 'detail': '14, n. 51'},
-	{'formular_id': 16, 'literatur_id': 1, 'detail': '14, n. 51'},
-	{'formular_id': 17, 'literatur_id': 1, 'detail': '14, n. 51'},
+	{'uid_local': 1, 'uid_foreign': 1, 'detail': '14, n. 51'},
+	{'uid_local': 2, 'uid_foreign': 1, 'detail': '14, n. 51'},
+	{'uid_local': 3, 'uid_foreign': 1, 'detail': '14, n. 51'},
+	{'uid_local': 4, 'uid_foreign': 1, 'detail': '14, n. 51'},
+	{'uid_local': 4, 'uid_foreign': 2, 'detail': '10 (38.), u. n. 40*'},
+	{'uid_local': 5, 'uid_foreign': 1, 'detail': '14, n. 51'},
+	{'uid_local': 6, 'uid_foreign': 1, 'detail': '14, n. 51'},
+	{'uid_local': 6, 'uid_foreign': 4, 'detail': '309, n. 11'},
+	{'uid_local': 6, 'uid_foreign': 5, 'detail': '515, n. 135'},
+	{'uid_local': 6, 'uid_foreign': 3, 'detail': '145, n. 676'},
+	{'uid_local': 7, 'uid_foreign': 1, 'detail': '14, n. 51'},
+	{'uid_local': 7, 'uid_foreign': 3, 'detail': '145, n. 676'},
+	{'uid_local': 8, 'uid_foreign': 1, 'detail': '14, n. 51'},
+	{'uid_local': 8, 'uid_foreign': 3, 'detail': '145, n. 676'},
+	{'uid_local': 9, 'uid_foreign': 1, 'detail': '14, n. 51'},
+	{'uid_local': 9, 'uid_foreign': 3, 'detail': '145, n. 676'},
+	{'uid_local': 10, 'uid_foreign': 1, 'detail': '14, n. 51'},
+	{'uid_local': 10, 'uid_foreign': 3, 'detail': '145, n. 676'},
+	{'uid_local': 11, 'uid_foreign': 1, 'detail': '14, n. 51'},
+	{'uid_local': 11, 'uid_foreign': 3, 'detail': '145, n. 676'},
+	{'uid_local': 12, 'uid_foreign': 1, 'detail': '14, n. 51'},
+	{'uid_local': 13, 'uid_foreign': 1, 'detail': '14, n. 51'},
+	{'uid_local': 14, 'uid_foreign': 1, 'detail': '14, n. 51'},
+	{'uid_local': 15, 'uid_foreign': 1, 'detail': '14, n. 51'},
+	{'uid_local': 16, 'uid_foreign': 1, 'detail': '14, n. 51'},
+	{'uid_local': 17, 'uid_foreign': 1, 'detail': '14, n. 51'},
 ]
 literatur = [
-	{'id': 1, 'beschreibung': 'Bedier, in: GM 162, 1998'}, 
-	{'id': 2, 'beschreibung': 'Budde/Kurth, in: EB 4, 1994'},
-	{'id': 3, 'beschreibung': 'Labrique, Stylistique'},
-	{'id': 4, 'beschreibung': u'Aufrère, L’univers minéral I'},
-	{'id': 5, 'beschreibung': u'Aufrère, L’univers minéral II'}
+	{'uid': 1, 'beschreibung': 'Bedier, in: GM 162, 1998'}, 
+	{'uid': 2, 'beschreibung': 'Budde/Kurth, in: EB 4, 1994'},
+	{'uid': 3, 'beschreibung': 'Labrique, Stylistique'},
+	{'uid': 4, 'beschreibung': u'Aufrère, L’univers minéral I'},
+	{'uid': 5, 'beschreibung': u'Aufrère, L’univers minéral II'}
 ]
 
 
@@ -102,15 +102,15 @@ photosDict = {}
 photo = []
 photo_typ = []
 photoTypDict = {
-	'alt': {'id': 0, 'name': 'alt', 'jahr': 1999},
-	'D03': {'id': 1, 'name': 'D03', 'jahr': 2003},
-	'D05': {'id': 2, 'name': 'D05', 'jahr': 2005},
-	'e': {'id': 3, 'name': 'e', 'jahr': 1900},
-	'G': {'id': 4, 'name': 'G', 'jahr': 1950},
-	'e-o': {'id': 5, 'name': 'e-o', 'jahr': 1960},
-	'Labrique, Stylistique': {'id': 6, 'name': 'Labrique, Stylistique', 'jahr': 1912},
-	'E. XIII': {'id': 7, 'name': 'Edfou XIII', 'jahr': 1913},
-	'E. XIV': {'id': 8, 'name': 'Edfou XIV', 'jahr': 1914},
+	'alt': {'uid': 0, 'name': 'alt', 'jahr': 1999},
+	'D03': {'uid': 1, 'name': 'D03', 'jahr': 2003},
+	'D05': {'uid': 2, 'name': 'D05', 'jahr': 2005},
+	'e': {'uid': 3, 'name': 'e', 'jahr': 1900},
+	'G': {'uid': 4, 'name': 'G', 'jahr': 1950},
+	'e-o': {'uid': 5, 'name': 'e-o', 'jahr': 1960},
+	'Labrique, Stylistique': {'uid': 6, 'name': 'Labrique, Stylistique', 'jahr': 1912},
+	'E. XIII': {'uid': 7, 'name': 'Edfou XIII', 'jahr': 1913},
+	'E. XIV': {'uid': 8, 'name': 'Edfou XIV', 'jahr': 1914},
 } 
 formular_has_photo_collection = []
 photo_collection = []
@@ -132,14 +132,14 @@ def finishCollection (PRIMARY):
 			break
 
 	# neue sammlung: ID geben und zur Liste hinzufügen
-	if not collection.has_key('id'):
-		collection['id'] = len(photo_collection)
+	if not collection.has_key('uid'):
+		collection['uid'] = len(photo_collection)
 		photo_collection += [collection]
 		#pprint.PrettyPrinter().pprint(collection)
 
 	formular_has_photo_collection += [{
-		'formular_id': PRIMARY,
-		'photo_collection_id': collection['id']
+		'uid_local': PRIMARY,
+		'uid_foreign': collection['uid']
 	}]
 
 	collection = copy.deepcopy(collectionPrototype)
@@ -158,7 +158,7 @@ cursor.execute(query)
 for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Photo, SzenenID, SekLit) in cursor:
 
 	myFormular = {}
-	myFormular['id'] = PRIMARY
+	myFormular['uid'] = PRIMARY
 	
 	# Felder
 	myFormular['uebersetzung'] = TEXTDEUTSC
@@ -434,8 +434,8 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 					pfad = ''
 			
 				myPhoto = {
-					'id': len(photosDict),
-					'photo_typ_id': photoTypDict[typ]['id'],
+					'uid': len(photosDict),
+					'photo_typ_uid': photoTypDict[typ]['uid'],
 					'name': name,
 					'count': 1
 				}
@@ -453,7 +453,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 
 	# Textposition
 	myStelle = {}
-	myStelle['band_id'] = bandDict[int(BAND)]['nummer']
+	myStelle['band_uid'] = bandDict[int(BAND)]['nummer']
 
 	## Sonderfälle
 	if PRIMARY == 3416:
@@ -527,11 +527,11 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 	myStelle['stop_unsicher'] = False
 	myStelle['zerstoerung'] = False
 
-	myStelle['id'] = len(stelle)
-	myFormular['stelle_id'] = len(stelle)
+	myStelle['uid'] = len(stelle)
+	myFormular['stelle_uid'] = len(stelle)
 
 	stelle += [myStelle]
-	formularDict[myFormular['id']] = myFormular	
+	formularDict[myFormular['uid']] = myFormular	
 	
 
 
@@ -598,7 +598,7 @@ for (PRIMARY, STELLE, TRANS, ORT, LOK, ANM) in cursor:
 
 
 	myOrt = {
-		'id': PRIMARY,
+		'uid': PRIMARY,
 		'transliteration': TRANS,
 		'uebersetzung': ORT,
 		'ortsbeschreibung': LOK,
@@ -631,8 +631,8 @@ for (PRIMARY, STELLE, TRANS, ORT, LOK, ANM) in cursor:
 				kommentar = m3.group(4).strip()
 
 				myStelle = {
-					'id': len(stelle),
-					'band_id': bandNr,
+					'uid': len(stelle),
+					'band_uid': bandNr,
 					'seite_start': seite,
 					'seite_stop': seite,
 					'zeile_start': zeileStart,
@@ -643,7 +643,7 @@ for (PRIMARY, STELLE, TRANS, ORT, LOK, ANM) in cursor:
 				}
 				
 				stelle += [myStelle]
-				ort_has_stelle += [{'ort_id': PRIMARY, 'stelle_id': myStelle['id']}]
+				ort_has_stelle += [{'uid_local': PRIMARY, 'uid_foreign': myStelle['uid']}]
 			
 
 # Doppelte Einträge in OL zusammenführen
@@ -655,11 +655,11 @@ for o in ort[:]:
 	if translit == previousTranslit and o['uebersetzung'] == previousO['uebersetzung'] and o['ortsbeschreibung'] == previousO['ortsbeschreibung']:
 		# Orte stimmen überein: alle links dem o Datensatz zuweisen
 		for ohs in ort_has_stelle:
-			if ohs['ort_id'] == previousO['id']:
-				ohs['ort_id'] = o['id']
+			if ohs['uid_local'] == previousO['uid']:
+				ohs['uid_local'] = o['uid']
 		o['transliteration'] = translit
 		ort.remove(previousO)	
-		print 'OL ' + str(o['id']) + ': DUPLIKAT von ' + str(previousO['id']) + '(' + o['transliteration'] + '/' +previousO['transliteration'] + '); mergen in ' + str(o['id'])
+		print 'OL ' + str(o['uid']) + ': DUPLIKAT von ' + str(previousO['uid']) + '(' + o['transliteration'] + '/' +previousO['transliteration'] + '); mergen in ' + str(o['uid'])
 		
 	previousO = o
 
@@ -736,7 +736,7 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 	
 	
 	myGott = {
-		'id': PRIMARY,
+		'uid': PRIMARY,
 		'transliteration': NAME,
 		'ort': ORT,
 		'eponym': EPON,
@@ -813,8 +813,8 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 	
 			if startSeite:
 				myStelle = {
-					'id': len(stelle),
-					'band_id': int(BND),
+					'uid': len(stelle),
+					'band_uid': int(BND),
 					'seite_start': startSeite,
 					'seite_stop': stopSeite,
 					'zeile_start': startZeile,
@@ -826,8 +826,8 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 				stelle += [myStelle]
 				
 				gott_has_stelle += [{
-					'gott_id': PRIMARY,
-					'stelle_id': myStelle['id']
+					'uid_local': PRIMARY,
+					'uid_foreign': myStelle['uid']
 				}]
 
 
@@ -835,7 +835,7 @@ wort = []
 wort_has_stelle = []
 # Wörterbuch Berlin mit Datensatz für 'nicht belegt'
 berlin = [{
-	'id': 0,
+	'uid': 0,
 	'band': 0,
 	'seite_start': 0,
 	'seite_stop': 0,
@@ -967,7 +967,7 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 			stop = start
 			
 		myWB = {
-			'id': len(berlin),
+			'uid': len(berlin),
 			'band': 1,
 			'seite_start': start[0],
 			'seite_stop': stop[0],
@@ -980,24 +980,24 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 		bereitsVorhanden = False
 		for b in berlin:
 			if b['seite_start'] == myWB['seite_start'] and b['seite_stop'] == myWB['seite_stop'] and b['zeile_start'] == myWB['zeile_start'] and b['zeile_stop'] == myWB['zeile_stop'] and b['zweifel'] == myWB['zweifel'] and b['anmerkung'] == myWB['anmerkung']:
-				myWB['id'] = b['id']
-				print 'WL ' + str(PRIMARY) + ' INFO Berlin Datensatz ' + str(b['id']) + ' nachgenutzt'
+				myWB['uid'] = b['uid']
+				print 'WL ' + str(PRIMARY) + ' INFO Berlin Datensatz ' + str(b['uid']) + ' nachgenutzt'
 				bereitsVorhanden = True
 		
 		if not bereitsVorhanden:
 			berlin += [myWB]
-		wbID = myWB['id']
+		wbID = myWB['uid']
 
 
 
 	myWort = {
-		'id': PRIMARY,
+		'uid': PRIMARY,
 		'transliteration': Transliteration,
 		'weiteres': Weiteres,
 		'uebersetzung': Deutsch,
 		'anmerkung': Anmerkungen,
 		'hieroglyph': IDS,
-		'berlin_id': wbID
+		'wb_berlin_uid': wbID
 	}
 	wort += [myWort]
 	
@@ -1056,8 +1056,8 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 
 
 				myStelle = {
-					'id': len(stelle),
-					'band_id': bandNr,
+					'uid': len(stelle),
+					'band_uid': bandNr,
 					'seite_start': seite,
 					'seite_stop': seite,
 					'zeile_start': zeileStart,
@@ -1069,8 +1069,8 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 				stelle += [myStelle]
 				
 				wort_has_stelle += [{
-					'stelle_id': myStelle['id'],
-					'wort_id': PRIMARY,
+					'uid_local': myStelle['uid'],
+					'uid_foreign': PRIMARY,
 					'schreiber_verbessert': klammer,
 					'chassinat_verbessert': stern
 				}]
@@ -1085,8 +1085,8 @@ db.close()
 for myCollection in photo_collection:
 	for item in myCollection['items']:
 		entry = {
-			'photo_collection_id': myCollection['id'],
-			'photo_id': photosDict[item]['id']
+			'uid_local': myCollection['uid'],
+			'uid_foreign': photosDict[item]['uid']
 		}
 		if not entry in photo_collection_has_photo:
 			photo_collection_has_photo += [entry]
@@ -1109,98 +1109,140 @@ for myBand in bandDict.itervalues():
 db = mysql.connector.connect(user='root', host='127.0.0.1', database='edfu')
 cursor = db.cursor()
 
-add_band = ('INSERT INTO band (`id`, nummer, freigegeben) VALUES (%(id)s, %(nummer)s, %(freigegeben)s)')
+f = open('schema.sql')
+schema = f.read()
+f.close()
+schema = re.sub(r'`edfu`.`(.*)`', r'`tx_edfu_domain_model_\1`' , schema)
+
+typo3Felder = """		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+		crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+		cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+		deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+		hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+		starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+		endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+
+		t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
+		t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
+		t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
+		t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
+		t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
+		t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
+		t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
+		t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
+		t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
+
+		t3_origuid       INT(11) DEFAULT '0'             NOT NULL,
+		sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
+		l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
+		l10n_diffsource  MEDIUMBLOB,
+
+		PRIMARY KEY (`uid`)"""
+
+schema = schema.replace('PRIMARY KEY (`uid`)', typo3Felder)
+schema = re.sub(r'DROP .*`tx_edfu_domain_model_([a-z_]+)_has_([a-z_]+)\`.*\n\n.*tx_edfu_domain_model_\1_has_\2\`',
+	r"DROP TABLE IF EXISTS `tx_edfu_\1_\2_mm`;\n\n CREATE TABLE IF NOT EXISTS `tx_edfu_\1_\2_mm`",
+	schema)
+#schema = re.sub(r'`tx_edfu_', r'`edfu`.`tx_edfu_', schema)
+print schema
+cursor.execute(schema, multi=True)
+db.commit()
+
+
+
+
+add_band = ('INSERT INTO tx_edfu_domain_model_band (`uid`, nummer, freigegeben) VALUES (%(uid)s, %(nummer)s, %(freigegeben)s)')
 for b in band:
 	cursor.execute(add_band, b)
 db.commit()
 
 
-add_berlin = ('INSERT INTO berlin (`id`, band, seite_start, zeile_start, seite_stop, zeile_stop, zweifel) VALUES (%(id)s, %(band)s, %(seite_start)s, %(zeile_start)s, %(seite_stop)s, %(zeile_stop)s, %(zweifel)s)')
+add_berlin = ('INSERT INTO tx_edfu_domain_model_wb_berlin (`uid`, band, seite_start, zeile_start, seite_stop, zeile_stop, zweifel) VALUES (%(uid)s, %(band)s, %(seite_start)s, %(zeile_start)s, %(seite_stop)s, %(zeile_stop)s, %(zweifel)s)')
 for b in berlin:
 	cursor.execute(add_berlin, b)
 db.commit()
 
-add_formular = ('INSERT INTO formular (`id`, stelle_id, transliteration, uebersetzung, texttyp) VALUES (%(id)s, %(stelle_id)s, %(transliteration)s, %(uebersetzung)s, %(texttyp)s)')
+add_formular = ('INSERT INTO tx_edfu_domain_model_formular (`uid`, stelle_uid, transliteration, uebersetzung, texttyp) VALUES (%(uid)s, %(stelle_uid)s, %(transliteration)s, %(uebersetzung)s, %(texttyp)s)')
 for b in formular:
 	cursor.execute(add_formular, b)
 db.commit()
 
-add_formular_has_literatur = ('INSERT INTO formular_has_literatur (formular_id, literatur_id, detail) VALUES (%(formular_id)s, %(literatur_id)s, %(detail)s)')
+add_formular_has_literatur = ('INSERT INTO tx_edfu_formular_literatur_mm (uid_local, uid_foreign, detail) VALUES (%(uid_local)s, %(uid_foreign)s, %(detail)s)')
 for b in formular_has_literatur:
 	cursor.execute(add_formular_has_literatur, b)
 db.commit()
 
-add_formular_has_photo_collection = ('INSERT INTO formular_has_photo_collection (formular_id, photo_collection_id) VALUES (%(formular_id)s, %(photo_collection_id)s)')
+add_formular_has_photo_collection = ('INSERT INTO tx_edfu_formular_photo_collection_mm (uid_local, uid_foreign) VALUES (%(uid_local)s, %(uid_foreign)s)')
 for b in formular_has_photo_collection:
 	cursor.execute(add_formular_has_photo_collection, b)
 db.commit()
 
-add_gott = ('INSERT INTO gott (`id`, transliteration, ort, eponym, beziehung, funktion) VALUES (%(id)s, %(transliteration)s, %(ort)s, %(eponym)s, %(beziehung)s, %(funktion)s)')
+add_gott = ('INSERT INTO tx_edfu_domain_model_gott (`uid`, transliteration, ort, eponym, beziehung, funktion) VALUES (%(uid)s, %(transliteration)s, %(ort)s, %(eponym)s, %(beziehung)s, %(funktion)s)')
 for b in gott:
 	cursor.execute(add_gott, b)
 db.commit()
 
-add_gott_has_stelle = ('INSERT INTO gott_has_stelle (gott_id, stelle_id) VALUES (%(gott_id)s, %(stelle_id)s)')
+add_gott_has_stelle = ('INSERT INTO tx_edfu_gott_stelle_mm (uid_local, uid_foreign) VALUES (%(uid_local)s, %(uid_foreign)s)')
 for b in gott_has_stelle:
 	cursor.execute(add_gott_has_stelle, b)
 db.commit()
 
-add_literatur = ('INSERT INTO literatur (`id`, beschreibung) VALUES (%(id)s, %(beschreibung)s)')
+add_literatur = ('INSERT INTO tx_edfu_domain_model_literatur (`uid`, beschreibung) VALUES (%(uid)s, %(beschreibung)s)')
 for b in literatur:
 	cursor.execute(add_literatur, b)
 db.commit()
 
-add_ort = ('INSERT INTO ort (`id`, transliteration, uebersetzung, ortsbeschreibung, anmerkung) VALUES (%(id)s, %(transliteration)s, %(uebersetzung)s, %(ortsbeschreibung)s, %(anmerkung)s)')
+add_ort = ('INSERT INTO tx_edfu_domain_model_ort (`uid`, transliteration, uebersetzung, ortsbeschreibung, anmerkung) VALUES (%(uid)s, %(transliteration)s, %(uebersetzung)s, %(ortsbeschreibung)s, %(anmerkung)s)')
 for b in ort:
 	cursor.execute(add_ort, b)
 db.commit()
 
-add_ort_has_stelle = ('INSERT INTO ort_has_stelle (ort_id, stelle_id) VALUES (%(ort_id)s, %(stelle_id)s)')
+add_ort_has_stelle = ('INSERT INTO tx_edfu_ort_stelle_mm (uid_local, uid_foreign) VALUES (%(uid_local)s, %(uid_foreign)s)')
 for b in ort_has_stelle:
 	cursor.execute(add_ort_has_stelle, b)
 db.commit()
 
-add_photo_typ = ('INSERT INTO photo_typ (`id`, name, jahr) VALUES (%(id)s, %(name)s, %(jahr)s)')
+add_photo_typ = ('INSERT INTO tx_edfu_domain_model_photo_typ (`uid`, name, jahr) VALUES (%(uid)s, %(name)s, %(jahr)s)')
 for b in photo_typ:
 	cursor.execute(add_photo_typ, b)
 db.commit()
 
-add_photo = ('INSERT INTO photo (`id`, photo_typ_id, name) VALUES (%(id)s, %(photo_typ_id)s, %(name)s)')
+add_photo = ('INSERT INTO tx_edfu_domain_model_photo (`uid`, photo_typ_uid, name) VALUES (%(uid)s, %(photo_typ_uid)s, %(name)s)')
 for b in photo:
 	cursor.execute(add_photo, b)
 db.commit()
 
-add_photo_collection = ('INSERT INTO photo_collection (`id`, klammern, stern, kommentar) VALUES (%(id)s, %(klammern)s, %(stern)s, %(kommentar)s)')
+add_photo_collection = ('INSERT INTO tx_edfu_domain_model_photo_collection (`uid`, klammern, stern, kommentar) VALUES (%(uid)s, %(klammern)s, %(stern)s, %(kommentar)s)')
 for b in photo_collection:
 	cursor.execute(add_photo_collection, b)
 db.commit()
 
-add_photo_collection_has_photo = ('INSERT INTO photo_collection_has_photo (photo_collection_id, photo_id) VALUES (%(photo_collection_id)s, %(photo_id)s)')
+add_photo_collection_has_photo = ('INSERT INTO tx_edfu_photo_collection_photo_mm (uid_local, uid_foreign) VALUES (%(uid_local)s, %(uid_foreign)s)')
 for b in photo_collection_has_photo:
 	cursor.execute(add_photo_collection_has_photo, b)
 db.commit()
 
-add_stelle = ('INSERT INTO stelle (`id`, band_id, seite_start, zeile_start, seite_stop, zeile_stop, anmerkung, stop_unsicher, zerstoerung) VALUES (%(id)s, %(band_id)s, %(seite_start)s, %(zeile_start)s, %(seite_stop)s, %(zeile_stop)s, %(anmerkung)s, %(stop_unsicher)s, %(zerstoerung)s)')
+add_stelle = ('INSERT INTO tx_edfu_domain_model_stelle (`uid`, band_uid, seite_start, zeile_start, seite_stop, zeile_stop, anmerkung, stop_unsicher, zerstoerung) VALUES (%(uid)s, %(band_uid)s, %(seite_start)s, %(zeile_start)s, %(seite_stop)s, %(zeile_stop)s, %(anmerkung)s, %(stop_unsicher)s, %(zerstoerung)s)')
 for b in stelle:
 	cursor.execute(add_stelle, b)
 db.commit()
 
-add_szene = ('INSERT INTO szene (`id`, nummer, beschreibung) VALUES (%(id)s, %(nummer)s, %(beschreibung)s)')
+add_szene = ('INSERT INTO tx_edfu_domain_model_szene (`uid`, nummer, beschreibung) VALUES (%(uid)s, %(nummer)s, %(beschreibung)s)')
 for b in szene:
 	cursor.execute(add_szene, b)
 db.commit()
 
-add_szene_has_stelle = ('INSERT INTO szene_has_stelle (szene_id, stelle_id) VALUES (%(szene_id)s, %(stelle_id)s)')
+add_szene_has_stelle = ('INSERT INTO tx_edfu_szene_stelle_mm (uid_local, uid_foreign) VALUES (%(uid_local)s, %(uid_foreign)s)')
 for b in szene_has_stelle:
 	cursor.execute(add_szene_has_stelle, b)
 db.commit()
 
-add_wort = ('INSERT INTO wort (`id`, transliteration, weiteres, uebersetzung, anmerkung, hieroglyph, berlin_id) VALUES (%(id)s, %(transliteration)s, %(weiteres)s, %(uebersetzung)s, %(anmerkung)s, %(hieroglyph)s, %(berlin_id)s)')
+add_wort = ('INSERT INTO tx_edfu_domain_model_wort (`uid`, transliteration, weiteres, uebersetzung, anmerkung, hieroglyph, wb_berlin_uid) VALUES (%(uid)s, %(transliteration)s, %(weiteres)s, %(uebersetzung)s, %(anmerkung)s, %(hieroglyph)s, %(wb_berlin_uid)s)')
 for b in wort:
 	cursor.execute(add_wort, b)
 db.commit()
 
-add_wort_has_stelle = ('INSERT INTO wort_has_stelle (wort_id, stelle_id, schreiber_verbessert, chassinat_verbessert) VALUES (%(wort_id)s, %(stelle_id)s, %(schreiber_verbessert)s, %(chassinat_verbessert)s)')
+add_wort_has_stelle = ('INSERT INTO tx_edfu_wort_stelle_mm (uid_local, uid_foreign, schreiber_verbessert, chassinat_verbessert) VALUES (%(uid_local)s, %(uid_foreign)s, %(schreiber_verbessert)s, %(chassinat_verbessert)s)')
 for b in wort_has_stelle:
 	cursor.execute(add_wort_has_stelle, b)
 db.commit()
