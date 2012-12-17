@@ -286,7 +286,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 		Photo = '( 3909, 3910 )*'
 
 	if Photo != originalPhoto:
-		print "FL " + str(PRIMARY) + u" INFO Photo String korrigiert"
+		print "\t".join(["FL", str(PRIMARY), "INFO", u"Photo String verändert", originalPhoto, Photo])
 
 
 
@@ -405,7 +405,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 				bildString = typ + ', pl. ' + bildString
 
 		else:
-			print u"FL " + str(PRIMARY) + u" ** UNKLAR **: »" + bildString + u"«"
+			print "\t".join(["FL ", str(PRIMARY), u"UNKLAR", bildString])
 			bildString = ''
 		
 		if len(name) > 0:
@@ -420,9 +420,6 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 			if PRIMARY == 9910 and bildString.find('103') == -1:
 				kommentar = 'E. VIII, 118, 7'
 				bildString = ''
-
-				
-			#print u"FL " + str(PRIMARY) + u" Bild " + typ + u"\t" + str(klammern) + u"\t" + str(stern) + u"\t" + name + u"\t" + kommentar
 			
 			photoID = typ + '-' + name
 			if photosDict.has_key(photoID):
@@ -456,15 +453,13 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 	myStelle['band_uid'] = bandDict[int(BAND)]['nummer']
 
 	## Sonderfälle
+	szOriginal = SEITEZEILE
 	if PRIMARY == 3416:
 		SEITEZEILE = "011, 09 - 012, 01"
-		print u"FL "+ str(PRIMARY) + u" ** ÄNDERUNG in »" + SEITEZEILE + u"«"
 	if PRIMARY == 9583:
 		SEITEZEILE = "078, 14 / Kol. 1"
-		print u"FL "+ str(PRIMARY) + u" ** ÄNDERUNG in »" + SEITEZEILE + u"«"
 	if PRIMARY == 9584:
 		SEITEZEILE = "078, 14 / Kol. 2"
-		print u"FL "+ str(PRIMARY) + u" ** ÄNDERUNG in »" + SEITEZEILE + u"«"
 
 
 	kommentar = []
@@ -487,14 +482,16 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 		kommentar += [SEITEZEILE[SEITEZEILE.find(' / ') + 3:]]
 		SEITEZEILE = SEITEZEILE[:SEITEZEILE.find(' / ')]
 		
+	if szOriginal != SEITEZEILE:
+		print "\t".join(["FL", str(PRIMARY), "INFO", u"Änderung SEITEZEILE", szOriginal, SEITEZEILE])
+	
 	if len(kommentar) > 0:
-		print "FL " + str(PRIMARY) + u" SEITEZEILE »" + SEITEZEILE + u"« KOMMENTAR »" + "; ".join(kommentar) + u"«"
+		print "\t".join(["FL", str(PRIMARY), "INFO", "SEITEZEILE + Kommentar", "; ".join(kommentar)])
 		
  	if len(re.findall("[^0-9, -]", SEITEZEILE)) > 0:
- 		print "FL " + str(PRIMARY) + u" SEITEZEILE »" + SEITEZEILE + u"« FEHLER"
+		print "\t".join(["FL", str(PRIMARY), "FEHLER", "SEITEZEILE", SEITEZEILE])
  	
  	myStelle['anmerkung'] = '; '.join(kommentar)
-	
  		
 	result = []	
 	if SEITEZEILE.find(' - ') != -1:
@@ -513,12 +510,12 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 			result = [[seite, zeile], [seite, zeile]]
 	else:
 		result = [[0,0],[0,0]]
-		print "FL " + str(PRIMARY) + " ** FEHLER SEITEZEILE: " + SEITEZEILE
+		print "\t".join(["FL", str(PRIMARY), "FEHLER", "SEITEZEILE", SEITEZEILE])
 	
 	if result[0][0] > result[1][0]:
-		print "FL " + str(PRIMARY) + " ** FEHLER SEITEN absteigend: " + SEITEZEILE
+		print "\t".join(["FL", str(PRIMARY), "FEHLER", "SEITEN absteigend", SEITEZEILE])
 	if result[0][0] == result[1][0] and result[0][1] > result[1][1]:
-		print "FL " + str(PRIMARY) + " ** FEHLER ZEILEN absteigend: " + SEITEZEILE
+		print "\t".join(["FL", str(PRIMARY), "FEHLER", "ZEILEN absteigend", SEITEZEILE])
 	
 	myStelle['seite_start'] = result[0][0]
 	myStelle['zeile_start'] = result[0][1]
@@ -594,7 +591,7 @@ for (PRIMARY, STELLE, TRANS, ORT, LOK, ANM) in cursor:
 		STELLE = 'VIII, 23, 2 (<23, 2>)'
 	
 	if STELLE != originalStelle:
-		print "OL " + str(PRIMARY) + u" INFO STELLE String angepaßt"
+		print "\t".join(["OL", str(PRIMARY), "INFO", u"Änderung STELLE", originalStelle, STELLE])
 
 
 	myOrt = {
@@ -614,7 +611,7 @@ for (PRIMARY, STELLE, TRANS, ORT, LOK, ANM) in cursor:
 		if len(teil.strip()) > 0:
 			m3 = re3.match(teil)
 			if not m3:
-				print 'FAIL ' + str(PRIMARY) + ': ' + teil
+				print "\t".join(["FL", str(PRIMARY), "FEHLER", u"STELLE", teil])
 			else:
 				myBand = m3.group(1).strip()
 				if len(myBand) > 0:
@@ -658,8 +655,8 @@ for o in ort[:]:
 			if ohs['uid_local'] == previousO['uid']:
 				ohs['uid_local'] = o['uid']
 		o['transliteration'] = translit
-		ort.remove(previousO)	
-		print 'OL ' + str(o['uid']) + ': DUPLIKAT von ' + str(previousO['uid']) + '(' + o['transliteration'] + '/' +previousO['transliteration'] + '); mergen in ' + str(o['uid'])
+		ort.remove(previousO)
+		print "\t".join(["OL", str(PRIMARY), "INFO", str(o['uid']) + u" Duplikat von " + str(previousO['uid']) + u": mergengen", o['transliteration'], previousO['transliteration']])
 		
 	previousO = o
 
@@ -768,7 +765,7 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 	SEITEZEILE = re.sub(r'und', ';', SEITEZEILE)
 	
 	if originalSEITEZEILE != SEITEZEILE:
-		print "GL " + str(PRIMARY) + u" INFO STELLE String angepaßt: »" + originalSEITEZEILE + u"« -> »" + SEITEZEILE + u"«"
+		print "\t".join(["GL", str(PRIMARY), "INFO", u"Änderung SEITEZEILE", originalSEITEZEILE, SEITEZEILE])
 		
 	szs = SEITEZEILE.strip('; ').split(';')
 	if len(SEITEZEILE) > 0:
@@ -793,7 +790,7 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 					stopSeite = stop[0]
 					stopZeile = stop[1]
 				else:
-					print "GL " + str(PRIMARY) + ": falsche Komponentenzahl " + sz
+					print "\t".join(["GL", str(PRIMARY), "FEHLER", u"SEITEZEILE, falsche Komponentenzahl", sz])
 			else:
 				startSeite = int(komponenten[0])
 				stopSeite = startSeite
@@ -864,6 +861,9 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 	elif bEdfu == 'VI, 148, <7>; 11':
 		# 1023
 		bEdfu = 'VI, <148, 7>; 11'
+	elif bEdfu == u'VI, 199, 10 (Ägypten); VI, 204, 3; 4 (??? Region, Göttin, Mineral ???); VI, 204, 8 (Sechep-Getränk u. Getreide); VI, 204, 9 (???)':
+		# 1801
+		bEdfu = u'VI, 199, 10 (Ägypten); VI, 204, 3; 204, 4 (??? Region, Göttin, Mineral ???); VI, 204, 8 (Sechep-Getränk u. Getreide); VI, 204, 9 (???)'
 	elif bEdfu == 'VII, 216,10; 217,7; 8; 246,2; VII; 216,9; 217,1; 224,5; VII, 216, 8':
 		# 2144
 		bEdfu = 'VII, 216,10; 217,7; 8; 246,2; VII, 216,9; 217,1; 224,5; VII, 216, 8'
@@ -903,7 +903,7 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 		
 
 	if BelegstellenEdfu != bEdfu:
-		print "WL " + str(PRIMARY) + u" INFO BelegstelleEdfu String angepaßt: »" + BelegstellenEdfu + u"« -> »" + bEdfu + u"«"
+		print "\t".join(["WL", str(PRIMARY), "INFO", u"Änderung BelegstellenEdfu", BelegstellenEdfu, bEdfu])
 
 
 	wb = BelegstellenWb
@@ -940,8 +940,7 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 
 		if wb != BelegstellenWb:
 			anmerkung = u'ursprünglich: ' + BelegstellenWb
-			print "WL " + str(PRIMARY) + u" INFO BelegstellenWb String angepaßt: »" + BelegstellenWb + u"« -> »" + wb + u"«"
-
+			print "\t".join(["WL", str(PRIMARY), "INFO", u"Änderung BelegstellenWb", BelegstellenWb, wb])
 
 		zweifel = False
 		if wb.find('nach W') == 0:
@@ -981,7 +980,6 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 		for b in berlin:
 			if b['seite_start'] == myWB['seite_start'] and b['seite_stop'] == myWB['seite_stop'] and b['zeile_start'] == myWB['zeile_start'] and b['zeile_stop'] == myWB['zeile_stop'] and b['zweifel'] == myWB['zweifel'] and b['anmerkung'] == myWB['anmerkung']:
 				myWB['uid'] = b['uid']
-				print 'WL ' + str(PRIMARY) + ' INFO Berlin Datensatz ' + str(b['uid']) + ' nachgenutzt'
 				bereitsVorhanden = True
 		
 		if not bereitsVorhanden:
@@ -1022,17 +1020,17 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 			if b.find(',') == -1:
 				if seite != 0:
 					b = str(seite) + ', ' + b
-					print 'WL ' + str(PRIMARY) + u' INFO Seitenzahl hinzugefügt »' + b + u'«'
+#					print "\t".join(["WL", str(PRIMARY), "INFO", u"Seitenzahl hinzugefügt", b])
 				else:
-					print 'WL ' + str(PRIMARY) + u' FEHLER Keine Seitenzahl? »' + b + u'«'
+					print "\t".join(["WL", str(PRIMARY), "FEHLER", u"keine Seitenzahl", b])
 
 			m20 = re20.match(b)
 			if m20:
 				if len(m20.group(1)) > 0:
 					bandNr = roemisch[m20.group(1).strip()]
 				elif bandNr == 0:
-					print 'WL ' + str(PRIMARY) + ': fehlende Bandangabe'
-				
+					print "\t".join(["WL", str(PRIMARY), "FEHLER", u"fehlende Bandangabe", b])
+
 				seite = int(m20.group(3))
 				
 				zeilenString = m20.group(4)
@@ -1045,8 +1043,8 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 					zeileStart = int(zeilen[0])
 					zeileStop = int(zeilen[1])
 				else:
-					print 'WL ' + str(PRIMARY) + u': zu viele Komponenten in Zeilenangabe »' + b + u"«"
-		
+					print "\t".join(["WL", str(PRIMARY), "FEHLER", u"zu viele Komponenten in Zeilenangabe", b])
+
 				anmerkung = m20.group(6).strip()
 				
 				if m20.group(5) == '>':
@@ -1076,8 +1074,9 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 				}]
 				
 			else:
-				print 'WL ' + str(PRIMARY) + u': keine erkennbare Seitenzahl »' + b + u'«'
+				print "\t".join(["WL", str(PRIMARY), "FEHLER", u"keine erkennbare Seitenzahl", b])
 
+cursor.close()
 db.close()
 
 
@@ -1136,6 +1135,8 @@ typo3Felder = """		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
 		sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
 		l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
 		l10n_diffsource  MEDIUMBLOB,
+		
+		pid              INT(11) DEFAULT '0'             NOT NULL,
 
 		PRIMARY KEY (`uid`)"""
 
@@ -1143,9 +1144,9 @@ schema = schema.replace('PRIMARY KEY (`uid`)', typo3Felder)
 schema = re.sub(r'DROP .*`tx_edfu_domain_model_([a-z_]+)_has_([a-z_]+)\`.*\n\n.*tx_edfu_domain_model_\1_has_\2\`',
 	r"DROP TABLE IF EXISTS `tx_edfu_\1_\2_mm`;\n\n CREATE TABLE IF NOT EXISTS `tx_edfu_\1_\2_mm`",
 	schema)
-#schema = re.sub(r'`tx_edfu_', r'`edfu`.`tx_edfu_', schema)
 print schema
-cursor.execute(schema, multi=True)
+result = cursor.execute(schema, multi=True)
+print result
 db.commit()
 
 
@@ -1247,6 +1248,7 @@ for b in wort_has_stelle:
 	cursor.execute(add_wort_has_stelle, b)
 db.commit()
 
+cursor.close()
 db.close()	
 
 
