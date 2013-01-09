@@ -93,6 +93,10 @@
       trailing underscores (e.g. _version_) are reserved.
    -->
 		<field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
+		
+		<field name="sql_tabelle" type="string" indexed="true" stored="true"/>
+		<field name="sql_uid" type="int" indexed="true" stored="true"/>
+		
 		<field name="typ" type="string" indexed="true" stored="true"/>
 		<field name="transliteration" type="string" indexed="true" stored="true"/>
 		<field name="uebersetzung" type="text_general" indexed="true" stored="true"/>
@@ -113,14 +117,12 @@
 		<field name="weiteres" type="text_general" indexed="true" stored="true"/>
 		<field name="hieroglyph" type="string" indexed="true" stored="true"/>
 		<field name="stelle_berlin" type="int" indexed="true" stored="true" multiValued="true"/>
-		<field name="stelle_id" type="int" indexed="true" stored="true"/>
-		<field name="stelle_berlin_id" type="int" indexed="true" stored="true"/>
 		<field name="band" type="int" indexed="true" stored="true"/>
 		<field name="freigegeben" type="boolean" indexed="true" stored="true"/>
-		<field name="seite_von" type="int" indexed="true" stored="true"/>
-		<field name="seite_bis" type="int" indexed="true" stored="true"/>
-		<field name="zeile_von" type="int" indexed="true" stored="true"/>
-		<field name="zeile_bis" type="int" indexed="true" stored="true"/>
+		<field name="seite_start" type="int" indexed="true" stored="true"/>
+		<field name="seite_stop" type="int" indexed="true" stored="true"/>
+		<field name="zeile_start" type="int" indexed="true" stored="true"/>
+		<field name="zeile_stop" type="int" indexed="true" stored="true"/>
 		<field name="stelle_anmerkung" type="text_general" indexed="true" stored="true"/>
 		<field name="stop_unsicher" type="boolean" indexed="true" stored="true"/>
 		<field name="zerstoerung" type="boolean" indexed="true" stored="true"/>
