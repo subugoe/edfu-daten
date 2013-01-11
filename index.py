@@ -26,7 +26,7 @@ query3 = ("SELECT tx_edfu_domain_model_photo.name AS photoName, tx_edfu_domain_m
 	AND tx_edfu_photo_collection_photo_mm.uid_local = tx_edfu_domain_model_photo_collection.uid
 	AND tx_edfu_photo_collection_photo_mm.uid_foreign = tx_edfu_domain_model_photo.uid
 	AND tx_edfu_domain_model_photo.photo_typ_uid = tx_edfu_domain_model_photo_typ.uid """
-	"ORDER BY photoJahr, photoName")
+	"ORDER BY photoJahr DESC, photoName DESC")
 
 
 for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
