@@ -99,22 +99,22 @@
 		
 		<field name="typ" type="string" indexed="true" stored="true"/>
 		<field name="transliteration" type="string" indexed="true" stored="true"/>
-		<field name="uebersetzung" type="text_general" indexed="true" stored="true"/>
-		<field name="anmerkung" type="text_general" indexed="true" stored="true"/>
+		<field name="uebersetzung" type="text_de" indexed="true" stored="true"/>
+		<field name="anmerkung" type="text_de" indexed="true" stored="true"/>
 		<field name="stelle" type="int" indexed="true" stored="true" multiValued="true"/>
 		<field name="formular_id" type="int" indexed="true" stored="true"/>
 		<field name="texttyp" type="string" indexed="true" stored="true"/>
 		<field name="photo" type="string" indexed="true" stored="true" multiValued="true"/>
 		<field name="literatur" type="string" indexed="true" stored="true" multiValued="true"/>
 		<field name="ort_id" type="int" indexed="true" stored="true"/>
-		<field name="ortsbeschreibung" type="text_general" indexed="true" stored="true"/>
+		<field name="ortsbeschreibung" type="text_de" indexed="true" stored="true"/>
 		<field name="gott_id" type="int" indexed="true" stored="true"/>
-		<field name="funktion" type="text_general" indexed="true" stored="true"/>
-		<field name="eponym" type="text_general" indexed="true" stored="true"/>
-		<field name="beziehung" type="text_general" indexed="true" stored="true"/>
-		<field name="ort" type="text_general" indexed="true" stored="true"/>
+		<field name="funktion" type="text_de" indexed="true" stored="true"/>
+		<field name="eponym" type="text_de" indexed="true" stored="true"/>
+		<field name="beziehung" type="text_de" indexed="true" stored="true"/>
+		<field name="ort" type="text_de" indexed="true" stored="true"/>
 		<field name="wort_id" type="int" indexed="true" stored="true"/>
-		<field name="weiteres" type="text_general" indexed="true" stored="true"/>
+		<field name="weiteres" type="text_de" indexed="true" stored="true"/>
 		<field name="hieroglyph" type="string" indexed="true" stored="true"/>
 		<field name="stelle_berlin" type="int" indexed="true" stored="true" multiValued="true"/>
 		<field name="band" type="int" indexed="true" stored="true"/>
@@ -123,7 +123,7 @@
 		<field name="seite_stop" type="int" indexed="true" stored="true"/>
 		<field name="zeile_start" type="int" indexed="true" stored="true"/>
 		<field name="zeile_stop" type="int" indexed="true" stored="true"/>
-		<field name="stelle_anmerkung" type="text_general" indexed="true" stored="true"/>
+		<field name="stelle_anmerkung" type="text_de" indexed="true" stored="true"/>
 		<field name="stop_unsicher" type="boolean" indexed="true" stored="true"/>
 		<field name="zerstoerung" type="boolean" indexed="true" stored="true"/>
 		<field name="szene" type="int" indexed="true" stored="true"/>
@@ -131,7 +131,7 @@
 
 		<!-- catchall field, containing all other searchable text fields (implemented
         via copyField further on in this schema  -->
-		<field name="text" type="text_general" indexed="true" stored="false" multiValued="true"/>
+		<field name="text" type="text_de" indexed="true" stored="false" multiValued="true"/>
 
 		<!-- catchall text field that indexes tokens both normally and in reverse for efficient
         leading wildcard queries. -->
