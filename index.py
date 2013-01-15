@@ -28,7 +28,7 @@ query3 = ("SELECT tx_edfu_domain_model_photo.name AS photoName, tx_edfu_domain_m
 	AND tx_edfu_domain_model_photo.photo_typ_uid = tx_edfu_domain_model_photo_typ.uid """
 	"ORDER BY photoJahr DESC, photoName DESC")
 
-
+docs = []
 for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 	literatur = []
 	cursor2.execute(query2, [str(uid)])
@@ -52,7 +52,10 @@ for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 		"literatur": literatur,
 		"photo": photos
 	}
-	index.add(doc)
+	
+	docs += [doc]
+	
+index.add_many(docs)
 
 
 # ORT
@@ -63,6 +66,7 @@ query4 = ("SELECT uid_foreign,uid_local "
 	"FROM tx_edfu_ort_stelle_mm "
 	"WHERE uid_local = %s")
 
+docs = []
 for (uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
 	stellen = []
 	cursor2.execute(query4, [str(uid)])
@@ -80,7 +84,10 @@ for (uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
 		"anmerkung": anmerkung,
 		"stelle_id": stellen
 	}
-	index.add(doc)
+	
+	docs += [doc]
+	
+index.add_many(docs)
 
 
 # GOTT
@@ -91,6 +98,7 @@ query5 = ("SELECT uid_foreign,uid_local "
 	"FROM tx_edfu_gott_stelle_mm "
 	"WHERE uid_local = %s")
 
+docs = []
 for (uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
 	stellen = []
 	cursor2.execute(query5, [str(uid)])
@@ -109,7 +117,10 @@ for (uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
 		"funktion": funktion,
 		"stelle_id": stellen
 	}
-	index.add(doc)
+	
+	docs += [doc]
+	
+index.add_many(docs)
 
 
 # WORT
@@ -120,6 +131,7 @@ query6 = ("SELECT uid_foreign,uid_local "
 	"FROM tx_edfu_wort_stelle_mm "
 	"WHERE uid_local = %s")
 
+docs = []
 for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,wb_berlin_uid) in cursor:
 	stellen = []
 	cursor2.execute(query6, [str(uid)])
@@ -139,7 +151,10 @@ for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,wb_berlin_ui
 		"stelle_berlin_id": wb_berlin_uid,
 		"stelle_id": stellen
 	}
-	index.add(doc)
+	
+	docs += [doc]
+
+index.add_many(docs)
 
 
 # STELLE
@@ -148,6 +163,7 @@ query = ("SELECT tx_edfu_domain_model_stelle.uid,seite_start,seite_stop,zeile_st
 	"WHERE tx_edfu_domain_model_stelle.band_uid = tx_edfu_domain_model_band.uid")
 cursor.execute(query)
 
+docs = []
 for (uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,zerstoerung,band,freigegeben) in cursor:
 	
 	doc = {
@@ -165,13 +181,19 @@ for (uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,z
 		"band": band,
 		"freigegeben": freigegeben
 	}
-	index.add(doc)
+	
+	docs += [doc]
+
+index.add_many(docs)
+
+
 
 # WB-BERLIN
 # WORT
 query = ("SELECT uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel FROM tx_edfu_domain_model_wb_berlin")
 cursor.execute(query)
 
+docs = []
 for (uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel) in cursor:
 	doc = {
 		"id": "wb_berlin-" + str(uid),
@@ -184,7 +206,10 @@ for (uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel) in cursor:
 		"zeile_stop": zeile_stop,
 		"zweifel": zweifel
 	}
-	index.add(doc)
+	
+	docs += [doc]
+	
+index.add_many(docs)
 
 
 
