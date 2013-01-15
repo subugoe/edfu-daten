@@ -48,7 +48,7 @@ for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 		"transliteration": transliteration,
 		"uebersetzung": uebersetzung,
 		"texttyp": texttyp,
-		"stelle": stelle_uid,
+		"stelle_id": stelle_uid,
 		"literatur": literatur,
 		"photo": photos
 	}
@@ -67,7 +67,7 @@ for (uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
 	stellen = []
 	cursor2.execute(query4, [str(uid)])
 	for (uid_foreign,uid_local) in cursor2:
-		stellen += [uid_foreign]
+		stellen += ['stelle-' + str(uid_foreign)]
 	
 	doc = {
 		"id": "ort-" + str(uid),
@@ -78,7 +78,7 @@ for (uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
 		"uebersetzung": uebersetzung,
 		"ortsbeschreibung": ortsbeschreibung,
 		"anmerkung": anmerkung,
-		"stelle": stellen
+		"stelle_id": stellen
 	}
 	index.add(doc)
 
@@ -95,7 +95,7 @@ for (uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
 	stellen = []
 	cursor2.execute(query5, [str(uid)])
 	for (uid_foreign,uid_local) in cursor2:
-		stellen += [uid_foreign]
+		stellen += ['stelle-' + str(uid_foreign)]
 	
 	doc = {
 		"id": "gott-" + str(uid),
@@ -107,7 +107,7 @@ for (uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
 		"eponym": eponym,
 		"beziehung": beziehung,
 		"funktion": funktion,
-		"stelle": stellen
+		"stelle_id": stellen
 	}
 	index.add(doc)
 
@@ -124,7 +124,7 @@ for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,wb_berlin_ui
 	stellen = []
 	cursor2.execute(query6, [str(uid)])
 	for (uid_foreign,uid_local) in cursor2:
-		stellen += [uid_foreign]
+		stellen += ['stelle-' + str(uid_foreign)]
 	
 	doc = {
 		"id": "gott-" + str(uid),
@@ -136,8 +136,8 @@ for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,wb_berlin_ui
 		"weiteres": weiteres,
 		"anmerkung": anmerkung,
 		"hieroglyph": hieroglyph,
-		"stelle_berlin": wb_berlin_uid,
-		"stelle": stellen
+		"stelle_berlin_id": wb_berlin_uid,
+		"stelle_id": stellen
 	}
 	index.add(doc)
 

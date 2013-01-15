@@ -101,7 +101,7 @@
 		<field name="transliteration" type="string" indexed="true" stored="true"/>
 		<field name="uebersetzung" type="text_de" indexed="true" stored="true"/>
 		<field name="anmerkung" type="text_de" indexed="true" stored="true"/>
-		<field name="stelle" type="int" indexed="true" stored="true" multiValued="true"/>
+		<field name="stelle_id" type="string" indexed="true" stored="true" multiValued="true"/>
 		<field name="formular_id" type="int" indexed="true" stored="true"/>
 		<field name="texttyp" type="string" indexed="true" stored="true"/>
 		<field name="photo" type="string" indexed="true" stored="true" multiValued="true"/>
@@ -116,7 +116,7 @@
 		<field name="wort_id" type="int" indexed="true" stored="true"/>
 		<field name="weiteres" type="text_de" indexed="true" stored="true"/>
 		<field name="hieroglyph" type="string" indexed="true" stored="true"/>
-		<field name="stelle_berlin" type="int" indexed="true" stored="true" multiValued="true"/>
+		<field name="stelle_berlin_id" type="string" indexed="true" stored="true" multiValued="true"/>
 		<field name="band" type="int" indexed="true" stored="true"/>
 		<field name="freigegeben" type="boolean" indexed="true" stored="true"/>
 		<field name="seite_start" type="int" indexed="true" stored="true"/>
