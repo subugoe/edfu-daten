@@ -48,7 +48,7 @@ for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 		"transliteration": transliteration,
 		"uebersetzung": uebersetzung,
 		"texttyp": texttyp,
-		"stelle_id": stelle_uid,
+		"stelle_id": 'stelle-' + str(stelle_uid),
 		"literatur": literatur,
 		"photo": photos
 	}
