@@ -129,6 +129,7 @@ CREATE  TABLE IF NOT EXISTS `edfu`.`wort` (
   `uebersetzung` TEXT CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NULL ,
   `anmerkung` TEXT NULL ,
   `hieroglyph` VARCHAR(255) CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NULL ,
+  `lemma` VARCHAR(2555) NULL ,
   `wb_berlin_uid` INT(11) NULL ,
   PRIMARY KEY (`uid`) ,
   INDEX `fk_wort_berlin1_idx` (`wb_berlin_uid` ASC) )
@@ -147,6 +148,12 @@ CREATE  TABLE IF NOT EXISTS `edfu`.`szene` (
   `uid` INT(11) NOT NULL ,
   `nummer` INT(11) NULL ,
   `beschreibung` TEXT NULL ,
+  `karte` VARCHAR(255) NULL ,
+  `polygon` TEXT NULL ,
+  `koordinateX` DOUBLE NULL ,
+  `koordinateY` DOUBLE NULL ,
+  `hoehe` INT NULL ,
+  `blickwinkel` INT NULL ,
   PRIMARY KEY (`uid`) )
 ENGINE = InnoDB;
 
