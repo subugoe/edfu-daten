@@ -10,6 +10,82 @@ db2 = mysql.connector.connect(user='root', host='127.0.0.1', database='edfu')
 cursor = db.cursor()
 cursor2 = db2.cursor()
 
+
+
+def addStellenTo (stellen, doc):
+	global stellenDict
+	
+	for feld in ['seite_start', 'seite_stop', 'zeile_start', 'zeile_stop', 'band', 'stelle_anmerkung', 'stelle_unsicher', 'zerstoerung', 'freigegeben']:
+		if not feld in doc:
+			doc[feld] = []
+			
+		for stelleID in stellen:
+			stelle = stellenDict[stelleID]
+			stelle['besitzer'] = doc['id']
+			doc[feld] += [stelle[feld]]
+			
+
+
+
+# STELLE
+query = ("SELECT tx_edfu_domain_model_stelle.uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,zerstoerung,nummer,freigegeben "
+	"FROM tx_edfu_domain_model_stelle,tx_edfu_domain_model_band "
+	"WHERE tx_edfu_domain_model_stelle.band_uid = tx_edfu_domain_model_band.uid")
+cursor.execute(query)
+
+docs = []
+for (uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,zerstoerung,band,freigegeben) in cursor:
+	
+	doc = {
+		"id": "stelle-" + str(uid),
+		"typ": "stelle",
+		"sql_tabelle": "tx_edfu_domain_model_stelle",
+		"sql_uid": uid,
+		"seite_start": seite_start,
+		"seite_stop": seite_stop,
+		"zeile_start": zeile_start,
+		"zeile_stop": zeile_stop,
+		"stelle_anmerkung": anmerkung,
+		"stelle_unsicher": stop_unsicher,
+		"zerstoerung": zerstoerung,
+		"band": band,
+		"freigegeben": freigegeben
+	}
+	
+	docs += [doc]
+
+stellenDict = {}
+for doc in docs:
+	stellenDict[doc['sql_uid']] = doc
+
+
+
+# WB-BERLIN
+# WORT
+query = ("SELECT uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel FROM tx_edfu_domain_model_wb_berlin")
+cursor.execute(query)
+
+docs = []
+for (uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel) in cursor:
+	doc = {
+		"id": "wb_berlin-" + str(uid),
+		"typ": "wb_berlin",
+		"sql_tabelle": "tx_edfu_domain_model_wb_berlin",
+		"sql_uid": uid,
+		"seite_start": seite_start,
+		"seite_stop": seite_stop,
+		"zeile_start": zeile_start,
+		"zeile_stop": zeile_stop,
+		"zweifel": zweifel
+	}
+	
+	docs += [doc]
+	
+index.add_many(docs)
+
+
+
+
 # FORMULAR
 query = ("SELECT uid,transliteration,uebersetzung,texttyp,stelle_uid FROM tx_edfu_domain_model_formular")
 cursor.execute(query)
@@ -52,6 +128,7 @@ for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 		"literatur": literatur,
 		"photo": photos
 	}
+	addStellenTo([stelle_uid], doc)
 	
 	docs += [doc]
 	
@@ -68,10 +145,12 @@ query4 = ("SELECT uid_foreign,uid_local "
 
 docs = []
 for (uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
+	stelleIDs = []
 	stellen = []
 	cursor2.execute(query4, [str(uid)])
 	for (uid_foreign,uid_local) in cursor2:
-		stellen += ['stelle-' + str(uid_foreign)]
+		stelleIDs += ['stelle-' + str(uid_foreign)]
+		stellen += [uid_foreign]
 	
 	doc = {
 		"id": "ort-" + str(uid),
@@ -82,9 +161,10 @@ for (uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
 		"uebersetzung": uebersetzung,
 		"ortsbeschreibung": ortsbeschreibung,
 		"anmerkung": anmerkung,
-		"stelle_id": stellen
+		"stelle_id": stelleIDs
 	}
-	
+	addStellenTo(stellen, doc)
+
 	docs += [doc]
 	
 index.add_many(docs)
@@ -100,11 +180,13 @@ query5 = ("SELECT uid_foreign,uid_local "
 
 docs = []
 for (uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
+	stelleIDs = []
 	stellen = []
 	cursor2.execute(query5, [str(uid)])
 	for (uid_foreign,uid_local) in cursor2:
-		stellen += ['stelle-' + str(uid_foreign)]
-	
+		stelleIDs += ['stelle-' + str(uid_foreign)]
+		stellen += [uid_foreign]
+		
 	doc = {
 		"id": "gott-" + str(uid),
 		"typ": "gott",
@@ -117,6 +199,7 @@ for (uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
 		"funktion": funktion,
 		"stelle_id": stellen
 	}
+	addStellenTo(stellen, doc)
 	
 	docs += [doc]
 	
@@ -124,7 +207,7 @@ index.add_many(docs)
 
 
 # WORT
-query = ("SELECT uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,wb_berlin_uid FROM tx_edfu_domain_model_wort")
+query = ("SELECT uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_berlin_uid FROM tx_edfu_domain_model_wort")
 cursor.execute(query)
 
 query6 = ("SELECT uid_foreign,uid_local "
@@ -132,11 +215,13 @@ query6 = ("SELECT uid_foreign,uid_local "
 	"WHERE uid_local = %s")
 
 docs = []
-for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,wb_berlin_uid) in cursor:
+for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_berlin_uid) in cursor:
+	stelleIDs = []
 	stellen = []
 	cursor2.execute(query6, [str(uid)])
 	for (uid_foreign,uid_local) in cursor2:
-		stellen += ['stelle-' + str(uid_foreign)]
+		stelleIDs += ['stelle-' + str(uid_foreign)]
+		stellen += [uid_foreign]
 	
 	doc = {
 		"id": "gott-" + str(uid),
@@ -148,68 +233,19 @@ for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,wb_berlin_ui
 		"weiteres": weiteres,
 		"anmerkung": anmerkung,
 		"hieroglyph": hieroglyph,
+		"lemma": lemma,
 		"stelle_berlin_id": wb_berlin_uid,
 		"stelle_id": stellen
 	}
+	addStellenTo(stellen, doc)
 	
 	docs += [doc]
 
 index.add_many(docs)
 
 
-# STELLE
-query = ("SELECT tx_edfu_domain_model_stelle.uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,zerstoerung,nummer,freigegeben "
-	"FROM tx_edfu_domain_model_stelle,tx_edfu_domain_model_band "
-	"WHERE tx_edfu_domain_model_stelle.band_uid = tx_edfu_domain_model_band.uid")
-cursor.execute(query)
-
-docs = []
-for (uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,zerstoerung,band,freigegeben) in cursor:
-	
-	doc = {
-		"id": "stelle-" + str(uid),
-		"typ": "stelle",
-		"sql_tabelle": "tx_edfu_domain_model_stelle",
-		"sql_uid": uid,
-		"seite_start": seite_start,
-		"seite_stop": seite_stop,
-		"zeile_start": zeile_start,
-		"zeile_stop": zeile_stop,
-		"stelle_anmerkung": anmerkung,
-		"stop_unsicher": stop_unsicher,
-		"zerstoerung": zerstoerung,
-		"band": band,
-		"freigegeben": freigegeben
-	}
-	
-	docs += [doc]
-
-index.add_many(docs)
-
-
-
-# WB-BERLIN
-# WORT
-query = ("SELECT uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel FROM tx_edfu_domain_model_wb_berlin")
-cursor.execute(query)
-
-docs = []
-for (uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel) in cursor:
-	doc = {
-		"id": "wb_berlin-" + str(uid),
-		"typ": "wb_berlin",
-		"sql_tabelle": "tx_edfu_domain_model_wb_berlin",
-		"sql_uid": uid,
-		"seite_start": seite_start,
-		"seite_stop": seite_stop,
-		"zeile_start": zeile_start,
-		"zeile_stop": zeile_stop,
-		"zweifel": zweifel
-	}
-	
-	docs += [doc]
-	
-index.add_many(docs)
+# Stellen zum Index hinzufügen
+index.add_many(stellenDict.values())
 
 
 

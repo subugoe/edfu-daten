@@ -116,16 +116,20 @@
 		<field name="wort_id" type="int" indexed="true" stored="true"/>
 		<field name="weiteres" type="text_de" indexed="true" stored="true"/>
 		<field name="hieroglyph" type="string" indexed="true" stored="true"/>
+		<field name="lemma" type="string" indexed="true" stored="true"/>
 		<field name="stelle_berlin_id" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="band" type="int" indexed="true" stored="true"/>
-		<field name="freigegeben" type="boolean" indexed="true" stored="true"/>
-		<field name="seite_start" type="int" indexed="true" stored="true"/>
-		<field name="seite_stop" type="int" indexed="true" stored="true"/>
-		<field name="zeile_start" type="int" indexed="true" stored="true"/>
-		<field name="zeile_stop" type="int" indexed="true" stored="true"/>
-		<field name="stelle_anmerkung" type="text_de" indexed="true" stored="true"/>
-		<field name="stop_unsicher" type="boolean" indexed="true" stored="true"/>
-		<field name="zerstoerung" type="boolean" indexed="true" stored="true"/>
+
+		<field name="band" type="int" indexed="true" stored="true" multiValued="true"/>
+		<field name="freigegeben" type="boolean" indexed="true" stored="true" multiValued="true"/>
+		<field name="seite_start" type="int" indexed="true" stored="true" multiValued="true"/>
+		<field name="seite_stop" type="int" indexed="true" stored="true" multiValued="true"/>
+		<field name="zeile_start" type="int" indexed="true" stored="true" multiValued="true"/>
+		<field name="zeile_stop" type="int" indexed="true" stored="true" multiValued="true"/>
+		<field name="stelle_anmerkung" type="text_de" indexed="true" stored="true" multiValued="true"/>
+		<field name="stelle_unsicher" type="boolean" indexed="true" stored="true" multiValued="true"/>
+		<field name="zerstoerung" type="boolean" indexed="true" stored="true" multiValued="true"/>
+		<field name="besitzer" type="string" indexed="true" stored="true" multiValued="false"/>
+
 		<field name="szene" type="int" indexed="true" stored="true"/>
 		<field name="zweifel" type="boolean" indexed="true" stored="true"/>
 
