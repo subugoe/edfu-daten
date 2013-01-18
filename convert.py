@@ -1146,8 +1146,9 @@ schema = re.sub(r'DROP .*`tx_edfu_domain_model_([a-z_]+)_has_([a-z_]+)\`.*\n\n.*
 	r"DROP TABLE IF EXISTS `tx_edfu_\1_\2_mm`;\n\n CREATE TABLE IF NOT EXISTS `tx_edfu_\1_\2_mm`",
 	schema)
 print schema
-result = cursor.execute(schema, multi=True)
-print result
+for result in cursor.execute(schema, multi=True):
+	print result
+
 db.commit()
 
 
