@@ -2,7 +2,8 @@
 #coding=utf-8
 
 import solr
-index = solr.Solr('http://localhost:8983/solr/edfu')
+# index = solr.Solr('http://localhost:8983/solr/edfu')
+index = solr.Solr('http://foo.local:8080/solr/edfu')
 
 import mysql.connector
 db = mysql.connector.connect(user='root', host='127.0.0.1', database='edfu')
@@ -95,14 +96,32 @@ query2 = ("SELECT beschreibung, detail "
 	"WHERE tx_edfu_formular_literatur_mm.uid_local = %s "
 	"AND tx_edfu_formular_literatur_mm.uid_foreign = tx_edfu_domain_model_literatur.uid")
 
-query3 = ("SELECT tx_edfu_domain_model_photo.name AS photoName, tx_edfu_domain_model_photo_typ.name AS typName, tx_edfu_domain_model_photo_typ.jahr AS photoJahr, klammern, stern, kommentar "
-	"FROM tx_edfu_formular_photo_collection_mm,tx_edfu_domain_model_photo_collection,tx_edfu_photo_collection_photo_mm,tx_edfu_domain_model_photo,tx_edfu_domain_model_photo_typ "
-	"WHERE tx_edfu_formular_photo_collection_mm.uid_local = %s "
-	"""AND tx_edfu_formular_photo_collection_mm.uid_foreign = tx_edfu_domain_model_photo_collection.uid
+query3 = """
+SELECT
+	tx_edfu_domain_model_photo.name AS photoName,
+	tx_edfu_domain_model_photo_typ.name AS typName,
+	tx_edfu_domain_model_photo_typ.jahr AS photoJahr,
+	klammern,
+	stern,
+	kommentar,
+	tx_edfu_domain_model_photo_collection.uid AS collectionID
+FROM
+	tx_edfu_formular_photo_collection_mm,
+	tx_edfu_domain_model_photo_collection,
+	tx_edfu_photo_collection_photo_mm,
+	tx_edfu_domain_model_photo,
+	tx_edfu_domain_model_photo_typ
+WHERE
+	tx_edfu_formular_photo_collection_mm.uid_local = %s
+	AND tx_edfu_formular_photo_collection_mm.uid_foreign = tx_edfu_domain_model_photo_collection.uid
 	AND tx_edfu_photo_collection_photo_mm.uid_local = tx_edfu_domain_model_photo_collection.uid
 	AND tx_edfu_photo_collection_photo_mm.uid_foreign = tx_edfu_domain_model_photo.uid
-	AND tx_edfu_domain_model_photo.photo_typ_uid = tx_edfu_domain_model_photo_typ.uid """
-	"ORDER BY photoJahr DESC, photoName DESC")
+	AND tx_edfu_domain_model_photo.photo_typ_uid = tx_edfu_domain_model_photo_typ.uid
+ORDER BY
+	collectionID ASC,
+	photoJahr DESC,
+	photoName DESC
+"""
 
 docs = []
 for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
@@ -111,10 +130,28 @@ for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 	for (beschreibung, detail) in cursor2:
 		literatur += [beschreibung + ' : ' + detail]
 	
+	photoCollections = {}
 	photos = []
 	cursor2.execute(query3, [str(uid)])
-	for (photoName, typName, photoJahr, klammern, stern, kommentar) in cursor2:
+	for (photoName, typName, photoJahr, klammern, stern, kommentar, collectionID) in cursor2:
 		photos += [photoName]
+		if not photoCollections.has_key(collectionID):
+			photoCollections[collectionID] = {'klammern': klammern, 'stern': stern, 'photos': []}
+		photoCollections[collectionID]['photos'] += [photoName]
+
+	
+	collectionIDs = []
+	collectionPhotos = []
+	for collectionID in photoCollections.iterkeys():
+		collectionIDs += [collectionID]
+		photoCollection = photoCollections[collectionID]
+		photosString = ','.join(photoCollection['photos'])
+		if photoCollection['klammern'] == 1:
+			photosString = '(' + photosString + ')'
+		if photoCollection['stern'] == 1:
+			photosString += '*'
+		collectionPhotos += [photosString]
+
 	
 	doc = {
 		"id": "formular-" + str(uid),
@@ -126,7 +163,9 @@ for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 		"texttyp": texttyp,
 		"stelle_id": 'stelle-' + str(stelle_uid),
 		"literatur": literatur,
-		"photo": photos
+		"photo": photos,
+		"photo_collection": collectionPhotos,
+		"photo_collection_id": collectionIDs
 	}
 	addStellenTo([stelle_uid], doc)
 	

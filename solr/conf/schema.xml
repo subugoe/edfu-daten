@@ -105,6 +105,8 @@
 		<field name="formular_id" type="int" indexed="true" stored="true"/>
 		<field name="texttyp" type="string" indexed="true" stored="true"/>
 		<field name="photo" type="string" indexed="true" stored="true" multiValued="true"/>
+		<field name="photo_collection" type="string" indexed="true" stored="true" multiValued="true"/>
+		<field name="photo_collection_id" type="string" indexed="true" stored="true" multiValued="true"/>
 		<field name="literatur" type="string" indexed="true" stored="true" multiValued="true"/>
 		<field name="ort_id" type="int" indexed="true" stored="true"/>
 		<field name="ortsbeschreibung" type="text_de" indexed="true" stored="true"/>
