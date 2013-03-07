@@ -140,6 +140,18 @@ COLLATE = utf8_unicode_ci;
 
 
 -- -----------------------------------------------------
+-- Table `edfu`.`szene_bild`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `edfu`.`szene_bild` ;
+
+CREATE  TABLE IF NOT EXISTS `edfu`.`szene_bild` (
+  `uid` INT NOT NULL ,
+  `name` VARCHAR(255) NULL ,
+  PRIMARY KEY (`uid`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `edfu`.`szene`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `edfu`.`szene` ;
@@ -148,13 +160,21 @@ CREATE  TABLE IF NOT EXISTS `edfu`.`szene` (
   `uid` INT(11) NOT NULL ,
   `nummer` INT(11) NULL ,
   `beschreibung` TEXT NULL ,
-  `karte` VARCHAR(255) NULL ,
+  `szene_bild_uid` INT NULL ,
   `polygon` TEXT NULL ,
   `koordinateX` DOUBLE NULL ,
   `koordinateY` DOUBLE NULL ,
-  `hoehe` INT NULL ,
-  `blickwinkel` INT NULL ,
-  PRIMARY KEY (`uid`) )
+  `breite` DOUBLE NULL ,
+  `koordinateZ` DOUBLE NULL ,
+  `blickwinkel` DOUBLE NULL ,
+  `hoehe` DOUBLE NULL ,
+  PRIMARY KEY (`uid`) ,
+  INDEX `fk_szene_szene_bild1_idx` (`szene_bild_uid` ASC) ,
+  CONSTRAINT `fk_szene_szene_bild1`
+    FOREIGN KEY (`szene_bild_uid` )
+    REFERENCES `edfu`.`szene_bild` (`uid` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 

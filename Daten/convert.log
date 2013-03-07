@@ -1,8 +1,3 @@
-➜  edfu git:(master) ✗ './convert.py'           
-
-
-
-
 **** FL *******************************************************************
 
 FL	263	INFO	Photo String verändert	D05_5503, D05_5504, D05_5509, D05_5510, D05_5511, D05_5512: D05_5513, D05_5514, ( 2982, 2983, 2984, 2985 )*	D05_5503, D05_5504, D05_5509, D05_5510, D05_5511, D05_5512, D05_5513, D05_5514, ( 2982, 2983, 2984, 2985 )*
@@ -123,9 +118,9 @@ FL	4023	INFO	SEITEZEILE + Kommentar	kol. 37
 FL	4024	INFO	Änderung SEITEZEILE	090, 03 / Z. 22	090, 03
 FL	4024	INFO	SEITEZEILE + Kommentar	Z. 22
 FL	4077	INFO	Photo String verändert	D05_0388, D05_0389, D05_0390, D05_0391, D05_0392, D05_0393, D05_0394, D05-0395, D03_0622, D03_0623, D03_0624, D03_0625, D03_0618, D03_0619, D03_0620, D03_0621, 1446, 1447 (E. XIV, pl. DLII )*	D05_0388, D05_0389, D05_0390, D05_0391, D05_0392, D05_0393, D05_0394, D05_0395, D03_0622, D03_0623, D03_0624, D03_0625, D03_0618, D03_0619, D03_0620, D03_0621, 1446, 1447 (E. XIV, pl. DLII )*
-FL	4127	INFO	Photo String verändert	D05_0539, D05_0540, D05_0541, D05_0542¸ D05_0543, D05_0544, D05_0545, D05_0546, D05_0553, D05_0554, D05_0555, 1449, 1450, e021D05_0539, D05_0540, D05_0541, D05_0542, D05_0543, D05_0544, D05_0545, D05_0546, D05_0553, D05_0554, D05_0555, 1449, 1450, e021
-FL	4128	INFO	Photo String verändert	D05_0539, D05_0540, D05_0541, D05_0542¸ D05_0543, D05_0544, D05_0545, D05_0546, D05_0553, D05_0554, D05_0555, 1449, 1450, e021D05_0539, D05_0540, D05_0541, D05_0542, D05_0543, D05_0544, D05_0545, D05_0546, D05_0553, D05_0554, D05_0555, 1449, 1450, e021
-FL	4129	INFO	Photo String verändert	D05_0539, D05_0540, D05_0541, D05_0542¸ D05_0543, D05_0544, D05_0545, D05_0546, D05_0553, D05_0554, D05_0555, 1449, 1450, e021D05_0539, D05_0540, D05_0541, D05_0542, D05_0543, D05_0544, D05_0545, D05_0546, D05_0553, D05_0554, D05_0555, 1449, 1450, e021
+FL	4127	INFO	Photo String verändert	D05_0539, D05_0540, D05_0541, D05_0542¸ D05_0543, D05_0544, D05_0545, D05_0546, D05_0553, D05_0554, D05_0555, 1449, 1450, e021	D05_0539, D05_0540, D05_0541, D05_0542, D05_0543, D05_0544, D05_0545, D05_0546, D05_0553, D05_0554, D05_0555, 1449, 1450, e021
+FL	4128	INFO	Photo String verändert	D05_0539, D05_0540, D05_0541, D05_0542¸ D05_0543, D05_0544, D05_0545, D05_0546, D05_0553, D05_0554, D05_0555, 1449, 1450, e021	D05_0539, D05_0540, D05_0541, D05_0542, D05_0543, D05_0544, D05_0545, D05_0546, D05_0553, D05_0554, D05_0555, 1449, 1450, e021
+FL	4129	INFO	Photo String verändert	D05_0539, D05_0540, D05_0541, D05_0542¸ D05_0543, D05_0544, D05_0545, D05_0546, D05_0553, D05_0554, D05_0555, 1449, 1450, e021	D05_0539, D05_0540, D05_0541, D05_0542, D05_0543, D05_0544, D05_0545, D05_0546, D05_0553, D05_0554, D05_0555, 1449, 1450, e021
 FL	4202	INFO	Photo String verändert	D05_1876, D05-1877, D05_1878, D05_1893, 1418, 1419, 1420, e087 ( 1415, 1416, 1417, E. XIII, pl. DXX, DXXI )*	D05_1876, D05_1877, D05_1878, D05_1893, 1418, 1419, 1420, e087 ( 1415, 1416, 1417, E. XIII, pl. DXX, DXXI )*
 FL	4227	INFO	Photo String verändert	D05_1954, D05_1955, D05_1962, D05_1963, 1409, 1408, e083 (E. XIII, DXXIV, DXXV )*	D05_1954, D05_1955, D05_1962, D05_1963, 1409, 1408, e083 (E. XIII, pl. DXXIV, DXXV )*
 FL	4420	INFO	Photo String verändert	D05_1824, D05_1825, D05_1826, D05_1827, D05_1830, D05_1831, D05_1832, D05_1833, D05-1834, D05_1835, D05_1836, D05_1837, 1425, 1426, 1427, e090 (E. XIII, pl. DXXXVI )*	D05_1824, D05_1825, D05_1826, D05_1827, D05_1830, D05_1831, D05_1832, D05_1833, D05_1834, D05_1835, D05_1836, D05_1837, 1425, 1426, 1427, e090 (E. XIII, pl. DXXXVI )*
@@ -170,12 +165,12 @@ FL	5633	INFO	Photo String verändert	D05_1743, D05_1746, D05_1747, D05_1748, D05
 FL	5634	INFO	Photo String verändert	D05_1735, D05_1741, D05_1742, D05_3472, D05_3473, ( 1510, 1511, 1528, 1529, 1530, E. E. XIV, pl. DXCVII )*	D05_1735, D05_1741, D05_1742, D05_3472, D05_3473, ( 1510, 1511, 1528, 1529, 1530, E. XIV, pl. DXCVII )*
 FL	5635	INFO	Photo String verändert	D05_1744, D05_1745, D05_1749, D05_1750, D05_1751, D05_1753, D05_3474, D05_3475, D05_3479, D05_3480, D05_3481, D05_3488, ( 1510, 1511, 1528, 1529, 1530, E. E. XIV, pl. DXCVII )*	D05_1744, D05_1745, D05_1749, D05_1750, D05_1751, D05_1753, D05_3474, D05_3475, D05_3479, D05_3480, D05_3481, D05_3488, ( 1510, 1511, 1528, 1529, 1530, E. XIV, pl. DXCVII )*
 FL	5636	INFO	Photo String verändert	D05_1744, D05_1745, D05_1751, D05_1753, D05_1754, D05_3474, D05_3481, D05_3482, ( 1510, 1511, 1528, 1529, 1530, E. E. XIV, pl. DXCVII )*	D05_1744, D05_1745, D05_1751, D05_1753, D05_1754, D05_3474, D05_3481, D05_3482, ( 1510, 1511, 1528, 1529, 1530, E. XIV, pl. DXCVII )*
-FL	5637	INFO	Photo String verändert	D05_1745, D05_1751, D05_1753, D05_1754, D05_3481, D05_3482, D05_3483, ( 1510, 1511, 1528, 1529, 1530, E. E. XIV, pl. DXCVII )*D05_1745, D05_1751, D05_1753, D05_1754, D05_3481, D05_3482, D05_3483, ( 1510, 1511, 1528, 1529, 1530, E. XIV, pl. DXCVII )*
+FL	5637	INFO	Photo String verändert	D05_1745, D05_1751, D05_1753, D05_1754, D05_3481, D05_3482, D05_3483, ( 1510, 1511, 1528, 1529, 1530, E. E. XIV, pl. DXCVII )*	D05_1745, D05_1751, D05_1753, D05_1754, D05_3481, D05_3482, D05_3483, ( 1510, 1511, 1528, 1529, 1530, E. XIV, pl. DXCVII )*
 FL	5638	INFO	Photo String verändert	D05_1752, D05_1754, D05_3482, D05_3483, D05_3484, ( 1510, 1511, 1528, 1529, 1530, E. E. XIV, pl. DXCVII )*	D05_1752, D05_1754, D05_3482, D05_3483, D05_3484, ( 1510, 1511, 1528, 1529, 1530, E. XIV, pl. DXCVII )*
 FL	5639	INFO	Photo String verändert	D05_1752, D05_1755, D05_3483, D05_3484, D05_3485, ( 1510, 1511, 1528, 1529, 1530, E. E. XIV, pl. DXCVII )*	D05_1752, D05_1755, D05_3483, D05_3484, D05_3485, ( 1510, 1511, 1528, 1529, 1530, E. XIV, pl. DXCVII )*
 FL	5640	INFO	Photo String verändert	D05_1755, D05_1756, D05_3484, D05_3485, D05_3486, ( 1510, 1511, 1528, 1529, 1530, E. E. XIV, pl. DXCVII )*	D05_1755, D05_1756, D05_3484, D05_3485, D05_3486, ( 1510, 1511, 1528, 1529, 1530, E. XIV, pl. DXCVII )*
 FL	5641	INFO	Photo String verändert	D05_1755, D05_1756, D05_1764, D05_3485, D05_3486, D05_3487, ( 1510, 1511, 1528, 1529, 1530, E. E. XIV, pl. DXCVII )*	D05_1755, D05_1756, D05_1764, D05_3485, D05_3486, D05_3487, ( 1510, 1511, 1528, 1529, 1530, E. XIV, pl. DXCVII )*
-FL	5642	INFO	Photo String verändert	D05_1756, D05_1764, D05_1765, D05_1766, D05_3486, D05_3487, D05_3493, ( 1510, 1511, 1528, 1529, 1530, E. E. XIV, pl. DXCVII )*D05_1756, D05_1764, D05_1765, D05_1766, D05_3486, D05_3487, D05_3493, ( 1510, 1511, 1528, 1529, 1530, E. XIV, pl. DXCVII )*
+FL	5642	INFO	Photo String verändert	D05_1756, D05_1764, D05_1765, D05_1766, D05_3486, D05_3487, D05_3493, ( 1510, 1511, 1528, 1529, 1530, E. E. XIV, pl. DXCVII )*	D05_1756, D05_1764, D05_1765, D05_1766, D05_3486, D05_3487, D05_3493, ( 1510, 1511, 1528, 1529, 1530, E. XIV, pl. DXCVII )*
 FL	5643	INFO	Photo String verändert	D05_1749, D05_1757, D05_3479, D05_3488, ( 1510, 1511, 1528, 1529, 1530, E. E. XIV, pl. DXCVII )*	D05_1749, D05_1757, D05_3479, D05_3488, ( 1510, 1511, 1528, 1529, 1530, E. XIV, pl. DXCVII )*
 FL	5644	INFO	Photo String verändert	D05_1758, D05_3489, D05_3490, ( 1510, 1511, 1528, 1529, 1530, E. E. XIV, pl. DXCVII )*	D05_1758, D05_3489, D05_3490, ( 1510, 1511, 1528, 1529, 1530, E. XIV, pl. DXCVII )*
 FL	5645	INFO	Photo String verändert	D05_1759, D05_3489, D05_3490, D05_3491, ( 1510, 1511, 1528, 1529, 1530, E. E. XIV, pl. DXCVII )*	D05_1759, D05_3489, D05_3490, D05_3491, ( 1510, 1511, 1528, 1529, 1530, E. XIV, pl. DXCVII )*
@@ -1110,7 +1105,7 @@ GL	6696	INFO	Änderung SEITEZEILE	210.13	210, 13
 GL	6697	INFO	Änderung SEITEZEILE	210.16	210, 16
 GL	6698	INFO	Änderung SEITEZEILE	211.2	211, 2
 GL	6699	INFO	Änderung SEITEZEILE	211.5	211, 5
-GL	6700	INFO	Änderung SEITEZEILE	211.8	211, 8
+GL		6700	INFO	Änderung SEITEZEILE	211.8	211, 8
 GL	6701	INFO	Änderung SEITEZEILE	211.11	211, 11
 GL	6702	INFO	Änderung SEITEZEILE	211.14	211, 14
 GL	6703	INFO	Änderung SEITEZEILE	212.2	212, 2
@@ -2537,7 +2532,7 @@ GL	8279	INFO	Änderung SEITEZEILE	168.14	168, 14
 WL	151	INFO	Änderung BelegstellenEdfu	V, 10, 13; 68, 6; 90, 12 (Pl.) / VI, 329, 9 (awj (wie: rA-awj)) / V, 140, 4; 179, 14; 387, 17; VII, 5, 1 ((rA)-awj)	V, 10, 13; 68, 6; 90, 12 (Pl.); VI, 329, 9 (awj (wie: rA-awj)); V, 140, 4; 179, 14; 387, 17; VII, 5, 1 ((rA)-awj)
 WL	454	INFO	Änderung BelegstellenEdfu	VII, 9, 3 / VII, 7, 5 (ausmeißeln (Türöffnung))	VII, 9, 3; VII, 7, 5 (ausmeißeln (Türöffnung))
 WL	509	INFO	Änderung BelegstellenWb	nach Wb, I, 22, 15	nach Wb I, 22, 15
-WL	539	INFO	Änderung BelegstellenEdfu	V, 194, 16 / VII, 321, 2 (an (awj), mit schöner (Armhaltung))	V, 194, 16; VII, 321, 2 (an (awj), mit schöner (Armhaltung))
+WL	539	INFO	Änderung BelegstellenEdfu	V, 194, 16 / VII, 321, 2 (an (awj), mit schöner (Armhaltung))V, 194, 16; VII, 321, 2 (an (awj), mit schöner (Armhaltung))
 WL	553	INFO	Änderung BelegstellenEdfu	VI, 333, 3 ((Feinde) verringern) / VII, 269, 5 ((Apophis) schwächen)	VI, 333, 3 ((Feinde) verringern); VII, 269, 5 ((Apophis) schwächen)
 WL	554	INFO	Änderung BelegstellenEdfu	VIII, 18, 4 / VIII, 52, 12 ((Feinde) verringern)	VIII, 18, 4; VIII, 52, 12 ((Feinde) verringern)
 WL	608	INFO	Änderung BelegstellenEdfu	VI, 156, 9; 164, 11; 242, 1 / VI, 167, 11 (antjw-Sw)	VI, 156, 9; 164, 11; 242, 1; VI, 167, 11 (antjw-Sw)
@@ -2637,13 +2632,13 @@ WL	3401	INFO	Änderung BelegstellenEdfu	VII, 10, 2; 49, 13; 85, 10; 87, 5 / V, 3
 WL	3411	INFO	Änderung BelegstellenEdfu	V, 22, 9; 24, 5; 71, 7, 189, 14 / V, 42, 1; 143, 4 (jTj pHtj) / VI, 212, 9	V, 22, 9; 24, 5; 71, 7, 189, 14; V, 42, 1; 143, 4 (jTj pHtj); VI, 212, 9
 WL	3417	INFO	Änderung BelegstellenEdfu	VIII, 42, 7 (jtrt Smat) / VIII, 42, 7; 17 (jtrt-(mHt)	VIII, 42, 7 (jtrt Smat); VIII, 42, 7; 17 (jtrt-(mHt)
 WL	3425	INFO	Änderung BelegstellenEdfu	VI, 132, 2 (jtrt-(Smat)) / VI, 132, 2 (jtrt-(mHt))	VI, 132, 2 (jtrt-(Smat)); VI, 132, 2 (jtrt-(mHt))
-WL	3426	INFO	Änderung BelegstellenEdfu	V, 339, 9 (jtrt-(Smat)) / V, 339, 10; VI, 130, 2  (jtrt-(mHt))	V, 339, 9 (jtrt-(Smat)); V, 339, 10; VI, 130, 2  (jtrt-(mHt))
+WL	3426	INFO	Änderung BelegstellenEdfu	V, 339, 9 (jtrt-(Smat)) / V, 339, 10; VI, 130, 2  (jtrt-(mHt)V, 339, 9 (jtrt-(Smat)); V, 339, 10; VI, 130, 2  (jtrt-(mHt))
 WL	3435	INFO	Änderung BelegstellenEdfu	VI, 200, 6; 7 / VI, 15, 1 (meilenweit)	VI, 200, 6; 7; VI, 15, 1 (meilenweit)
 WL	3473	INFO	Änderung BelegstellenWb	Wb I, 46, X - 47, 3	Wb I, 46, 10 - 47, 3
 WL	3474	INFO	Änderung BelegstellenWb	Wb I, 46, X - 47, 3	Wb I, 46, 10 - 47, 3
 WL	3493	INFO	Änderung BelegstellenEdfu	VI, 155, 3; 6 / VI, 80, 1 (sich drehen) / VII, 17, 1 (wDb (a), (den Umlauf) vollziehen)	VI, 155, 3; 6; VI, 80, 1 (sich drehen); VII, 17, 1 (wDb (a), (den Umlauf) vollziehen)
 WL	3500	INFO	Änderung BelegstellenEdfu	VII, 212, 1 (Ufersand) / VII, 212, 5 ((Hrj)-wDb, (Schu))	VII, 212, 1 (Ufersand); VII, 212, 5 ((Hrj)-wDb, (Schu))
-WL	3534	INFO	Änderung BelegstellenEdfu	VI, 94, 7 (Sänfte des Horus) / VII, 181, 3 (Thron des Königs)	VI, 94, 7 (Sänfte des Horus); VII, 181, 3 (Thron des Königs)
+WL	3534	INFO	Änderung BelegstellenEdfu	VI, 94, 7 (Sänfte des Horus) / VII, 181, 3 (Thron des Königs)VI, 94, 7 (Sänfte des Horus); VII, 181, 3 (Thron des Königs)
 WL	3535	INFO	Änderung BelegstellenWb	Wb I, 46, X - 47, 3	Wb I, 46, 10 - 47, 3
 WL	3536	INFO	Änderung BelegstellenWb	Wb I, 46, X - 47, 3	Wb I, 46, 10 - 47, 3
 WL	3537	INFO	Änderung BelegstellenWb	Wb I, 46, X - 47, 3	Wb I, 46, 10 - 47, 3
@@ -3024,6 +3019,7 @@ CREATE  TABLE IF NOT EXISTS `tx_edfu_domain_model_wort` (
   `uebersetzung` TEXT CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NULL ,
   `anmerkung` TEXT NULL ,
   `hieroglyph` VARCHAR(255) CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NULL ,
+  `lemma` VARCHAR(2555) NULL ,
   `wb_berlin_uid` INT(11) NULL ,
   		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
 		crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
@@ -3059,14 +3055,13 @@ COLLATE = utf8_unicode_ci;
 
 
 -- -----------------------------------------------------
--- Table `tx_edfu_domain_model_szene`
+-- Table `tx_edfu_domain_model_szene_bild`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_domain_model_szene` ;
+DROP TABLE IF EXISTS `tx_edfu_domain_model_szene_bild` ;
 
-CREATE  TABLE IF NOT EXISTS `tx_edfu_domain_model_szene` (
-  `uid` INT(11) NOT NULL ,
-  `nummer` INT(11) NULL ,
-  `beschreibung` TEXT NULL ,
+CREATE  TABLE IF NOT EXISTS `tx_edfu_domain_model_szene_bild` (
+  `uid` INT NOT NULL ,
+  `name` VARCHAR(255) NULL ,
   		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
 		crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
 		cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
@@ -3093,6 +3088,58 @@ CREATE  TABLE IF NOT EXISTS `tx_edfu_domain_model_szene` (
 		pid              INT(11) DEFAULT '0'             NOT NULL,
 
 		PRIMARY KEY (`uid`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `tx_edfu_domain_model_szene`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `tx_edfu_domain_model_szene` ;
+
+CREATE  TABLE IF NOT EXISTS `tx_edfu_domain_model_szene` (
+  `uid` INT(11) NOT NULL ,
+  `nummer` INT(11) NULL ,
+  `beschreibung` TEXT NULL ,
+  `szene_bild_uid` INT NULL ,
+  `polygon` TEXT NULL ,
+  `koordinateX` DOUBLE NULL ,
+  `koordinateY` DOUBLE NULL ,
+  `breite` DOUBLE NULL ,
+  `koordinateZ` DOUBLE NULL ,
+  `blickwinkel` DOUBLE NULL ,
+  `hoehe` DOUBLE NULL ,
+  		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+		crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+		cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+		deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+		hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+		starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+		endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+
+		t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
+		t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
+		t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
+		t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
+		t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
+		t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
+		t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
+		t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
+		t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
+
+		t3_origuid       INT(11) DEFAULT '0'             NOT NULL,
+		sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
+		l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
+		l10n_diffsource  MEDIUMBLOB,
+		
+		pid              INT(11) DEFAULT '0'             NOT NULL,
+
+		PRIMARY KEY (`uid`) ,
+  INDEX `fk_szene_szene_bild1_idx` (`szene_bild_uid` ASC) ,
+  CONSTRAINT `fk_szene_szene_bild1`
+    FOREIGN KEY (`szene_bild_uid` )
+    REFERENCES `tx_edfu_domain_model_szene_bild` (`uid` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -3389,3 +3436,116 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+'MySQLCursor: SET @OLD_UNIQUE_CHECKS=@@UNIQU..'
+'MySQLCursor: \nSET @OLD_FOREIGN_KEY_CHECKS=@..'
+'MySQLCursor: \nSET @OLD_SQL_MODE=@@SQL_MODE,..'
+'MySQLCursor: \n\nDROP SCHEMA IF EXISTS `edfu`..'
+'MySQLCursor: \nCREATE SCHEMA IF NOT EXISTS `..'
+'MySQLCursor: \nUSE `edfu` '
+'MySQLCursor: \n\n-- -------------------------..'
+'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\n CREATE TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\n CREATE TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\n CREATE TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\n CREATE TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\n CREATE TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\n CREATE TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n-- ------------------------..'
+'MySQLCursor: \n\n CREATE TABLE IF NOT EXISTS ..'
+'MySQLCursor: \n\n\n\nSET SQL_MODE=@OLD_SQL_MODE'
+'MySQLCursor: \nSET FOREIGN_KEY_CHECKS=@OLD_F..'
+'MySQLCursor: \nSET UNIQUE_CHECKS=@OLD_UNIQUE..'
+
+FL: Transliteration mit Punkt und Folgebuchstaben:
+{u'.Aw': 1,
+ u'.Ct': 1,
+ u'.Hnk': 9,
+ u'.Htp': 1,
+ u'.T': 871,
+ u'.Tn': 314,
+ u'.Tw': 1,
+ u'.bb': 1,
+ u'.c': 2486,
+ u'.cj': 2,
+ u'.cn': 1910,
+ u'.ct': 33,
+ u'.f': 8995,
+ u'.fj': 10,
+ u'.g': 1,
+ u'.j': 3858,
+ u'.jn': 96,
+ u'.k': 8647,
+ u'.kA': 1,
+ u'.kwj': 8,
+ u'.m': 1,
+ u'.mH': 1,
+ u'.n': 2965,
+ u'.nt': 1,
+ u'.nw': 31,
+ u'.nwt': 1,
+ u'.s': 1,
+ u'.sS': 4,
+ u'.t': 323,
+ u'.tj': 1648,
+ u'.tn': 3,
+ u'.tw': 464,
+ u'.w': 368,
+ u'.wHm': 1,
+ u'.wj': 1,
+ u'.xr': 9}
+
+FL: Datensätze und Stellen
+formular: 10372
+stelle: 33643
+szene: 5
+szene_has_stelle: 5
+
+FL: Bilder, Sammlungen und Relationen
+photo: 12215
+photo_collection_has_photo 34918
+photo_collection 4334
+formular_has_photo_collection 15290
+
+OL
+ort: 1180
+ort_has_stelle: 5587
+
+GL
+gott: 9470
+gott_has_stelle: 9477
+
+WL
+wort: 4622
+wort_has_stelle: 8202
+berlin: 1004

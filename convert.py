@@ -34,13 +34,13 @@ bandDict = {
 	8: {'uid': 8, 'nummer': 8, 'freigegeben': False}
 }
 band = []
-# Bislang 5 szenen genutzt, manuell übertragen.
+# Bislang 5 Szenen genutzt, manuell übertragen.
 szene = [
-	{'uid': 1, 'nummer':1, 'beschreibung':''},
-	{'uid': 2, 'nummer':2, 'beschreibung':''},
-	{'uid': 3, 'nummer':3, 'beschreibung':''},
-	{'uid': 4, 'nummer':4, 'beschreibung':''},
-	{'uid': 5, 'nummer':5, 'beschreibung':''},
+	{'uid': 1, 'beschreibung':''},
+	{'uid': 2, 'beschreibung':''},
+	{'uid': 3, 'beschreibung':''},
+	{'uid': 4, 'beschreibung':''},
+	{'uid': 5, 'beschreibung':''},
 ]
 # Stellenzuweisungen für Szenen.
 szene_has_stelle = [
@@ -50,7 +50,7 @@ szene_has_stelle = [
 	{'uid_local': 4, 'uid_foreign': 3},
 	{'uid_local': 5, 'uid_foreign': 4},
 ]
-# Eiträge: Stellen für Szenen.
+# Einträge: Stellen für Szenen.
 stelle = [
 	{'uid': 0, 'band_uid': 5, 'seite_start': 1, 'zeile_start': 11, 'seite_stop': 4, 'zeile_stop': 6, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
 	{'uid': 1, 'band_uid': 5, 'seite_start': 4, 'zeile_start': 6, 'seite_stop': 7, 'zeile_stop': 4, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
@@ -1109,7 +1109,7 @@ for myBand in bandDict.itervalues():
 db = mysql.connector.connect(user='root', host='127.0.0.1', database='edfu')
 cursor = db.cursor()
 
-f = open('schema.sql')
+f = open('Daten/schema.sql')
 schema = f.read()
 f.close()
 schema = re.sub(r'`edfu`.`(.*)`', r'`tx_edfu_domain_model_\1`' , schema)
@@ -1230,7 +1230,7 @@ for b in stelle:
 	cursor.execute(add_stelle, b)
 db.commit()
 
-add_szene = ('INSERT INTO tx_edfu_domain_model_szene (`uid`, nummer, beschreibung) VALUES (%(uid)s, %(nummer)s, %(beschreibung)s)')
+add_szene = ('INSERT INTO tx_edfu_domain_model_szene (`uid`, beschreibung) VALUES (%(uid)s, %(beschreibung)s)')
 for b in szene:
 	cursor.execute(add_szene, b)
 db.commit()
