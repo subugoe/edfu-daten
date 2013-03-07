@@ -35,7 +35,7 @@
        that you fully re-index after changing this setting as it can
        affect both how text is indexed and queried.
   -->
-  <luceneMatchVersion>LUCENE_40</luceneMatchVersion>
+  <luceneMatchVersion>LUCENE_41</luceneMatchVersion>
 
   <!-- <lib/> directives can be used to instruct Solr to load an Jars
        identified and use them to resolve any "plugins" specified in
@@ -93,7 +93,16 @@
   <!--
      <lib path="../a-jar-that-does-not-exist.jar" /> 
   -->
-  
+  <!--
+  <lib dir="/Users/ssp/SUB/edfu/solr/lib/solr-typo3-plugin-1.2.0.jar" />
+  -->
+<!--
+  <lib dir="/Users/ssp/Downloads/SelectAllQParser/dist/SelectAllQParser.jar" />
+  <lib dir="/Users/ssp/Downloads/lucene-solr/solr/de/unigoettingen/sub/solr/response/xmlxxml.jar" />
+-->
+<!--
+  <queryResponseWriter name="xmlxml" class="de.unigoettingen.sub.solr.response.XMLXMLResponseWriter"/>
+-->
   <!-- Data Directory
 
        Used to specify an alternate directory to hold all index data
@@ -1694,6 +1703,10 @@
     <str name="content-type">text/plain; charset=UTF-8</str>
   </queryResponseWriter>
   
+  
+
+  
+  
   <!--
      Custom response writers can be declared as needed...
     -->
@@ -1764,5 +1777,6 @@
   <admin>
     <defaultQuery>*:*</defaultQuery>
   </admin>
+
 
 </config>

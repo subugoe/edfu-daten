@@ -2,8 +2,8 @@
 #coding=utf-8
 
 import solr
-# index = solr.Solr('http://localhost:8983/solr/edfu')
-index = solr.Solr('http://foo.local:8080/solr/edfu')
+index = solr.Solr('http://localhost:8080/solr/edfu')
+#index = solr.Solr('http://foo.local:8080/solr/edfu')
 
 import mysql.connector
 db = mysql.connector.connect(user='root', host='127.0.0.1', database='edfu')
@@ -13,25 +13,41 @@ cursor2 = db2.cursor()
 
 
 
+intToRoman = {1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII', 8: 'VIII'}
+
+
+
 def addStellenTo (stellen, doc):
-	global stellenDict
+	global stellenDict, intToRoman
 	
 	for feld in ['seite_start', 'seite_stop', 'zeile_start', 'zeile_stop', 'band', 'stelle_anmerkung', 'stelle_unsicher', 'zerstoerung', 'freigegeben']:
 		if not feld in doc:
 			doc[feld] = []
+			if feld == 'band':
+				doc['bandseite'] = []
+				doc['bandseitezeile'] = []
 			
 		for stelleID in stellen:
 			stelle = stellenDict[stelleID]
 			stelle['besitzer'] = doc['id']
 			doc[feld] += [stelle[feld]]
 			
+			if feld == 'band':
+				bandNummer = stelle['band']
+				if intToRoman.has_key(bandNummer):
+					bandseiteString = intToRoman[bandNummer] + ' ' + str(stelle['seite_start'])
+					doc['bandseite'] += [bandseiteString]
+					doc['bandseitezeile'] += [bandseiteString + ', ' + str(stelle['zeile_start'])]
+			
 
 
 
 # STELLE
-query = ("SELECT tx_edfu_domain_model_stelle.uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,zerstoerung,nummer,freigegeben "
-	"FROM tx_edfu_domain_model_stelle,tx_edfu_domain_model_band "
-	"WHERE tx_edfu_domain_model_stelle.band_uid = tx_edfu_domain_model_band.uid")
+query = """
+SELECT tx_edfu_domain_model_stelle.uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,zerstoerung,nummer,freigegeben
+FROM tx_edfu_domain_model_stelle,tx_edfu_domain_model_band
+WHERE tx_edfu_domain_model_stelle.band_uid = tx_edfu_domain_model_band.uid
+"""
 cursor.execute(query)
 
 docs = []
@@ -91,10 +107,12 @@ index.add_many(docs)
 query = ("SELECT uid,transliteration,uebersetzung,texttyp,stelle_uid FROM tx_edfu_domain_model_formular")
 cursor.execute(query)
 
-query2 = ("SELECT beschreibung, detail "
-	"FROM tx_edfu_formular_literatur_mm,tx_edfu_domain_model_literatur "
-	"WHERE tx_edfu_formular_literatur_mm.uid_local = %s "
-	"AND tx_edfu_formular_literatur_mm.uid_foreign = tx_edfu_domain_model_literatur.uid")
+query2 = """
+SELECT beschreibung, detail
+FROM tx_edfu_formular_literatur_mm,tx_edfu_domain_model_literatur
+WHERE tx_edfu_formular_literatur_mm.uid_local = %s
+AND tx_edfu_formular_literatur_mm.uid_foreign = tx_edfu_domain_model_literatur.uid
+"""
 
 query3 = """
 SELECT
@@ -136,15 +154,17 @@ for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 	for (photoName, typName, photoJahr, klammern, stern, kommentar, collectionID) in cursor2:
 		photos += [photoName]
 		if not photoCollections.has_key(collectionID):
-			photoCollections[collectionID] = {'klammern': klammern, 'stern': stern, 'photos': []}
+			photoCollections[collectionID] = {'klammern': klammern, 'stern': stern, 'photos': [], 'kommentar': kommentar}
 		photoCollections[collectionID]['photos'] += [photoName]
 
 	
 	collectionIDs = []
 	collectionPhotos = []
+	collectionKommentare = []
 	for collectionID in photoCollections.iterkeys():
 		collectionIDs += [collectionID]
 		photoCollection = photoCollections[collectionID]
+		collectionKommentare += [photoCollection['kommentar']]
 		photosString = ','.join(photoCollection['photos'])
 		if photoCollection['klammern'] == 1:
 			photosString = '(' + photosString + ')'
@@ -165,7 +185,8 @@ for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 		"literatur": literatur,
 		"photo": photos,
 		"photo_collection": collectionPhotos,
-		"photo_collection_id": collectionIDs
+		"photo_collection_id": collectionIDs,
+		"photo_collection_kommentar": collectionKommentare
 	}
 	addStellenTo([stelle_uid], doc)
 	
@@ -178,9 +199,11 @@ index.add_many(docs)
 query = ("SELECT uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung FROM tx_edfu_domain_model_ort")
 cursor.execute(query)
 
-query4 = ("SELECT uid_foreign,uid_local "
-	"FROM tx_edfu_ort_stelle_mm "
-	"WHERE uid_local = %s")
+query4 = """
+SELECT uid_foreign,uid_local
+FROM tx_edfu_ort_stelle_mm
+WHERE uid_local = %s
+"""
 
 docs = []
 for (uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
@@ -213,9 +236,11 @@ index.add_many(docs)
 query = ("SELECT uid,transliteration,ort,eponym,beziehung,funktion FROM tx_edfu_domain_model_gott")
 cursor.execute(query)
 
-query5 = ("SELECT uid_foreign,uid_local "
-	"FROM tx_edfu_gott_stelle_mm "
-	"WHERE uid_local = %s")
+query5 = """
+SELECT uid_foreign,uid_local
+FROM tx_edfu_gott_stelle_mm
+WHERE uid_local = %s
+"""
 
 docs = []
 for (uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
@@ -249,9 +274,11 @@ index.add_many(docs)
 query = ("SELECT uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_berlin_uid FROM tx_edfu_domain_model_wort")
 cursor.execute(query)
 
-query6 = ("SELECT uid_foreign,uid_local "
-	"FROM tx_edfu_wort_stelle_mm "
-	"WHERE uid_local = %s")
+query6 = """
+SELECT uid_foreign,uid_local
+FROM tx_edfu_wort_stelle_mm
+WHERE uid_local = %s
+"""
 
 docs = []
 for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_berlin_uid) in cursor:
