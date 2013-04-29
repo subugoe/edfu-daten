@@ -4,6 +4,8 @@
 import re
 import copy
 import pprint
+import glob
+import csv
 import mysql.connector
 db = mysql.connector.connect(user='root', host='127.0.0.1', database='edfuprojekt')
 cursor = db.cursor()
@@ -15,6 +17,73 @@ def szSplit (s):
 	
 	return parts
 	
+
+
+
+# from http://docs.python.org/2/library/csv.html
+import csv, codecs, cStringIO
+
+class UTF8Recoder:
+    """
+    Iterator that reads an encoded stream and reencodes the input to UTF-8
+    """
+    def __init__(self, f, encoding):
+        self.reader = codecs.getreader(encoding)(f)
+
+    def __iter__(self):
+        return self
+
+    def next(self):
+        return self.reader.next().encode("utf-8")
+
+class UnicodeReader:
+    """
+    A CSV reader which will iterate over lines in the CSV file "f",
+    which is encoded in the given encoding.
+    """
+
+    def __init__(self, f, dialect=csv.excel, encoding="utf-8", **kwds):
+        f = UTF8Recoder(f, encoding)
+        self.reader = csv.reader(f, dialect=dialect, **kwds)
+
+    def next(self):
+        row = self.reader.next()
+        return [unicode(s, "utf-8") for s in row]
+
+    def __iter__(self):
+        return self
+
+
+class UnicodeWriter:
+    """
+    A CSV writer which will write rows to CSV file "f",
+    which is encoded in the given encoding.
+    """
+
+    def __init__(self, f, dialect=csv.excel, encoding="utf-8", **kwds):
+        # Redirect output to a queue
+        self.queue = cStringIO.StringIO()
+        self.writer = csv.writer(self.queue, dialect=dialect, **kwds)
+        self.stream = f
+        self.encoder = codecs.getincrementalencoder(encoding)()
+
+    def writerow(self, row):
+        self.writer.writerow([s.encode("utf-8") for s in row])
+        # Fetch UTF-8 output from the queue ...
+        data = self.queue.getvalue()
+        data = data.decode("utf-8")
+        # ... and reencode it into the target encoding
+        data = self.encoder.encode(data)
+        # write to the target stream
+        self.stream.write(data)
+        # empty queue
+        self.queue.truncate(0)
+
+    def writerows(self, rows):
+        for row in rows:
+            self.writerow(row)
+
+
 
 
 roemisch = {
@@ -36,19 +105,19 @@ bandDict = {
 band = []
 # Bislang 5 Szenen genutzt, manuell übertragen.
 szene = [
-	{'uid': 1, 'beschreibung':''},
-	{'uid': 2, 'beschreibung':''},
-	{'uid': 3, 'beschreibung':''},
-	{'uid': 4, 'beschreibung':''},
-	{'uid': 5, 'beschreibung':''},
+	{'uid': 0, 'nummer': 1, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinateX': None, 'koordinateY': None, 'blickwinkel': None, 'breite': None, 'prozentZ': None, 'hoehe': None},
+	{'uid': 1, 'nummer': 2, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinateX': None, 'koordinateY': None, 'blickwinkel': None, 'breite': None, 'prozentZ': None, 'hoehe': None},
+	{'uid': 2, 'nummer': 3, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinateX': None, 'koordinateY': None, 'blickwinkel': None, 'breite': None, 'prozentZ': None, 'hoehe': None},
+	{'uid': 3, 'nummer': 4, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinateX': None, 'koordinateY': None, 'blickwinkel': None, 'breite': None, 'prozentZ': None, 'hoehe': None},
+	{'uid': 4, 'nummer': 5, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinateX': None, 'koordinateY': None, 'blickwinkel': None, 'breite': None, 'prozentZ': None, 'hoehe': None},
 ]
 # Stellenzuweisungen für Szenen.
 szene_has_stelle = [
-	{'uid_local': 1, 'uid_foreign': 0},
-	{'uid_local': 2, 'uid_foreign': 1},
-	{'uid_local': 3, 'uid_foreign': 2},
-	{'uid_local': 4, 'uid_foreign': 3},
-	{'uid_local': 5, 'uid_foreign': 4},
+	{'uid_local': 0, 'uid_foreign': 0},
+	{'uid_local': 1, 'uid_foreign': 1},
+	{'uid_local': 2, 'uid_foreign': 2},
+	{'uid_local': 3, 'uid_foreign': 3},
+	{'uid_local': 4, 'uid_foreign': 4},
 ]
 # Einträge: Stellen für Szenen.
 stelle = [
@@ -58,6 +127,8 @@ stelle = [
 	{'uid': 3, 'band_uid': 5, 'seite_start': 9, 'zeile_start': 10, 'seite_stop': 10, 'zeile_stop': 16, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
 	{'uid': 4, 'band_uid': 5, 'seite_start': 11, 'zeile_start': 4, 'seite_stop': 12, 'zeile_stop': 4, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
 ]
+szene_bildDict = {}
+szene_bild = []
 formularDict = {}
 formular = []
 suffixe = {}
@@ -996,6 +1067,7 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 		'uebersetzung': Deutsch,
 		'anmerkung': Anmerkungen,
 		'hieroglyph': IDS,
+        'lemma': None,
 		'wb_berlin_uid': wbID
 	}
 	wort += [myWort]
@@ -1053,7 +1125,6 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 				elif m20.group(5) == '>*':
 					stern = True
 
-
 				myStelle = {
 					'uid': len(stelle),
 					'band_uid': bandNr,
@@ -1103,6 +1174,68 @@ for myFormular in formularDict.itervalues():
 	
 for myBand in bandDict.itervalues():
 	band += [myBand]
+
+
+
+
+# Szeneninformation aus CSV Dateien (aus Imagemap)
+# csv + Unicode Handhabungscode aus der Anleitung
+fileList = glob.glob('Daten/imagemaps/*.csv')
+for filePath in fileList:
+    with open(filePath, 'rb') as csvFile:
+        reader = UnicodeReader(csvFile, delimiter=';')
+        for row in reader:
+            if len(row) == 12 and row[0] != 'description':
+                szeneID = len(szene)
+                stelleID = len(stelle)
+                
+                imageName = filePath.split('/')[-1].rstrip('.csv')
+                if not szene_bildDict.has_key(imageName):
+                    rSzene_bild = {
+                        'uid': len(szene_bildDict),
+                        'name': imageName
+                    }
+                    szene_bildDict[imageName] = rSzene_bild
+                szene_bild_ID = szene_bildDict[imageName]['uid']
+                
+                rSzene = {
+                    'uid': szeneID,
+                    'nummer': row[3],
+                    'beschreibung': row[0],
+                    'szene_bild_uid': szene_bild_ID,
+                    'polygon': row[4],
+                    'koordinateX': row[7],
+                    'koordinateY': row[8],
+                    'blickwinkel': row[6],
+                    'breite': row[10],
+                    'prozentZ': row[9],
+                    'hoehe': row[11]
+                }
+                szene += [rSzene]
+                
+                if row[1] != '':
+                    rStelle = {
+                    	'uid': stelleID,
+                        'band_uid': row[1],
+                        'seite_start': row[2],
+                        'zeile_start': None,
+                        'seite_stop': row[2],
+                        'zeile_stop': None,
+                        'anmerkung': '',
+                        'stop_unsicher': 0,
+                        'zerstoerung': 0
+                    }
+                    stelle += [rStelle]
+                
+                    szene_has_stelle += [{
+                        'uid_local': szeneID,
+                        'uid_foreign': stelleID
+                    }]
+
+for mySzene_bild in szene_bildDict.itervalues():
+	szene_bild += [mySzene_bild]
+pprint.PrettyPrinter().pprint(szene_bild)
+
 
 
 # In MySQL einfügen
@@ -1158,7 +1291,6 @@ add_band = ('INSERT INTO tx_edfu_domain_model_band (`uid`, nummer, freigegeben) 
 for b in band:
 	cursor.execute(add_band, b)
 db.commit()
-
 
 add_berlin = ('INSERT INTO tx_edfu_domain_model_wb_berlin (`uid`, band, seite_start, zeile_start, seite_stop, zeile_stop, zweifel) VALUES (%(uid)s, %(band)s, %(seite_start)s, %(zeile_start)s, %(seite_stop)s, %(zeile_stop)s, %(zweifel)s)')
 for b in berlin:
@@ -1230,7 +1362,12 @@ for b in stelle:
 	cursor.execute(add_stelle, b)
 db.commit()
 
-add_szene = ('INSERT INTO tx_edfu_domain_model_szene (`uid`, beschreibung) VALUES (%(uid)s, %(beschreibung)s)')
+add_szene_bild = ('INSERT INTO tx_edfu_domain_model_szene_bild (`uid`, name) VALUES (%(uid)s, %(name)s)')
+for b in szene_bild:
+	cursor.execute(add_szene_bild, b)
+db.commit()
+
+add_szene = ('INSERT INTO tx_edfu_domain_model_szene (`uid`, nummer, beschreibung, szene_bild_uid, polygon, koordinateX, koordinateY, blickwinkel, breite, prozentZ, hoehe) VALUES (%(uid)s, %(nummer)s, %(beschreibung)s, %(szene_bild_uid)s, %(polygon)s, %(koordinateX)s, %(koordinateY)s, %(blickwinkel)s, %(breite)s, %(prozentZ)s, %(hoehe)s)')
 for b in szene:
 	cursor.execute(add_szene, b)
 db.commit()
@@ -1240,7 +1377,7 @@ for b in szene_has_stelle:
 	cursor.execute(add_szene_has_stelle, b)
 db.commit()
 
-add_wort = ('INSERT INTO tx_edfu_domain_model_wort (`uid`, transliteration, weiteres, uebersetzung, anmerkung, hieroglyph, wb_berlin_uid) VALUES (%(uid)s, %(transliteration)s, %(weiteres)s, %(uebersetzung)s, %(anmerkung)s, %(hieroglyph)s, %(wb_berlin_uid)s)')
+add_wort = ('INSERT INTO tx_edfu_domain_model_wort (`uid`, transliteration, weiteres, uebersetzung, anmerkung, hieroglyph, lemma, wb_berlin_uid) VALUES (%(uid)s, %(transliteration)s, %(weiteres)s, %(uebersetzung)s, %(anmerkung)s, %(hieroglyph)s, %(lemma)s, %(wb_berlin_uid)s)')
 for b in wort:
 	cursor.execute(add_wort, b)
 db.commit()
@@ -1266,6 +1403,8 @@ print "\n\n**** stelle ****"
 pprint.PrettyPrinter().pprint(stelle)
 print "\n\n**** szene ****"
 pprint.PrettyPrinter().pprint(szene)
+print "\n\n**** szene_bild ****"
+pprint.PrettyPrinter().pprint(szene_bild)
 print "\n\n**** szene_has_stelle ****"
 pprint.PrettyPrinter().pprint(szene_has_stelle)
 print "\n\n**** formular_has_photo_collection ****"
