@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" width="765" height="990" id="svg2" xml:space="preserve">
+  <metadata id="metadata8">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs6"/>
+  <g transform="matrix(1.25,0,0,-1.25,0,990)" id="g10">
+    <g transform="scale(0.1,0.1)" id="g12">
+      <path d="m 561.602,462 -544.8012,0 6,45.602 7.1992,31.199 12,30 15.6016,22.801 L 72,612 l 18,25.199 21.602,19.199 25.199,18 20.398,14.403 30,13.199 30,9.602 20.403,4.796 37.199,4.801 27.597,0 26.403,-4.801 27.597,-4.796 30,-7.204 20.403,-7.199 27.597,-18 22.801,-16.801 21.602,-15.597 18,-24 18,-24 16.801,-26.403 12,-22.796 8.398,-34.801 7.199,-25.199 2.403,-27.602" inkscape:connector-curvature="0" id="path14" style="stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;fill:none;stroke-opacity:1"/>
+      <path d="m 652.801,463.199 0,108 196.801,0 0,568.801 221.998,0 0,362.4 117.6,0 0,-1039.201 -536.399,0" inkscape:connector-curvature="0" id="path16" style="stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;fill:none;stroke-opacity:1"/>
+      <path d="m 24,316.801 1172.4,0 0,-297.6018 L 1040.4,168 178.801,168 24,19.1992 24,316.801" inkscape:connector-curvature="0" id="path18" style="stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;fill:none;stroke-opacity:1"/>
+    </g>
+  </g>
+</svg>
