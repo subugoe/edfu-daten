@@ -86,6 +86,8 @@
 		<field name="szene" type="int" indexed="true" stored="true"/>
 		<field name="zweifel" type="boolean" indexed="true" stored="true"/>
 
+		<dynamicField name="*_facet" type="string" indexed="true" stored="true" multiValued="true"/>
+		<dynamicField name="*_suggest" type="text_ws" indexed="true" stored="true" multiValued="true"/>
 
 		<!-- fields filled with the content of other fields -->
 		<field name="text_all" type="text_ws" indexed="true" stored="false" multiValued="true"/>
@@ -132,7 +134,7 @@
 		Fill transliteration fields.
 	-->
 	<copyField source="transliteration" dest="transliteration_nosuffix"/>
-	<copyField source="transliteration" dest="transliteration_nosuffix"/>
+	<copyField source="transliteration" dest="transliteration_all"/>
 	<copyField source="transliteration_nosuffix" dest="transliteration_all"/>
 
 	<!--
@@ -144,6 +146,18 @@
 	<copyField source="photo" dest="text"/>
 	<copyField source="bandseite" dest="text"/>
 	<copyField source="bandseitezeile" dest="text"/>
+
+
+	<!--
+		Fill fields for autosuggest.
+	-->
+	<copyField source="uebersetzung" dest="all_suggest"/>
+	<copyField source="texttyp" dest="all_suggest"/>
+	<copyField source="ortsbeschreibung" dest="all_suggest"/>
+	<copyField source="eponym" dest="all_suggest"/>
+	<copyField source="ort" dest="all_suggest"/>
+	<copyField source="transliteration" dest="all_suggest"/>
+
 
 	<!--
 		Copy everything over to field with German stemming.

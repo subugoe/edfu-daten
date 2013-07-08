@@ -1139,8 +1139,8 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 				stelle += [myStelle]
 				
 				wort_has_stelle += [{
-					'uid_local': myStelle['uid'],
-					'uid_foreign': PRIMARY,
+					'uid_local': PRIMARY,
+					'uid_foreign': myStelle['uid'],
 					'schreiber_verbessert': klammer,
 					'chassinat_verbessert': stern
 				}]

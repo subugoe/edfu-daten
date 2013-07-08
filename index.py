@@ -1,9 +1,13 @@
 #! /usr/bin/env python
 #coding=utf-8
+"""
+Skript zur Indexierung der Edfu Daten.
+Liest die Daten aus MySQL,
+denormalisiert sie in Solr Dokumente
+und spielt sie in Solr Index(e).
 
-import solr
-index = solr.Solr('http://localhost:8080/solr/edfu')
-#index = solr.Solr('http://foo.local:8080/solr/edfu')
+2013 Sven-S. Porst, SUB Göttingen <porst@sub.uni-goettingen.de>
+"""
 
 import mysql.connector
 db = mysql.connector.connect(user='root', host='127.0.0.1', database='edfu')
@@ -14,6 +18,8 @@ cursor2 = db2.cursor()
 
 
 intToRoman = {1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII', 8: 'VIII'}
+
+docs = []
 
 
 
@@ -50,7 +56,7 @@ WHERE tx_edfu_domain_model_stelle.band_uid = tx_edfu_domain_model_band.uid
 """
 cursor.execute(query)
 
-docs = []
+
 for (uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,zerstoerung,band,freigegeben) in cursor:
 	
 	doc = {
@@ -78,11 +84,10 @@ for doc in docs:
 
 
 # WB-BERLIN
-# WORT
 query = ("SELECT uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel FROM tx_edfu_domain_model_wb_berlin")
 cursor.execute(query)
 
-docs = []
+
 for (uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel) in cursor:
 	doc = {
 		"id": "wb_berlin-" + str(uid),
@@ -98,9 +103,6 @@ for (uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel) in cursor:
 	
 	docs += [doc]
 	
-index.add_many(docs)
-
-
 
 
 # FORMULAR
@@ -141,7 +143,7 @@ ORDER BY
 	photoName DESC
 """
 
-docs = []
+
 for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 	literatur = []
 	cursor2.execute(query2, [str(uid)])
@@ -191,8 +193,7 @@ for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 	addStellenTo([stelle_uid], doc)
 	
 	docs += [doc]
-	
-index.add_many(docs)
+
 
 
 # ORT
@@ -205,7 +206,7 @@ FROM tx_edfu_ort_stelle_mm
 WHERE uid_local = %s
 """
 
-docs = []
+
 for (uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
 	stelleIDs = []
 	stellen = []
@@ -228,8 +229,7 @@ for (uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
 	addStellenTo(stellen, doc)
 
 	docs += [doc]
-	
-index.add_many(docs)
+
 
 
 # GOTT
@@ -242,7 +242,7 @@ FROM tx_edfu_gott_stelle_mm
 WHERE uid_local = %s
 """
 
-docs = []
+
 for (uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
 	stelleIDs = []
 	stellen = []
@@ -266,8 +266,7 @@ for (uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
 	addStellenTo(stellen, doc)
 	
 	docs += [doc]
-	
-index.add_many(docs)
+
 
 
 # WORT
@@ -280,7 +279,7 @@ FROM tx_edfu_wort_stelle_mm
 WHERE uid_local = %s
 """
 
-docs = []
+
 for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_berlin_uid) in cursor:
 	stelleIDs = []
 	stellen = []
@@ -290,9 +289,9 @@ for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_ber
 		stellen += [uid_foreign]
 	
 	doc = {
-		"id": "gott-" + str(uid),
-		"typ": "gott",
-		"sql_tabelle": "tx_edfu_domain_model_gott",
+		"id": "wort-" + str(uid),
+		"typ": "wort",
+		"sql_tabelle": "tx_edfu_domain_model_wort",
 		"sql_uid": uid,
 		"transliteration": transliteration,
 		"uebersetzung": uebersetzung,
@@ -307,16 +306,25 @@ for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_ber
 	
 	docs += [doc]
 
-index.add_many(docs)
 
-
-# Stellen zum Index hinzufügen
-index.add_many(stellenDict.values())
-
-
-
-
-index.commit()
-cursor2.close()	
+# MySQL Verbindungen schließen
+cursor2.close()
 cursor.close()
 db.close()
+db2.close()
+
+
+docs += stellenDict.values()
+
+#pprint.pprint(docs)
+# Indexieren
+import solr
+index = solr.Solr('http://localhost:8080/solr/edfu')
+index.delete_query('*:*')
+index.add_many(docs)
+index.commit()
+
+index = solr.Solr('http://vlib.sub.uni-goettingen.de/solr/edfu')
+index.delete_query('*:*')
+index.add_many(docs)
+index.commit()
