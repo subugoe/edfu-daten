@@ -173,9 +173,9 @@ photosDict = {}
 photo = []
 photo_typ = []
 photoTypDict = {
-	'alt': {'uid': 0, 'name': 'alt', 'jahr': 1999},
-	'D03': {'uid': 1, 'name': 'D03', 'jahr': 2003},
-	'D05': {'uid': 2, 'name': 'D05', 'jahr': 2005},
+	'alt': {'uid': 0, 'name': 'SW', 'jahr': 1999},
+	'D03': {'uid': 1, 'name': '2003', 'jahr': 2003},
+	'D05': {'uid': 2, 'name': '2005', 'jahr': 2005},
 	'e': {'uid': 3, 'name': 'e', 'jahr': 1900},
 	'G': {'uid': 4, 'name': 'G', 'jahr': 1950},
 	'e-o': {'uid': 5, 'name': 'e-o', 'jahr': 1960},
@@ -1278,7 +1278,7 @@ schema = schema.replace('PRIMARY KEY (`uid`)', typo3Felder)
 schema = re.sub(r'DROP .*`tx_edfu_domain_model_([a-z_]+)_has_([a-z_]+)\`.*\n\n.*tx_edfu_domain_model_\1_has_\2\`',
 	r"DROP TABLE IF EXISTS `tx_edfu_\1_\2_mm`;\n\n CREATE TABLE IF NOT EXISTS `tx_edfu_\1_\2_mm`",
 	schema)
-print schema
+# print schema
 for result in cursor.execute(schema, multi=True):
 	print result
 

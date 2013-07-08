@@ -9,6 +9,8 @@ und spielt sie in Solr Index(e).
 2013 Sven-S. Porst, SUB Göttingen <porst@sub.uni-goettingen.de>
 """
 
+import copy
+
 import mysql.connector
 db = mysql.connector.connect(user='root', host='127.0.0.1', database='edfu')
 db2 = mysql.connector.connect(user='root', host='127.0.0.1', database='edfu')
@@ -154,25 +156,30 @@ for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 	photos = []
 	cursor2.execute(query3, [str(uid)])
 	for (photoName, typName, photoJahr, klammern, stern, kommentar, collectionID) in cursor2:
+		photoPfad = typName + '/' + photoName
 		photos += [photoName]
 		if not photoCollections.has_key(collectionID):
-			photoCollections[collectionID] = {'klammern': klammern, 'stern': stern, 'photos': [], 'kommentar': kommentar}
+			photoCollections[collectionID] = {'klammern': klammern, 'stern': stern, 'photos': [], 'photoPfade': [], 'kommentar': kommentar}
+		photoCollections[collectionID]['photoPfade'] += [photoPfad]
 		photoCollections[collectionID]['photos'] += [photoName]
 
 	
-	collectionIDs = []
+	collectionStrings = []
 	collectionPhotos = []
+	collectionIDs = []
 	collectionKommentare = []
 	for collectionID in photoCollections.iterkeys():
 		collectionIDs += [collectionID]
 		photoCollection = photoCollections[collectionID]
 		collectionKommentare += [photoCollection['kommentar']]
-		photosString = ','.join(photoCollection['photos'])
-		if photoCollection['klammern'] == 1:
-			photosString = '(' + photosString + ')'
-		if photoCollection['stern'] == 1:
-			photosString += '*'
+		photosString = ','.join(photoCollection['photoPfade'])
 		collectionPhotos += [photosString]
+		photoBemerkungString = ', '.join(photoCollection['photos'])
+		if photoCollection['klammern'] == 1:
+			photoBemerkungString = '(' + photoBemerkungString + ')'
+		if photoCollection['stern'] == 1:
+			photoBemerkungString += '*'
+		collectionStrings += [photoBemerkungString]
 
 	
 	doc = {
@@ -186,7 +193,8 @@ for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 		"stelle_id": 'stelle-' + str(stelle_uid),
 		"literatur": literatur,
 		"photo": photos,
-		"photo_collection": collectionPhotos,
+		"photo_collection_photos": collectionPhotos,
+		"photo_collection_string": collectionStrings,
 		"photo_collection_id": collectionIDs,
 		"photo_collection_kommentar": collectionKommentare
 	}
