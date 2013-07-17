@@ -77,6 +77,8 @@
 		<field name="seite_stop" type="int" indexed="true" stored="true" multiValued="true"/>
 		<field name="zeile_start" type="int" indexed="true" stored="true" multiValued="true"/>
 		<field name="zeile_stop" type="int" indexed="true" stored="true" multiValued="true"/>
+		<field name="start" type="int" indexed="true" stored="true" multiValued="true"/>
+		<field name="stop" type="int" indexed="true" stored="true" multiValued="true"/>
 		<field name="stelle_anmerkung" type="string" indexed="true" stored="true" multiValued="true"/>
 		<field name="stelle_unsicher" type="boolean" indexed="true" stored="true" multiValued="true"/>
 		<field name="zerstoerung" type="boolean" indexed="true" stored="true" multiValued="true"/>

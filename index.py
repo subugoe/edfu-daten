@@ -60,20 +60,28 @@ cursor.execute(query)
 
 
 for (uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,zerstoerung,band,freigegeben) in cursor:
-	
+	zeile_start2 = zeile_start
+	if not zeile_start:
+		zeile_start2 = 0
+	zeile_stop2 = zeile_stop
+	if not zeile_stop:
+		zeile_stop2 = 100
+
 	doc = {
 		"id": "stelle-" + str(uid),
 		"typ": "stelle",
 		"sql_tabelle": "tx_edfu_domain_model_stelle",
 		"sql_uid": uid,
+		"band": band,
 		"seite_start": seite_start,
 		"seite_stop": seite_stop,
-		"zeile_start": zeile_start,
-		"zeile_stop": zeile_stop,
+		"zeile_start": zeile_start2,
+		"zeile_stop": zeile_stop2,
 		"stelle_anmerkung": anmerkung,
 		"stelle_unsicher": stop_unsicher,
+		"start": band * 1000000 + seite_start * 1000 + zeile_start2,
+		"stop": band * 1000000 + seite_stop * 1000 + zeile_stop2,
 		"zerstoerung": zerstoerung,
-		"band": band,
 		"freigegeben": freigegeben
 	}
 	

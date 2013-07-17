@@ -588,11 +588,17 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 		print "\t".join(["FL", str(PRIMARY), "FEHLER", "SEITEN absteigend", SEITEZEILE])
 	if result[0][0] == result[1][0] and result[0][1] > result[1][1]:
 		print "\t".join(["FL", str(PRIMARY), "FEHLER", "ZEILEN absteigend", SEITEZEILE])
-	
+
 	myStelle['seite_start'] = result[0][0]
 	myStelle['zeile_start'] = result[0][1]
 	myStelle['seite_stop'] = result[1][0]
 	myStelle['zeile_stop'] = result[1][1]
+
+	if myStelle['zeile_start'] > 30:
+		print "\t".join(["FL", str(PRIMARY), "FEHLER", "zeile_start > 30", SEITEZEILE])
+	if myStelle['zeile_stop'] > 30:
+		print "\t".join(["FL", str(PRIMARY), "FEHLER", "zeile_stop > 30", SEITEZEILE])
+
 	myStelle['stop_unsicher'] = False
 	myStelle['zerstoerung'] = False
 
@@ -649,12 +655,21 @@ for (PRIMARY, STELLE, TRANS, ORT, LOK, ANM) in cursor:
 	elif STELLE == 'VI, 36, 11; 208, Anm. 2; 328, 17/18;':
 		# 751
 		STELLE = 'VI, 36, 11; 208, 0 (Anm. 2); 328, 17/18;'
+	elif STELLE == 'VIII, 53, 1; 53, 2; 53, 5; 57, 8; 57, 11; 60, 14-61, 1; 61, 15; 66, 6; 71, 6; 71, 7; VII, 69, 4; 76, 15; 76, 15/16; 106, 13; 131, 2; 131, 6; 190, 1; 204, 7; 204, 10; 204, 15; 211, 6/7; 254, 3; 270, 14; 270, 16; 292, 4; 304, 12; 317, 7; 317, 13;':
+		# 892
+		STELLE = 'VIII, 53, 1; 53, 2; 53, 5; 57, 8; 57, 11; 60, 14 - 61, 1; 61, 15; 66, 6; 71, 6; 71, 7; VII, 69, 4; 76, 15; 76, 15/16; 106, 13; 131, 2; 131, 6; 190, 1; 204, 7; 204, 10; 204, 15; 211, 6/7; 254, 3; 270, 14; 270, 16; 292, 4; 304, 12; 317, 7; 317, 13;'
 	elif STELLE == 'VII, 2, 4; 3, 4; 5, 2; 7, 6; 8, 2; 8, 7; 9, 7; 10, 8; 13, 2; 15, 9; 21, 9; 22, 1; 22, 11; 22, 12 (2x); 24, 2; 26, 7; 26, 8; 31, 5; 35, 9; 36, 4; 40, 11; 43, 3; 44, 5; 61, 4; 74, 17; (Gau); 88, 4; 89, 8; 100, 16; 102, 1; 105, 10; 105, 14; 108, 2; 108, 3; 111, 11; 119, 6; 120, 6; 125, 10; 126, 3; 130, 12;':
 		# 939
 		STELLE = 'VII, 2, 4; 3, 4; 5, 2; 7, 6; 8, 2; 8, 7; 9, 7; 10, 8; 13, 2; 15, 9; 21, 9; 22, 1; 22, 11; 22, 12 (2x); 24, 2; 26, 7; 26, 8; 31, 5; 35, 9; 36, 4; 40, 11; 43, 3; 44, 5; 61, 4; 74, 17 (Gau); 88, 4; 89, 8; 100, 16; 102, 1; 105, 10; 105, 14; 108, 2; 108, 3; 111, 11; 119, 6; 120, 6; 125, 10; 126, 3; 130, 12;'
+	elif STELLE == 'V, 175, 18-176, 1;':
+		# 993
+		STELLE = 'V, 175, 18 - 176, 1;'
+	elif STELLE == 'V, 42, 9; 63, 9 ([]); 71, 13/14 ([]); 86, 7/8; 89, 15; 151, 17-152, 1; 155, 1; 162, 6; 165, 9; 206, 2; 215, 10; 231, 3/4; 244, 14; 288, 16/17; 300, 19; 326, 7; 396, 7;':
+		# 1067
+		STELLE = 'V, 42, 9; 63, 9 ([]); 71, 13/14 ([]); 86, 7/8; 89, 15; 151, 17 - 152, 1; 155, 1; 162, 6; 165, 9; 206, 2; 215, 10; 231, 3/4; 244, 14; 288, 16/17; 300, 19; 326, 7; 396, 7;'
 	elif STELLE == 'VI, 105, 5; 107, 3; 107, 8; 108, 12; 143, 3; 152, 1; 152, 16; 158, 1; 169, 174, 1; 174, 17; 175, 1; 179, 8; 181, 7; 186, 4; 190, 5; 199, 2; 237, 6; 237, 10; 243, 16; 244; 13; 245, 15; 248, 5; 249, 14; 260, 3; 274, 13; 276, 7; 276, 10; 277, 4/5; 277, 14/15;':
 		# 1072
-		STELLE = 'VI, 105, 5; 107, 3; 107, 8; 108, 12; 143, 3; 152, 1; 152, 16; 158, 1; 169, 174, 1; 174, 17; 175, 1; 179, 8; 181, 7; 186, 4; 190, 5; 199, 2; 237, 6; 237, 10; 243, 16; 244, 13; 245, 15; 248, 5; 249, 14; 260, 3; 274, 13; 276, 7; 276, 10; 277, 4/5; 277, 14/15;'
+		STELLE = 'VI, 105, 5; 107, 3; 107, 8; 108, 12; 143, 3; 152, 1; 152, 16; 158, 1; 169, 1; 174, 17; 175, 1; 179, 8; 181, 7; 186, 4; 190, 5; 199, 2; 237, 6; 237, 10; 243, 16; 244, 13; 245, 15; 248, 5; 249, 14; 260, 3; 274, 13; 276, 7; 276, 10; 277, 4/5; 277, 14/15;'
 	elif STELLE == 'VI, 278, 9; 278, 17; 280, 15; 281, 15; 283, 9; 283, 11; 287, 3; 290, 11; 297, 17; 299, 3 ([]); 303, 16; 308, 10; 315; 7; 319, 14; 324, 4; 325, 7; 332, 1; 334, 4; 349, 6; 351, 14; V, 4, 1; 7, 1; 13, 12; 31, 5; 31, 6; 36, 2; 38, 11; 39, 10; 40, 4; 41, 2; 44, 11; 50, 12; 55, 1; 56, 11; 58, 15, 16;':
 		# 1073
 		STELLE = 'VI, 278, 9; 278, 17; 280, 15; 281, 15; 283, 9; 283, 11; 287, 3; 290, 11; 297, 17; 299, 3 ([]); 303, 16; 308, 10; 315, 7; 319, 14; 324, 4; 325, 7; 332, 1; 334, 4; 349, 6; 351, 14; V, 4, 1; 7, 1; 13, 12; 31, 5; 31, 6; 36, 2; 38, 11; 39, 10; 40, 4; 41, 2; 44, 11; 50, 12; 55, 1; 56, 11; 58, 15, 16;'
@@ -683,34 +698,48 @@ for (PRIMARY, STELLE, TRANS, ORT, LOK, ANM) in cursor:
 		if len(teil.strip()) > 0:
 			m3 = re3.match(teil)
 			if not m3:
-				print "\t".join(["FL", str(PRIMARY), "FEHLER", u"STELLE", teil])
+				print "\t".join(["OL", str(PRIMARY), "FEHLER", u"STELLE", teil])
 			else:
 				myBand = m3.group(1).strip()
 				if len(myBand) > 0:
 					bandNr = roemisch[myBand]
-				seite = int(m3.group(2).strip())
-				z = m3.group(3).replace(' ', '').replace('/', '-')
-				zeilen = z.split('-')
-				zeileStart = int(zeilen[0])
-				if len(zeilen) == 1:
-					zeileStop = zeileStart
+				seiteStart = int(m3.group(2).strip())
+				seiteStop = seiteStart
+				zeileStart = 100
+				zeileStop = 100
+				if m3.group(3).find(' - ') != -1:
+					seiteStop = int(m3.group(3).split(' - ')[1])
+					zeileStart = int(m3.group(3).split(' - ')[0])
+					zeileStop = int(m3.group(4).strip(' ,'))
+					kommentar = ''
 				else:
-					zeileStop = int(zeilen[1])
-				
-				kommentar = m3.group(4).strip()
+					z = m3.group(3).replace(' ', '').replace('/', '-')
+					zeilen = z.split('-')
+					zeileStart = int(zeilen[0])
+					if len(zeilen) == 1:
+						zeileStop = zeileStart
+					else:
+						zeileStop = int(zeilen[1])
+
+					kommentar = m3.group(4).strip()
 
 				myStelle = {
 					'uid': len(stelle),
 					'band_uid': bandNr,
-					'seite_start': seite,
-					'seite_stop': seite,
+					'seite_start': seiteStart,
+					'seite_stop': seiteStop,
 					'zeile_start': zeileStart,
 					'zeile_stop': zeileStop,
 					'stop_unsicher': False,
 					'zerstoerung': False,
 					'anmerkung': kommentar
 				}
-				
+
+				if myStelle['zeile_start'] > 30:
+					print "\t".join(["OL", str(PRIMARY), "FEHLER", "zeile_start > 30: " + str(myStelle['zeile_start']), teil])
+				if myStelle['zeile_stop'] > 30:
+					print "\t".join(["OL", str(PRIMARY), "FEHLER", "zeile_stop > 30: " + str(myStelle['zeile_stop']), teil])
+
 				stelle += [myStelle]
 				ort_has_stelle += [{'uid_local': PRIMARY, 'uid_foreign': myStelle['uid']}]
 			
@@ -755,7 +784,7 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 		SEITEZEILE = '066, 011ff'
 	elif SEITEZEILE == '264-269;':
 		# 1551
-		SEITEZEILE = '264, 0-269, 100;'
+		SEITEZEILE = '264, 0 - 269, 30;'
 	elif SEITEZEILE == '2,7?':
 		# 1178
 		SEITEZEILE = '2, 7'
@@ -791,6 +820,9 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 	elif SEITEZEILE == '114,4 114,7                                                114,4':
 		# 7603
 		SEITEZEILE = '114,4; 114,7'
+	elif SEITEZEILE == '47,5 47,5- 47,5':
+		# 7616
+		SEITEZEILE = '47, 5'
 	elif SEITEZEILE == '24;4':
 		# 7693
 		SEITEZEILE == '24, 4'
@@ -800,6 +832,9 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 	elif SEITEZEILE == '54;3':
 		# 8222
 		SEITEZEILE = '54, 3'
+	elif SEITEZEILE == '137, 008-138':
+		# 8337
+		SEITEZEILE = '137, 008 - 138, 10'
 	elif PRIMARY == 9165:
 		BND = '5'
 	
@@ -822,13 +857,16 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 		SEITEZEILE = halberString
 	
 	SEITEZEILE = SEITEZEILE.replace('.09999999999999', ', 1')
+	SEITEZEILE = SEITEZEILE.replace('.300000000000001', ', 3')
 	SEITEZEILE = SEITEZEILE.replace('.30000000000001', ', 3')
 	SEITEZEILE = SEITEZEILE.replace('.40000000000001', ', 4')
 	SEITEZEILE = SEITEZEILE.replace('.59999999999999', ', 6')
+	SEITEZEILE = SEITEZEILE.replace('.699999999999999', ', 7')
 	SEITEZEILE = SEITEZEILE.replace('.69999999999999', ', 7')
 	SEITEZEILE = SEITEZEILE.replace('.90000000000001', ', 9')
 	SEITEZEILE = SEITEZEILE.replace('.109999999999999', ', 11')
 	SEITEZEILE = SEITEZEILE.replace('.119999999999999', ', 12')
+	SEITEZEILE = SEITEZEILE.replace('.140000000000001', ', 14')
 	SEITEZEILE = SEITEZEILE.replace('.14000000000001', ', 14')
 	SEITEZEILE = SEITEZEILE.replace('.15000000000001', ', 15')
 	SEITEZEILE = SEITEZEILE.replace('.18000000000001', ', 18')
@@ -893,7 +931,12 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 					'anmerkung': ANM
 				}
 				stelle += [myStelle]
-				
+
+				if myStelle['zeile_start'] > 30:
+					print "\t".join(["GL", str(PRIMARY), "FEHLER", "zeile_start > 30", sz])
+				if myStelle['zeile_stop'] > 30:
+					print "\t".join(["GL", str(PRIMARY), "FEHLER", "zeile_stop > 30", sz])
+
 				gott_has_stelle += [{
 					'uid_local': PRIMARY,
 					'uid_foreign': myStelle['uid']
@@ -927,7 +970,10 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 	bEdfu = BelegstellenEdfu.strip('; ')
 	bEdfu = re.sub(r' / V', '; V', bEdfu)
 
-	if bEdfu == 'V, 233. 6':
+	if bEdfu == 'VII, 216, 78; 9; 224, 6':
+		# 549
+		bEdfu = 'VII, 216, 7; 8; 9; 224, 6'
+	elif bEdfu == 'V, 233. 6':
 		# 921
 		bEdfu = 'V, 233, 6'
 	elif bEdfu == 'VI, 148, <7>; 11':
@@ -945,6 +991,9 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 	elif bEdfu == 'VI, 112. 1; VII, 122, 9':
 		# 2158
 		bEdfu = 'VI, 112, 1; VII, 122, 9'
+	elif bEdfu == 'VI, 95, 10; 13, 96, 1; 11; 13; 15; 102, 2':
+		# 2417
+		bEdfu = 'VI, 95, 10; 13; 96, 1; 11; 13; 15; 102, 2'
 	elif bEdfu == '128, 5/6':
 		# 2468
 		bEdfu = 'VI, 128, 5/6'
@@ -957,6 +1006,9 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 	elif bEdfu == 'V, 130,10; 136,4; 349,3; 4; 8; 350,2; 7; 8; 353,3; 355,6; 359,4; VI, 169, 8; 242, 11; VI, ???18,7; 10; 169,8; 320,12; 321,4; 5; 328,18???; VI, 125, 1; 135, 3; VI, 112, 7; 114, 8; 116, 4; V, 12, 8; 10; 37, 11':
 		# 2815
 		bEdfu = 'V, 130,10; 136,4; 349,3; 4; 8; 350,2; 7; 8; 353,3; 355,6; 359,4; VI, 169, 8; 242, 11; VI, 18,7 ???; 10; 169,8; 320,12; 321,4; 5; 328,18???; VI, 125, 1; 135, 3; VI, 112, 7; 114, 8; 116, 4; V, 12, 8; 10; 37, 11'
+	elif bEdfu == 'V, 247, 17-248, 1':
+		# 2860
+		bEdfu = 'V, 247, 17 - 248, 1'
 	elif bEdfu == 'V, 130, 1 / kol. 14':
 		# 3173
 		bEdfu = 'V, 130, 1 (kol. 14)'
@@ -1074,7 +1126,7 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 	
 	
 	bandNr = 0
-	seite = 0
+	seiteStart = 0
 	zerstoerung = False
 		
 	if len(bEdfu) > 0:
@@ -1088,11 +1140,10 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 			if b.find('%') != -1:
 				zerstoerung = True
 				b = b.replace('%', '').replace('&', '')
-			
 
 			if b.find(',') == -1:
-				if seite != 0:
-					b = str(seite) + ', ' + b
+				if seiteStart != 0:
+					b = str(seiteStart) + ', ' + b
 #					print "\t".join(["WL", str(PRIMARY), "INFO", u"Seitenzahl hinzugefügt", b])
 				else:
 					print "\t".join(["WL", str(PRIMARY), "FEHLER", u"keine Seitenzahl", b])
@@ -1104,32 +1155,39 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 				elif bandNr == 0:
 					print "\t".join(["WL", str(PRIMARY), "FEHLER", u"fehlende Bandangabe", b])
 
-				seite = int(m20.group(3))
-				
-				zeilenString = m20.group(4)
-				zeilenString = zeilenString.replace('/', '-').replace(' ', '')
-				zeilen = zeilenString.split('-')
-				if len(zeilen) == 1:
-					zeileStart = int(zeilen[0])
-					zeileStop = zeileStart
-				elif len(zeilen) == 2:
-					zeileStart = int(zeilen[0])
-					zeileStop = int(zeilen[1])
-				else:
-					print "\t".join(["WL", str(PRIMARY), "FEHLER", u"zu viele Komponenten in Zeilenangabe", b])
+				seiteStart = int(m20.group(3))
+				seiteStop = seiteStart
+				anmerkung = ''
 
-				anmerkung = m20.group(6).strip()
-				
-				if m20.group(5) == '>':
-					klammer = True
-				elif m20.group(5) == '>*':
-					stern = True
+				if m20.group(4).find(' - ') != -1:
+					zeileStart = int(m20.group(4).split(' - ')[0])
+					seiteStop = int(m20.group(4).split(' - ')[1])
+					zeileStop = int(m20.group(6).strip(' ,'))
+				else:
+					zeilenString = m20.group(4)
+					zeilenString = zeilenString.replace('/', '-').replace(' ', '')
+					zeilen = zeilenString.split('-')
+					if len(zeilen) == 1:
+						zeileStart = int(zeilen[0])
+						zeileStop = zeileStart
+					elif len(zeilen) == 2:
+						zeileStart = int(zeilen[0])
+						zeileStop = int(zeilen[1])
+					else:
+						print "\t".join(["WL", str(PRIMARY), "FEHLER", u"zu viele Komponenten in Zeilenangabe", b])
+
+					anmerkung = m20.group(6).strip()
+
+					if m20.group(5) == '>':
+						klammer = True
+					elif m20.group(5) == '>*':
+						stern = True
 
 				myStelle = {
 					'uid': len(stelle),
 					'band_uid': bandNr,
-					'seite_start': seite,
-					'seite_stop': seite,
+					'seite_start': seiteStart,
+					'seite_stop': seiteStop,
 					'zeile_start': zeileStart,
 					'zeile_stop': zeileStop,
 					'anmerkung': anmerkung,
@@ -1137,7 +1195,12 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 					'zerstoerung': zerstoerung
 				}
 				stelle += [myStelle]
-				
+
+				if myStelle['zeile_start'] > 30:
+					print "\t".join(["WL", str(PRIMARY), "FEHLER", "zeile_start > 30", b])
+				if myStelle['zeile_stop'] > 30:
+					print "\t".join(["WL", str(PRIMARY), "FEHLER", "zeile_stop > 30", b])
+
 				wort_has_stelle += [{
 					'uid_local': PRIMARY,
 					'uid_foreign': myStelle['uid'],
@@ -1218,9 +1281,9 @@ for filePath in fileList:
                     	'uid': stelleID,
                         'band_uid': row[1],
                         'seite_start': row[2],
-                        'zeile_start': None,
+                        'zeile_start': 0,
                         'seite_stop': row[2],
-                        'zeile_stop': None,
+                        'zeile_stop': 30,
                         'anmerkung': '',
                         'stop_unsicher': 0,
                         'zerstoerung': 0
@@ -1280,7 +1343,7 @@ schema = re.sub(r'DROP .*`tx_edfu_domain_model_([a-z_]+)_has_([a-z_]+)\`.*\n\n.*
 	schema)
 # print schema
 for result in cursor.execute(schema, multi=True):
-	print result
+	print ""
 
 db.commit()
 
