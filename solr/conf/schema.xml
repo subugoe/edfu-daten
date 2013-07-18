@@ -69,7 +69,14 @@
 		<field name="weiteres" type="string" indexed="true" stored="true"/>
 		<field name="hieroglyph" type="string" indexed="true" stored="true"/>
 		<field name="lemma" type="string" indexed="true" stored="true"/>
-		<field name="stelle_berlin_id" type="string" indexed="true" stored="true" multiValued="true"/>
+		<field name="stelle_berlin_id" type="string" indexed="true" stored="true" multiValued="false"/>
+		<field name="berlin_band" type="int" indexed="true" stored="true" multiValued="false"/>
+		<field name="berlin_seite_start" type="int" indexed="true" stored="true" multiValued="false"/>
+		<field name="berlin_seite_stop" type="int" indexed="true" stored="true" multiValued="false"/>
+		<field name="berlin_zeile_start" type="int" indexed="true" stored="true" multiValued="false"/>
+		<field name="berlin_zeile_stop" type="int" indexed="true" stored="true" multiValued="false"/>
+		<field name="berlin_zweifel" type="int" indexed="true" stored="true" multiValued="false"/>
+		<field name="berlin_display" type="string" indexed="true" stored="true" multiValued="false"/>
 
 		<field name="band" type="int" indexed="true" stored="true" multiValued="true"/>
 		<field name="freigegeben" type="boolean" indexed="true" stored="true" multiValued="true"/>

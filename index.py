@@ -94,9 +94,9 @@ for doc in docs:
 
 
 # WB-BERLIN
+berlinDict = {}
 query = ("SELECT uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel FROM tx_edfu_domain_model_wb_berlin")
 cursor.execute(query)
-
 
 for (uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel) in cursor:
 	doc = {
@@ -104,6 +104,7 @@ for (uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel) in cursor:
 		"typ": "wb_berlin",
 		"sql_tabelle": "tx_edfu_domain_model_wb_berlin",
 		"sql_uid": uid,
+		"band": band,
 		"seite_start": seite_start,
 		"seite_stop": seite_stop,
 		"zeile_start": zeile_start,
@@ -112,6 +113,7 @@ for (uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel) in cursor:
 	}
 	
 	docs += [doc]
+	berlinDict[uid] = doc
 	
 
 
@@ -319,6 +321,20 @@ for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_ber
 		"stelle_id": stellen
 	}
 	addStellenTo(stellen, doc)
+	
+	# WB Berlin Daten hinzufügen
+	if berlinDict.has_key(wb_berlin_uid):
+		berlin = berlinDict[wb_berlin_uid]
+		berlinStart = str(berlin['seite_start']) + '.' + str(berlin['zeile_start'])
+		berlinStop = str(berlin['seite_stop']) + '.' + str(berlin['zeile_stop'])
+		berlinString = str(berlin['band']) + ', ' + berlinStart
+		if berlinStart != berlinStop:
+			berlinString += '-' + berlinStop
+		doc['berlin_display'] = berlinString
+		copyFields = ['band', 'seite_start', 'zeile_start', 'seite_stop', 'zeile_stop', 'zweifel']
+		for fieldName in copyFields:
+			doc['berlin_' + fieldName] = berlin[fieldName]
+		
 	
 	docs += [doc]
 
