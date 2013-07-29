@@ -3,12 +3,15 @@
 
 import re
 import copy
+import time
 import pprint
 import glob
 import csv
 import mysql.connector
 db = mysql.connector.connect(user='root', host='127.0.0.1', database='edfuprojekt')
 cursor = db.cursor()
+
+writePrefix = 'edfu`.`tx_edfu_'
 
 
 def szSplit (s):
@@ -84,11 +87,60 @@ class UnicodeWriter:
             self.writerow(row)
 
 
+defaultDate = int(time.mktime(time.strptime('2000-01-01 00:00:00', '%Y-%m-%d %H:%M:%S')))
+defaultFields = {
+	'tstamp': int(time.time()),
+	'crdate': defaultDate,
+	'cruser_id': 0,
+	'deleted': 0,
+	'hidden': 0,
+	'starttime': 0,
+	'endtime': 0,
+	't3ver_oid': 0,
+	't3ver_id': 0,
+	't3ver_wsid': 0,
+	't3ver_label': '',
+	't3ver_state': 0,
+	't3ver_stage': 0,
+	't3ver_count': 0,
+	't3ver_tstamp': 0,
+	't3ver_move_id': 0,
+	't3_origuid': 0,
+	'sys_language_uid': 0,
+	'l10n_parent': 0,
+	'l10n_diffsource': None,
+	'pid': 0
+}
+
+
+def addRecordsToTable (records, tableName):
+	global db, cursor
+	print u"\nTabelle »" + tableName + u"«: " + str(len(records)) + u" Datensätze"
+
+	if len(records) > 0:
+		for record in records:
+			prefix = writePrefix
+			if tableName[-3:] != '_mm':
+				prefix += 'domain_model_'
+			
+				# add default fields to record
+				for fieldName in defaultFields:
+					if not record.has_key(fieldName):
+						record[fieldName] = defaultFields[fieldName]
+			
+			fieldNames = '(' + ', '.join(record.keys()) + ')'
+			values = '(%(' + ')s, %('.join(record.keys()) + ')s)'
+			insertStatement = "INSERT INTO `" + prefix + tableName + "` " + fieldNames + " VALUES " + values
+			cursor.execute(insertStatement, record)
+			
+		db.commit()
+
 
 
 roemisch = {
 	'I': 1, 'II':2, 'III':3, 'IV':4, 'V':5, 'VI':6, 'VII':7, 'VIII':8
 }
+
 
 
 # Einträge für die 8 Chassinat Bände.
@@ -103,6 +155,8 @@ bandDict = {
 	8: {'uid': 8, 'nummer': 8, 'freigegeben': False}
 }
 band = []
+
+
 # Bislang 5 Szenen genutzt, manuell übertragen.
 szene = [
 	{'uid': 0, 'nummer': 1, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinateX': None, 'koordinateY': None, 'blickwinkel': None, 'breite': None, 'prozentZ': None, 'hoehe': None},
@@ -1226,78 +1280,88 @@ for myCollection in photo_collection:
 			photo_collection_has_photo += [entry]
 	del myCollection['items']
 	
-for myPhoto in photosDict.itervalues():
-	photo += [myPhoto]
 
-for myPhotoTyp in photoTypDict.itervalues():
-	photo_typ += [myPhotoTyp]
-	
-for myFormular in formularDict.itervalues():
-	formular += [myFormular]
-	
-for myBand in bandDict.itervalues():
-	band += [myBand]
-
+photo = photosDict.values()
+photo_typ = photoTypDict.values()
+formular = formularDict.values()
+band = bandDict.values()
 
 
 
 # Szeneninformation aus CSV Dateien (aus Imagemap)
 # csv + Unicode Handhabungscode aus der Anleitung
 fileList = glob.glob('Daten/imagemaps/*.csv')
+print ""
 for filePath in fileList:
-    with open(filePath, 'rb') as csvFile:
-        reader = UnicodeReader(csvFile, delimiter=';')
-        for row in reader:
-            if len(row) == 12 and row[0] != 'description':
-                szeneID = len(szene)
-                stelleID = len(stelle)
-                
-                imageName = filePath.split('/')[-1].rstrip('.csv')
-                if not szene_bildDict.has_key(imageName):
-                    rSzene_bild = {
-                        'uid': len(szene_bildDict),
-                        'name': imageName
-                    }
-                    szene_bildDict[imageName] = rSzene_bild
-                szene_bild_ID = szene_bildDict[imageName]['uid']
-                
-                rSzene = {
-                    'uid': szeneID,
-                    'nummer': row[3],
-                    'beschreibung': row[0],
-                    'szene_bild_uid': szene_bild_ID,
-                    'polygon': row[4],
-                    'koordinateX': row[7],
-                    'koordinateY': row[8],
-                    'blickwinkel': row[6],
-                    'breite': row[10],
-                    'prozentZ': row[9],
-                    'hoehe': row[11]
-                }
-                szene += [rSzene]
-                
-                if row[1] != '':
-                    rStelle = {
-                    	'uid': stelleID,
-                        'band_uid': row[1],
-                        'seite_start': row[2],
-                        'zeile_start': 0,
-                        'seite_stop': row[2],
-                        'zeile_stop': 30,
-                        'anmerkung': '',
-                        'stop_unsicher': 0,
-                        'zerstoerung': 0
-                    }
-                    stelle += [rStelle]
-                
-                    szene_has_stelle += [{
-                        'uid_local': szeneID,
-                        'uid_foreign': stelleID
-                    }]
+	with open(filePath, 'rb') as csvFile:
+		print u'INFO CSV Datei »' + filePath + u'«'
+		columnDict = {}
+		
+		reader = UnicodeReader(csvFile, delimiter=';')
+		for row in reader:
+			if row[0] == 'description':
+				# Spaltennummern für Felder feststellen
+				for index, value in enumerate(row):
+					columnDict[value] = index
+				pprint.pprint(columnDict)
+			elif len(row) >= 12:
+				szeneID = len(szene)
+				stelleID = len(stelle)
+				
+				imageName = filePath.split('/')[-1].rstrip('.csv')
+				if not szene_bildDict.has_key(imageName):
+					rSzene_bild = {
+						'uid': len(szene_bildDict),
+						'name': imageName
+					}
+					szene_bildDict[imageName] = rSzene_bild
+				szene_bild_ID = szene_bildDict[imageName]['uid']
+				
+				rSzene = {
+					'uid': szeneID,
+					'nummer': row[columnDict['plate']],
+					'beschreibung': row[columnDict['description']],
+					'szene_bild_uid': szene_bild_ID,
+					'rect': row[columnDict['polygon']],
+					'polygon': '',
+					'koordinateX': row[columnDict['coord-x']],
+					'koordinateY': row[columnDict['coord-y']],
+					'blickwinkel': row[columnDict['angleOfView']],
+					'breite': row[columnDict['extent-width']],
+					'prozentZ': row[columnDict['height-percent']],
+					'hoehe': row[columnDict['extent-height-percent']],
+					'grau': False
+				}
+				
+				if columnDict.has_key('areacolor') and row[columnDict['areacolor']] == 2:
+					rSzene['grau'] = True
+				if columnDict.has_key('polygon_original'):
+					rSzene['polygon'] = row[columnDict['polygon_original']]
+				
+				szene += [rSzene]
+				
+				if row[1] != '':
+					rStelle = {
+						'uid': stelleID,
+						'band_uid': row[columnDict['volume']],
+						'seite_start': row[columnDict['page']],
+						'zeile_start': 0,
+						'seite_stop': row[columnDict['page']],
+						'zeile_stop': 30,
+						'anmerkung': '',
+						'stop_unsicher': 0,
+						'zerstoerung': 0
+					}
+					stelle += [rStelle]
+				
+					szene_has_stelle += [{
+						'uid_local': szeneID,
+						'uid_foreign': stelleID
+					}]
+			else:
+				print u'Zeile »' + ';'.join(row) + u'« hat weniger als 12 Spalten'
 
-for mySzene_bild in szene_bildDict.itervalues():
-	szene_bild += [mySzene_bild]
-pprint.PrettyPrinter().pprint(szene_bild)
+szene_bild = szene_bildDict.values()
 
 
 
@@ -1343,112 +1407,37 @@ schema = re.sub(r'DROP .*`tx_edfu_domain_model_([a-z_]+)_has_([a-z_]+)\`.*\n\n.*
 	schema)
 # print schema
 for result in cursor.execute(schema, multi=True):
-	print ""
+	1
 
 db.commit()
 
+addRecordsToTable(band, 'band')
+addRecordsToTable(stelle, 'stelle')
+addRecordsToTable(szene_bild, 'szene_bild')
+addRecordsToTable(szene, 'szene')
+addRecordsToTable(szene_has_stelle, 'szene_stelle_mm')
+addRecordsToTable(literatur, 'literatur')
 
+addRecordsToTable(berlin, 'wb_berlin')
 
+addRecordsToTable(formular, 'formular')
+addRecordsToTable(formular_has_literatur, 'formular_literatur_mm')
+addRecordsToTable(photo_typ, 'photo_typ')
+for p in photo:
+	del(p['count'])
+addRecordsToTable(photo, 'photo')
+addRecordsToTable(photo_collection, 'photo_collection')
+addRecordsToTable(photo_collection_has_photo, 'photo_collection_photo_mm')
+addRecordsToTable(formular_has_photo_collection, 'formular_photo_collection_mm')
 
-add_band = ('INSERT INTO tx_edfu_domain_model_band (`uid`, nummer, freigegeben) VALUES (%(uid)s, %(nummer)s, %(freigegeben)s)')
-for b in band:
-	cursor.execute(add_band, b)
-db.commit()
+addRecordsToTable(gott, 'gott')
+addRecordsToTable(gott_has_stelle, 'gott_stelle_mm')
 
-add_berlin = ('INSERT INTO tx_edfu_domain_model_wb_berlin (`uid`, band, seite_start, zeile_start, seite_stop, zeile_stop, zweifel) VALUES (%(uid)s, %(band)s, %(seite_start)s, %(zeile_start)s, %(seite_stop)s, %(zeile_stop)s, %(zweifel)s)')
-for b in berlin:
-	cursor.execute(add_berlin, b)
-db.commit()
+addRecordsToTable(ort, 'ort')
+addRecordsToTable(ort_has_stelle, 'ort_stelle_mm')
 
-add_formular = ('INSERT INTO tx_edfu_domain_model_formular (`uid`, stelle_uid, transliteration, uebersetzung, texttyp) VALUES (%(uid)s, %(stelle_uid)s, %(transliteration)s, %(uebersetzung)s, %(texttyp)s)')
-for b in formular:
-	cursor.execute(add_formular, b)
-db.commit()
-
-add_formular_has_literatur = ('INSERT INTO tx_edfu_formular_literatur_mm (uid_local, uid_foreign, detail) VALUES (%(uid_local)s, %(uid_foreign)s, %(detail)s)')
-for b in formular_has_literatur:
-	cursor.execute(add_formular_has_literatur, b)
-db.commit()
-
-add_formular_has_photo_collection = ('INSERT INTO tx_edfu_formular_photo_collection_mm (uid_local, uid_foreign) VALUES (%(uid_local)s, %(uid_foreign)s)')
-for b in formular_has_photo_collection:
-	cursor.execute(add_formular_has_photo_collection, b)
-db.commit()
-
-add_gott = ('INSERT INTO tx_edfu_domain_model_gott (`uid`, transliteration, ort, eponym, beziehung, funktion) VALUES (%(uid)s, %(transliteration)s, %(ort)s, %(eponym)s, %(beziehung)s, %(funktion)s)')
-for b in gott:
-	cursor.execute(add_gott, b)
-db.commit()
-
-add_gott_has_stelle = ('INSERT INTO tx_edfu_gott_stelle_mm (uid_local, uid_foreign) VALUES (%(uid_local)s, %(uid_foreign)s)')
-for b in gott_has_stelle:
-	cursor.execute(add_gott_has_stelle, b)
-db.commit()
-
-add_literatur = ('INSERT INTO tx_edfu_domain_model_literatur (`uid`, beschreibung) VALUES (%(uid)s, %(beschreibung)s)')
-for b in literatur:
-	cursor.execute(add_literatur, b)
-db.commit()
-
-add_ort = ('INSERT INTO tx_edfu_domain_model_ort (`uid`, transliteration, uebersetzung, ortsbeschreibung, anmerkung) VALUES (%(uid)s, %(transliteration)s, %(uebersetzung)s, %(ortsbeschreibung)s, %(anmerkung)s)')
-for b in ort:
-	cursor.execute(add_ort, b)
-db.commit()
-
-add_ort_has_stelle = ('INSERT INTO tx_edfu_ort_stelle_mm (uid_local, uid_foreign) VALUES (%(uid_local)s, %(uid_foreign)s)')
-for b in ort_has_stelle:
-	cursor.execute(add_ort_has_stelle, b)
-db.commit()
-
-add_photo_typ = ('INSERT INTO tx_edfu_domain_model_photo_typ (`uid`, name, jahr) VALUES (%(uid)s, %(name)s, %(jahr)s)')
-for b in photo_typ:
-	cursor.execute(add_photo_typ, b)
-db.commit()
-
-add_photo = ('INSERT INTO tx_edfu_domain_model_photo (`uid`, photo_typ_uid, name) VALUES (%(uid)s, %(photo_typ_uid)s, %(name)s)')
-for b in photo:
-	cursor.execute(add_photo, b)
-db.commit()
-
-add_photo_collection = ('INSERT INTO tx_edfu_domain_model_photo_collection (`uid`, klammern, stern, kommentar) VALUES (%(uid)s, %(klammern)s, %(stern)s, %(kommentar)s)')
-for b in photo_collection:
-	cursor.execute(add_photo_collection, b)
-db.commit()
-
-add_photo_collection_has_photo = ('INSERT INTO tx_edfu_photo_collection_photo_mm (uid_local, uid_foreign) VALUES (%(uid_local)s, %(uid_foreign)s)')
-for b in photo_collection_has_photo:
-	cursor.execute(add_photo_collection_has_photo, b)
-db.commit()
-
-add_stelle = ('INSERT INTO tx_edfu_domain_model_stelle (`uid`, band_uid, seite_start, zeile_start, seite_stop, zeile_stop, anmerkung, stop_unsicher, zerstoerung) VALUES (%(uid)s, %(band_uid)s, %(seite_start)s, %(zeile_start)s, %(seite_stop)s, %(zeile_stop)s, %(anmerkung)s, %(stop_unsicher)s, %(zerstoerung)s)')
-for b in stelle:
-	cursor.execute(add_stelle, b)
-db.commit()
-
-add_szene_bild = ('INSERT INTO tx_edfu_domain_model_szene_bild (`uid`, name) VALUES (%(uid)s, %(name)s)')
-for b in szene_bild:
-	cursor.execute(add_szene_bild, b)
-db.commit()
-
-add_szene = ('INSERT INTO tx_edfu_domain_model_szene (`uid`, nummer, beschreibung, szene_bild_uid, polygon, koordinateX, koordinateY, blickwinkel, breite, prozentZ, hoehe) VALUES (%(uid)s, %(nummer)s, %(beschreibung)s, %(szene_bild_uid)s, %(polygon)s, %(koordinateX)s, %(koordinateY)s, %(blickwinkel)s, %(breite)s, %(prozentZ)s, %(hoehe)s)')
-for b in szene:
-	cursor.execute(add_szene, b)
-db.commit()
-
-add_szene_has_stelle = ('INSERT INTO tx_edfu_szene_stelle_mm (uid_local, uid_foreign) VALUES (%(uid_local)s, %(uid_foreign)s)')
-for b in szene_has_stelle:
-	cursor.execute(add_szene_has_stelle, b)
-db.commit()
-
-add_wort = ('INSERT INTO tx_edfu_domain_model_wort (`uid`, transliteration, weiteres, uebersetzung, anmerkung, hieroglyph, lemma, wb_berlin_uid) VALUES (%(uid)s, %(transliteration)s, %(weiteres)s, %(uebersetzung)s, %(anmerkung)s, %(hieroglyph)s, %(lemma)s, %(wb_berlin_uid)s)')
-for b in wort:
-	cursor.execute(add_wort, b)
-db.commit()
-
-add_wort_has_stelle = ('INSERT INTO tx_edfu_wort_stelle_mm (uid_local, uid_foreign, schreiber_verbessert, chassinat_verbessert) VALUES (%(uid_local)s, %(uid_foreign)s, %(schreiber_verbessert)s, %(chassinat_verbessert)s)')
-for b in wort_has_stelle:
-	cursor.execute(add_wort_has_stelle, b)
-db.commit()
+addRecordsToTable(wort, 'wort')
+addRecordsToTable(wort_has_stelle, 'wort_stelle_mm')
 
 cursor.close()
 db.close()	
@@ -1530,4 +1519,8 @@ print "wort: " + str(len(wort))
 print "wort_has_stelle: " + str(len(wort_has_stelle))
 print "berlin: " + str(len(berlin))
 
-
+print ""
+print "Szenen"
+print "szene: " + str(len(szene))
+print "szene_bild: " + str(len(szene_bild))
+print "szene_has_stelle: " + str(len(szene_has_stelle))

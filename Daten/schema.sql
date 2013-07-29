@@ -113,6 +113,7 @@ CREATE  TABLE IF NOT EXISTS `edfu`.`wb_berlin` (
   `seite_stop` INT(11) NULL ,
   `zeile_stop` INT(11) NULL ,
   `zweifel` TINYINT NULL ,
+  `anmerkung` TEXT NULL ,
   PRIMARY KEY (`uid`) )
 ENGINE = InnoDB;
 
@@ -161,13 +162,15 @@ CREATE  TABLE IF NOT EXISTS `edfu`.`szene` (
   `nummer` INT(11) NULL ,
   `beschreibung` TEXT NULL ,
   `szene_bild_uid` INT NULL ,
+  `rect` VARCHAR(45) NULL ,
   `polygon` TEXT NULL ,
   `koordinateX` DOUBLE NULL ,
   `koordinateY` DOUBLE NULL ,
-  `blickwinkel` DOUBLE NULL ,
+  `blickwinkel` INT NULL ,
   `breite` DOUBLE NULL ,
   `prozentZ` DOUBLE NULL ,
   `hoehe` DOUBLE NULL ,
+  `grau` TINYINT NULL ,
   PRIMARY KEY (`uid`) ,
   INDEX `fk_szene_szene_bild1_idx` (`szene_bild_uid` ASC) ,
   CONSTRAINT `fk_szene_szene_bild1`

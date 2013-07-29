@@ -9,25 +9,50 @@ und spielt sie in Solr Index(e).
 2013 Sven-S. Porst, SUB Göttingen <porst@sub.uni-goettingen.de>
 """
 
+import re
 import copy
+import solr
+import pprint
 
 import mysql.connector
 db = mysql.connector.connect(user='root', host='127.0.0.1', database='edfu')
 db2 = mysql.connector.connect(user='root', host='127.0.0.1', database='edfu')
+db3 = mysql.connector.connect(user='root', host='127.0.0.1', database='edfu')
 cursor = db.cursor()
 cursor2 = db2.cursor()
+cursor3 = db3.cursor() # für szenen
 
 
 
 intToRoman = {1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII', 8: 'VIII'}
 
-docs = []
+
+def addValueForKeyToDict (value, key, myDict):
+	if not myDict.has_key(key):
+		myDict[key] = []
+	insertValue = value
+	if value == None:
+		insertValue = ''
+	myDict[key] += [value]
+
+
+def mergeDocIntoDoc (new, target):
+	for key in new.keys():
+		value = new[key]
+		if type(value) == list:
+			for item in value:
+				addValueForKeyToDict(item, key, target)
+		else:
+			addValueForKeyToDict(value, key, target)
 
 
 
+"""
+	Die übergebenen Stellen dem Dokument hinzufügen.
+"""
 def addStellenTo (stellen, doc):
 	global stellenDict, intToRoman
-	
+
 	for feld in ['seite_start', 'seite_stop', 'zeile_start', 'zeile_stop', 'band', 'stelle_anmerkung', 'stelle_unsicher', 'zerstoerung', 'freigegeben']:
 		if not feld in doc:
 			doc[feld] = []
@@ -46,18 +71,101 @@ def addStellenTo (stellen, doc):
 					bandseiteString = intToRoman[bandNummer] + ' ' + str(stelle['seite_start'])
 					doc['bandseite'] += [bandseiteString]
 					doc['bandseitezeile'] += [bandseiteString + ', ' + str(stelle['zeile_start'])]
-			
+		
+				addSzenenForStelleToDocument(stelle, doc)
+
+
+
+"""
+	Die relevanten Szenen für die Stelle dem Dokument hinzufügen.
+"""
+szenenQuery = """
+SELECT
+	szene.uid AS szene_uid,
+	szene.nummer AS szene_nummer,
+	szene.beschreibung AS szene_beschreibung,
+	szene_bild.name AS szene_bild_name,
+	szene.rect AS szene_bild_rect,
+	szene.polygon AS szene_bild_polygon,
+	szene.koordinateX AS szene_koordinateX,
+	szene.koordinateY AS szene_koordinateY,
+	szene.blickwinkel AS szene_blickwinkel,
+	szene.breite AS szene_breite,
+	szene.hoehe AS szene_hoehe,
+	szene.prozentZ AS szene_prozentZ,
+	szene.grau AS szene_grau
+FROM
+	tx_edfu_domain_model_stelle AS stelle_original,
+	tx_edfu_domain_model_szene AS szene,
+	tx_edfu_domain_model_szene_bild AS szene_bild,
+	tx_edfu_szene_stelle_mm AS szene_stelle,
+	tx_edfu_domain_model_stelle AS stelle
+WHERE
+	stelle_original.uid = %s AND
+	stelle_original.band_uid = stelle.band_uid AND
+	stelle_original.seite_start <= stelle.seite_stop AND
+	stelle_original.seite_stop >= stelle.seite_start AND
+	szene.szene_bild_uid = szene_bild.uid AND
+	szene_stelle.uid_local = szene.uid AND
+	szene_stelle.uid_foreign = stelle.uid 
+"""
+def addSzenenForStelleToDocument (stelle, document):
+	cursor3.execute(szenenQuery, [str(stelle['sql_uid'])])
+	for values3 in cursor3:
+		docSzene = dict(zip(cursor3.column_names, values3))
+		mergeDocIntoDoc(docSzene, document)
+
+
+
+"""
+	Entfernen des Suffix in Transliterationen.
+	Ist bereits durch : markiert.
+	: danach durch den normalen . ersetzen.
+"""
+suffixremover = re.compile(r'(:[^aeiou][^ ]*)')
+def removeSuffix (transliteration):
+	return suffixremover.sub('', transliteration).replace(':', '.')
+
+
+
+"""
+	Dokumente im Array doc an den Index schicken und den Array leeren.
+"""
+def submitDocs (name):
+	global docs
+	#pprint.pprint(docs)
+	
+	index = solr.Solr('http://localhost:8080/solr/edfu')
+	index.add_many(docs)
+	index.commit()
+
+	index = solr.Solr('http://vlib.sub.uni-goettingen.de/solr/edfu')
+	index.add_many(docs)
+	index.commit()
+	
+	print str(len(docs)) + ' ' + name + u' Dokumente indexiert'
+	docs = []
+	
+	
+
+
+
+
+"""
+	Erstellen von Indexdokumenten für die verschiedenen SQL Tabellen.
+"""
 
 
 
 # STELLE
+stellenDict = {}
+
 query = """
 SELECT tx_edfu_domain_model_stelle.uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,zerstoerung,nummer,freigegeben
 FROM tx_edfu_domain_model_stelle,tx_edfu_domain_model_band
 WHERE tx_edfu_domain_model_stelle.band_uid = tx_edfu_domain_model_band.uid
 """
 cursor.execute(query)
-
 
 for (uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,zerstoerung,band,freigegeben) in cursor:
 	zeile_start2 = zeile_start
@@ -85,16 +193,16 @@ for (uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,z
 		"freigegeben": freigegeben
 	}
 	
-	docs += [doc]
-
-stellenDict = {}
-for doc in docs:
 	stellenDict[doc['sql_uid']] = doc
+
+docs = stellenDict.values()
+submitDocs('Stellen')
 
 
 
 # WB-BERLIN
 berlinDict = {}
+
 query = ("SELECT uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel FROM tx_edfu_domain_model_wb_berlin")
 cursor.execute(query)
 
@@ -112,9 +220,11 @@ for (uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel) in cursor:
 		"zweifel": zweifel
 	}
 	
-	docs += [doc]
 	berlinDict[uid] = doc
 	
+docs = berlinDict.values()
+submitDocs('WB Berlin')
+
 
 
 # FORMULAR
@@ -122,10 +232,14 @@ query = ("SELECT uid,transliteration,uebersetzung,texttyp,stelle_uid FROM tx_edf
 cursor.execute(query)
 
 query2 = """
-SELECT beschreibung, detail
-FROM tx_edfu_formular_literatur_mm,tx_edfu_domain_model_literatur
-WHERE tx_edfu_formular_literatur_mm.uid_local = %s
-AND tx_edfu_formular_literatur_mm.uid_foreign = tx_edfu_domain_model_literatur.uid
+SELECT
+	beschreibung, detail
+FROM
+	tx_edfu_formular_literatur_mm,
+	tx_edfu_domain_model_literatur
+WHERE
+	tx_edfu_formular_literatur_mm.uid_local = %s AND
+	tx_edfu_formular_literatur_mm.uid_foreign = tx_edfu_domain_model_literatur.uid
 """
 
 query3 = """
@@ -197,7 +311,8 @@ for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 		"typ": "formular",
 		"sql_tabelle": "tx_edfu_domain_model_formular",
 		"sql_uid": uid,
-		"transliteration": transliteration,
+		"transliteration": transliteration.replace(':', '.'),
+		"transliteration_nosuffix": removeSuffix(transliteration),
 		"uebersetzung": uebersetzung,
 		"texttyp": texttyp,
 		"stelle_id": 'stelle-' + str(stelle_uid),
@@ -212,6 +327,8 @@ for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 	
 	docs += [doc]
 
+submitDocs('Formular')
+
 
 
 # ORT
@@ -219,11 +336,22 @@ query = ("SELECT uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung FRO
 cursor.execute(query)
 
 query4 = """
-SELECT uid_foreign,uid_local
-FROM tx_edfu_ort_stelle_mm
-WHERE uid_local = %s
+SELECT 
+	uid_foreign,
+	uid_local
+FROM
+	tx_edfu_domain_model_stelle AS stelle,
+	tx_edfu_domain_model_band AS band,
+	tx_edfu_ort_stelle_mm
+WHERE
+	uid_local = %s AND
+	uid_foreign = stelle.uid AND
+	stelle.band_uid = band.uid
+ORDER BY 
+	band.nummer,
+	stelle.seite_start,
+	stelle.zeile_start
 """
-
 
 for (uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
 	stelleIDs = []
@@ -238,7 +366,8 @@ for (uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
 		"typ": "ort",
 		"sql_tabelle": "tx_edfu_domain_model_ort",
 		"sql_uid": uid,
-		"transliteration": transliteration,
+		"transliteration": transliteration.replace(':', '.'),
+		"transliteration_nosuffix": removeSuffix(transliteration),
 		"uebersetzung": uebersetzung,
 		"ortsbeschreibung": ortsbeschreibung,
 		"anmerkung": anmerkung,
@@ -248,6 +377,8 @@ for (uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
 
 	docs += [doc]
 
+submitDocs('Ort')
+
 
 
 # GOTT
@@ -255,11 +386,22 @@ query = ("SELECT uid,transliteration,ort,eponym,beziehung,funktion FROM tx_edfu_
 cursor.execute(query)
 
 query5 = """
-SELECT uid_foreign,uid_local
-FROM tx_edfu_gott_stelle_mm
-WHERE uid_local = %s
+SELECT 
+	uid_foreign,
+	uid_local
+FROM
+	tx_edfu_domain_model_stelle AS stelle,
+	tx_edfu_domain_model_band AS band,
+	tx_edfu_gott_stelle_mm
+WHERE
+	uid_local = %s AND
+	uid_foreign = stelle.uid AND
+	stelle.band_uid = band.uid
+ORDER BY 
+	band.nummer,
+	stelle.seite_start,
+	stelle.zeile_start
 """
-
 
 for (uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
 	stelleIDs = []
@@ -274,7 +416,8 @@ for (uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
 		"typ": "gott",
 		"sql_tabelle": "tx_edfu_domain_model_gott",
 		"sql_uid": uid,
-		"transliteration": transliteration,
+		"transliteration": transliteration.replace(':', '.'),
+		"transliteration_nosuffix": removeSuffix(transliteration),
 		"ort": ort,
 		"eponym": eponym,
 		"beziehung": beziehung,
@@ -285,6 +428,8 @@ for (uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
 	
 	docs += [doc]
 
+submitDocs('Gott')
+
 
 
 # WORT
@@ -292,11 +437,22 @@ query = ("SELECT uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,
 cursor.execute(query)
 
 query6 = """
-SELECT uid_foreign,uid_local
-FROM tx_edfu_wort_stelle_mm
-WHERE uid_local = %s
+SELECT 
+	uid_foreign,
+	uid_local
+FROM
+	tx_edfu_domain_model_stelle AS stelle,
+	tx_edfu_domain_model_band AS band,
+	tx_edfu_wort_stelle_mm
+WHERE
+	uid_local = %s AND
+	uid_foreign = stelle.uid AND
+	stelle.band_uid = band.uid
+ORDER BY 
+	band.nummer,
+	stelle.seite_start,
+	stelle.zeile_start
 """
-
 
 for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_berlin_uid) in cursor:
 	stelleIDs = []
@@ -311,7 +467,8 @@ for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_ber
 		"typ": "wort",
 		"sql_tabelle": "tx_edfu_domain_model_wort",
 		"sql_uid": uid,
-		"transliteration": transliteration,
+		"transliteration": transliteration.replace(':', '.'),
+		"transliteration_nosuffix": removeSuffix(transliteration),
 		"uebersetzung": uebersetzung,
 		"weiteres": weiteres,
 		"anmerkung": anmerkung,
@@ -338,25 +495,14 @@ for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_ber
 	
 	docs += [doc]
 
+submitDocs('Wort')
+
+
 
 # MySQL Verbindungen schließen
-cursor2.close()
 cursor.close()
+cursor2.close()
+cursor3.close()
 db.close()
 db2.close()
-
-
-docs += stellenDict.values()
-
-#pprint.pprint(docs)
-# Indexieren
-import solr
-index = solr.Solr('http://localhost:8080/solr/edfu')
-index.delete_query('*:*')
-index.add_many(docs)
-index.commit()
-
-index = solr.Solr('http://vlib.sub.uni-goettingen.de/solr/edfu')
-index.delete_query('*:*')
-index.add_many(docs)
-index.commit()
+db3.close()

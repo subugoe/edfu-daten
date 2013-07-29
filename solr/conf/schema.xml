@@ -46,29 +46,30 @@
 		<field name="sql_uid" type="int" indexed="true" stored="true"/>
 		
 		<field name="typ" type="string" indexed="true" stored="true"/>
-		<field name="transliteration" type="transliteration" indexed="true" stored="true"/>
-		<field name="uebersetzung" type="string" indexed="true" stored="true"/>
-		<field name="anmerkung" type="string" indexed="true" stored="true"/>
+		<field name="transliteration" type="text_ws" indexed="true" stored="true"/>
+		<field name="transliteration_nosuffix" type="text_ws" indexed="true" stored="true"/>
+		<field name="uebersetzung" type="text_de" indexed="true" stored="true"/>
+		<field name="anmerkung" type="text_de" indexed="true" stored="true"/>
 		<field name="stelle_id" type="string" indexed="true" stored="true" multiValued="true"/>
 		<field name="formular_id" type="int" indexed="true" stored="true"/>
-		<field name="texttyp" type="string" indexed="true" stored="true"/>
-		<field name="photo" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="photo_collection_string" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="photo_collection_photos" type="string" indexed="true" stored="true" multiValued="true"/>
+		<field name="texttyp" type="text_de" indexed="true" stored="true"/>
+		<field name="photo" type="text_ws" indexed="true" stored="true" multiValued="true"/>
+		<field name="photo_collection_string" type="text_ws" indexed="true" stored="true" multiValued="true"/>
+		<field name="photo_collection_photos" type="text_ws" indexed="true" stored="true" multiValued="true"/>
 		<field name="photo_collection_id" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="photo_collection_kommentar" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="literatur" type="string" indexed="true" stored="true" multiValued="true"/>
+		<field name="photo_collection_kommentar" type="text_de" indexed="true" stored="true" multiValued="true"/>
+		<field name="literatur" type="text_de" indexed="true" stored="true" multiValued="true"/>
 		<field name="ort_id" type="int" indexed="true" stored="true"/>
-		<field name="ortsbeschreibung" type="string" indexed="true" stored="true"/>
+		<field name="ortsbeschreibung" type="text_de" indexed="true" stored="true"/>
 		<field name="gott_id" type="int" indexed="true" stored="true"/>
-		<field name="funktion" type="string" indexed="true" stored="true"/>
-		<field name="eponym" type="string" indexed="true" stored="true"/>
-		<field name="beziehung" type="string" indexed="true" stored="true"/>
-		<field name="ort" type="string" indexed="true" stored="true"/>
+		<field name="funktion" type="text_de" indexed="true" stored="true"/>
+		<field name="eponym" type="text_de" indexed="true" stored ="true"/>
+		<field name="beziehung" type="text_de" indexed="true" stored="true"/>
+		<field name="ort" type="text_de" indexed="true" stored="true"/>
 		<field name="wort_id" type="int" indexed="true" stored="true"/>
-		<field name="weiteres" type="string" indexed="true" stored="true"/>
-		<field name="hieroglyph" type="string" indexed="true" stored="true"/>
-		<field name="lemma" type="string" indexed="true" stored="true"/>
+		<field name="weiteres" type="text_de" indexed="true" stored="true"/>
+		<field name="hieroglyph" type="text_ws" indexed="true" stored="true"/>
+		<field name="lemma" type="text_ws" indexed="true" stored="true"/>
 		<field name="stelle_berlin_id" type="string" indexed="true" stored="true" multiValued="false"/>
 		<field name="berlin_band" type="int" indexed="true" stored="true" multiValued="false"/>
 		<field name="berlin_seite_start" type="int" indexed="true" stored="true" multiValued="false"/>
@@ -86,25 +87,36 @@
 		<field name="zeile_stop" type="int" indexed="true" stored="true" multiValued="true"/>
 		<field name="start" type="int" indexed="true" stored="true" multiValued="true"/>
 		<field name="stop" type="int" indexed="true" stored="true" multiValued="true"/>
-		<field name="stelle_anmerkung" type="string" indexed="true" stored="true" multiValued="true"/>
+		<field name="stelle_anmerkung" type="text_ws" indexed="true" stored="true" multiValued="true"/>
 		<field name="stelle_unsicher" type="boolean" indexed="true" stored="true" multiValued="true"/>
 		<field name="zerstoerung" type="boolean" indexed="true" stored="true" multiValued="true"/>
 		<field name="besitzer" type="string" indexed="true" stored="true" multiValued="false"/>
 		<field name="bandseite" type="string" indexed="true" stored="true" multiValued="true"/>
 		<field name="bandseitezeile" type="string" indexed="true" stored="true" multiValued="true"/>
+		
+		<field name="szene_uid" type="int" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_nummer" type="int" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_beschreibung" type="text_ws" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_bild_name" type="string" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_bild_rect" type="string" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_bild_polygon" type="string" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_koordinateX" type="float" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_koordinateY" type="float" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_blickwinkel" type="int" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_breite" type="float" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_hoehe" type="float" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_prozentZ" type="float" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_grau" type="boolean" indexed="true" stored="true" multiValued="true"/>
 
-		<field name="szene" type="int" indexed="true" stored="true"/>
 		<field name="zweifel" type="boolean" indexed="true" stored="true"/>
 
 		<dynamicField name="*_facet" type="string" indexed="true" stored="true" multiValued="true"/>
+		<dynamicField name="*_highlight" type="text_ws" indexed="true" stored="true" multiValued="true"/>
 		<dynamicField name="*_suggest" type="text_ws" indexed="true" stored="true" multiValued="true"/>
 
 		<!-- fields filled with the content of other fields -->
-		<field name="text_all" type="text_ws" indexed="true" stored="false" multiValued="true"/>
-		<field name="transliteration_nosuffix" type="transliteration_nosuffix" indexed="true" stored="false" multiValued="true"/>
-		<field name="transliteration_all" type="transliteration" indexed="true" stored="false" multiValued="true"/>
-		<field name="text" type="text_ws" indexed="true" stored="false" multiValued="true"/>
-		<field name="text_de" type="text_ws" indexed="true" stored="false" multiValued="true"/>
+		<field name="text" type="text_de" indexed="true" stored="false" multiValued="true"/>
+		<field name="text_ws" type="text_de" indexed="true" stored="false" multiValued="true"/>
 		
 
 		<field name="_version_" type="long" indexed="true" stored="true"/>
@@ -125,56 +137,62 @@
 	<!--
 		Fill field text_all with fields containing text.
 	-->
-	<copyField source="uebersetzung" dest="text_all"/>
-	<copyField source="anmerkung" dest="text_all"/>
-	<copyField source="texttyp" dest="text_all"/>
-	<copyField source="literatur" dest="text_all"/>
-	<copyField source="ortsbeschreibung" dest="text_all"/>
-	<copyField source="funktion" dest="text_all"/>
-	<copyField source="eponym" dest="text_all"/>
-	<copyField source="beziehung" dest="text_all"/>
-	<copyField source="ort" dest="text_all"/>
-	<copyField source="weiteres" dest="text_all"/>
-	<copyField source="anmerkung" dest="text_all"/>
-	<copyField source="stelle_anmerkung" dest="text_all"/>
-	<copyField source="transliteration_all" dest="text_all"/>
-	
-
-	<!--
-		Fill transliteration fields.
-	-->
-	<copyField source="transliteration" dest="transliteration_nosuffix"/>
-	<copyField source="transliteration" dest="transliteration_all"/>
-	<copyField source="transliteration_nosuffix" dest="transliteration_all"/>
-
-	<!--
-		Fill field text with everything one may want to search for.
-	-->
-	<copyField source="text_all" dest="text"/>
-	<copyField source="transliteration_all" dest="text"/>
+	<copyField source="transliteration" dest="text"/>
+	<copyField source="transliteration_nosuffix" dest="text"/>
+	<copyField source="uebersetzung" dest="text"/>
+	<copyField source="anmerkung" dest="text"/>
 	<copyField source="texttyp" dest="text"/>
-	<copyField source="photo" dest="text"/>
-	<copyField source="bandseite" dest="text"/>
-	<copyField source="bandseitezeile" dest="text"/>
+	<copyField source="literatur" dest="text"/>
+	<copyField source="ortsbeschreibung" dest="text"/>
+	<copyField source="eponym" dest="text"/>
+	<copyField source="beziehung" dest="text"/>
+	<copyField source="funktion" dest="text"/>
+	<copyField source="ort" dest="text"/>
+	<copyField source="weiteres" dest="text"/>
+	<copyField source="anmerkung" dest="text"/>
+	<copyField source="stelle_anmerkung" dest="text"/>
+	<copyField source="hieroglyph" dest="text"/>
+	<copyField source="lemma" dest="text"/>
 
+	<copyField source="photo" dest="text"/>
+	<copyField source="bandseitezeile" dest="text"/>
+	
 
 	<!--
 		Fill fields for autosuggest.
 	-->
 	<copyField source="uebersetzung" dest="all_suggest"/>
+	<copyField source="transliteration" dest="all_suggest"/>
+	<copyField source="transliteration_nosuffix" dest="all_suggest"/>
 	<copyField source="texttyp" dest="all_suggest"/>
 	<copyField source="ortsbeschreibung" dest="all_suggest"/>
 	<copyField source="eponym" dest="all_suggest"/>
 	<copyField source="ort" dest="all_suggest"/>
-	<copyField source="transliteration" dest="all_suggest"/>
+	<copyField source="photo" dest="all_suggest"/>
 
 
 	<!--
-		Copy everything over to field with German stemming.
+		Fill highlight Fields.
 	-->
-	<copyField source="text" dest="text_de"/>
+	<copyField source="transliteration" dest="transliteration_highlight"/>
+	<copyField source="uebersetzung" dest="uebersetzung_highlight"/>
+	<copyField source="anmerkung" dest="anmerkung_highlight"/>
+	<copyField source="texttyp" dest="texttyp_highlight"/>
+	<copyField source="literatur" dest="literatur_highlight"/>
+	<copyField source="ortsbeschreibung" dest="ortsbeschreibung_highlight"/>
+	<copyField source="eponym" dest="eponym_highlight"/>
+	<copyField source="beziehung" dest="beziehung_highlight"/>
+	<copyField source="funktion" dest="funktion_highlight"/>
+	<copyField source="ort" dest="ort_highlight"/>
+	<copyField source="weiteres" dest="weiteres_highlight"/>
+	<copyField source="anmerkung" dest="anmerkung_highlight"/>
+	<copyField source="stelle_anmerkung" dest="stelle_anmerkung_highlight"/>
+	<copyField source="hieroglyph" dest="hieroglyph_highlight"/>
+	<copyField source="lemma" dest="lemma_highlight"/>
 
-
+	<copyField source="photo" dest="photo_highlight"/>
+	<copyField source="bandseitezeile" dest="bandseitezeile_highlight"/>
+	
 
 	<types>
 		<!-- The StrField type is not analyzed, but indexed/stored verbatim. -->
