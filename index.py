@@ -148,6 +148,14 @@ def submitDocs (name):
 	
 	
 
+"""
+	Indexe leeren.
+"""
+index = solr.Solr('http://localhost:8080/solr/edfu')
+index.delete_query('*:*')
+index = solr.Solr('http://vlib.sub.uni-goettingen.de/solr/edfu')
+index.delete_query('*:*')
+
 
 
 
