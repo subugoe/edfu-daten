@@ -1007,7 +1007,7 @@ berlin = [{
 	'seite_stop': 0,
 	'zeile_start': 0,
 	'zeile_stop': 0,
-	'zweifel': False
+	'notiz': None
 }]
 
 
@@ -1024,61 +1024,9 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 	bEdfu = BelegstellenEdfu.strip('; ')
 	bEdfu = re.sub(r' / V', '; V', bEdfu)
 
-	if bEdfu == 'VII, 216, 78; 9; 224, 6':
-		# 549
-		bEdfu = 'VII, 216, 7; 8; 9; 224, 6'
-	elif bEdfu == 'V, 233. 6':
-		# 921
-		bEdfu = 'V, 233, 6'
-	elif bEdfu == 'VI, 148, <7>; 11':
-		# 1023
-		bEdfu = 'VI, <148, 7>; 11'
-	elif bEdfu == u'VI, 199, 10 (Ägypten); VI, 204, 3; 4 (??? Region, Göttin, Mineral ???); VI, 204, 8 (Sechep-Getränk u. Getreide); VI, 204, 9 (???)':
-		# 1801
-		bEdfu = u'VI, 199, 10 (Ägypten); VI, 204, 3; 204, 4 (??? Region, Göttin, Mineral ???); VI, 204, 8 (Sechep-Getränk u. Getreide); VI, 204, 9 (???)'
-	elif bEdfu == 'VII, 216,10; 217,7; 8; 246,2; VII; 216,9; 217,1; 224,5; VII, 216, 8':
-		# 2144
-		bEdfu = 'VII, 216,10; 217,7; 8; 246,2; VII, 216,9; 217,1; 224,5; VII, 216, 8'
-	elif bEdfu == 'V, 15, 7; VI, 133, 8; 227, 5; VII, 200, 6; /; 284, 4':
-		# 2156
-		bEdfu = 'V, 15, 7; VI, 133, 8; 227, 5; VII, 200, 6; 284, 4'
-	elif bEdfu == 'VI, 112. 1; VII, 122, 9':
-		# 2158
-		bEdfu = 'VI, 112, 1; VII, 122, 9'
-	elif bEdfu == 'VI, 95, 10; 13, 96, 1; 11; 13; 15; 102, 2':
-		# 2417
-		bEdfu = 'VI, 95, 10; 13; 96, 1; 11; 13; 15; 102, 2'
-	elif bEdfu == '128, 5/6':
-		# 2468
-		bEdfu = 'VI, 128, 5/6'
-	elif bEdfu == 'VII, 197,7; 198,<2>; 5; 6; 9':
-		# 2593
-		bEdfu = 'VII, 197,7; <198, 2>; 5; 6; 9'
-	elif bEdfu == 'VI, 176,4; 5; 6; 7; ???323,7; 8; 9; 11; 324,1; 4; 5; 329,1???; VII, ???26,7; 257,2???; VI, 118,9; 122,13; 123,9; 127,7; 134,6; V, 37,4; 39,12; 40,7; 10':
-		# 2813
-		bEdfu = 'VI, 176,4; 5; 6; 7; 323,7 ???; 8 ???; 9 ???; 11; 324,1; 4; 5; 329,1 ???; VII, 26,7 ???; 257,2 ???; VI, 118,9; 122,13; 123,9; 127,7; 134,6; V, 37,4; 39,12; 40,7; 10'
-	elif bEdfu == 'V, 130,10; 136,4; 349,3; 4; 8; 350,2; 7; 8; 353,3; 355,6; 359,4; VI, 169, 8; 242, 11; VI, ???18,7; 10; 169,8; 320,12; 321,4; 5; 328,18???; VI, 125, 1; 135, 3; VI, 112, 7; 114, 8; 116, 4; V, 12, 8; 10; 37, 11':
-		# 2815
-		bEdfu = 'V, 130,10; 136,4; 349,3; 4; 8; 350,2; 7; 8; 353,3; 355,6; 359,4; VI, 169, 8; 242, 11; VI, 18,7 ???; 10; 169,8; 320,12; 321,4; 5; 328,18???; VI, 125, 1; 135, 3; VI, 112, 7; 114, 8; 116, 4; V, 12, 8; 10; 37, 11'
-	elif bEdfu == 'V, 247, 17-248, 1':
-		# 2860
-		bEdfu = 'V, 247, 17 - 248, 1'
-	elif bEdfu == 'V, 130, 1 / kol. 14':
-		# 3173
-		bEdfu = 'V, 130, 1 (kol. 14)'
-	elif bEdfu == 'VIII, 125, 1-4; Z. 14':
-		# 3835
-		bEdfu = 'VIII, 125, 1-4 (Z. 14)'
-	elif bEdfu == u'VII, 107, 17 (Pl.); VI, &344, 16& ???':
-		# 3914
-		bEdfu = u'VII, 107, 17 (Pl.); VI, %344, 16& ???'
-	elif bEdfu == 'V, 100, 7; 251, 6; VIII; 129, 9; 10; 130, 7':
-		# 4022
-		bEdfu = 'V, 100, 7; 251, 6; VIII, 129, 9; 10; 130, 7'
-	elif bEdfu == 'V, <30, 2>; 87, 6; 120, 8; 217, 6; VIII; 37, 2; 38, 4':
-		# 4363
-		bEdfu = 'V, <30, 2>; 87, 6; 120, 8; 217, 6; VIII, 37, 2; 38, 4'
-		
+	if bEdfu == u'VII, 237…':
+		# 78
+		bEdfu = 'VII, 237, 1 - 30'
 
 	if BelegstellenEdfu != bEdfu:
 		print "\t".join(["WL", str(PRIMARY), "INFO", u"Änderung BelegstellenEdfu", BelegstellenEdfu, bEdfu])
@@ -1087,57 +1035,52 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 	wb = BelegstellenWb
 	wbID = None
 	anmerkung = None
+	notiz = None
+	
 	if wb == 'nicht im Wb belegt':
 		wbID = 0
 	elif len(wb) > 0:
-		wb = wb.replace('nach Wb I7', 'nach Wb I')
-		wb = wb.replace('Wb, I', 'Wb I,').replace(',,', ',')
-		wb = wb.replace('X', '10').replace('x', '10')
-		wb = wb.replace('o', '0')
-		if wb == 'Wb I, 2, 3 - 4':
-			# 824
-			wb = 'Wb I, 2, 3-4'
-		elif wb == 'Wb I, 483, x - 484, 11':
-			# 1080
-			wb = 'Wb I, 483, 10 - 484, 11'
-		elif wb == 'Wb I, 84, 15 - 85, o':
-			# 1195
-			wb = 'Wb I, 84, 15 - 85, 0'
-		elif wb == 'Wb I, 419, 14 - 420, O':
-			# 1633
-			wb = 'Wb I, 419, 14 - 420, 0'
-		elif wb == 'Wb I, 54, (11)-(12)':
-			# 2898
-			wb = 'Wb I, 54, 11-12'
-		elif wb == 'Wb I, 104':
-			# 3079-3094
-			wb = 'Wb I, 104, 0'
-		elif wb == 'Wb I, 344, 7-13???':
-			# 4226
-			wb = 'Wb I, 344, 7-13'
+		if wb == 'I, 030, 14 - 15?':
+			wb = 'I, 030, 14 - 15'
+			notiz = '?'
 
 		if wb != BelegstellenWb:
 			anmerkung = u'ursprünglich: ' + BelegstellenWb
 			print "\t".join(["WL", str(PRIMARY), "INFO", u"Änderung BelegstellenWb", BelegstellenWb, wb])
 
-		zweifel = False
-		if wb.find('nach W') == 0:
-			zweifel = True
+		if wb.find('nach ') == 0 :
+			notiz = 'nach'
+			wb = wb.replace('nach ', '')
+		elif wb.find('vor ') == 0:
+			notiz = 'vor'
+			wb = wb.replace('vor ', '')
 		
-		wb = wb.replace('nach Wb I, ', '').replace('Wb I, ', '')
+		wb = wb.replace('I, ', '').replace(' -', '-').replace('- ', '-')
 		
-		if wb.find(' - ') != -1:
-			# Range über mehrere Seiten
-			teile = wb.split(' - ')
-			start = szSplit(teile[0])
-			stop = szSplit(teile[1])
-		elif wb.find('-') != -1:
-			# Range über mehrere Zeilen
-			teile = wb.split(',')
-			seite = int(teile[0].strip())
-			zeilen = teile[1].strip().split('-')
-			start = [seite, int(zeilen[0].strip())]
-			stop = [seite, int(zeilen[1].strip())]
+		if wb.find('-') != -1:
+			# Range
+			teile = wb.split('-')
+			if len(teile) == 2:
+				seiteZeile = teile[0].split(',')
+				seiteStart = int(seiteZeile[0].strip())
+				seiteStop = seiteStart
+				zeileStart = int(seiteZeile[1].strip())
+				
+				if teile[1].find(',') != -1:
+					# Komma im zweiten Teil: unterschiedliche Seiten
+					seiteZeile2 = teile[1].split(',')
+					seiteStop = int(seiteZeile2[0].strip())
+					zeileStop = int(seiteZeile2[1].strip())
+				else:
+					# Range innerhalb einer Seite
+					zeileStop = int(teile[1].strip())
+					
+				start = [seiteStart, zeileStart]
+				stop = [seiteStart, zeileStop]
+				
+			else:
+				print "\t".join(["WL", str(PRIMARY), "FEHLER", u"BelegstellenWb Formatfehler", BelegstellenWb, wb])
+				
 		else:
 			# Nur eine Stelle
 			start = szSplit(wb)
@@ -1150,13 +1093,13 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 			'seite_stop': stop[0],
 			'zeile_start': start[1],
 			'zeile_stop': stop[1],
-			'zweifel': zweifel,
+			'notiz': notiz,
 			'anmerkung': anmerkung
 		}
 		
 		bereitsVorhanden = False
 		for b in berlin:
-			if b['seite_start'] == myWB['seite_start'] and b['seite_stop'] == myWB['seite_stop'] and b['zeile_start'] == myWB['zeile_start'] and b['zeile_stop'] == myWB['zeile_stop'] and b['zweifel'] == myWB['zweifel'] and b['anmerkung'] == myWB['anmerkung']:
+			if b['seite_start'] == myWB['seite_start'] and b['seite_stop'] == myWB['seite_stop'] and b['zeile_start'] == myWB['zeile_start'] and b['zeile_stop'] == myWB['zeile_stop'] and b['notiz'] == myWB['notiz'] and b['anmerkung'] == myWB['anmerkung']:
 				myWB['uid'] = b['uid']
 				bereitsVorhanden = True
 		
@@ -1215,8 +1158,7 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 
 				if m20.group(4).find(' - ') != -1:
 					zeileStart = int(m20.group(4).split(' - ')[0])
-					seiteStop = int(m20.group(4).split(' - ')[1])
-					zeileStop = int(m20.group(6).strip(' ,'))
+					zeileStop = int(m20.group(4).split(' - ')[1])
 				else:
 					zeilenString = m20.group(4)
 					zeilenString = zeilenString.replace('/', '-').replace(' ', '')
@@ -1232,10 +1174,12 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 
 					anmerkung = m20.group(6).strip()
 
-					if m20.group(5) == '>':
-						klammer = True
-					elif m20.group(5) == '>*':
-						stern = True
+				if m20.group(5) == '>':
+					klammer = True
+				elif m20.group(5) == '>*':
+					stern = True
+				elif len(m20.group(5)) > 2:
+						print "\t".join(["WL", str(PRIMARY), "FEHLER", u"m20.group(5) zu lang", b])
 
 				myStelle = {
 					'uid': len(stelle),

@@ -1,3 +1,7 @@
+
+
+
+
 **** FL *******************************************************************
 
 FL	263	INFO	Photo String verändert	D05_5503, D05_5504, D05_5509, D05_5510, D05_5511, D05_5512: D05_5513, D05_5514, ( 2982, 2983, 2984, 2985 )*	D05_5503, D05_5504, D05_5509, D05_5510, D05_5511, D05_5512, D05_5513, D05_5514, ( 2982, 2983, 2984, 2985 )*
@@ -460,8 +464,11 @@ OL	619	INFO	Änderung STELLE	VI, 68, 3; 237, 9; 277, 6; 310, 13; V, 9, 2 ([]; wo
 OL	628	INFO	Änderung STELLE	VIII, 5, 11; (vergleiche auch 8, 9; V, 95, 12 ([]); 324, 5;	VIII, 5, 11 (vergleiche auch 8, 9); V, 95, 12 ([]); 324, 5
 OL	722	INFO	Änderung STELLE	VII, 326, 6; VI, 17, 1; 58, 16; 65, 2; 71, 11; 86, 8; 158, 12; 278, 12; 280, 6; 299, 6; 304, 6; 309, 6; 317, 2; 319, 15;V, 60, 7; 77, 5; 78, 13; 86, 10; 151, 4 ([];<>); 159, 13; 162, 3;	VII, 326, 6; VI, 17, 1; 58, 16; 65, 2; 71, 11; 86, 8; 158, 12; 278, 12; 280, 6; 299, 6; 304, 6; 309, 6; 317, 2; 319, 15;V, 60, 7; 77, 5; 78, 13; 86, 10; 151, 4 ([],<>); 159, 13; 162, 3;
 OL	751	INFO	Änderung STELLE	VI, 36, 11; 208, Anm. 2; 328, 17/18;	VI, 36, 11; 208, 0 (Anm. 2); 328, 17/18;
+OL	892	INFO	Änderung STELLE	VIII, 53, 1; 53, 2; 53, 5; 57, 8; 57, 11; 60, 14-61, 1; 61, 15; 66, 6; 71, 6; 71, 7; VII, 69, 4; 76, 15; 76, 15/16; 106, 13; 131, 2; 131, 6; 190, 1; 204, 7; 204, 10; 204, 15; 211, 6/7; 254, 3; 270, 14; 270, 16; 292, 4; 304, 12; 317, 7; 317, 13;	VIII, 53, 1; 53, 2; 53, 5; 57, 8; 57, 11; 60, 14 - 61, 1; 61, 15; 66, 6; 71, 6; 71, 7; VII, 69, 4; 76, 15; 76, 15/16; 106, 13; 131, 2; 131, 6; 190, 1; 204, 7; 204, 10; 204, 15; 211, 6/7; 254, 3; 270, 14; 270, 16; 292, 4; 304, 12; 317, 7; 317, 13;
 OL	939	INFO	Änderung STELLE	VII, 2, 4; 3, 4; 5, 2; 7, 6; 8, 2; 8, 7; 9, 7; 10, 8; 13, 2; 15, 9; 21, 9; 22, 1; 22, 11; 22, 12 (2x); 24, 2; 26, 7; 26, 8; 31, 5; 35, 9; 36, 4; 40, 11; 43, 3; 44, 5; 61, 4; 74, 17; (Gau); 88, 4; 89, 8; 100, 16; 102, 1; 105, 10; 105, 14; 108, 2; 108, 3; 111, 11; 119, 6; 120, 6; 125, 10; 126, 3; 130, 12;	VII, 2, 4; 3, 4; 5, 2; 7, 6; 8, 2; 8, 7; 9, 7; 10, 8; 13, 2; 15, 9; 21, 9; 22, 1; 22, 11; 22, 12 (2x); 24, 2; 26, 7; 26, 8; 31, 5; 35, 9; 36, 4; 40, 11; 43, 3; 44, 5; 61, 4; 74, 17 (Gau); 88, 4; 89, 8; 100, 16; 102, 1; 105, 10; 105, 14; 108, 2; 108, 3; 111, 11; 119, 6; 120, 6; 125, 10; 126, 3; 130, 12;
-OL	1072	INFO	Änderung STELLE	VI, 105, 5; 107, 3; 107, 8; 108, 12; 143, 3; 152, 1; 152, 16; 158, 1; 169, 174, 1; 174, 17; 175, 1; 179, 8; 181, 7; 186, 4; 190, 5; 199, 2; 237, 6; 237, 10; 243, 16; 244; 13; 245, 15; 248, 5; 249, 14; 260, 3; 274, 13; 276, 7; 276, 10; 277, 4/5; 277, 14/15;	VI, 105, 5; 107, 3; 107, 8; 108, 12; 143, 3; 152, 1; 152, 16; 158, 1; 169, 174, 1; 174, 17; 175, 1; 179, 8; 181, 7; 186, 4; 190, 5; 199, 2; 237, 6; 237, 10; 243, 16; 244, 13; 245, 15; 248, 5; 249, 14; 260, 3; 274, 13; 276, 7; 276, 10; 277, 4/5; 277, 14/15;
+OL	993	INFO	Änderung STELLE	V, 175, 18-176, 1;	V, 175, 18 - 176, 1;
+OL	1067	INFO	Änderung STELLE	V, 42, 9; 63, 9 ([]); 71, 13/14 ([]); 86, 7/8; 89, 15; 151, 17-152, 1; 155, 1; 162, 6; 165, 9; 206, 2; 215, 10; 231, 3/4; 244, 14; 288, 16/17; 300, 19; 326, 7; 396, 7;	V, 42, 9; 63, 9 ([]); 71, 13/14 ([]); 86, 7/8; 89, 15; 151, 17 - 152, 1; 155, 1; 162, 6; 165, 9; 206, 2; 215, 10; 231, 3/4; 244, 14; 288, 16/17; 300, 19; 326, 7; 396, 7;
+OL	1072	INFO	Änderung STELLE	VI, 105, 5; 107, 3; 107, 8; 108, 12; 143, 3; 152, 1; 152, 16; 158, 1; 169, 174, 1; 174, 17; 175, 1; 179, 8; 181, 7; 186, 4; 190, 5; 199, 2; 237, 6; 237, 10; 243, 16; 244; 13; 245, 15; 248, 5; 249, 14; 260, 3; 274, 13; 276, 7; 276, 10; 277, 4/5; 277, 14/15;	VI, 105, 5; 107, 3; 107, 8; 108, 12; 143, 3; 152, 1; 152, 16; 158, 1; 169, 1; 174, 17; 175, 1; 179, 8; 181, 7; 186, 4; 190, 5; 199, 2; 237, 6; 237, 10; 243, 16; 244, 13; 245, 15; 248, 5; 249, 14; 260, 3; 274, 13; 276, 7; 276, 10; 277, 4/5; 277, 14/15;
 OL	1073	INFO	Änderung STELLE	VI, 278, 9; 278, 17; 280, 15; 281, 15; 283, 9; 283, 11; 287, 3; 290, 11; 297, 17; 299, 3 ([]); 303, 16; 308, 10; 315; 7; 319, 14; 324, 4; 325, 7; 332, 1; 334, 4; 349, 6; 351, 14; V, 4, 1; 7, 1; 13, 12; 31, 5; 31, 6; 36, 2; 38, 11; 39, 10; 40, 4; 41, 2; 44, 11; 50, 12; 55, 1; 56, 11; 58, 15, 16;	VI, 278, 9; 278, 17; 280, 15; 281, 15; 283, 9; 283, 11; 287, 3; 290, 11; 297, 17; 299, 3 ([]); 303, 16; 308, 10; 315, 7; 319, 14; 324, 4; 325, 7; 332, 1; 334, 4; 349, 6; 351, 14; V, 4, 1; 7, 1; 13, 12; 31, 5; 31, 6; 36, 2; 38, 11; 39, 10; 40, 4; 41, 2; 44, 11; 50, 12; 55, 1; 56, 11; 58, 15, 16;
 OL	1198	INFO	Änderung STELLE	VIII, <23, 2>;	VIII, 23, 2 (<23, 2>)
 OL	1249	INFO	21 Duplikat von 20: mergengen	NDm-anx	NDm-anx 1
@@ -623,7 +630,7 @@ GL	1377	INFO	Änderung SEITEZEILE	300.17	300, 17
 GL	1378	INFO	Änderung SEITEZEILE	302.6	302, 6
 GL	1379	INFO	Änderung SEITEZEILE	302.9	302, 9
 GL	1380	INFO	Änderung SEITEZEILE	303.19	303, 19
-GL	1551	INFO	Änderung SEITEZEILE	264-269;	264, 0-269, 100;
+GL	1551	INFO	Änderung SEITEZEILE	264-269;	264, 0 - 269, 30;
 GL	1773	INFO	Änderung SEITEZEILE	233.8	233, 8
 GL	1774	INFO	Änderung SEITEZEILE	234.7	234, 7
 GL	1775	INFO	Änderung SEITEZEILE	238.1	238, 1
@@ -879,7 +886,7 @@ GL	6429	INFO	Änderung SEITEZEILE	5.5	5, 5
 GL	6430	INFO	Änderung SEITEZEILE	6.1	6, 1
 GL	6431	INFO	Änderung SEITEZEILE	7.3	7, 3
 GL	6433	INFO	Änderung SEITEZEILE	9.6	9, 6
-GL	6434	INFO	Änderung SEITEZEILE	9.699999999999999	9, 79
+GL	6434	INFO	Änderung SEITEZEILE	9.699999999999999	9, 7
 GL	6435	INFO	Änderung SEITEZEILE	9.9	9, 9
 GL	6436	INFO	Änderung SEITEZEILE	10.4	10, 4
 GL	6438	INFO	Änderung SEITEZEILE	12.4	12, 4
@@ -1105,7 +1112,7 @@ GL	6696	INFO	Änderung SEITEZEILE	210.13	210, 13
 GL	6697	INFO	Änderung SEITEZEILE	210.16	210, 16
 GL	6698	INFO	Änderung SEITEZEILE	211.2	211, 2
 GL	6699	INFO	Änderung SEITEZEILE	211.5	211, 5
-GL		6700	INFO	Änderung SEITEZEILE	211.8	211, 8
+GL	6700	INFO	Änderung SEITEZEILE	211.8	211, 8
 GL	6701	INFO	Änderung SEITEZEILE	211.11	211, 11
 GL	6702	INFO	Änderung SEITEZEILE	211.14	211, 14
 GL	6703	INFO	Änderung SEITEZEILE	212.2	212, 2
@@ -1270,13 +1277,13 @@ GL	6871	INFO	Änderung SEITEZEILE	6.6	6, 6
 GL	6872	INFO	Änderung SEITEZEILE	7.1	7, 1
 GL	6875	INFO	Änderung SEITEZEILE	8.6	8, 6
 GL	6877	INFO	Änderung SEITEZEILE	9.1	9, 1
-GL	6878	INFO	Änderung SEITEZEILE	9.300000000000001	9, 300000000000001
+GL	6878	INFO	Änderung SEITEZEILE	9.300000000000001	9, 3
 GL	6879	INFO	Änderung SEITEZEILE	9.4	9, 4
 GL	6880	INFO	Änderung SEITEZEILE	9.5	9, 5
 GL	6882	INFO	Änderung SEITEZEILE	9.1	9, 1
 GL	6883	INFO	Änderung SEITEZEILE	9.109999999999999	9, 11
 GL	6884	INFO	Änderung SEITEZEILE	9.119999999999999	9, 12
-GL	6885	INFO	Änderung SEITEZEILE	9.140000000000001	9, 140000000000001
+GL	6885	INFO	Änderung SEITEZEILE	9.140000000000001	9, 14
 GL	6886	INFO	Änderung SEITEZEILE	10.1	10, 1
 GL	6887	INFO	Änderung SEITEZEILE	10.3	10, 3
 GL	6889	INFO	Änderung SEITEZEILE	10.14	10, 14
@@ -1939,6 +1946,7 @@ GL	7612	INFO	Änderung SEITEZEILE	157,6 157,6	157,6
 GL	7613	INFO	Änderung SEITEZEILE	274,9 274,9	274,9
 GL	7614	INFO	Änderung SEITEZEILE	275,1 275,1	275,1
 GL	7615	INFO	Änderung SEITEZEILE	275,5  275,5	275,5
+GL	7616	INFO	Änderung SEITEZEILE	47,5 47,5- 47,5	47, 5
 GL	7617	INFO	Änderung SEITEZEILE	90,7 90,7	90,7
 GL	7618	INFO	Änderung SEITEZEILE	90,9  90,9	90,9
 GL	7619	INFO	Änderung SEITEZEILE	399,4                                        399,4                                                                                                                                                                                                                                     	399,4
@@ -2523,969 +2531,1189 @@ GL	8276	INFO	Änderung SEITEZEILE	335.5	335, 5
 GL	8277	INFO	Änderung SEITEZEILE	56.1	56, 1
 GL	8278	INFO	Änderung SEITEZEILE	94.12	94, 12
 GL	8279	INFO	Änderung SEITEZEILE	168.14	168, 14
+GL	8337	INFO	Änderung SEITEZEILE	137, 008-138	137, 008 - 138, 10
+GL	8566	FEHLER	zeile_start > 30	299, 213
+GL	8566	FEHLER	zeile_stop > 30	299, 213
 
 
 
 
 **** WL *******************************************************************
 
-WL	151	INFO	Änderung BelegstellenEdfu	V, 10, 13; 68, 6; 90, 12 (Pl.) / VI, 329, 9 (awj (wie: rA-awj)) / V, 140, 4; 179, 14; 387, 17; VII, 5, 1 ((rA)-awj)	V, 10, 13; 68, 6; 90, 12 (Pl.); VI, 329, 9 (awj (wie: rA-awj)); V, 140, 4; 179, 14; 387, 17; VII, 5, 1 ((rA)-awj)
-WL	454	INFO	Änderung BelegstellenEdfu	VII, 9, 3 / VII, 7, 5 (ausmeißeln (Türöffnung))	VII, 9, 3; VII, 7, 5 (ausmeißeln (Türöffnung))
-WL	509	INFO	Änderung BelegstellenWb	nach Wb, I, 22, 15	nach Wb I, 22, 15
-WL	539	INFO	Änderung BelegstellenEdfu	V, 194, 16 / VII, 321, 2 (an (awj), mit schöner (Armhaltung))V, 194, 16; VII, 321, 2 (an (awj), mit schöner (Armhaltung))
-WL	553	INFO	Änderung BelegstellenEdfu	VI, 333, 3 ((Feinde) verringern) / VII, 269, 5 ((Apophis) schwächen)	VI, 333, 3 ((Feinde) verringern); VII, 269, 5 ((Apophis) schwächen)
-WL	554	INFO	Änderung BelegstellenEdfu	VIII, 18, 4 / VIII, 52, 12 ((Feinde) verringern)	VIII, 18, 4; VIII, 52, 12 ((Feinde) verringern)
-WL	608	INFO	Änderung BelegstellenEdfu	VI, 156, 9; 164, 11; 242, 1 / VI, 167, 11 (antjw-Sw)	VI, 156, 9; 164, 11; 242, 1; VI, 167, 11 (antjw-Sw)
-WL	788	INFO	Änderung BelegstellenEdfu	V, 350, 5 / V, 357, 6 (letzter Tag eines Festes)	V, 350, 5; V, 357, 6 (letzter Tag eines Festes)
-WL	814	INFO	Änderung BelegstellenEdfu	V, 236, 12 (Pl.) / V, 16, 7 ((twt)-at) / V, 110, 8 ((km)-at)	V, 236, 12 (Pl.); V, 16, 7 ((twt)-at); V, 110, 8 ((km)-at)
-WL	824	INFO	Änderung BelegstellenWb	Wb I, 2, 3 - 4	Wb I, 2, 3-4
-WL	899	INFO	Änderung BelegstellenWb	Wb, I, 6, 1	Wb I, 6, 1
-WL	921	INFO	Änderung BelegstellenEdfu	V, 233. 6	V, 233, 6
-WL	931	INFO	Änderung BelegstellenEdfu	V, 126, 6; 302, 9; VI, 90, 2; 235, 5; VII, 124, 15; VIII, 165, 5 / VII, 261, 14; 316, 7 (Pl.)	V, 126, 6; 302, 9; VI, 90, 2; 235, 5; VII, 124, 15; VIII, 165, 5; VII, 261, 14; 316, 7 (Pl.)
-WL	963	INFO	Änderung BelegstellenWb	Wb, I, 19, 3	Wb I, 19, 3
-WL	1011	INFO	Änderung BelegstellenEdfu	VI, 210, 2 (bnr mrwt) / VII, 210, 1 (xt nb) bnr	VI, 210, 2 (bnr mrwt); VII, 210, 1 (xt nb) bnr
-WL	1023	INFO	Änderung BelegstellenEdfu	VI, 148, <7>; 11	VI, <148, 7>; 11
-WL	1080	INFO	Änderung BelegstellenWb	Wb I, 483, x - 484, 11	Wb I, 483, 10 - 484, 11
-WL	1081	INFO	Änderung BelegstellenWb	Wb I, 483, x - 484, 11	Wb I, 483, 10 - 484, 11
-WL	1128	INFO	Änderung BelegstellenEdfu	VI, 138, 4-5 (bd (mAwt), (Licht) aussenden) / VII, 294, 5-6	VI, 138, 4-5 (bd (mAwt), (Licht) aussenden); VII, 294, 5-6
-WL	1135	INFO	Änderung BelegstellenEdfu	VII, 50, 8 / VIII, 106, 11 ((m) bd, rein)	VII, 50, 8; VIII, 106, 11 ((m) bd, rein)
-WL	1146	INFO	Änderung BelegstellenEdfu	VII, 83, 13 / VII, 79, 9 (bdt (HDt))	VII, 83, 13; VII, 79, 9 (bdt (HDt))
-WL	1195	INFO	Änderung BelegstellenWb	Wb I, 84, 15 - 85, o	Wb I, 84, 15 - 85, 0
-WL	1196	INFO	Änderung BelegstellenWb	Wb I, 84, 15 - 85, o	Wb I, 84, 15 - 85, 0
-WL	1197	INFO	Änderung BelegstellenWb	Wb I, 84, 15 - 85, o	Wb I, 84, 15 - 85, 0
-WL	1198	INFO	Änderung BelegstellenWb	Wb I, 84, 15 - 85, o	Wb I, 84, 15 - 85, 0
-WL	1572	INFO	Änderung BelegstellenEdfu	VIII, 147, 9;	VIII, 147, 9
-WL	1584	INFO	Änderung BelegstellenWb	nach Wb I7, 1, 12-23	nach Wb I, 1, 12-23
-WL	1585	INFO	Änderung BelegstellenWb	nach Wb I7, 1, 12-23	nach Wb I, 1, 12-23
-WL	1586	INFO	Änderung BelegstellenWb	nach Wb I7, 1, 12-23	nach Wb I, 1, 12-23
-WL	1612	INFO	Änderung BelegstellenEdfu	VII, 107, 14 (divinités) / VII, 151, 4 (Atum)	VII, 107, 14 (divinités); VII, 151, 4 (Atum)
-WL	1633	INFO	Änderung BelegstellenWb	Wb I, 419, 14 - 420, O	Wb I, 419, 14 - 420, 0
-WL	1658	INFO	Änderung BelegstellenEdfu	V, %145, 1& (Horusspeer) / VI, 175, 3 (Ptah)	V, %145, 1& (Horusspeer); VI, 175, 3 (Ptah)
-WL	1801	INFO	Änderung BelegstellenEdfu	VI, 199, 10 (Ägypten); VI, 204, 3; 4 (??? Region, Göttin, Mineral ???); VI, 204, 8 (Sechep-Getränk u. Getreide); VI, 204, 9 (???)	VI, 199, 10 (Ägypten); VI, 204, 3; 204, 4 (??? Region, Göttin, Mineral ???); VI, 204, 8 (Sechep-Getränk u. Getreide); VI, 204, 9 (???)
-WL	1808	INFO	Änderung BelegstellenEdfu	VI, 146, 10; 240, 15; VII, 294, 1; VIII, 136, 1 (Horusauge) / V, 350, 5; 352, 7; 355, 8 (???); V, 61, 2; VIII, 76, 9 (Hathor); VI, 200, 4; 5; 10 (Ägypten); V, 151, 2; VI, 253, 2; VII, 288, 4 (Wein); VII, 123, 7; V, 162, 14 (Heru-a-Getränk)	VI, 146, 10; 240, 15; VII, 294, 1; VIII, 136, 1 (Horusauge); V, 350, 5; 352, 7; 355, 8 (???); V, 61, 2; VIII, 76, 9 (Hathor); VI, 200, 4; 5; 10 (Ägypten); V, 151, 2; VI, 253, 2; VII, 288, 4 (Wein); VII, 123, 7; V, 162, 14 (Heru-a-Getränk)
-WL	1810	INFO	Änderung BelegstellenEdfu	V, 66, 8; VI, 253, 16 (Libationswasser) / VII, 288, 10 (Brot und Bier) / VII, 70, 3 (Opferbrot) / VII, 72, 6; 9 (Kuchen) / V, 61, 7 (Speisen) / V, 356, 4 (Melone) ??? / V, 174, 8; 272, 14 (Salbe)	V, 66, 8; VI, 253, 16 (Libationswasser); VII, 288, 10 (Brot und Bier); VII, 70, 3 (Opferbrot); VII, 72, 6; 9 (Kuchen); V, 61, 7 (Speisen); V, 356, 4 (Melone) ???; V, 174, 8; 272, 14 (Salbe)
-WL	1854	INFO	Änderung BelegstellenEdfu	V, 91, 10; VI, 153, 9; 11; 154, 5; 155, 1; 3 / VII, 88, 10 (jem. zujubeln)	V, 91, 10; VI, 153, 9; 11; 154, 5; 155, 1; 3; VII, 88, 10 (jem. zujubeln)
-WL	2000	INFO	Änderung BelegstellenEdfu	VIII, 124, 7 / V, 323, 6; 324, 8 (bjtj (Ra))	VIII, 124, 7; V, 323, 6; 324, 8 (bjtj (Ra))
-WL	2001	INFO	Änderung BelegstellenEdfu	V, 261, 8 / VIII, 132, 5 (bjtj (Ra))	V, 261, 8; VIII, 132, 5 (bjtj (Ra))
-WL	2034	INFO	Änderung BelegstellenEdfu	V, 60, 6 (bnbn (n), herankommen (zu)) / VII, 203, 8; 208, 18	V, 60, 6 (bnbn (n), herankommen (zu)); VII, 203, 8; 208, 18
-WL	2043	INFO	Änderung BelegstellenEdfu	VI, 230, 3; 329, 2 / VIII, 25, 6 (bw (wa), insgesamt) / VI, 12, 10; 114, 4; 129, 10 et passim (bw nb)	VI, 230, 3; 329, 2; VIII, 25, 6 (bw (wa), insgesamt); VI, 12, 10; 114, 4; 129, 10 et passim (bw nb)
-WL	2117	INFO	Änderung BelegstellenEdfu	VIII, 67, 14 / V, 311, 12 (Pylonturm)	VIII, 67, 14; V, 311, 12 (Pylonturm)
-WL	2144	INFO	Änderung BelegstellenEdfu	VII, 216,10; 217,7; 8; 246,2; VII; 216,9; 217,1; 224,5; VII, 216, 8	VII, 216,10; 217,7; 8; 246,2; VII, 216,9; 217,1; 224,5; VII, 216, 8
-WL	2156	INFO	Änderung BelegstellenEdfu	V, 15, 7; VI, 133, 8; 227, 5; VII, 200, 6; /; 284, 4	V, 15, 7; VI, 133, 8; 227, 5; VII, 200, 6; 284, 4
-WL	2158	INFO	Änderung BelegstellenEdfu	VI, 112. 1; VII, 122, 9	VI, 112, 1; VII, 122, 9
-WL	2378	INFO	Änderung BelegstellenEdfu	VII, 52, 8; 106, 1; 130, 18 / V, 174, 13; VII, 253, 12 (jdt-(nTr)) / VI, 306, 2; VII, 204, 13; 210, 1; 8; 258, 8; VIII, 66, 12 ((cTj) jdt)	VII, 52, 8; 106, 1; 130, 18; V, 174, 13; VII, 253, 12 (jdt-(nTr)); VI, 306, 2; VII, 204, 13; 210, 1; 8; 258, 8; VIII, 66, 12 ((cTj) jdt)
-WL	2379	INFO	Änderung BelegstellenEdfu	VII, 51, 14; 253, 7; 12 / VII, 317, 14 (jdt-(nTr)) / VI, 166, 17 ((cTj) jdt	VII, 51, 14; 253, 7; 12; VII, 317, 14 (jdt-(nTr)); VI, 166, 17 ((cTj) jdt
-WL	2380	INFO	Änderung BelegstellenEdfu	VIII, <52, 13>* / V, 337, 15 ((cTj) jdt	VIII, <52, 13>*; V, 337, 15 ((cTj) jdt
-WL	2381	INFO	Änderung BelegstellenEdfu	VII, 270, 7 / V, 364, 5 (jdt-(nTr))	VII, 270, 7; V, 364, 5 (jdt-(nTr))
-WL	2461	INFO	Änderung BelegstellenEdfu	VI, 92, 9; VII, 182, 2 (Schutzschild (Umfassungsmauer)) / VII, 277, 7 (Schutz (für den Schwachen))	VI, 92, 9; VII, 182, 2 (Schutzschild (Umfassungsmauer)); VII, 277, 7 (Schutz (für den Schwachen))
-WL	2468	INFO	Änderung BelegstellenEdfu	128, 5/6	VI, 128, 5/6
-WL	2593	INFO	Änderung BelegstellenEdfu	VII, 197,7; 198,<2>; 5; 6; 9	VII, 197,7; <198, 2>; 5; 6; 9
-WL	2698	INFO	Änderung BelegstellenEdfu	VII, 67, 7; 147, 2; 163, 10 / V, 205, 10 (Ideogramm mit Krummstab)	VII, 67, 7; 147, 2; 163, 10; V, 205, 10 (Ideogramm mit Krummstab)
-WL	2699	INFO	Änderung BelegstellenEdfu	V, 278, 8; VIII, 120, 2 / V, 227, 3; 256, 16 (Ideogramm mit Krummstab und Geißel) / VI, 57, 11; VII, 167, 10; VIII, 79, 14; 84, 12	V, 278, 8; VIII, 120, 2; V, 227, 3; 256, 16 (Ideogramm mit Krummstab und Geißel); VI, 57, 11; VII, 167, 10; VIII, 79, 14; 84, 12
-WL	2769	INFO	Änderung BelegstellenEdfu	V, 79, 11; VI, 299, 4; VII, 137, 15 (wcx (nmtt)) / VII, 175, 12	V, 79, 11; VI, 299, 4; VII, 137, 15 (wcx (nmtt)); VII, 175, 12
-WL	2780	INFO	Änderung BelegstellenEdfu	VI, 326, 7 (wcxt-(Hwt-%Htr&) ???) / VI, 326, 8 (wcxt-Smc-jb ???)	VI, 326, 7 (wcxt-(Hwt-%Htr&) ???); VI, 326, 8 (wcxt-Smc-jb ???)
-WL	2789	INFO	Änderung BelegstellenEdfu	V, 61, 15; 268, 14; 311, 11; VIII, 114, 7 / VIII, 145, 6 (wD (sA r) - (in Obhut) nehmen (gegen)	V, 61, 15; 268, 14; 311, 11; VIII, 114, 7; VIII, 145, 6 (wD (sA r) - (in Obhut) nehmen (gegen)
-WL	2813	INFO	Änderung BelegstellenEdfu	VI, 176,4; 5; 6; 7; ???323,7; 8; 9; 11; 324,1; 4; 5; 329,1???; VII, ???26,7; 257,2???; VI, 118,9; 122,13; 123,9; 127,7; 134,6; V, 37,4; 39,12; 40,7; 10	VI, 176,4; 5; 6; 7; 323,7 ???; 8 ???; 9 ???; 11; 324,1; 4; 5; 329,1 ???; VII, 26,7 ???; 257,2 ???; VI, 118,9; 122,13; 123,9; 127,7; 134,6; V, 37,4; 39,12; 40,7; 10
-WL	2815	INFO	Änderung BelegstellenEdfu	V, 130,10; 136,4; 349,3; 4; 8; 350,2; 7; 8; 353,3; 355,6; 359,4; VI, 169, 8; 242, 11; VI, ???18,7; 10; 169,8; 320,12; 321,4; 5; 328,18???; VI, 125, 1; 135, 3; VI, 112, 7; 114, 8; 116, 4; V, 12, 8; 10; 37, 11	V, 130,10; 136,4; 349,3; 4; 8; 350,2; 7; 8; 353,3; 355,6; 359,4; VI, 169, 8; 242, 11; VI, 18,7 ???; 10; 169,8; 320,12; 321,4; 5; 328,18???; VI, 125, 1; 135, 3; VI, 112, 7; 114, 8; 116, 4; V, 12, 8; 10; 37, 11
-WL	2897	INFO	Änderung BelegstellenWb	Wb I, 54, (11)-(12)	Wb I, 54, 11-12
-WL	2898	INFO	Änderung BelegstellenWb	Wb I, 54, (11)-(12)	Wb I, 54, 11-12
-WL	2899	INFO	Änderung BelegstellenWb	Wb I, 54, (11)-(12)	Wb I, 54, 11-12
-WL	2900	INFO	Änderung BelegstellenWb	Wb I, 54, (11)-(12)	Wb I, 54, 11-12
-WL	2901	INFO	Änderung BelegstellenWb	Wb I, 54, (11)-(12)	Wb I, 54, 11-12
-WL	2902	INFO	Änderung BelegstellenWb	Wb I, 54, (11)-(12)	Wb I, 54, 11-12
-WL	2903	INFO	Änderung BelegstellenWb	Wb I, 54, (11)-(12)	Wb I, 54, 11-12
-WL	2904	INFO	Änderung BelegstellenWb	Wb I, 54, (11)-(12)	Wb I, 54, 11-12
-WL	2905	INFO	Änderung BelegstellenWb	Wb I, 54, (11)-(12)	Wb I, 54, 11-12
-WL	2906	INFO	Änderung BelegstellenWb	Wb I, 54, (11)-(12)	Wb I, 54, 11-12
-WL	2907	INFO	Änderung BelegstellenWb	Wb I, 54, (11)-(12)	Wb I, 54, 11-12
-WL	3048	INFO	Änderung BelegstellenWb	Wb I, 66, X	Wb I, 66, 10
-WL	3049	INFO	Änderung BelegstellenWb	Wb I, 66, X	Wb I, 66, 10
-WL	3050	INFO	Änderung BelegstellenWb	Wb I, 66, X	Wb I, 66, 10
-WL	3079	INFO	Änderung BelegstellenWb	Wb I, 104	Wb I, 104, 0
-WL	3080	INFO	Änderung BelegstellenWb	Wb I, 104	Wb I, 104, 0
-WL	3081	INFO	Änderung BelegstellenWb	Wb I, 104	Wb I, 104, 0
-WL	3082	INFO	Änderung BelegstellenWb	Wb I, 104	Wb I, 104, 0
-WL	3083	INFO	Änderung BelegstellenWb	Wb I, 104	Wb I, 104, 0
-WL	3084	INFO	Änderung BelegstellenWb	Wb I, 104	Wb I, 104, 0
-WL	3085	INFO	Änderung BelegstellenWb	Wb I, 104	Wb I, 104, 0
-WL	3086	INFO	Änderung BelegstellenWb	Wb I, 104	Wb I, 104, 0
-WL	3087	INFO	Änderung BelegstellenWb	Wb I, 104	Wb I, 104, 0
-WL	3088	INFO	Änderung BelegstellenWb	Wb I, 104	Wb I, 104, 0
-WL	3089	INFO	Änderung BelegstellenWb	Wb I, 104	Wb I, 104, 0
-WL	3090	INFO	Änderung BelegstellenWb	Wb I, 104	Wb I, 104, 0
-WL	3091	INFO	Änderung BelegstellenWb	Wb I, 104	Wb I, 104, 0
-WL	3092	INFO	Änderung BelegstellenWb	Wb I, 104	Wb I, 104, 0
-WL	3093	INFO	Änderung BelegstellenWb	Wb I, 104	Wb I, 104, 0
-WL	3094	INFO	Änderung BelegstellenWb	Wb I, 104	Wb I, 104, 0
-WL	3139	INFO	Änderung BelegstellenEdfu	VI, 44, 2; 176, 8; VII, 102, 17 ??? (handeln, tätig sein) / VII, 25, 15 (Opferriten vollziehen)	VI, 44, 2; 176, 8; VII, 102, 17 ??? (handeln, tätig sein); VII, 25, 15 (Opferriten vollziehen)
-WL	3141	INFO	Änderung BelegstellenEdfu	VI, 127, 12 (ein Mahl zubereiten für (jem.) / VI, 348, 10; VII, 289, 6 (Nahrung schaffen für (jem.)	VI, 127, 12 (ein Mahl zubereiten für (jem.); VI, 348, 10; VII, 289, 6 (Nahrung schaffen für (jem.)
-WL	3142	INFO	Änderung BelegstellenEdfu	V, 162, 14; VI, 153, 2; 328, 5; VII,%294,15& (Getränk, Speisen, Fleischstücke) / VI, 262, 14; VII, 118,7; 258,4; 8 (Weihrauch) / VII, 97, 2 (Kranz)	V, 162, 14; VI, 153, 2; 328, 5; VII,%294,15& (Getränk, Speisen, Fleischstücke); VI, 262, 14; VII, 118,7; 258,4; 8 (Weihrauch); VII, 97, 2 (Kranz)
-WL	3143	INFO	Änderung BelegstellenEdfu	VI, 117, 2; 330, 7;	VI, 117, 2; 330, 7
-WL	3173	INFO	Änderung BelegstellenEdfu	V, 130, 1 / kol. 14	V, 130, 1 (kol. 14)
-WL	3241	INFO	Änderung BelegstellenEdfu	V, 239, 8 (Weihrauch) / VI, 312, 2 (Feuer)	V, 239, 8 (Weihrauch); VI, 312, 2 (Feuer)
-WL	3333	INFO	Änderung BelegstellenEdfu	V, 208, 17 (König) / VI, 148, 15 (das Verb ???)	V, 208, 17 (König); VI, 148, 15 (das Verb ???)
-WL	3362	INFO	Änderung BelegstellenEdfu	V, 57, 6 (jt jtw); VI, 10, 8 / VII, 3, 7; 11, 7 (jtw jtw (Vorväter))	V, 57, 6 (jt jtw); VI, 10, 8; VII, 3, 7; 11, 7 (jtw jtw (Vorväter))
-WL	3369	INFO	Änderung BelegstellenEdfu	V, 57, 6; 157, 1; VI, 10, 8; 332, 4; VII, 59, 10; 92, 7; %136, 13&; 163, 1 / VI, 9, 9 ((jtw) jtw) Vorväter / VII, 3, 7; 11, 7	V, 57, 6; 157, 1; VI, 10, 8; 332, 4; VII, 59, 10; 92, 7; %136, 13&; 163, 1; VI, 9, 9 ((jtw) jtw) Vorväter; VII, 3, 7; 11, 7
-WL	3371	INFO	Änderung BelegstellenEdfu	V, 157, 1 (jt jtw); VI, 332, 4; VII, 59, 10; 92, 7; %136, 13&; 163, 1 / VI, 9, 9 (jt(w) jtw) Vorväter	V, 157, 1 (jt jtw); VI, 332, 4; VII, 59, 10; 92, 7; %136, 13&; 163, 1; VI, 9, 9 (jt(w) jtw) Vorväter
-WL	3399	INFO	Änderung BelegstellenEdfu	VI, 106, 3; 4; 132, 12, 161, 18 / VI, 91, 17; 92, 4; 284, 8; 315, 1 (ohne Krone) / VI, 140, 8; 141, 6; 144, 12; 243, 11 (ohne Krone, aber mit Uräus)	VI, 106, 3; 4; 132, 12, 161, 18; VI, 91, 17; 92, 4; 284, 8; 315, 1 (ohne Krone); VI, 140, 8; 141, 6; 144, 12; 243, 11 (ohne Krone, aber mit Uräus)
-WL	3401	INFO	Änderung BelegstellenEdfu	VII, 10, 2; 49, 13; 85, 10; 87, 5 / V, 309, 16; 316, 4 (ohne Krone) / VI, 249, 12 (ohne Krone, aber mit Uräus)	VII, 10, 2; 49, 13; 85, 10; 87, 5; V, 309, 16; 316, 4 (ohne Krone); VI, 249, 12 (ohne Krone, aber mit Uräus)
-WL	3411	INFO	Änderung BelegstellenEdfu	V, 22, 9; 24, 5; 71, 7, 189, 14 / V, 42, 1; 143, 4 (jTj pHtj) / VI, 212, 9	V, 22, 9; 24, 5; 71, 7, 189, 14; V, 42, 1; 143, 4 (jTj pHtj); VI, 212, 9
-WL	3417	INFO	Änderung BelegstellenEdfu	VIII, 42, 7 (jtrt Smat) / VIII, 42, 7; 17 (jtrt-(mHt)	VIII, 42, 7 (jtrt Smat); VIII, 42, 7; 17 (jtrt-(mHt)
-WL	3425	INFO	Änderung BelegstellenEdfu	VI, 132, 2 (jtrt-(Smat)) / VI, 132, 2 (jtrt-(mHt))	VI, 132, 2 (jtrt-(Smat)); VI, 132, 2 (jtrt-(mHt))
-WL	3426	INFO	Änderung BelegstellenEdfu	V, 339, 9 (jtrt-(Smat)) / V, 339, 10; VI, 130, 2  (jtrt-(mHt)V, 339, 9 (jtrt-(Smat)); V, 339, 10; VI, 130, 2  (jtrt-(mHt))
-WL	3435	INFO	Änderung BelegstellenEdfu	VI, 200, 6; 7 / VI, 15, 1 (meilenweit)	VI, 200, 6; 7; VI, 15, 1 (meilenweit)
-WL	3473	INFO	Änderung BelegstellenWb	Wb I, 46, X - 47, 3	Wb I, 46, 10 - 47, 3
-WL	3474	INFO	Änderung BelegstellenWb	Wb I, 46, X - 47, 3	Wb I, 46, 10 - 47, 3
-WL	3493	INFO	Änderung BelegstellenEdfu	VI, 155, 3; 6 / VI, 80, 1 (sich drehen) / VII, 17, 1 (wDb (a), (den Umlauf) vollziehen)	VI, 155, 3; 6; VI, 80, 1 (sich drehen); VII, 17, 1 (wDb (a), (den Umlauf) vollziehen)
-WL	3500	INFO	Änderung BelegstellenEdfu	VII, 212, 1 (Ufersand) / VII, 212, 5 ((Hrj)-wDb, (Schu))	VII, 212, 1 (Ufersand); VII, 212, 5 ((Hrj)-wDb, (Schu))
-WL	3534	INFO	Änderung BelegstellenEdfu	VI, 94, 7 (Sänfte des Horus) / VII, 181, 3 (Thron des Königs)VI, 94, 7 (Sänfte des Horus); VII, 181, 3 (Thron des Königs)
-WL	3535	INFO	Änderung BelegstellenWb	Wb I, 46, X - 47, 3	Wb I, 46, 10 - 47, 3
-WL	3536	INFO	Änderung BelegstellenWb	Wb I, 46, X - 47, 3	Wb I, 46, 10 - 47, 3
-WL	3537	INFO	Änderung BelegstellenWb	Wb I, 46, X - 47, 3	Wb I, 46, 10 - 47, 3
-WL	3538	INFO	Änderung BelegstellenWb	Wb I, 46, X - 47, 3	Wb I, 46, 10 - 47, 3
-WL	3547	INFO	Änderung BelegstellenEdfu	VIII, 6, 13 (Bez. der Osirisreliquie) / VII, 123, 13; 285, 12; VIII, 105, 1 (Produkt (der Kühe = Milch) / VI, 188, 9; 190, 11; VII, 28, 6 (Besitz eines Gottes ???)	VIII, 6, 13 (Bez. der Osirisreliquie); VII, 123, 13; 285, 12; VIII, 105, 1 (Produkt (der Kühe = Milch); VI, 188, 9; 190, 11; VII, 28, 6 (Besitz eines Gottes ???)
-WL	3554	INFO	Änderung BelegstellenEdfu	V, 99, 6 ???, 168, 1; VII, 142, 5 (Wein) / V, 70, 3 (Rauschtrank) / VI, 251, 11 (Weihrauch) / V, 171, 13 (Amulett) / V, 173, 2; VII, 320, 11 (Menit)	V, 99, 6 ???, 168, 1; VII, 142, 5 (Wein); V, 70, 3 (Rauschtrank); VI, 251, 11 (Weihrauch); V, 171, 13 (Amulett); V, 173, 2; VII, 320, 11 (Menit)
-WL	3591	INFO	Änderung BelegstellenEdfu	VI, 17, 11 / VII, 179, 1 (pajt (nt nb)	VI, 17, 11; VII, 179, 1 (pajt (nt nb)
-WL	3597	INFO	Änderung BelegstellenWb	nach Wb I, 492, 3 - 493, o	nach Wb I, 492, 3 - 493, 0
-WL	3622	INFO	Änderung BelegstellenWb	nach Wb I, 492, 3 - 493, o	nach Wb I, 492, 3 - 493, 0
-WL	3623	INFO	Änderung BelegstellenWb	nach Wb I, 492, 3 - 493, o	nach Wb I, 492, 3 - 493, 0
-WL	3624	INFO	Änderung BelegstellenWb	nach Wb I, 492, 3 - 493, o	nach Wb I, 492, 3 - 493, 0
-WL	3625	INFO	Änderung BelegstellenWb	nach Wb I, 492, 3 - 493, o	nach Wb I, 492, 3 - 493, 0
-WL	3640	INFO	Änderung BelegstellenEdfu	VI, 173, 9 / VI, 320, 4	VI, 173, 9; VI, 320, 4
-WL	3646	INFO	Änderung BelegstellenEdfu	VIII, 82, 8 (pl.) / V, 85, 15 ((nTrw) PAwtjw ???) / VI, 174, 11 (PAwtjw (tpjw))	VIII, 82, 8 (pl.); V, 85, 15 ((nTrw) PAwtjw ???); VI, 174, 11 (PAwtjw (tpjw))
-WL	3648	INFO	Änderung BelegstellenEdfu	VI, 104, 6 (Horus) / VI, 174, 13	VI, 104, 6 (Horus); VI, 174, 13
-WL	3651	INFO	Änderung BelegstellenEdfu	VII, 68, 12; 93, 4 (PAwtj (tpj) (Horus)) / VI, 173, 6; 175, 8 (PAwtjw (tpjw)) / VII, 118, 11	VII, 68, 12; 93, 4 (PAwtj (tpj) (Horus)); VI, 173, 6; 175, 8 (PAwtjw (tpjw)); VII, 118, 11
-WL	3704	INFO	Änderung BelegstellenWb	Wb I, 518, x - 525, 3	Wb I, 518, 10 - 525, 3
-WL	3705	INFO	Änderung BelegstellenWb	Wb I, 518, x - 525, 3	Wb I, 518, 10 - 525, 3
-WL	3706	INFO	Änderung BelegstellenWb	Wb I, 518, x - 525, 3	Wb I, 518, 10 - 525, 3
-WL	3707	INFO	Änderung BelegstellenWb	Wb I, 518, x - 525, 3	Wb I, 518, 10 - 525, 3
-WL	3708	INFO	Änderung BelegstellenWb	Wb I, 518, x - 525, 3	Wb I, 518, 10 - 525, 3
-WL	3709	INFO	Änderung BelegstellenWb	Wb I, 518, x - 525, 3	Wb I, 518, 10 - 525, 3
-WL	3710	INFO	Änderung BelegstellenWb	Wb I, 518, x - 525, 3	Wb I, 518, 10 - 525, 3
-WL	3711	INFO	Änderung BelegstellenWb	Wb I, 518, x - 525, 3	Wb I, 518, 10 - 525, 3
-WL	3712	INFO	Änderung BelegstellenWb	Wb I, 518, x - 525, 3	Wb I, 518, 10 - 525, 3
-WL	3713	INFO	Änderung BelegstellenWb	Wb I, 518, x - 525, 3	Wb I, 518, 10 - 525, 3
-WL	3714	INFO	Änderung BelegstellenWb	Wb I, 518, x - 525, 3	Wb I, 518, 10 - 525, 3
-WL	3727	INFO	Änderung BelegstellenWb	nach Wb I, 518, x - 525, 3	nach Wb I, 518, 10 - 525, 3
-WL	3835	INFO	Änderung BelegstellenEdfu	VIII, 125, 1-4; Z. 14	VIII, 125, 1-4 (Z. 14)
-WL	3893	INFO	Änderung BelegstellenEdfu	VI, <%237, 4&>*??? (der Erfolgreiche (Jäger) / VII, 82, 2	VI, <%237, 4&>*??? (der Erfolgreiche (Jäger); VII, 82, 2
-WL	3913	INFO	Änderung BelegstellenEdfu	V, 157, 12; VII, 95, 9; 108, 7 / VII, 104, 1 (Pl.)	V, 157, 12; VII, 95, 9; 108, 7; VII, 104, 1 (Pl.)
-WL	3914	INFO	Änderung BelegstellenEdfu	VII, 107, 17 (Pl.) / VI, &344, 16& ???	VII, 107, 17 (Pl.); VI, %344, 16& ???
-WL	3940	INFO	Änderung BelegstellenEdfu	V, 1, 12 (Mittelmeer) / VI, 200, 4 (Delta)	V, 1, 12 (Mittelmeer); VI, 200, 4 (Delta)
-WL	3991	INFO	Änderung BelegstellenEdfu	VI, 7, 6; 101, 8; 225, 15; VII, 17, 3; 8; 9; 10 et passim; VIII, 132, 1 / V, 122, 10; VII, 124, 12 (einziehen (Vögel in ein Gebiet)) / VI, 226, 8 (wbA (S))	VI, 7, 6; 101, 8; 225, 15; VII, 17, 3; 8; 9; 10 et passim; VIII, 132, 1; V, 122, 10; VII, 124, 12 (einziehen (Vögel in ein Gebiet)); VI, 226, 8 (wbA (S))
-WL	3994	INFO	Änderung BelegstellenEdfu	VII, 12, 1; 19, 4; 256, 5 / V, 87, 7 (wbA (S))	VII, 12, 1; 19, 4; 256, 5; V, 87, 7 (wbA (S))
-WL	4022	INFO	Änderung BelegstellenEdfu	V, 100, 7; 251, 6; VIII; 129, 9; 10; 130, 7	V, 100, 7; 251, 6; VIII, 129, 9; 10; 130, 7
-WL	4218	INFO	Änderung BelegstellenWb	Wb I, 340, x - 343, 15	Wb I, 340, 10 - 343, 15
-WL	4219	INFO	Änderung BelegstellenWb	Wb I, 340, x - 343, 15	Wb I, 340, 10 - 343, 15
-WL	4220	INFO	Änderung BelegstellenWb	Wb I, 340, x - 343, 15	Wb I, 340, 10 - 343, 15
-WL	4226	INFO	Änderung BelegstellenWb	Wb I, 344, 7-13???	Wb I, 344, 7-13
-WL	4253	INFO	Änderung BelegstellenEdfu	VII, 113, 3; 140, 6 (Inf.: Vergehen, Frevel) / V, 241, 3 (wjn (mw)) / VII, 45, 12; 149, 14; 159, 6; 161, 11 / V, 36, 5 (wjn (Hr wDAt)	VII, 113, 3; 140, 6 (Inf.: Vergehen, Frevel); V, 241, 3 (wjn (mw)); VII, 45, 12; 149, 14; 159, 6; 161, 11; V, 36, 5 (wjn (Hr wDAt)
-WL	4289	INFO	Änderung BelegstellenEdfu	VI, 282, 16 / VIII, 71, 8 (Zubehör (Rohstoffe))	VI, 282, 16; VIII, 71, 8 (Zubehör (Rohstoffe))
-WL	4363	INFO	Änderung BelegstellenEdfu	V, <30, 2>; 87, 6; 120, 8; 217, 6; VIII; 37, 2; 38, 4	V, <30, 2>; 87, 6; 120, 8; 217, 6; VIII, 37, 2; 38, 4
-WL	4380	INFO	Änderung BelegstellenEdfu	VII, 5, 5; 8 (die Ausmaße (eines Gebäudes) festlegen) / VII, 54, 5 (die Welt (mit Licht) erschließen)	VII, 5, 5; 8 (die Ausmaße (eines Gebäudes) festlegen); VII, 54, 5 (die Welt (mit Licht) erschließen)
-WL	4454	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4455	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4456	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4457	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4458	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4459	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4460	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4461	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4462	INFO	Änderung BelegstellenEdfu	V, 238, 3; 257, 2 (wrt) / V, 2, 2; 229, 3; 6; VII, 20, 13 ((Ct)-wrt)	V, 238, 3; 257, 2 (wrt); V, 2, 2; 229, 3; 6; VII, 20, 13 ((Ct)-wrt)
-WL	4462	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4463	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4464	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4465	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4466	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4467	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4468	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4469	INFO	Änderung BelegstellenEdfu	V, 6, 8 (wrt) / VII, 5, 8; VIII, 93, 8 ((Ct)-wrt)	V, 6, 8 (wrt); VII, 5, 8; VIII, 93, 8 ((Ct)-wrt)
-WL	4469	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4472	INFO	Änderung BelegstellenWb	nach Wb I, 326, x - 328, 13	nach Wb I, 326, 10 - 328, 13
-WL	4485	INFO	Änderung BelegstellenWb	nach Wb I, 326, x - 328, 13	nach Wb I, 326, 10 - 328, 13
-WL	4490	INFO	Änderung BelegstellenWb	nach Wb I, 326, x - 328, 13	nach Wb I, 326, 10 - 328, 13
-WL	4491	INFO	Änderung BelegstellenWb	nach Wb I, 326, x - 328, 13	nach Wb I, 326, 10 - 328, 13
-WL	4493	INFO	Änderung BelegstellenWb	nach Wb I, 326, x - 328, 13	nach Wb I, 326, 10 - 328, 13
-WL	4494	INFO	Änderung BelegstellenWb	nach Wb I, 326, x - 328, 13	nach Wb I, 326, 10 - 328, 13
-WL	4495	INFO	Änderung BelegstellenWb	nach Wb I, 326, x - 328, 13	nach Wb I, 326, 10 - 328, 13
-WL	4496	INFO	Änderung BelegstellenWb	nach Wb I, 326, x - 328, 13	nach Wb I, 326, 10 - 328, 13
-WL	4497	INFO	Änderung BelegstellenWb	nach Wb I, 326, x - 328, 13	nach Wb I, 326, 10 - 328, 13
-WL	4509	INFO	Änderung BelegstellenEdfu	VI, 66, 10 / V, 319, 13 (???)	VI, 66, 10; V, 319, 13 (???)
-WL	4510	INFO	Änderung BelegstellenEdfu	VI, 299, 8; VII, 24, 2 / VI, 145, 5; 299, 12 (¦A-wrt, Thoëris (als Amulett))	VI, 299, 8; VII, 24, 2; VI, 145, 5; 299, 12 (¦A-wrt, Thoëris (als Amulett))
-WL	4538	INFO	Änderung BelegstellenWb	nach Wb I, 326, x - 328, 13	nach Wb I, 326, 10 - 328, 13
-WL	4539	INFO	Änderung BelegstellenWb	nach Wb I, 326, x - 328, 13	nach Wb I, 326, 10 - 328, 13
-WL	4540	INFO	Änderung BelegstellenWb	nach Wb I, 326, x - 328, 13	nach Wb I, 326, 10 - 328, 13
-WL	4541	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4542	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4543	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4544	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4545	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4546	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4547	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4548	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4549	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4550	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4551	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4552	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4553	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4554	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4555	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4556	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4557	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4558	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4559	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4560	INFO	Änderung BelegstellenWb	Wb I, 326, x - 328, 13	Wb I, 326, 10 - 328, 13
-WL	4561	INFO	Änderung BelegstellenWb	nach Wb I, 326, x - 328, 13	nach Wb I, 326, 10 - 328, 13
-WL	4562	INFO	Änderung BelegstellenWb	nach Wb I, 326, x - 328, 13	nach Wb I, 326, 10 - 328, 13
-WL	4582	INFO	Änderung BelegstellenEdfu	VIII, 105, 8 (Rind) / VII, 313, 16 (pl.: Rinder)	VIII, 105, 8 (Rind); VII, 313, 16 (pl.: Rinder)
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
-
-DROP SCHEMA IF EXISTS `edfu` ;
-CREATE SCHEMA IF NOT EXISTS `edfu` DEFAULT CHARACTER SET utf8 ;
-USE `edfu` ;
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_band`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_domain_model_band` ;
-
-CREATE  TABLE IF NOT EXISTS `tx_edfu_domain_model_band` (
-  `uid` INT(11) NOT NULL ,
-  `nummer` INT(11) NULL ,
-  `freigegeben` TINYINT NULL ,
-  		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-
-		t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
-		t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
-		t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
-
-		t3_origuid       INT(11) DEFAULT '0'             NOT NULL,
-		sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
-		l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
-		l10n_diffsource  MEDIUMBLOB,
-		
-		pid              INT(11) DEFAULT '0'             NOT NULL,
-
-		PRIMARY KEY (`uid`) )
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_stelle`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_domain_model_stelle` ;
-
-CREATE  TABLE IF NOT EXISTS `tx_edfu_domain_model_stelle` (
-  `uid` INT(11) NOT NULL ,
-  `band_uid` INT(11) NOT NULL ,
-  `seite_start` INT(11) NULL ,
-  `zeile_start` INT(11) NULL ,
-  `seite_stop` INT(11) NULL ,
-  `zeile_stop` INT(11) NULL ,
-  `anmerkung` TEXT NULL ,
-  `stop_unsicher` TINYINT NULL ,
-  `zerstoerung` TINYINT NULL ,
-  INDEX `fk_belegstelle_band1_idx` (`band_uid` ASC) ,
-  		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-
-		t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
-		t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
-		t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
-
-		t3_origuid       INT(11) DEFAULT '0'             NOT NULL,
-		sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
-		l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
-		l10n_diffsource  MEDIUMBLOB,
-		
-		pid              INT(11) DEFAULT '0'             NOT NULL,
-
-		PRIMARY KEY (`uid`) ,
-  CONSTRAINT `fk_belegstelle_band1`
-    FOREIGN KEY (`band_uid` )
-    REFERENCES `tx_edfu_domain_model_band` (`uid` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_formular`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_domain_model_formular` ;
-
-CREATE  TABLE IF NOT EXISTS `tx_edfu_domain_model_formular` (
-  `uid` INT(11) NOT NULL AUTO_INCREMENT ,
-  `stelle_uid` INT(11) NOT NULL ,
-  `transliteration` TEXT CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NOT NULL ,
-  `uebersetzung` TEXT CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NULL ,
-  `texttyp` TEXT CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NULL ,
-  		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-
-		t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
-		t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
-		t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
-
-		t3_origuid       INT(11) DEFAULT '0'             NOT NULL,
-		sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
-		l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
-		l10n_diffsource  MEDIUMBLOB,
-		
-		pid              INT(11) DEFAULT '0'             NOT NULL,
-
-		PRIMARY KEY (`uid`) ,
-  INDEX `fk_FL_belegstelle1_idx` (`stelle_uid` ASC) )
-ENGINE = MyISAM
-AUTO_INCREMENT = 10373
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_unicode_ci;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_gott`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_domain_model_gott` ;
-
-CREATE  TABLE IF NOT EXISTS `tx_edfu_domain_model_gott` (
-  `uid` INT(11) NOT NULL AUTO_INCREMENT ,
-  `transliteration` TEXT CHARACTER SET 'utf8' NOT NULL ,
-  `ort` TEXT CHARACTER SET 'utf8' NULL ,
-  `eponym` TEXT CHARACTER SET 'utf8' NULL ,
-  `beziehung` TEXT CHARACTER SET 'utf8' NULL ,
-  `funktion` TEXT CHARACTER SET 'utf8' NULL ,
-  		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-
-		t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
-		t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
-		t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
-
-		t3_origuid       INT(11) DEFAULT '0'             NOT NULL,
-		sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
-		l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
-		l10n_diffsource  MEDIUMBLOB,
-		
-		pid              INT(11) DEFAULT '0'             NOT NULL,
-
-		PRIMARY KEY (`uid`) )
-ENGINE = MyISAM
-AUTO_INCREMENT = 9471
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_unicode_ci;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_ort`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_domain_model_ort` ;
-
-CREATE  TABLE IF NOT EXISTS `tx_edfu_domain_model_ort` (
-  `uid` INT(11) NOT NULL AUTO_INCREMENT ,
-  `transliteration` TEXT CHARACTER SET 'utf8' NOT NULL ,
-  `uebersetzung` TEXT CHARACTER SET 'utf8' NULL ,
-  `ortsbeschreibung` TEXT CHARACTER SET 'utf8' NULL ,
-  `anmerkung` TEXT NULL ,
-  		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-
-		t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
-		t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
-		t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
-
-		t3_origuid       INT(11) DEFAULT '0'             NOT NULL,
-		sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
-		l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
-		l10n_diffsource  MEDIUMBLOB,
-		
-		pid              INT(11) DEFAULT '0'             NOT NULL,
-
-		PRIMARY KEY (`uid`) )
-ENGINE = MyISAM
-AUTO_INCREMENT = 1250
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_unicode_ci;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_wb_berlin`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_domain_model_wb_berlin` ;
-
-CREATE  TABLE IF NOT EXISTS `tx_edfu_domain_model_wb_berlin` (
-  `uid` INT(11) NOT NULL ,
-  `band` INT(11) NULL ,
-  `seite_start` INT(11) NULL ,
-  `zeile_start` INT(11) NULL ,
-  `seite_stop` INT(11) NULL ,
-  `zeile_stop` INT(11) NULL ,
-  `zweifel` TINYINT NULL ,
-  		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-
-		t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
-		t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
-		t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
-
-		t3_origuid       INT(11) DEFAULT '0'             NOT NULL,
-		sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
-		l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
-		l10n_diffsource  MEDIUMBLOB,
-		
-		pid              INT(11) DEFAULT '0'             NOT NULL,
-
-		PRIMARY KEY (`uid`) )
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_wort`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_domain_model_wort` ;
-
-CREATE  TABLE IF NOT EXISTS `tx_edfu_domain_model_wort` (
-  `uid` INT(11) NOT NULL AUTO_INCREMENT ,
-  `transliteration` TEXT CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NOT NULL ,
-  `weiteres` TEXT NULL ,
-  `uebersetzung` TEXT CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NULL ,
-  `anmerkung` TEXT NULL ,
-  `hieroglyph` VARCHAR(255) CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NULL ,
-  `lemma` VARCHAR(2555) NULL ,
-  `wb_berlin_uid` INT(11) NULL ,
-  		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-
-		t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
-		t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
-		t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
-
-		t3_origuid       INT(11) DEFAULT '0'             NOT NULL,
-		sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
-		l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
-		l10n_diffsource  MEDIUMBLOB,
-		
-		pid              INT(11) DEFAULT '0'             NOT NULL,
-
-		PRIMARY KEY (`uid`) ,
-  INDEX `fk_wort_berlin1_idx` (`wb_berlin_uid` ASC) )
-ENGINE = MyISAM
-AUTO_INCREMENT = 4623
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_unicode_ci;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_szene_bild`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_domain_model_szene_bild` ;
-
-CREATE  TABLE IF NOT EXISTS `tx_edfu_domain_model_szene_bild` (
-  `uid` INT NOT NULL ,
-  `name` VARCHAR(255) NULL ,
-  		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-
-		t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
-		t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
-		t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
-
-		t3_origuid       INT(11) DEFAULT '0'             NOT NULL,
-		sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
-		l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
-		l10n_diffsource  MEDIUMBLOB,
-		
-		pid              INT(11) DEFAULT '0'             NOT NULL,
-
-		PRIMARY KEY (`uid`) )
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_szene`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_domain_model_szene` ;
-
-CREATE  TABLE IF NOT EXISTS `tx_edfu_domain_model_szene` (
-  `uid` INT(11) NOT NULL ,
-  `nummer` INT(11) NULL ,
-  `beschreibung` TEXT NULL ,
-  `szene_bild_uid` INT NULL ,
-  `polygon` TEXT NULL ,
-  `koordinateX` DOUBLE NULL ,
-  `koordinateY` DOUBLE NULL ,
-  `breite` DOUBLE NULL ,
-  `koordinateZ` DOUBLE NULL ,
-  `blickwinkel` DOUBLE NULL ,
-  `hoehe` DOUBLE NULL ,
-  		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-
-		t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
-		t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
-		t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
-
-		t3_origuid       INT(11) DEFAULT '0'             NOT NULL,
-		sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
-		l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
-		l10n_diffsource  MEDIUMBLOB,
-		
-		pid              INT(11) DEFAULT '0'             NOT NULL,
-
-		PRIMARY KEY (`uid`) ,
-  INDEX `fk_szene_szene_bild1_idx` (`szene_bild_uid` ASC) ,
-  CONSTRAINT `fk_szene_szene_bild1`
-    FOREIGN KEY (`szene_bild_uid` )
-    REFERENCES `tx_edfu_domain_model_szene_bild` (`uid` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_photo_typ`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_domain_model_photo_typ` ;
-
-CREATE  TABLE IF NOT EXISTS `tx_edfu_domain_model_photo_typ` (
-  `uid` INT(11) NOT NULL ,
-  `name` VARCHAR(255) NULL ,
-  `jahr` INT(11) NULL ,
-  		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-
-		t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
-		t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
-		t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
-
-		t3_origuid       INT(11) DEFAULT '0'             NOT NULL,
-		sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
-		l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
-		l10n_diffsource  MEDIUMBLOB,
-		
-		pid              INT(11) DEFAULT '0'             NOT NULL,
-
-		PRIMARY KEY (`uid`) )
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_photo`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_domain_model_photo` ;
-
-CREATE  TABLE IF NOT EXISTS `tx_edfu_domain_model_photo` (
-  `uid` INT(11) NOT NULL ,
-  `photo_typ_uid` INT(11) NOT NULL ,
-  `name` VARCHAR(255) NULL ,
-  		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-
-		t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
-		t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
-		t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
-
-		t3_origuid       INT(11) DEFAULT '0'             NOT NULL,
-		sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
-		l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
-		l10n_diffsource  MEDIUMBLOB,
-		
-		pid              INT(11) DEFAULT '0'             NOT NULL,
-
-		PRIMARY KEY (`uid`) ,
-  INDEX `fk_photo_photo_typ1_idx` (`photo_typ_uid` ASC) ,
-  CONSTRAINT `fk_photo_photo_typ1`
-    FOREIGN KEY (`photo_typ_uid` )
-    REFERENCES `tx_edfu_domain_model_photo_typ` (`uid` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_literatur`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_domain_model_literatur` ;
-
-CREATE  TABLE IF NOT EXISTS `tx_edfu_domain_model_literatur` (
-  `uid` INT(11) NOT NULL ,
-  `beschreibung` TEXT NULL ,
-  		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-
-		t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
-		t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
-		t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
-
-		t3_origuid       INT(11) DEFAULT '0'             NOT NULL,
-		sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
-		l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
-		l10n_diffsource  MEDIUMBLOB,
-		
-		pid              INT(11) DEFAULT '0'             NOT NULL,
-
-		PRIMARY KEY (`uid`) )
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_formular_has_literatur`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_formular_literatur_mm`;
-
- CREATE TABLE IF NOT EXISTS `tx_edfu_formular_literatur_mm` (
-  `uid_local` INT(11) NOT NULL ,
-  `uid_foreign` INT(11) NOT NULL ,
-  `detail` TEXT NULL ,
-  PRIMARY KEY (`uid_local`, `uid_foreign`) ,
-  INDEX `fk_FL_has_literatur_literatur1_idx` (`uid_foreign` ASC) ,
-  INDEX `fk_FL_has_literatur_FL1_idx` (`uid_local` ASC) )
-ENGINE = MyISAM
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_unicode_ci;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_gott_has_stelle`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_gott_stelle_mm`;
-
- CREATE TABLE IF NOT EXISTS `tx_edfu_gott_stelle_mm` (
-  `uid_local` INT(11) NOT NULL ,
-  `uid_foreign` INT(11) NOT NULL ,
-  PRIMARY KEY (`uid_local`, `uid_foreign`) ,
-  INDEX `fk_gott_has_belegstelle_belegstelle1_idx` (`uid_foreign` ASC) ,
-  INDEX `fk_gott_has_belegstelle_gott1_idx` (`uid_local` ASC) )
-ENGINE = MyISAM
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_unicode_ci;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_wort_has_stelle`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_wort_stelle_mm`;
-
- CREATE TABLE IF NOT EXISTS `tx_edfu_wort_stelle_mm` (
-  `uid_local` INT(11) NOT NULL ,
-  `uid_foreign` INT(11) NOT NULL ,
-  `schreiber_verbessert` TINYINT NULL ,
-  `chassinat_verbessert` TINYINT NULL ,
-  PRIMARY KEY (`uid_local`, `uid_foreign`) ,
-  INDEX `fk_wort_has_stelle_stelle1_idx` (`uid_foreign` ASC) ,
-  INDEX `fk_wort_has_stelle_wort1_idx` (`uid_local` ASC) )
-ENGINE = MyISAM
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_unicode_ci;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_ort_has_stelle`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_ort_stelle_mm`;
-
- CREATE TABLE IF NOT EXISTS `tx_edfu_ort_stelle_mm` (
-  `uid_local` INT(11) NOT NULL ,
-  `uid_foreign` INT(11) NOT NULL ,
-  PRIMARY KEY (`uid_local`, `uid_foreign`) ,
-  INDEX `fk_ort_has_stelle1_stelle1_idx` (`uid_foreign` ASC) ,
-  INDEX `fk_ort_has_stelle1_ort1_idx` (`uid_local` ASC) )
-ENGINE = MyISAM
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_unicode_ci;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_szene_has_stelle`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_szene_stelle_mm`;
-
- CREATE TABLE IF NOT EXISTS `tx_edfu_szene_stelle_mm` (
-  `uid_local` INT(11) NOT NULL ,
-  `uid_foreign` INT(11) NOT NULL ,
-  PRIMARY KEY (`uid_local`, `uid_foreign`) ,
-  INDEX `fk_szene_has_stelle_stelle1_idx` (`uid_foreign` ASC) ,
-  INDEX `fk_szene_has_stelle_szene1_idx` (`uid_local` ASC) ,
-  CONSTRAINT `fk_szene_has_stelle_szene1`
-    FOREIGN KEY (`uid_local` )
-    REFERENCES `tx_edfu_domain_model_szene` (`uid` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_szene_has_stelle_stelle1`
-    FOREIGN KEY (`uid_foreign` )
-    REFERENCES `tx_edfu_domain_model_stelle` (`uid` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_photo_collection`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_domain_model_photo_collection` ;
-
-CREATE  TABLE IF NOT EXISTS `tx_edfu_domain_model_photo_collection` (
-  `uid` INT(11) NOT NULL ,
-  `klammern` TINYINT NULL ,
-  `stern` TINYINT NULL ,
-  `kommentar` TEXT NULL ,
-  		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		crdate           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		cruser_id        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		deleted          TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		hidden           TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-		starttime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-		endtime          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-
-		t3ver_oid        INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_id         INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_wsid       INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_label      VARCHAR(255) DEFAULT ''         NOT NULL,
-		t3ver_state      TINYINT(4) DEFAULT '0'          NOT NULL,
-		t3ver_stage      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_count      INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_tstamp     INT(11) DEFAULT '0'             NOT NULL,
-		t3ver_move_id    INT(11) DEFAULT '0'             NOT NULL,
-
-		t3_origuid       INT(11) DEFAULT '0'             NOT NULL,
-		sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
-		l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
-		l10n_diffsource  MEDIUMBLOB,
-		
-		pid              INT(11) DEFAULT '0'             NOT NULL,
-
-		PRIMARY KEY (`uid`) )
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_formular_has_photo_collection`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_formular_photo_collection_mm`;
-
- CREATE TABLE IF NOT EXISTS `tx_edfu_formular_photo_collection_mm` (
-  `uid_local` INT(11) NOT NULL ,
-  `uid_foreign` INT(11) NOT NULL ,
-  PRIMARY KEY (`uid_local`, `uid_foreign`) ,
-  INDEX `fk_formular_has_photo_collection_photo_collection1_idx` (`uid_foreign` ASC) ,
-  INDEX `fk_formular_has_photo_collection_formular1_idx` (`uid_local` ASC) )
-ENGINE = MyISAM
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_unicode_ci;
-
-
--- -----------------------------------------------------
--- Table `tx_edfu_domain_model_photo_collection_has_photo`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tx_edfu_photo_collection_photo_mm`;
-
- CREATE TABLE IF NOT EXISTS `tx_edfu_photo_collection_photo_mm` (
-  `uid_local` INT(11) NOT NULL ,
-  `uid_foreign` INT(11) NOT NULL ,
-  PRIMARY KEY (`uid_local`, `uid_foreign`) ,
-  INDEX `fk_photo_collection_has_photo_photo1_idx` (`uid_foreign` ASC) ,
-  INDEX `fk_photo_collection_has_photo_photo_collection1_idx` (`uid_local` ASC) ,
-  CONSTRAINT `fk_photo_collection_has_photo_photo_collection1`
-    FOREIGN KEY (`uid_local` )
-    REFERENCES `tx_edfu_domain_model_photo_collection` (`uid` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_photo_collection_has_photo_photo1`
-    FOREIGN KEY (`uid_foreign` )
-    REFERENCES `tx_edfu_domain_model_photo` (`uid` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
-'MySQLCursor: SET @OLD_UNIQUE_CHECKS=@@UNIQU..'
-'MySQLCursor: \nSET @OLD_FOREIGN_KEY_CHECKS=@..'
-'MySQLCursor: \nSET @OLD_SQL_MODE=@@SQL_MODE,..'
-'MySQLCursor: \n\nDROP SCHEMA IF EXISTS `edfu`..'
-'MySQLCursor: \nCREATE SCHEMA IF NOT EXISTS `..'
-'MySQLCursor: \nUSE `edfu` '
-'MySQLCursor: \n\n-- -------------------------..'
-'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\n CREATE TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\n CREATE TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\n CREATE TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\n CREATE TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\n CREATE TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\nCREATE  TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\n CREATE TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n-- ------------------------..'
-'MySQLCursor: \n\n CREATE TABLE IF NOT EXISTS ..'
-'MySQLCursor: \n\n\n\nSET SQL_MODE=@OLD_SQL_MODE'
-'MySQLCursor: \nSET FOREIGN_KEY_CHECKS=@OLD_F..'
-'MySQLCursor: \nSET UNIQUE_CHECKS=@OLD_UNIQUE..'
+WL	10	INFO	Änderung BelegstellenEdfu	VII, 018, 02; 018, 08; 026, 08; 027, 12; 251, 08 	VII, 018, 02; 018, 08; 026, 08; 027, 12; 251, 08
+WL	30	INFO	Änderung BelegstellenEdfu	VIII, 019, 16; 036, 06; VII, 020, 14;VIII, 055, 13 	VIII, 019, 16; 036, 06; VII, 020, 14;VIII, 055, 13
+WL	78	INFO	Änderung BelegstellenEdfu	VII, 237…	VII, 237, 1 - 30
+WL	149	INFO	Änderung BelegstellenWb	I, 030, 14 - 15?	I, 030, 14 - 15
+WL	262	INFO	Änderung BelegstellenEdfu	VIII, <082, 11>* 	VIII, <082, 11>*
+WL	289	INFO	Änderung BelegstellenEdfu	VIII, 009, 10; 020, 05; 045, 07; 045, 11; 056, 12; 	VIII, 009, 10; 020, 05; 045, 07; 045, 11; 056, 12
+WL	395	INFO	Änderung BelegstellenEdfu	VIII, 074, 06; 091, 11; 128, 06; 131, 05; 131, 08; 134, 10; 142, 08; 	VIII, 074, 06; 091, 11; 128, 06; 131, 05; 131, 08; 134, 10; 142, 08
+WL	408	FEHLER	BelegstellenWb Formatfehler	I, 171, 03 - 12; 18 - 21	171, 03-12; 18-21
+WL	450	INFO	Änderung BelegstellenEdfu	VIII, 012, 09; 017, 14; 024, 08; 	VIII, 012, 09; 017, 14; 024, 08
+WL	452	INFO	Änderung BelegstellenEdfu	VIII, 154, 08 	VIII, 154, 08
+WL	476	INFO	Änderung BelegstellenEdfu	VIII, 074, 06 	VIII, 074, 06
+WL	492	INFO	Änderung BelegstellenEdfu	VIII, 014, 10 	VIII, 014, 10
+
+INFO CSV Datei »Daten/imagemaps/court.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/court_white.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/innerwall.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/innerwall_white.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/pylon.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'polygon_original': 13,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/pylon_tuerlaibungen_white.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/pylon_white.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_A.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_A_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_As.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_As_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_B.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_B_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_C.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_C_architrave.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_C_aussentuer_rechts.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_C_aussentuer_unten.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_C_tuerlaibung_unten.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_C_tuerlaibung_untenlinks.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_C_tuerlaibung_untenrechts.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_D.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_D_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_E.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_E_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_F.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_F_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_G.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_G_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_H.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_I.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_I_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_J.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_J_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_K.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_K_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_L.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_L_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_M.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_M_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_N.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_N_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_O.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_O_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_P.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_P_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_Q.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_Q_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_R.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_R_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_S.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_S_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_V.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_V_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_W.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_W_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_W_tuerlaibunglinksunten.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_W_tuerlaibungrechtsoben.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_Y.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_Y_aussentuer_links.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_Y_aussentuer_rechts.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_Z.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Raum_Z_aussentuer.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/south.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/south_tuerlaibungen.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Tuer_Hs_Js_1.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Tuer_Hs_Js_1_tuerlaibung.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Tuer_Hs_Js_1s.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Tuer_Hs_Js_1s_tuerlaibungen.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Tuer_Hs_Js_2.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Tuer_Hs_Js_2s.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Tuer_Is_Js_1.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Tuer_Is_Js_1_tuerlaibungen.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/wall.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/wall_white.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Wand_B.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Wand_C.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Wand_F.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Wand_G.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Wand_G_links.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+INFO CSV Datei »Daten/imagemaps/Wand_G_rechts.csv«
+{u'angleOfView': 7,
+ u'areacolor': 5,
+ u'coord-x': 8,
+ u'coord-y': 9,
+ u'description': 0,
+ u'extent-height-percent': 12,
+ u'extent-width': 11,
+ u'height-percent': 10,
+ u'link': 6,
+ u'page': 2,
+ u'plate': 3,
+ u'polygon': 4,
+ u'volume': 1}
+
+Tabelle »band«: 8 Datensätze
+
+Tabelle »stelle«: 26931 Datensätze
+
+Tabelle »szene_bild«: 77 Datensätze
+
+Tabelle »szene«: 3286 Datensätze
+
+Tabelle »szene_stelle_mm«: 693 Datensätze
+
+Tabelle »literatur«: 5 Datensätze
+
+Tabelle »wb_berlin«: 578 Datensätze
+
+Tabelle »formular«: 10372 Datensätze
+
+Tabelle »formular_literatur_mm«: 26 Datensätze
+
+Tabelle »photo_typ«: 9 Datensätze
+
+Tabelle »photo«: 12215 Datensätze
+
+Tabelle »photo_collection«: 4334 Datensätze
+
+Tabelle »photo_collection_photo_mm«: 34918 Datensätze
+
+Tabelle »formular_photo_collection_mm«: 15290 Datensätze
+
+Tabelle »gott«: 9470 Datensätze
+
+Tabelle »gott_stelle_mm«: 9477 Datensätze
+
+Tabelle »ort«: 1180 Datensätze
+
+Tabelle »ort_stelle_mm«: 5587 Datensätze
+
+Tabelle »wort«: 587 Datensätze
+
+Tabelle »wort_stelle_mm«: 802 Datensätze
 
 FL: Transliteration mit Punkt und Folgebuchstaben:
 {u'.Aw': 1,
@@ -3527,9 +3755,9 @@ FL: Transliteration mit Punkt und Folgebuchstaben:
 
 FL: Datensätze und Stellen
 formular: 10372
-stelle: 33643
-szene: 5
-szene_has_stelle: 5
+stelle: 26931
+szene: 3286
+szene_has_stelle: 693
 
 FL: Bilder, Sammlungen und Relationen
 photo: 12215
@@ -3546,6 +3774,11 @@ gott: 9470
 gott_has_stelle: 9477
 
 WL
-wort: 4622
-wort_has_stelle: 8202
-berlin: 1004
+wort: 587
+wort_has_stelle: 802
+berlin: 578
+
+Szenen
+szene: 3286
+szene_bild: 77
+szene_has_stelle: 693

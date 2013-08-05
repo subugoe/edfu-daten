@@ -203,10 +203,10 @@ submitDocs('Stellen')
 # WB-BERLIN
 berlinDict = {}
 
-query = ("SELECT uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel FROM tx_edfu_domain_model_wb_berlin")
+query = ("SELECT uid,band,seite_start,seite_stop,zeile_start,zeile_stop,notiz FROM tx_edfu_domain_model_wb_berlin")
 cursor.execute(query)
 
-for (uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel) in cursor:
+for (uid,band,seite_start,seite_stop,zeile_start,zeile_stop,notiz) in cursor:
 	doc = {
 		"id": "wb_berlin-" + str(uid),
 		"typ": "wb_berlin",
@@ -217,7 +217,7 @@ for (uid,band,seite_start,seite_stop,zeile_start,zeile_stop,zweifel) in cursor:
 		"seite_stop": seite_stop,
 		"zeile_start": zeile_start,
 		"zeile_stop": zeile_stop,
-		"zweifel": zweifel
+		"notiz": notiz
 	}
 	
 	berlinDict[uid] = doc
@@ -488,7 +488,7 @@ for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_ber
 		if berlinStart != berlinStop:
 			berlinString += '-' + berlinStop
 		doc['berlin_display'] = berlinString
-		copyFields = ['band', 'seite_start', 'zeile_start', 'seite_stop', 'zeile_stop', 'zweifel']
+		copyFields = ['band', 'seite_start', 'zeile_start', 'seite_stop', 'zeile_stop', 'notiz']
 		for fieldName in copyFields:
 			doc['berlin_' + fieldName] = berlin[fieldName]
 		

@@ -76,7 +76,7 @@
 		<field name="berlin_seite_stop" type="int" indexed="true" stored="true" multiValued="false"/>
 		<field name="berlin_zeile_start" type="int" indexed="true" stored="true" multiValued="false"/>
 		<field name="berlin_zeile_stop" type="int" indexed="true" stored="true" multiValued="false"/>
-		<field name="berlin_zweifel" type="int" indexed="true" stored="true" multiValued="false"/>
+		<field name="berlin_notiz" type="string" indexed="true" stored="true" multiValued="false"/>
 		<field name="berlin_display" type="string" indexed="true" stored="true" multiValued="false"/>
 
 		<field name="band" type="int" indexed="true" stored="true" multiValued="true"/>
@@ -108,6 +108,7 @@
 		<field name="szene_prozentZ" type="float" indexed="true" stored="true" multiValued="true"/>
 		<field name="szene_grau" type="boolean" indexed="true" stored="true" multiValued="true"/>
 
+		<field name="notiz" type="string" indexed="true" stored="true"/>
 		<field name="zweifel" type="boolean" indexed="true" stored="true"/>
 
 		<dynamicField name="*_facet" type="string" indexed="true" stored="true" multiValued="true"/>

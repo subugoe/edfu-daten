@@ -112,7 +112,7 @@ CREATE  TABLE IF NOT EXISTS `edfu`.`wb_berlin` (
   `zeile_start` INT(11) NULL ,
   `seite_stop` INT(11) NULL ,
   `zeile_stop` INT(11) NULL ,
-  `zweifel` TINYINT NULL ,
+  `notiz` VARCHAR(45) NULL ,
   `anmerkung` TEXT NULL ,
   PRIMARY KEY (`uid`) )
 ENGINE = InnoDB;
