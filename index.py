@@ -131,8 +131,7 @@ def removeSuffix (transliteration):
 """
 	Dokumente im Array doc an den Index schicken und den Array leeren.
 """
-def submitDocs (name):
-	global docs
+def submitDocs (docs, name):
 	#pprint.pprint(docs)
 	
 	index = solr.Solr('http://localhost:8080/solr/edfu')
@@ -144,7 +143,6 @@ def submitDocs (name):
 	index.commit()
 	
 	print str(len(docs)) + ' ' + name + u' Dokumente indexiert'
-	docs = []
 	
 	
 
@@ -203,9 +201,6 @@ for (uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,z
 	
 	stellenDict[doc['sql_uid']] = doc
 
-docs = stellenDict.values()
-submitDocs('Stellen')
-
 
 
 # WB-BERLIN
@@ -231,7 +226,8 @@ for (uid,band,seite_start,seite_stop,zeile_start,zeile_stop,notiz) in cursor:
 	berlinDict[uid] = doc
 	
 docs = berlinDict.values()
-submitDocs('WB Berlin')
+submitDocs(docs, 'WB Berlin')
+docs = []
 
 
 
@@ -335,7 +331,8 @@ for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 	
 	docs += [doc]
 
-submitDocs('Formular')
+submitDocs(docs, 'Formular')
+docs = []
 
 
 
@@ -385,7 +382,8 @@ for (uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
 
 	docs += [doc]
 
-submitDocs('Ort')
+submitDocs(docs, 'Ort')
+docs = []
 
 
 
@@ -436,7 +434,10 @@ for (uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
 	
 	docs += [doc]
 
-submitDocs('Gott')
+submitDocs(docs, 'Gott')
+docs = []
+
+submitDocs(stellenDict.values(), 'Stellen')
 
 
 
@@ -503,7 +504,8 @@ for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_ber
 	
 	docs += [doc]
 
-submitDocs('Wort')
+submitDocs(docs, 'Wort')
+docs = []
 
 
 
