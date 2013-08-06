@@ -329,6 +329,8 @@ for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 	}
 	addStellenTo([stelle_uid], doc)
 	
+	doc['sort'] = stellenDict[stelle_uid]['start']
+	
 	docs += [doc]
 
 submitDocs(docs, 'Formular')
@@ -379,6 +381,10 @@ for (uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
 		"stelle_id": stelleIDs
 	}
 	addStellenTo(stellen, doc)
+
+	doc['sort'] = doc['transliteration']
+	if len(stellen) > 0:
+		doc['sort'] += '--' + str(stellenDict[stellen[0]]['start'])
 
 	docs += [doc]
 
@@ -431,6 +437,10 @@ for (uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
 		"stelle_id": stellen
 	}
 	addStellenTo(stellen, doc)
+	
+	doc['sort'] = doc['transliteration']
+	if len(stellen) > 0:
+		doc['sort'] += '--' + str(stellenDict[stellen[0]]['start'])
 	
 	docs += [doc]
 
@@ -488,6 +498,8 @@ for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_ber
 	}
 	addStellenTo(stellen, doc)
 	
+	doc['sort'] = doc['transliteration']
+	
 	# WB Berlin Daten hinzufügen
 	if berlinDict.has_key(wb_berlin_uid):
 		berlin = berlinDict[wb_berlin_uid]
@@ -500,7 +512,8 @@ for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_ber
 		copyFields = ['band', 'seite_start', 'zeile_start', 'seite_stop', 'zeile_stop', 'notiz']
 		for fieldName in copyFields:
 			doc['berlin_' + fieldName] = berlin[fieldName]
-		
+			
+		doc['sort'] += '--' +  str(berlin['band'] * 1000000 + berlin['seite_start'] * 1000 + berlin['zeile_start'])
 	
 	docs += [doc]
 

@@ -111,6 +111,8 @@
 		<field name="notiz" type="string" indexed="true" stored="true"/>
 		<field name="zweifel" type="boolean" indexed="true" stored="true"/>
 
+		<field name="sort" type="string" indexed="true" stored="true"/>
+
 		<dynamicField name="*_facet" type="string" indexed="true" stored="true" multiValued="true"/>
 		<dynamicField name="*_highlight" type="text_ws" indexed="true" stored="true" multiValued="true"/>
 		<dynamicField name="*_suggest" type="text_ws" indexed="true" stored="true" multiValued="true"/>
