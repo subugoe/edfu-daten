@@ -13,14 +13,13 @@ import re
 import copy
 import solr
 import pprint
+import time
 
 import mysql.connector
 db = mysql.connector.connect(user='root', host='127.0.0.1', database='edfu')
 db2 = mysql.connector.connect(user='root', host='127.0.0.1', database='edfu')
-db3 = mysql.connector.connect(user='root', host='127.0.0.1', database='edfu')
 cursor = db.cursor()
 cursor2 = db2.cursor()
-cursor3 = db3.cursor() # für szenen
 
 
 
@@ -76,11 +75,23 @@ def addStellenTo (stellen, doc):
 
 
 
+def addSzenenForStelleToDocument (stelle, doc):
+	global stelleSzene, szenenDict
+	if stelleSzene.has_key(stelle['sql_uid']):
+		szenen = stelleSzene[stelle['sql_uid']]
+		for szeneID in szenen:
+			szene = copy.deepcopy(szenenDict[szeneID])
+			del szene['stelle_uid']
+			mergeDocIntoDoc(szene, doc)
+		
+
+
 """
-	Die relevanten Szenen für die Stelle dem Dokument hinzufügen.
+	Szeneninformationen laden und zwischenspeichern.
 """
 szenenQuery = """
 SELECT
+	stelle_original.uid AS stelle_uid,
 	szene.uid AS szene_uid,
 	szene.nummer AS szene_nummer,
 	szene.beschreibung AS szene_beschreibung,
@@ -101,7 +112,6 @@ FROM
 	tx_edfu_szene_stelle_mm AS szene_stelle,
 	tx_edfu_domain_model_stelle AS stelle
 WHERE
-	stelle_original.uid = %s AND
 	stelle_original.band_uid = stelle.band_uid AND
 	stelle_original.seite_start <= stelle.seite_stop AND
 	stelle_original.seite_stop >= stelle.seite_start AND
@@ -109,11 +119,30 @@ WHERE
 	szene_stelle.uid_local = szene.uid AND
 	szene_stelle.uid_foreign = stelle.uid 
 """
-def addSzenenForStelleToDocument (stelle, document):
-	cursor3.execute(szenenQuery, [str(stelle['sql_uid'])])
-	for values3 in cursor3:
-		docSzene = dict(zip(cursor3.column_names, values3))
-		mergeDocIntoDoc(docSzene, document)
+
+szenenDict = {}
+stelleSzene = {}
+currentSzeneID = None
+cursor.execute(szenenQuery)
+for values in cursor:
+	docSzene = dict(zip(cursor.column_names, values))
+	szeneUID = docSzene['szene_uid']
+	stelleUID = docSzene['stelle_uid']
+	if currentSzeneID != szeneUID:
+		# Neue Szene
+		currentSzeneID = szeneUID
+		docSzene['stelle_uid'] = [stelleUID]
+		szenenDict[currentSzeneID] = docSzene
+	else:
+		szenenDict[currentSzeneID]['stelle_uid'] += [stelleUID]
+	
+	if not stelleSzene.has_key(stelleUID):
+		stelleSzene[stelleUID] = []
+	stelleSzene[stelleUID] += [szeneUID]
+	
+	# Arrgh!
+	time.sleep(0.001)
+
 
 
 
@@ -447,9 +476,6 @@ for (uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
 submitDocs(docs, 'Gott')
 docs = []
 
-submitDocs(stellenDict.values(), 'Stellen')
-
-
 
 # WORT
 query = ("SELECT uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_berlin_uid FROM tx_edfu_domain_model_wort")
@@ -520,12 +546,11 @@ for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_ber
 submitDocs(docs, 'Wort')
 docs = []
 
+submitDocs(stellenDict.values(), 'Stellen')
 
 
 # MySQL Verbindungen schließen
 cursor.close()
 cursor2.close()
-cursor3.close()
 db.close()
 db2.close()
-db3.close()
