@@ -1,0 +1,1075 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets:mets xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:dv="http://dfg-viewer.de/">
+  <dmdSec xmlns="http://www.loc.gov/METS/" ID="dmd-chassinat-8">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="MODS">
+      <xmlData>
+        <mods xmlns="http://www.loc.gov/mods/v3" version="3.0">
+          <titleInfo>
+            <nonSort>Le</nonSort>
+            <title>temple d’Edfou</title>
+            <partNumber>8</partNumber>
+          </titleInfo>
+          <name>
+            <family>Chassinat</family>
+            <given>Émile</given>
+          </name>
+          <originInfo>
+            <place>
+              <placeTerm type="code" authority="marccountry">ua</placeTerm>
+            </place>
+            <place>
+              <placeTerm type="text">Le Caire</placeTerm>
+            </place>
+            <publisher>Institut français d'archéologie orientale</publisher>
+            <dateIssued>1933</dateIssued>
+          </originInfo>
+        </mods>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <amdSec xmlns="http://www.loc.gov/METS/" ID="amd-chassinat-8">
+    <rightsMD ID="rights">
+      <mdWrap MIMETYPE="text/xml" MDTYPE="OTHER" OTHERMDTYPE="DVRIGHTS">
+        <xmlData>
+          <dv:rights>
+            <dv:owner>Edfu Projekt</dv:owner>
+          </dv:rights>
+        </xmlData>
+      </mdWrap>
+    </rightsMD>
+    <digiprovMD ID="digiprov">
+      <mdWrap MIMETYPE="text/xml" MDTYPE="OTHER" OTHERMDTYPE="DVLINKS">
+        <xmlData>
+          <dv:links>
+            <dv:reference>http://opac.sub.uni-goettingen.de/DB=1/</dv:reference>
+          </dv:links>
+        </xmlData>
+      </mdWrap>
+    </digiprovMD>
+  </amdSec>
+  <fileSec xmlns="http://www.loc.gov/METS/">
+    <fileGrp USE="DEFAULT">
+      <file MIMETYPE="image/jpeg" ID="img8_001">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_001.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_002">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_002.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_003">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_003.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_004">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_004.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_005">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_005.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_006">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_006.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_007">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_007.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_008">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_008.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_009">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_009.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_010">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_010.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_011">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_011.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_012">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_012.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_013">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_013.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_014">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_014.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_015">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_015.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_016">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_016.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_017">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_017.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_018">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_018.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_019">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_019.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_020">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_020.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_021">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_021.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_022">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_022.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_023">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_023.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_024">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_024.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_025">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_025.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_026">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_026.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_027">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_027.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_028">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_028.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_029">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_029.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_030">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_030.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_031">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_031.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_032">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_032.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_033">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_033.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_034">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_034.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_035">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_035.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_036">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_036.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_037">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_037.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_038">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_038.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_039">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_039.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_040">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_040.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_041">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_041.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_042">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_042.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_043">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_043.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_044">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_044.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_045">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_045.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_046">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_046.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_047">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_047.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_048">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_048.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_049">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_049.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_051">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_051.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_052">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_052.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_053">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_053.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_054">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_054.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_055">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_055.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_056">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_056.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_057">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_057.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_058">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_058.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_059">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_059.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_060">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_060.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_061">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_061.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_062">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_062.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_063">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_063.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_064">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_064.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_065">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_065.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_066">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_066.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_067">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_067.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_068">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_068.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_069">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_069.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_070">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_070.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_071">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_071.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_072">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_072.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_073">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_073.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_074">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_074.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_075">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_075.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_076">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_076.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_077">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_077.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_078">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_078.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_079">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_079.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_080">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_080.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_081">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_081.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_082">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_082.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_083">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_083.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_084">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_084.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_085">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_085.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_086">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_086.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_087">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_087.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_088">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_088.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_089">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_089.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_090">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_090.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_091">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_091.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_092">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_092.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_093">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_093.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_094">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_094.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_095">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_095.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_096">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_096.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_097">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_097.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_098">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_098.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_099">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_099.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_100">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_100.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_101">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_101.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_102">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_102.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_103">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_103.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_104">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_104.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_105">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_105.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_106">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_106.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_107">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_107.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_108">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_108.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_109">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_109.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_110">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_110.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_111">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_111.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_112">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_112.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_113">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_113.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_114">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_114.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_115">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_115.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_116">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_116.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_117">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_117.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_118">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_118.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_119">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_119.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_120">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_120.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_121">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_121.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_122">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_122.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_123">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_123.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_124">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_124.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_125">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_125.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_126">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_126.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_127">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_127.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_128">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_128.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_129">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_129.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_130">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_130.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_131">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_131.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_132">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_132.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_133">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_133.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_134">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_134.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_135">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_135.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_136">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_136.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_137">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_137.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_138">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_138.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_139">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_139.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_140">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_140.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_141">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_141.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_142">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_142.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_143">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_143.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_144">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_144.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_145">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_145.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_146">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_146.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_147">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_147.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_148">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_148.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_149">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_149.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_150">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_150.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_151">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_151.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_152">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_152.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_153">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_153.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_154">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_154.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_155">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_155.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_156">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_156.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_157">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_157.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_158">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_158.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_159">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_159.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_160">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_160.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_161">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_161.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_162">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_162.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_163">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_163.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_164">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_164.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_165">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_165.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_166">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_166.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_167">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_167.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_168">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_168.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_169">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_169.jpg"/>
+      </file>
+      <file MIMETYPE="image/jpeg" ID="img8_170">
+        <FLocat LOCTYPE="URL" xlink:href="http://vlib.sub.uni-goettingen.de/test/fileadmin/edfu-data/Chassinat/8_170.jpg"/>
+      </file>
+    </fileGrp>
+  </fileSec>
+  <structMap xmlns="http://www.loc.gov/METS/" TYPE="LOGICAL">
+    <div TYPE="monograph" ID="log1" ADMID="amd-chassinat-8" DMDID="dmd-chassinat-8"/>
+  </structMap>
+  <structMap xmlns="http://www.loc.gov/METS/" TYPE="PHYSICAL">
+    <div TYPE="physSequence" ADMID="amd-chassinat-8" DMDID="dmd-chassinat-8" ID="phys-chassinat-8">
+      <div TYPE="page" ORDER="1" ORDERLABEL="1" ID="div-8_001">
+        <fptr FILEID="img8_001"/>
+      </div>
+      <div TYPE="page" ORDER="2" ORDERLABEL="2" ID="div-8_002">
+        <fptr FILEID="img8_002"/>
+      </div>
+      <div TYPE="page" ORDER="3" ORDERLABEL="3" ID="div-8_003">
+        <fptr FILEID="img8_003"/>
+      </div>
+      <div TYPE="page" ORDER="4" ORDERLABEL="4" ID="div-8_004">
+        <fptr FILEID="img8_004"/>
+      </div>
+      <div TYPE="page" ORDER="5" ORDERLABEL="5" ID="div-8_005">
+        <fptr FILEID="img8_005"/>
+      </div>
+      <div TYPE="page" ORDER="6" ORDERLABEL="6" ID="div-8_006">
+        <fptr FILEID="img8_006"/>
+      </div>
+      <div TYPE="page" ORDER="7" ORDERLABEL="7" ID="div-8_007">
+        <fptr FILEID="img8_007"/>
+      </div>
+      <div TYPE="page" ORDER="8" ORDERLABEL="8" ID="div-8_008">
+        <fptr FILEID="img8_008"/>
+      </div>
+      <div TYPE="page" ORDER="9" ORDERLABEL="9" ID="div-8_009">
+        <fptr FILEID="img8_009"/>
+      </div>
+      <div TYPE="page" ORDER="10" ORDERLABEL="10" ID="div-8_010">
+        <fptr FILEID="img8_010"/>
+      </div>
+      <div TYPE="page" ORDER="11" ORDERLABEL="11" ID="div-8_011">
+        <fptr FILEID="img8_011"/>
+      </div>
+      <div TYPE="page" ORDER="12" ORDERLABEL="12" ID="div-8_012">
+        <fptr FILEID="img8_012"/>
+      </div>
+      <div TYPE="page" ORDER="13" ORDERLABEL="13" ID="div-8_013">
+        <fptr FILEID="img8_013"/>
+      </div>
+      <div TYPE="page" ORDER="14" ORDERLABEL="14" ID="div-8_014">
+        <fptr FILEID="img8_014"/>
+      </div>
+      <div TYPE="page" ORDER="15" ORDERLABEL="15" ID="div-8_015">
+        <fptr FILEID="img8_015"/>
+      </div>
+      <div TYPE="page" ORDER="16" ORDERLABEL="16" ID="div-8_016">
+        <fptr FILEID="img8_016"/>
+      </div>
+      <div TYPE="page" ORDER="17" ORDERLABEL="17" ID="div-8_017">
+        <fptr FILEID="img8_017"/>
+      </div>
+      <div TYPE="page" ORDER="18" ORDERLABEL="18" ID="div-8_018">
+        <fptr FILEID="img8_018"/>
+      </div>
+      <div TYPE="page" ORDER="19" ORDERLABEL="19" ID="div-8_019">
+        <fptr FILEID="img8_019"/>
+      </div>
+      <div TYPE="page" ORDER="20" ORDERLABEL="20" ID="div-8_020">
+        <fptr FILEID="img8_020"/>
+      </div>
+      <div TYPE="page" ORDER="21" ORDERLABEL="21" ID="div-8_021">
+        <fptr FILEID="img8_021"/>
+      </div>
+      <div TYPE="page" ORDER="22" ORDERLABEL="22" ID="div-8_022">
+        <fptr FILEID="img8_022"/>
+      </div>
+      <div TYPE="page" ORDER="23" ORDERLABEL="23" ID="div-8_023">
+        <fptr FILEID="img8_023"/>
+      </div>
+      <div TYPE="page" ORDER="24" ORDERLABEL="24" ID="div-8_024">
+        <fptr FILEID="img8_024"/>
+      </div>
+      <div TYPE="page" ORDER="25" ORDERLABEL="25" ID="div-8_025">
+        <fptr FILEID="img8_025"/>
+      </div>
+      <div TYPE="page" ORDER="26" ORDERLABEL="26" ID="div-8_026">
+        <fptr FILEID="img8_026"/>
+      </div>
+      <div TYPE="page" ORDER="27" ORDERLABEL="27" ID="div-8_027">
+        <fptr FILEID="img8_027"/>
+      </div>
+      <div TYPE="page" ORDER="28" ORDERLABEL="28" ID="div-8_028">
+        <fptr FILEID="img8_028"/>
+      </div>
+      <div TYPE="page" ORDER="29" ORDERLABEL="29" ID="div-8_029">
+        <fptr FILEID="img8_029"/>
+      </div>
+      <div TYPE="page" ORDER="30" ORDERLABEL="30" ID="div-8_030">
+        <fptr FILEID="img8_030"/>
+      </div>
+      <div TYPE="page" ORDER="31" ORDERLABEL="31" ID="div-8_031">
+        <fptr FILEID="img8_031"/>
+      </div>
+      <div TYPE="page" ORDER="32" ORDERLABEL="32" ID="div-8_032">
+        <fptr FILEID="img8_032"/>
+      </div>
+      <div TYPE="page" ORDER="33" ORDERLABEL="33" ID="div-8_033">
+        <fptr FILEID="img8_033"/>
+      </div>
+      <div TYPE="page" ORDER="34" ORDERLABEL="34" ID="div-8_034">
+        <fptr FILEID="img8_034"/>
+      </div>
+      <div TYPE="page" ORDER="35" ORDERLABEL="35" ID="div-8_035">
+        <fptr FILEID="img8_035"/>
+      </div>
+      <div TYPE="page" ORDER="36" ORDERLABEL="36" ID="div-8_036">
+        <fptr FILEID="img8_036"/>
+      </div>
+      <div TYPE="page" ORDER="37" ORDERLABEL="37" ID="div-8_037">
+        <fptr FILEID="img8_037"/>
+      </div>
+      <div TYPE="page" ORDER="38" ORDERLABEL="38" ID="div-8_038">
+        <fptr FILEID="img8_038"/>
+      </div>
+      <div TYPE="page" ORDER="39" ORDERLABEL="39" ID="div-8_039">
+        <fptr FILEID="img8_039"/>
+      </div>
+      <div TYPE="page" ORDER="40" ORDERLABEL="40" ID="div-8_040">
+        <fptr FILEID="img8_040"/>
+      </div>
+      <div TYPE="page" ORDER="41" ORDERLABEL="41" ID="div-8_041">
+        <fptr FILEID="img8_041"/>
+      </div>
+      <div TYPE="page" ORDER="42" ORDERLABEL="42" ID="div-8_042">
+        <fptr FILEID="img8_042"/>
+      </div>
+      <div TYPE="page" ORDER="43" ORDERLABEL="43" ID="div-8_043">
+        <fptr FILEID="img8_043"/>
+      </div>
+      <div TYPE="page" ORDER="44" ORDERLABEL="44" ID="div-8_044">
+        <fptr FILEID="img8_044"/>
+      </div>
+      <div TYPE="page" ORDER="45" ORDERLABEL="45" ID="div-8_045">
+        <fptr FILEID="img8_045"/>
+      </div>
+      <div TYPE="page" ORDER="46" ORDERLABEL="46" ID="div-8_046">
+        <fptr FILEID="img8_046"/>
+      </div>
+      <div TYPE="page" ORDER="47" ORDERLABEL="47" ID="div-8_047">
+        <fptr FILEID="img8_047"/>
+      </div>
+      <div TYPE="page" ORDER="48" ORDERLABEL="48" ID="div-8_048">
+        <fptr FILEID="img8_048"/>
+      </div>
+      <div TYPE="page" ORDER="49" ORDERLABEL="49" ID="div-8_049">
+        <fptr FILEID="img8_049"/>
+      </div>
+      <div TYPE="page" ORDER="50" ORDERLABEL="51" ID="div-8_051">
+        <fptr FILEID="img8_051"/>
+      </div>
+      <div TYPE="page" ORDER="51" ORDERLABEL="52" ID="div-8_052">
+        <fptr FILEID="img8_052"/>
+      </div>
+      <div TYPE="page" ORDER="52" ORDERLABEL="53" ID="div-8_053">
+        <fptr FILEID="img8_053"/>
+      </div>
+      <div TYPE="page" ORDER="53" ORDERLABEL="54" ID="div-8_054">
+        <fptr FILEID="img8_054"/>
+      </div>
+      <div TYPE="page" ORDER="54" ORDERLABEL="55" ID="div-8_055">
+        <fptr FILEID="img8_055"/>
+      </div>
+      <div TYPE="page" ORDER="55" ORDERLABEL="56" ID="div-8_056">
+        <fptr FILEID="img8_056"/>
+      </div>
+      <div TYPE="page" ORDER="56" ORDERLABEL="57" ID="div-8_057">
+        <fptr FILEID="img8_057"/>
+      </div>
+      <div TYPE="page" ORDER="57" ORDERLABEL="58" ID="div-8_058">
+        <fptr FILEID="img8_058"/>
+      </div>
+      <div TYPE="page" ORDER="58" ORDERLABEL="59" ID="div-8_059">
+        <fptr FILEID="img8_059"/>
+      </div>
+      <div TYPE="page" ORDER="59" ORDERLABEL="60" ID="div-8_060">
+        <fptr FILEID="img8_060"/>
+      </div>
+      <div TYPE="page" ORDER="60" ORDERLABEL="61" ID="div-8_061">
+        <fptr FILEID="img8_061"/>
+      </div>
+      <div TYPE="page" ORDER="61" ORDERLABEL="62" ID="div-8_062">
+        <fptr FILEID="img8_062"/>
+      </div>
+      <div TYPE="page" ORDER="62" ORDERLABEL="63" ID="div-8_063">
+        <fptr FILEID="img8_063"/>
+      </div>
+      <div TYPE="page" ORDER="63" ORDERLABEL="64" ID="div-8_064">
+        <fptr FILEID="img8_064"/>
+      </div>
+      <div TYPE="page" ORDER="64" ORDERLABEL="65" ID="div-8_065">
+        <fptr FILEID="img8_065"/>
+      </div>
+      <div TYPE="page" ORDER="65" ORDERLABEL="66" ID="div-8_066">
+        <fptr FILEID="img8_066"/>
+      </div>
+      <div TYPE="page" ORDER="66" ORDERLABEL="67" ID="div-8_067">
+        <fptr FILEID="img8_067"/>
+      </div>
+      <div TYPE="page" ORDER="67" ORDERLABEL="68" ID="div-8_068">
+        <fptr FILEID="img8_068"/>
+      </div>
+      <div TYPE="page" ORDER="68" ORDERLABEL="69" ID="div-8_069">
+        <fptr FILEID="img8_069"/>
+      </div>
+      <div TYPE="page" ORDER="69" ORDERLABEL="70" ID="div-8_070">
+        <fptr FILEID="img8_070"/>
+      </div>
+      <div TYPE="page" ORDER="70" ORDERLABEL="71" ID="div-8_071">
+        <fptr FILEID="img8_071"/>
+      </div>
+      <div TYPE="page" ORDER="71" ORDERLABEL="72" ID="div-8_072">
+        <fptr FILEID="img8_072"/>
+      </div>
+      <div TYPE="page" ORDER="72" ORDERLABEL="73" ID="div-8_073">
+        <fptr FILEID="img8_073"/>
+      </div>
+      <div TYPE="page" ORDER="73" ORDERLABEL="74" ID="div-8_074">
+        <fptr FILEID="img8_074"/>
+      </div>
+      <div TYPE="page" ORDER="74" ORDERLABEL="75" ID="div-8_075">
+        <fptr FILEID="img8_075"/>
+      </div>
+      <div TYPE="page" ORDER="75" ORDERLABEL="76" ID="div-8_076">
+        <fptr FILEID="img8_076"/>
+      </div>
+      <div TYPE="page" ORDER="76" ORDERLABEL="77" ID="div-8_077">
+        <fptr FILEID="img8_077"/>
+      </div>
+      <div TYPE="page" ORDER="77" ORDERLABEL="78" ID="div-8_078">
+        <fptr FILEID="img8_078"/>
+      </div>
+      <div TYPE="page" ORDER="78" ORDERLABEL="79" ID="div-8_079">
+        <fptr FILEID="img8_079"/>
+      </div>
+      <div TYPE="page" ORDER="79" ORDERLABEL="80" ID="div-8_080">
+        <fptr FILEID="img8_080"/>
+      </div>
+      <div TYPE="page" ORDER="80" ORDERLABEL="81" ID="div-8_081">
+        <fptr FILEID="img8_081"/>
+      </div>
+      <div TYPE="page" ORDER="81" ORDERLABEL="82" ID="div-8_082">
+        <fptr FILEID="img8_082"/>
+      </div>
+      <div TYPE="page" ORDER="82" ORDERLABEL="83" ID="div-8_083">
+        <fptr FILEID="img8_083"/>
+      </div>
+      <div TYPE="page" ORDER="83" ORDERLABEL="84" ID="div-8_084">
+        <fptr FILEID="img8_084"/>
+      </div>
+      <div TYPE="page" ORDER="84" ORDERLABEL="85" ID="div-8_085">
+        <fptr FILEID="img8_085"/>
+      </div>
+      <div TYPE="page" ORDER="85" ORDERLABEL="86" ID="div-8_086">
+        <fptr FILEID="img8_086"/>
+      </div>
+      <div TYPE="page" ORDER="86" ORDERLABEL="87" ID="div-8_087">
+        <fptr FILEID="img8_087"/>
+      </div>
+      <div TYPE="page" ORDER="87" ORDERLABEL="88" ID="div-8_088">
+        <fptr FILEID="img8_088"/>
+      </div>
+      <div TYPE="page" ORDER="88" ORDERLABEL="89" ID="div-8_089">
+        <fptr FILEID="img8_089"/>
+      </div>
+      <div TYPE="page" ORDER="89" ORDERLABEL="90" ID="div-8_090">
+        <fptr FILEID="img8_090"/>
+      </div>
+      <div TYPE="page" ORDER="90" ORDERLABEL="91" ID="div-8_091">
+        <fptr FILEID="img8_091"/>
+      </div>
+      <div TYPE="page" ORDER="91" ORDERLABEL="92" ID="div-8_092">
+        <fptr FILEID="img8_092"/>
+      </div>
+      <div TYPE="page" ORDER="92" ORDERLABEL="93" ID="div-8_093">
+        <fptr FILEID="img8_093"/>
+      </div>
+      <div TYPE="page" ORDER="93" ORDERLABEL="94" ID="div-8_094">
+        <fptr FILEID="img8_094"/>
+      </div>
+      <div TYPE="page" ORDER="94" ORDERLABEL="95" ID="div-8_095">
+        <fptr FILEID="img8_095"/>
+      </div>
+      <div TYPE="page" ORDER="95" ORDERLABEL="96" ID="div-8_096">
+        <fptr FILEID="img8_096"/>
+      </div>
+      <div TYPE="page" ORDER="96" ORDERLABEL="97" ID="div-8_097">
+        <fptr FILEID="img8_097"/>
+      </div>
+      <div TYPE="page" ORDER="97" ORDERLABEL="98" ID="div-8_098">
+        <fptr FILEID="img8_098"/>
+      </div>
+      <div TYPE="page" ORDER="98" ORDERLABEL="99" ID="div-8_099">
+        <fptr FILEID="img8_099"/>
+      </div>
+      <div TYPE="page" ORDER="99" ORDERLABEL="100" ID="div-8_100">
+        <fptr FILEID="img8_100"/>
+      </div>
+      <div TYPE="page" ORDER="100" ORDERLABEL="101" ID="div-8_101">
+        <fptr FILEID="img8_101"/>
+      </div>
+      <div TYPE="page" ORDER="101" ORDERLABEL="102" ID="div-8_102">
+        <fptr FILEID="img8_102"/>
+      </div>
+      <div TYPE="page" ORDER="102" ORDERLABEL="103" ID="div-8_103">
+        <fptr FILEID="img8_103"/>
+      </div>
+      <div TYPE="page" ORDER="103" ORDERLABEL="104" ID="div-8_104">
+        <fptr FILEID="img8_104"/>
+      </div>
+      <div TYPE="page" ORDER="104" ORDERLABEL="105" ID="div-8_105">
+        <fptr FILEID="img8_105"/>
+      </div>
+      <div TYPE="page" ORDER="105" ORDERLABEL="106" ID="div-8_106">
+        <fptr FILEID="img8_106"/>
+      </div>
+      <div TYPE="page" ORDER="106" ORDERLABEL="107" ID="div-8_107">
+        <fptr FILEID="img8_107"/>
+      </div>
+      <div TYPE="page" ORDER="107" ORDERLABEL="108" ID="div-8_108">
+        <fptr FILEID="img8_108"/>
+      </div>
+      <div TYPE="page" ORDER="108" ORDERLABEL="109" ID="div-8_109">
+        <fptr FILEID="img8_109"/>
+      </div>
+      <div TYPE="page" ORDER="109" ORDERLABEL="110" ID="div-8_110">
+        <fptr FILEID="img8_110"/>
+      </div>
+      <div TYPE="page" ORDER="110" ORDERLABEL="111" ID="div-8_111">
+        <fptr FILEID="img8_111"/>
+      </div>
+      <div TYPE="page" ORDER="111" ORDERLABEL="112" ID="div-8_112">
+        <fptr FILEID="img8_112"/>
+      </div>
+      <div TYPE="page" ORDER="112" ORDERLABEL="113" ID="div-8_113">
+        <fptr FILEID="img8_113"/>
+      </div>
+      <div TYPE="page" ORDER="113" ORDERLABEL="114" ID="div-8_114">
+        <fptr FILEID="img8_114"/>
+      </div>
+      <div TYPE="page" ORDER="114" ORDERLABEL="115" ID="div-8_115">
+        <fptr FILEID="img8_115"/>
+      </div>
+      <div TYPE="page" ORDER="115" ORDERLABEL="116" ID="div-8_116">
+        <fptr FILEID="img8_116"/>
+      </div>
+      <div TYPE="page" ORDER="116" ORDERLABEL="117" ID="div-8_117">
+        <fptr FILEID="img8_117"/>
+      </div>
+      <div TYPE="page" ORDER="117" ORDERLABEL="118" ID="div-8_118">
+        <fptr FILEID="img8_118"/>
+      </div>
+      <div TYPE="page" ORDER="118" ORDERLABEL="119" ID="div-8_119">
+        <fptr FILEID="img8_119"/>
+      </div>
+      <div TYPE="page" ORDER="119" ORDERLABEL="120" ID="div-8_120">
+        <fptr FILEID="img8_120"/>
+      </div>
+      <div TYPE="page" ORDER="120" ORDERLABEL="121" ID="div-8_121">
+        <fptr FILEID="img8_121"/>
+      </div>
+      <div TYPE="page" ORDER="121" ORDERLABEL="122" ID="div-8_122">
+        <fptr FILEID="img8_122"/>
+      </div>
+      <div TYPE="page" ORDER="122" ORDERLABEL="123" ID="div-8_123">
+        <fptr FILEID="img8_123"/>
+      </div>
+      <div TYPE="page" ORDER="123" ORDERLABEL="124" ID="div-8_124">
+        <fptr FILEID="img8_124"/>
+      </div>
+      <div TYPE="page" ORDER="124" ORDERLABEL="125" ID="div-8_125">
+        <fptr FILEID="img8_125"/>
+      </div>
+      <div TYPE="page" ORDER="125" ORDERLABEL="126" ID="div-8_126">
+        <fptr FILEID="img8_126"/>
+      </div>
+      <div TYPE="page" ORDER="126" ORDERLABEL="127" ID="div-8_127">
+        <fptr FILEID="img8_127"/>
+      </div>
+      <div TYPE="page" ORDER="127" ORDERLABEL="128" ID="div-8_128">
+        <fptr FILEID="img8_128"/>
+      </div>
+      <div TYPE="page" ORDER="128" ORDERLABEL="129" ID="div-8_129">
+        <fptr FILEID="img8_129"/>
+      </div>
+      <div TYPE="page" ORDER="129" ORDERLABEL="130" ID="div-8_130">
+        <fptr FILEID="img8_130"/>
+      </div>
+      <div TYPE="page" ORDER="130" ORDERLABEL="131" ID="div-8_131">
+        <fptr FILEID="img8_131"/>
+      </div>
+      <div TYPE="page" ORDER="131" ORDERLABEL="132" ID="div-8_132">
+        <fptr FILEID="img8_132"/>
+      </div>
+      <div TYPE="page" ORDER="132" ORDERLABEL="133" ID="div-8_133">
+        <fptr FILEID="img8_133"/>
+      </div>
+      <div TYPE="page" ORDER="133" ORDERLABEL="134" ID="div-8_134">
+        <fptr FILEID="img8_134"/>
+      </div>
+      <div TYPE="page" ORDER="134" ORDERLABEL="135" ID="div-8_135">
+        <fptr FILEID="img8_135"/>
+      </div>
+      <div TYPE="page" ORDER="135" ORDERLABEL="136" ID="div-8_136">
+        <fptr FILEID="img8_136"/>
+      </div>
+      <div TYPE="page" ORDER="136" ORDERLABEL="137" ID="div-8_137">
+        <fptr FILEID="img8_137"/>
+      </div>
+      <div TYPE="page" ORDER="137" ORDERLABEL="138" ID="div-8_138">
+        <fptr FILEID="img8_138"/>
+      </div>
+      <div TYPE="page" ORDER="138" ORDERLABEL="139" ID="div-8_139">
+        <fptr FILEID="img8_139"/>
+      </div>
+      <div TYPE="page" ORDER="139" ORDERLABEL="140" ID="div-8_140">
+        <fptr FILEID="img8_140"/>
+      </div>
+      <div TYPE="page" ORDER="140" ORDERLABEL="141" ID="div-8_141">
+        <fptr FILEID="img8_141"/>
+      </div>
+      <div TYPE="page" ORDER="141" ORDERLABEL="142" ID="div-8_142">
+        <fptr FILEID="img8_142"/>
+      </div>
+      <div TYPE="page" ORDER="142" ORDERLABEL="143" ID="div-8_143">
+        <fptr FILEID="img8_143"/>
+      </div>
+      <div TYPE="page" ORDER="143" ORDERLABEL="144" ID="div-8_144">
+        <fptr FILEID="img8_144"/>
+      </div>
+      <div TYPE="page" ORDER="144" ORDERLABEL="145" ID="div-8_145">
+        <fptr FILEID="img8_145"/>
+      </div>
+      <div TYPE="page" ORDER="145" ORDERLABEL="146" ID="div-8_146">
+        <fptr FILEID="img8_146"/>
+      </div>
+      <div TYPE="page" ORDER="146" ORDERLABEL="147" ID="div-8_147">
+        <fptr FILEID="img8_147"/>
+      </div>
+      <div TYPE="page" ORDER="147" ORDERLABEL="148" ID="div-8_148">
+        <fptr FILEID="img8_148"/>
+      </div>
+      <div TYPE="page" ORDER="148" ORDERLABEL="149" ID="div-8_149">
+        <fptr FILEID="img8_149"/>
+      </div>
+      <div TYPE="page" ORDER="149" ORDERLABEL="150" ID="div-8_150">
+        <fptr FILEID="img8_150"/>
+      </div>
+      <div TYPE="page" ORDER="150" ORDERLABEL="151" ID="div-8_151">
+        <fptr FILEID="img8_151"/>
+      </div>
+      <div TYPE="page" ORDER="151" ORDERLABEL="152" ID="div-8_152">
+        <fptr FILEID="img8_152"/>
+      </div>
+      <div TYPE="page" ORDER="152" ORDERLABEL="153" ID="div-8_153">
+        <fptr FILEID="img8_153"/>
+      </div>
+      <div TYPE="page" ORDER="153" ORDERLABEL="154" ID="div-8_154">
+        <fptr FILEID="img8_154"/>
+      </div>
+      <div TYPE="page" ORDER="154" ORDERLABEL="155" ID="div-8_155">
+        <fptr FILEID="img8_155"/>
+      </div>
+      <div TYPE="page" ORDER="155" ORDERLABEL="156" ID="div-8_156">
+        <fptr FILEID="img8_156"/>
+      </div>
+      <div TYPE="page" ORDER="156" ORDERLABEL="157" ID="div-8_157">
+        <fptr FILEID="img8_157"/>
+      </div>
+      <div TYPE="page" ORDER="157" ORDERLABEL="158" ID="div-8_158">
+        <fptr FILEID="img8_158"/>
+      </div>
+      <div TYPE="page" ORDER="158" ORDERLABEL="159" ID="div-8_159">
+        <fptr FILEID="img8_159"/>
+      </div>
+      <div TYPE="page" ORDER="159" ORDERLABEL="160" ID="div-8_160">
+        <fptr FILEID="img8_160"/>
+      </div>
+      <div TYPE="page" ORDER="160" ORDERLABEL="161" ID="div-8_161">
+        <fptr FILEID="img8_161"/>
+      </div>
+      <div TYPE="page" ORDER="161" ORDERLABEL="162" ID="div-8_162">
+        <fptr FILEID="img8_162"/>
+      </div>
+      <div TYPE="page" ORDER="162" ORDERLABEL="163" ID="div-8_163">
+        <fptr FILEID="img8_163"/>
+      </div>
+      <div TYPE="page" ORDER="163" ORDERLABEL="164" ID="div-8_164">
+        <fptr FILEID="img8_164"/>
+      </div>
+      <div TYPE="page" ORDER="164" ORDERLABEL="165" ID="div-8_165">
+        <fptr FILEID="img8_165"/>
+      </div>
+      <div TYPE="page" ORDER="165" ORDERLABEL="166" ID="div-8_166">
+        <fptr FILEID="img8_166"/>
+      </div>
+      <div TYPE="page" ORDER="166" ORDERLABEL="167" ID="div-8_167">
+        <fptr FILEID="img8_167"/>
+      </div>
+      <div TYPE="page" ORDER="167" ORDERLABEL="168" ID="div-8_168">
+        <fptr FILEID="img8_168"/>
+      </div>
+      <div TYPE="page" ORDER="168" ORDERLABEL="169" ID="div-8_169">
+        <fptr FILEID="img8_169"/>
+      </div>
+      <div TYPE="page" ORDER="169" ORDERLABEL="170" ID="div-8_170">
+        <fptr FILEID="img8_170"/>
+      </div>
+    </div>
+  </structMap>
+</mets:mets>
