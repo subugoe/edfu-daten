@@ -67,9 +67,17 @@ def addStellenTo (stellen, doc):
 			if feld == 'band':
 				bandNummer = stelle['band']
 				if intToRoman.has_key(bandNummer):
-					bandseiteString = intToRoman[bandNummer] + ' ' + str(stelle['seite_start'])
-					doc['bandseite'] += [bandseiteString]
-					doc['bandseitezeile'] += [bandseiteString + ', ' + str(stelle['zeile_start'])]
+					bandSeite = intToRoman[bandNummer] + ' ' + str(stelle['seite_start'])
+					doc['bandseite'] += [bandSeite]
+					bandSeiteZeile = bandSeite + ', '
+					if stelle['seite_stop'] == stelle['seite_start']:
+						bandSeiteZeile += str(stelle['zeile_start'])
+						if stelle['zeile_stop'] != stelle['zeile_start']:
+							bandSeiteZeile += '-' + str(stelle['zeile_stop'])
+					else:
+						bandSeiteZeile += str(stelle['zeile_start']) + ' - ' + str(stelle['seite_stop']) + ', ' + str(stelle['zeile_stop'])
+					
+					doc['bandseitezeile'] += [bandSeiteZeile]
 		
 				addSzenenForStelleToDocument(stelle, doc)
 
