@@ -47,6 +47,7 @@
 		
 		<field name="typ" type="string" indexed="true" stored="true"/>
 		<field name="transliteration" type="text_ws" indexed="true" stored="true"/>
+		<field name="transliteration_highlight" type="text_de" indexed="true" stored="true"/>
 		<field name="transliteration_nosuffix" type="text_ws" indexed="true" stored="true"/>
 		<field name="uebersetzung" type="text_de" indexed="true" stored="true"/>
 		<field name="anmerkung" type="text_de" indexed="true" stored="true"/>
@@ -115,7 +116,6 @@
 
 		<dynamicField name="*_facet" type="string" indexed="true" stored="true" multiValued="true"/>
 		<dynamicField name="*_highlight" type="text_ws" indexed="true" stored="true" multiValued="true"/>
-		<dynamicField name="*_suggest" type="text_ws" indexed="true" stored="true" multiValued="true"/>
 
 		<!-- fields filled with the content of other fields -->
 		<field name="text" type="text_de" indexed="true" stored="false" multiValued="true"/>
@@ -141,6 +141,7 @@
 		Fill field text_all with fields containing text.
 	-->
 	<copyField source="transliteration" dest="text"/>
+	<copyField source="transliteration" dest="transliteration_highlight"/>
 	<copyField source="transliteration_nosuffix" dest="text"/>
 	<copyField source="uebersetzung" dest="text"/>
 	<copyField source="anmerkung" dest="text"/>
@@ -160,39 +161,6 @@
 	<copyField source="photo" dest="text"/>
 	<copyField source="bandseitezeile" dest="text"/>
 	
-
-	<!--
-		Fill fields for autosuggest.
-	-->
-	<copyField source="uebersetzung" dest="all_suggest"/>
-	<copyField source="transliteration" dest="all_suggest"/>
-	<copyField source="transliteration_nosuffix" dest="all_suggest"/>
-	<copyField source="texttyp" dest="all_suggest"/>
-	<copyField source="ortsbeschreibung" dest="all_suggest"/>
-	<copyField source="eponym" dest="all_suggest"/>
-	<copyField source="ort" dest="all_suggest"/>
-	<copyField source="photo" dest="all_suggest"/>
-
-
-	<!--
-		Fill highlight Fields.
-	-->
-	<copyField source="transliteration" dest="transliteration_highlight"/>
-	<copyField source="uebersetzung" dest="uebersetzung_highlight"/>
-	<copyField source="anmerkung" dest="anmerkung_highlight"/>
-	<copyField source="texttyp" dest="texttyp_highlight"/>
-	<copyField source="literatur" dest="literatur_highlight"/>
-	<copyField source="ortsbeschreibung" dest="ortsbeschreibung_highlight"/>
-	<copyField source="eponym" dest="eponym_highlight"/>
-	<copyField source="beziehung" dest="beziehung_highlight"/>
-	<copyField source="funktion" dest="funktion_highlight"/>
-	<copyField source="ort" dest="ort_highlight"/>
-	<copyField source="weiteres" dest="weiteres_highlight"/>
-	<copyField source="anmerkung" dest="anmerkung_highlight"/>
-	<copyField source="stelle_anmerkung" dest="stelle_anmerkung_highlight"/>
-	<copyField source="hieroglyph" dest="hieroglyph_highlight"/>
-	<copyField source="lemma" dest="lemma_highlight"/>
-
 	<copyField source="photo" dest="photo_highlight"/>
 	<copyField source="bandseitezeile" dest="bandseitezeile_highlight"/>
 	
