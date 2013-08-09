@@ -483,4 +483,6 @@
 
 	</types>
 	
+	<solrQueryParser defaultOperator="AND"/>
+	
 </schema>
