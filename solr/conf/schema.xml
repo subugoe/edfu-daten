@@ -144,7 +144,6 @@
 	<copyField source="transliteration" dest="transliteration_highlight"/>
 	<copyField source="transliteration_nosuffix" dest="text"/>
 	<copyField source="uebersetzung" dest="text"/>
-	<copyField source="anmerkung" dest="text"/>
 	<copyField source="texttyp" dest="text"/>
 	<copyField source="literatur" dest="text"/>
 	<copyField source="ortsbeschreibung" dest="text"/>
