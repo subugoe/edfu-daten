@@ -1273,7 +1273,7 @@ for filePath in fileList:
 					'blickwinkel': row[columnDict['angleOfView']],
 					'breite': row[columnDict['extent-width']],
 					'prozentZ': row[columnDict['height-percent']],
-					'hoehe': row[columnDict['extent-height-percent']],
+					'hoehe': float(row[columnDict['extent-height-percent']]) / 100,
 					'grau': False
 				}
 				

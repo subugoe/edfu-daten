@@ -3687,7 +3687,7 @@ Tabelle »szene_stelle_mm«: 693 Datensätze
 
 Tabelle »literatur«: 5 Datensätze
 
-Tabelle »wb_berlin«: 578 Datensätze
+Tabelle »wb_berlin«: 295 Datensätze
 
 Tabelle »formular«: 10372 Datensätze
 
@@ -3776,7 +3776,7 @@ gott_has_stelle: 9477
 WL
 wort: 587
 wort_has_stelle: 802
-berlin: 578
+berlin: 295
 
 Szenen
 szene: 3286
