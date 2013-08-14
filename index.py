@@ -148,7 +148,7 @@ for values in cursor:
 		stelleSzene[stelleUID] = []
 	stelleSzene[stelleUID] += [szeneUID]
 	
-	# Arrgh!
+	# Arrgh! (Ohne kleine Pause bricht die MySQL Verbindung zusammen. Unklar, warum.)
 	time.sleep(0.001)
 
 
