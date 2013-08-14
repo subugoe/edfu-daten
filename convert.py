@@ -298,7 +298,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 		else:
 			suffixe[i] = 1
 
-	myFormular['transliteration'] = re.sub(r'\.([bcdfghjklmnprstvwxyz])', ':\\1', TEXTMITSUF, re.IGNORECASE | re.UNICODE)
+	myFormular['transliteration'] = re.sub(r'\.([^aeiou. ][^.]*)', ':\\1', TEXTMITSUF, re.IGNORECASE | re.UNICODE)
 	
 	
 	# Photos
