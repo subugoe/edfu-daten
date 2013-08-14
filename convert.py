@@ -149,10 +149,10 @@ bandDict = {
 	2: {'uid': 2, 'nummer': 2, 'freigegeben': False},
 	3: {'uid': 3, 'nummer': 3, 'freigegeben': False},
 	4: {'uid': 4, 'nummer': 4, 'freigegeben': False},
-	5: {'uid': 5, 'nummer': 5, 'freigegeben': True},
-	6: {'uid': 6, 'nummer': 6, 'freigegeben': True},
-	7: {'uid': 7, 'nummer': 7, 'freigegeben': False},
-	8: {'uid': 8, 'nummer': 8, 'freigegeben': False}
+	5: {'uid': 5, 'nummer': 5, 'freigegeben': False},
+	6: {'uid': 6, 'nummer': 6, 'freigegeben': False},
+	7: {'uid': 7, 'nummer': 7, 'freigegeben': True},
+	8: {'uid': 8, 'nummer': 8, 'freigegeben': True}
 }
 band = []
 
