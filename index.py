@@ -67,7 +67,7 @@ def addStellenTo (stellen, doc):
 			if feld == 'band':
 				bandNummer = stelle['band']
 				if intToRoman.has_key(bandNummer):
-					bandSeite = intToRoman[bandNummer] + ' ' + str(stelle['seite_start'])
+					bandSeite = intToRoman[bandNummer] + ' ' + ("%03d" % (stelle['seite_start']))
 					doc['bandseite'] += [bandSeite]
 					bandSeiteZeile = bandSeite + ', '
 					if stelle['seite_stop'] == stelle['seite_start']:
@@ -75,7 +75,7 @@ def addStellenTo (stellen, doc):
 						if stelle['zeile_stop'] != stelle['zeile_start']:
 							bandSeiteZeile += '-' + str(stelle['zeile_stop'])
 					else:
-						bandSeiteZeile += str(stelle['zeile_start']) + ' - ' + str(stelle['seite_stop']) + ', ' + str(stelle['zeile_stop'])
+						bandSeiteZeile += str(stelle['zeile_start']) + ' - ' + ("%03d" % (stelle['seite_stop'])) + ', ' + str(stelle['zeile_stop'])
 					
 					doc['bandseitezeile'] += [bandSeiteZeile]
 		
