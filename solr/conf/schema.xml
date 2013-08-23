@@ -99,14 +99,19 @@
 		<field name="szene_nummer" type="int" indexed="true" stored="true" multiValued="true"/>
 		<field name="szene_beschreibung" type="text_ws" indexed="true" stored="true" multiValued="true"/>
 		<field name="szene_bild_name" type="string" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_bild_dateiname" type="string" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_bild_breite" type="int" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_bild_hoehe" type="int" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_bild_offset_x" type="int" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_bild_offset_y" type="int" indexed="true" stored="true" multiValued="true"/>
 		<field name="szene_bild_rect" type="string" indexed="true" stored="true" multiValued="true"/>
 		<field name="szene_bild_polygon" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="szene_koordinateX" type="float" indexed="true" stored="true" multiValued="true"/>
-		<field name="szene_koordinateY" type="float" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_koordinate_x" type="float" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_koordinate_y" type="float" indexed="true" stored="true" multiValued="true"/>
 		<field name="szene_blickwinkel" type="int" indexed="true" stored="true" multiValued="true"/>
 		<field name="szene_breite" type="float" indexed="true" stored="true" multiValued="true"/>
 		<field name="szene_hoehe" type="float" indexed="true" stored="true" multiValued="true"/>
-		<field name="szene_prozentZ" type="float" indexed="true" stored="true" multiValued="true"/>
+		<field name="szene_prozent_z" type="float" indexed="true" stored="true" multiValued="true"/>
 		<field name="szene_grau" type="boolean" indexed="true" stored="true" multiValued="true"/>
 
 		<field name="notiz" type="string" indexed="true" stored="true"/>
