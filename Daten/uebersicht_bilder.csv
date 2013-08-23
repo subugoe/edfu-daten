@@ -27,11 +27,11 @@ Raum_W.gif;;Raum W;640;800;565;740;23;35
 Raum_Y.gif;;Raum Y';640;480;533;354;5;15
 Raum_Z.gif;;Raum Z';640;480;376;367;15;9
 sued.gif;South.html;Tor L';640;480;428;358;7;13
-Tuer_Hs_Js_1.gif;;Tür H'-J'1;640;480;304;196;30;92
-Tuer_Hs_Js_1s.gif;;Tür H'-J'1';640;480;402;267;7;45
-Tuer_Hs_Js_2.gif;;Tür H'-J'2;640;480;309;203;38;88
-Tuer_Hs_Js_2s.gif;;Tür H'-J'2';640;480;309;203;38;88
-Tuer_Is_Js_1.gif;;Tür I'-J';640;480;402;214;7;59
+Tuer_Hs_Js_1.gif;;TÃ¼r H'-J'1;640;480;304;196;30;92
+Tuer_Hs_Js_1s.gif;;TÃ¼r H'-J'1';640;480;402;267;7;45
+Tuer_Hs_Js_2.gif;;TÃ¼r H'-J'2;640;480;309;203;38;88
+Tuer_Hs_Js_2s.gif;;TÃ¼r H'-J'2';640;480;309;203;38;88
+Tuer_Is_Js_1.gif;;TÃ¼r I'-J';640;480;402;214;7;59
 wall.gif;Wall.html;Wand J';475;1390;395;1298;42;87
 Wand_B.gif;;Wand B;640;582;375;316;23;8
 Wand_C.gif;;Wand C;748;850;655;738;49;62
