@@ -159,12 +159,13 @@ band = []
 
 # Bislang 5 Szenen genutzt, manuell übertragen.
 szene = [
-	{'uid': 0, 'nummer': 1, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinateX': None, 'koordinateY': None, 'blickwinkel': None, 'breite': None, 'prozentZ': None, 'hoehe': None},
-	{'uid': 1, 'nummer': 2, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinateX': None, 'koordinateY': None, 'blickwinkel': None, 'breite': None, 'prozentZ': None, 'hoehe': None},
-	{'uid': 2, 'nummer': 3, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinateX': None, 'koordinateY': None, 'blickwinkel': None, 'breite': None, 'prozentZ': None, 'hoehe': None},
-	{'uid': 3, 'nummer': 4, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinateX': None, 'koordinateY': None, 'blickwinkel': None, 'breite': None, 'prozentZ': None, 'hoehe': None},
-	{'uid': 4, 'nummer': 5, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinateX': None, 'koordinateY': None, 'blickwinkel': None, 'breite': None, 'prozentZ': None, 'hoehe': None},
+	{'uid': 0, 'nummer': 1, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinate_x': None, 'koordinate_y': None, 'blickwinkel': None, 'breite': None, 'prozent_z': None, 'hoehe': None},
+	{'uid': 1, 'nummer': 2, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinate_x': None, 'koordinate_y': None, 'blickwinkel': None, 'breite': None, 'prozent_z': None, 'hoehe': None},
+	{'uid': 2, 'nummer': 3, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinate_x': None, 'koordinate_y': None, 'blickwinkel': None, 'breite': None, 'prozent_z': None, 'hoehe': None},
+	{'uid': 3, 'nummer': 4, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinate_x': None, 'koordinate_y': None, 'blickwinkel': None, 'breite': None, 'prozent_z': None, 'hoehe': None},
+	{'uid': 4, 'nummer': 5, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinate_x': None, 'koordinate_y': None, 'blickwinkel': None, 'breite': None, 'prozent_z': None, 'hoehe': None},
 ]
+
 # Stellenzuweisungen für Szenen.
 szene_has_stelle = [
 	{'uid_local': 0, 'uid_foreign': 0},
@@ -173,6 +174,7 @@ szene_has_stelle = [
 	{'uid_local': 3, 'uid_foreign': 3},
 	{'uid_local': 4, 'uid_foreign': 4},
 ]
+
 # Einträge: Stellen für Szenen.
 stelle = [
 	{'uid': 0, 'band_uid': 5, 'seite_start': 1, 'zeile_start': 11, 'seite_stop': 4, 'zeile_stop': 6, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
@@ -1281,11 +1283,11 @@ with open('Daten/uebersicht_bilder.csv', 'rb') as bilderListeCSV:
 							'szene_bild_uid': szene_bild_ID,
 							'rect': row[columnDict['polygon']],
 							'polygon': '',
-							'koordinateX': row[columnDict['coord-x']],
-							'koordinateY': row[columnDict['coord-y']],
+							'koordinate_x': row[columnDict['coord-x']],
+							'koordinate_y': row[columnDict['coord-y']],
 							'blickwinkel': row[columnDict['angleOfView']],
 							'breite': row[columnDict['extent-width']],
-							'prozentZ': row[columnDict['height-percent']],
+							'prozent_z': row[columnDict['height-percent']],
 							'hoehe': float(row[columnDict['extent-height-percent']]),
 							'grau': False
 						}
