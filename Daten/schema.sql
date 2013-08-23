@@ -148,6 +148,14 @@ DROP TABLE IF EXISTS `edfu`.`szene_bild` ;
 CREATE  TABLE IF NOT EXISTS `edfu`.`szene_bild` (
   `uid` INT NOT NULL ,
   `name` VARCHAR(255) NULL ,
+  `dateiname` VARCHAR(255) NULL ,
+  `imagemap` VARCHAR(255) NULL ,
+  `breite` INT NULL ,
+  `hoehe` INT NULL ,
+  `offset_x` INT NULL ,
+  `offset_y` INT NULL ,
+  `breite_original` INT NULL ,
+  `hoehe_original` INT NULL ,
   PRIMARY KEY (`uid`) )
 ENGINE = InnoDB;
 

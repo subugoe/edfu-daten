@@ -1234,76 +1234,89 @@ band = bandDict.values()
 
 # Szeneninformation aus CSV Dateien (aus Imagemap)
 # csv + Unicode Handhabungscode aus der Anleitung
-fileList = glob.glob('Daten/imagemaps/*.csv')
-print ""
-for filePath in fileList:
-	with open(filePath, 'rb') as csvFile:
-		print u'INFO CSV Datei »' + filePath + u'«'
-		columnDict = {}
+with open('Daten/uebersicht_bilder.csv', 'rb') as bilderListeCSV:
+	bilderListeReader = UnicodeReader(bilderListeCSV, delimiter=';')
+	bilderColumnDict = {}
+	for bildRow in bilderListeReader:
+		if bildRow[0] == 'image':
+			# Spaltennummern für Felder feststellen
+			for index, value in enumerate(bildRow):
+				bilderColumnDict[value] = index
+		else:
+			recordSzeneBild = {
+				'uid': len(szene_bildDict),
+				'name': bildRow[bilderColumnDict['label']],
+				'dateiname': bildRow[bilderColumnDict['image']],
+				'imagemap': bildRow[bilderColumnDict['imagemap']],
+				'breite': bildRow[bilderColumnDict['new_size_x']],
+				'hoehe': bildRow[bilderColumnDict['new_size_y']],
+				'breite_original': bildRow[bilderColumnDict['orig_size_x']],
+				'hoehe_original': bildRow[bilderColumnDict['orig_size_y']],
+				'offset_x': bildRow[bilderColumnDict['offset_x']],
+				'offset_y': bildRow[bilderColumnDict['offset_y']],
+				'name': bildRow[bilderColumnDict['label']]
+			}
+			szene_bildDict[recordSzeneBild['dateiname']] = recordSzeneBild
+			szene_bild_ID = recordSzeneBild['uid']
+			
+			filePath = 'Daten/imagemaps/' + recordSzeneBild['dateiname'].rstrip('.gif') + '.csv'
+			with open(filePath, 'rb') as csvFile:
+				print u'INFO CSV Datei »' + filePath + u'«'
+				columnDict = {}
 		
-		reader = UnicodeReader(csvFile, delimiter=';')
-		for row in reader:
-			if row[0] == 'description':
-				# Spaltennummern für Felder feststellen
-				for index, value in enumerate(row):
-					columnDict[value] = index
-				pprint.pprint(columnDict)
-			elif len(row) >= 12:
-				szeneID = len(szene)
-				stelleID = len(stelle)
-				
-				imageName = filePath.split('/')[-1].rstrip('.csv')
-				if not szene_bildDict.has_key(imageName):
-					rSzene_bild = {
-						'uid': len(szene_bildDict),
-						'name': imageName
-					}
-					szene_bildDict[imageName] = rSzene_bild
-				szene_bild_ID = szene_bildDict[imageName]['uid']
-				
-				rSzene = {
-					'uid': szeneID,
-					'nummer': row[columnDict['plate']],
-					'beschreibung': row[columnDict['description']],
-					'szene_bild_uid': szene_bild_ID,
-					'rect': row[columnDict['polygon']],
-					'polygon': '',
-					'koordinateX': row[columnDict['coord-x']],
-					'koordinateY': row[columnDict['coord-y']],
-					'blickwinkel': row[columnDict['angleOfView']],
-					'breite': row[columnDict['extent-width']],
-					'prozentZ': row[columnDict['height-percent']],
-					'hoehe': float(row[columnDict['extent-height-percent']]),
-					'grau': False
-				}
-				
-				if columnDict.has_key('areacolor') and row[columnDict['areacolor']] == 2:
-					rSzene['grau'] = True
-				if columnDict.has_key('polygon_original'):
-					rSzene['polygon'] = row[columnDict['polygon_original']]
-				
-				szene += [rSzene]
-				
-				if row[1] != '':
-					rStelle = {
-						'uid': stelleID,
-						'band_uid': row[columnDict['volume']],
-						'seite_start': row[columnDict['page']],
-						'zeile_start': 0,
-						'seite_stop': row[columnDict['page']],
-						'zeile_stop': 30,
-						'anmerkung': '',
-						'stop_unsicher': 0,
-						'zerstoerung': 0
-					}
-					stelle += [rStelle]
-				
-					szene_has_stelle += [{
-						'uid_local': szeneID,
-						'uid_foreign': stelleID
-					}]
-			else:
-				print u'Zeile »' + ';'.join(row) + u'« hat weniger als 12 Spalten'
+				reader = UnicodeReader(csvFile, delimiter=';')
+				for row in reader:
+					if row[0] == 'description':
+						# Spaltennummern für Felder feststellen
+						for index, value in enumerate(row):
+							columnDict[value] = index
+					elif len(row) >= 12:
+						szeneID = len(szene)
+						stelleID = len(stelle)
+						
+						rSzene = {
+							'uid': szeneID,
+							'nummer': row[columnDict['plate']],
+							'beschreibung': row[columnDict['description']],
+							'szene_bild_uid': szene_bild_ID,
+							'rect': row[columnDict['polygon']],
+							'polygon': '',
+							'koordinateX': row[columnDict['coord-x']],
+							'koordinateY': row[columnDict['coord-y']],
+							'blickwinkel': row[columnDict['angleOfView']],
+							'breite': row[columnDict['extent-width']],
+							'prozentZ': row[columnDict['height-percent']],
+							'hoehe': float(row[columnDict['extent-height-percent']]),
+							'grau': False
+						}
+						
+						if columnDict.has_key('areacolor') and row[columnDict['areacolor']] == 2:
+							rSzene['grau'] = True
+						if columnDict.has_key('polygon_original'):
+							rSzene['polygon'] = row[columnDict['polygon_original']]
+							
+						szene += [rSzene]
+						
+						if row[columnDict['volume']] != '':
+							rStelle = {
+								'uid': stelleID,
+								'band_uid': row[columnDict['volume']],
+								'seite_start': row[columnDict['page']],
+								'zeile_start': 0,
+								'seite_stop': row[columnDict['page']],
+								'zeile_stop': 30,
+								'anmerkung': '',
+								'stop_unsicher': 0,
+								'zerstoerung': 0
+							}
+							stelle += [rStelle]
+							
+							szene_has_stelle += [{
+								'uid_local': szeneID,
+								'uid_foreign': stelleID
+							}]
+					else:
+						print u'Zeile »' + ';'.join(row) + u'« hat weniger als 12 Spalten'
 
 szene_bild = szene_bildDict.values()
 
