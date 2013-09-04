@@ -51,12 +51,14 @@ DROP TABLE IF EXISTS `edfu`.`formular` ;
 
 CREATE  TABLE IF NOT EXISTS `edfu`.`formular` (
   `uid` INT NOT NULL AUTO_INCREMENT ,
+  `id` INT NOT NULL ,
   `stelle_uid` INT NOT NULL ,
   `transliteration` TEXT CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NOT NULL ,
   `uebersetzung` TEXT CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NULL ,
   `texttyp` TEXT CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NULL ,
   PRIMARY KEY (`uid`) ,
-  INDEX `fk_FL_belegstelle1_idx` (`stelle_uid` ASC) )
+  INDEX `fk_FL_belegstelle1_idx` (`stelle_uid` ASC) ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) )
 ENGINE = MyISAM
 AUTO_INCREMENT = 10373
 DEFAULT CHARACTER SET = utf8
@@ -70,12 +72,14 @@ DROP TABLE IF EXISTS `edfu`.`gott` ;
 
 CREATE  TABLE IF NOT EXISTS `edfu`.`gott` (
   `uid` INT NOT NULL AUTO_INCREMENT ,
+  `id` INT NOT NULL ,
   `transliteration` TEXT CHARACTER SET 'utf8' NOT NULL ,
-  `ort` TEXT CHARACTER SET 'utf8' NULL ,
   `eponym` TEXT CHARACTER SET 'utf8' NULL ,
-  `beziehung` TEXT CHARACTER SET 'utf8' NULL ,
   `funktion` TEXT CHARACTER SET 'utf8' NULL ,
-  PRIMARY KEY (`uid`) )
+  `beziehung` TEXT CHARACTER SET 'utf8' NULL ,
+  `ort` TEXT CHARACTER SET 'utf8' NULL ,
+  PRIMARY KEY (`uid`) ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) )
 ENGINE = MyISAM
 AUTO_INCREMENT = 9471
 DEFAULT CHARACTER SET = utf8
@@ -89,11 +93,13 @@ DROP TABLE IF EXISTS `edfu`.`ort` ;
 
 CREATE  TABLE IF NOT EXISTS `edfu`.`ort` (
   `uid` INT NOT NULL AUTO_INCREMENT ,
+  `id` INT NOT NULL ,
   `transliteration` TEXT CHARACTER SET 'utf8' NOT NULL ,
   `uebersetzung` TEXT CHARACTER SET 'utf8' NULL ,
   `ortsbeschreibung` TEXT CHARACTER SET 'utf8' NULL ,
   `anmerkung` TEXT NULL ,
-  PRIMARY KEY (`uid`) )
+  PRIMARY KEY (`uid`) ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) )
 ENGINE = MyISAM
 AUTO_INCREMENT = 1250
 DEFAULT CHARACTER SET = utf8
@@ -126,15 +132,17 @@ DROP TABLE IF EXISTS `edfu`.`wort` ;
 
 CREATE  TABLE IF NOT EXISTS `edfu`.`wort` (
   `uid` INT NOT NULL AUTO_INCREMENT ,
+  `id` INT NOT NULL ,
   `transliteration` TEXT CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NOT NULL ,
-  `weiteres` TEXT NULL ,
   `uebersetzung` TEXT CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NULL ,
-  `anmerkung` TEXT NULL ,
   `hieroglyph` VARCHAR(255) CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NULL ,
+  `weiteres` TEXT NULL ,
+  `anmerkung` TEXT NULL ,
   `lemma` VARCHAR(255) NULL ,
   `wb_berlin_uid` INT NULL ,
   PRIMARY KEY (`uid`) ,
-  INDEX `fk_wort_berlin1_idx` (`wb_berlin_uid` ASC) )
+  INDEX `fk_wort_berlin1_idx` (`wb_berlin_uid` ASC) ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) )
 ENGINE = MyISAM
 AUTO_INCREMENT = 4623
 DEFAULT CHARACTER SET = utf8

@@ -286,8 +286,10 @@ cursor.execute(query)
 
 for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Photo, SzenenID, SekLit) in cursor:
 
-	myFormular = {}
-	myFormular['uid'] = PRIMARY
+	myFormular = {
+		'uid': PRIMARY,
+		'id': PRIMARY
+	}
 	
 	# Felder
 	myFormular['uebersetzung'] = TEXTDEUTSC
@@ -751,6 +753,7 @@ for (PRIMARY, STELLE, TRANS, ORT, LOK, ANM) in cursor:
 
 	myOrt = {
 		'uid': PRIMARY,
+		'id': PRIMARY,
 		'transliteration': TRANS,
 		'uebersetzung': ORT,
 		'ortsbeschreibung': LOK,
@@ -909,6 +912,7 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 	
 	myGott = {
 		'uid': PRIMARY,
+		'id': PRIMARY,
 		'transliteration': NAME,
 		'ort': ORT,
 		'eponym': EPON,
@@ -1161,6 +1165,7 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 
 	myWort = {
 		'uid': PRIMARY,
+		'id': PRIMARY,
 		'transliteration': Transliteration,
 		'weiteres': Weiteres,
 		'uebersetzung': Deutsch,
