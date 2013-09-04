@@ -274,7 +274,7 @@ docs = []
 
 
 # FORMULAR
-query = ("SELECT uid,transliteration,uebersetzung,texttyp,stelle_uid FROM tx_edfu_domain_model_formular")
+query = ("SELECT uid,id,transliteration,uebersetzung,texttyp,stelle_uid FROM tx_edfu_domain_model_formular")
 cursor.execute(query)
 
 query2 = """
@@ -307,7 +307,7 @@ ORDER BY
 	photoName DESC
 """
 
-for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
+for (uid,id,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 	literatur = []
 	cursor2.execute(query2, [str(uid)])
 	for (beschreibung, detail) in cursor2:
@@ -323,7 +323,7 @@ for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 		photo_kommentar += [kommentar]
 	
 	doc = {
-		"id": "formular-" + str(uid),
+		"id": "formular-" + str(id),
 		"typ": "formular",
 		"sql_tabelle": "tx_edfu_domain_model_formular",
 		"sql_uid": uid,
@@ -349,7 +349,7 @@ docs = []
 
 
 # ORT
-query = ("SELECT uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung FROM tx_edfu_domain_model_ort")
+query = ("SELECT uid,id,transliteration,uebersetzung,ortsbeschreibung,anmerkung FROM tx_edfu_domain_model_ort")
 cursor.execute(query)
 
 query4 = """
@@ -370,7 +370,7 @@ ORDER BY
 	stelle.zeile_start
 """
 
-for (uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
+for (uid,id,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
 	stelleIDs = []
 	stellen = []
 	cursor2.execute(query4, [str(uid)])
@@ -379,7 +379,7 @@ for (uid,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
 		stellen += [uid_foreign]
 	
 	doc = {
-		"id": "ort-" + str(uid),
+		"id": "ort-" + str(id),
 		"typ": "ort",
 		"sql_tabelle": "tx_edfu_domain_model_ort",
 		"sql_uid": uid,
@@ -404,7 +404,7 @@ docs = []
 
 
 # GOTT
-query = ("SELECT uid,transliteration,ort,eponym,beziehung,funktion FROM tx_edfu_domain_model_gott")
+query = ("SELECT uid,id,transliteration,ort,eponym,beziehung,funktion FROM tx_edfu_domain_model_gott")
 cursor.execute(query)
 
 query5 = """
@@ -425,7 +425,7 @@ ORDER BY
 	stelle.zeile_start
 """
 
-for (uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
+for (uid,id,transliteration,ort,eponym,beziehung,funktion) in cursor:
 	stelleIDs = []
 	stellen = []
 	cursor2.execute(query5, [str(uid)])
@@ -434,7 +434,7 @@ for (uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
 		stellen += [uid_foreign]
 		
 	doc = {
-		"id": "gott-" + str(uid),
+		"id": "gott-" + str(id),
 		"typ": "gott",
 		"sql_tabelle": "tx_edfu_domain_model_gott",
 		"sql_uid": uid,
@@ -459,7 +459,7 @@ docs = []
 
 
 # WORT
-query = ("SELECT uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_berlin_uid FROM tx_edfu_domain_model_wort")
+query = ("SELECT uid,id,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_berlin_uid FROM tx_edfu_domain_model_wort")
 cursor.execute(query)
 
 query6 = """
@@ -480,7 +480,7 @@ ORDER BY
 	stelle.zeile_start
 """
 
-for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_berlin_uid) in cursor:
+for (uid,id,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_berlin_uid) in cursor:
 	stelleIDs = []
 	stellen = []
 	cursor2.execute(query6, [str(uid)])
@@ -489,7 +489,7 @@ for (uid,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_ber
 		stellen += [uid_foreign]
 	
 	doc = {
-		"id": "wort-" + str(uid),
+		"id": "wort-" + str(id),
 		"typ": "wort",
 		"sql_tabelle": "tx_edfu_domain_model_wort",
 		"sql_uid": uid,
