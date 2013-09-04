@@ -119,6 +119,7 @@ def addRecordsToTable (records, tableName):
 
 	if len(records) > 0:
 		for record in records:
+			#pprint.pprint(record)
 			prefix = writePrefix
 			if tableName[-3:] != '_mm':
 				prefix += 'domain_model_'
@@ -813,7 +814,7 @@ for o in ort[:]:
 				ohs['uid_local'] = o['uid']
 		o['transliteration'] = translit
 		ort.remove(previousO)
-		print "\t".join(["OL", str(PRIMARY), "INFO", str(o['uid']) + u" Duplikat von " + str(previousO['uid']) + u": mergengen", o['transliteration'], previousO['transliteration']])
+		print "\t".join(["OL", str(PRIMARY), "INFO", str(o['uid']) + u" Duplikat von " + str(previousO['uid']) + u": mergen", o['transliteration'], previousO['transliteration']])
 		
 	previousO = o
 
@@ -974,10 +975,11 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 				else:
 					stopZeile = startZeile
 	
-			if startSeite:
+			band = int(BND)
+			if startSeite > 0 and band > 0:
 				myStelle = {
 					'uid': len(stelle),
-					'band_uid': int(BND),
+					'band_uid': band,
 					'seite_start': startSeite,
 					'seite_stop': stopSeite,
 					'zeile_start': startZeile,
@@ -997,6 +999,8 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 					'uid_local': PRIMARY,
 					'uid_foreign': myStelle['uid']
 				}]
+			else:
+				print "\t".join(["GL", str(PRIMARY), "FEHLER", u"startSeite oder Band nicht ermittelbar: Datensatz verwerfen", sz])
 
 
 wort = []
@@ -1023,41 +1027,73 @@ cursor.execute(query)
 re20 = re.compile(r'^\s*([VI]*)\s*,?\s*(<?)([0-9]*)\s*,\s*([0-9/ -]*)(>?\*?)\s*(.*)$')
 
 for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, BelegstellenWb, Anmerkungen) in cursor:
-	bEdfu = BelegstellenEdfu.strip('; ')
+	anmerkungWL = ''
+	
+	bEdfu = BelegstellenEdfu
+	if bEdfu.find('zum Beispiel') == 0:
+		# 1266, 1296, 2781, 2811
+		bEdfu = bEdfu.replace('zum Beispiel', '')
+		anmerkungWL = '(Beispiele) '
+	elif bEdfu.find('<VIII, ') == 0:
+		# 732, 797, 804, 816, 2247, 2312, 2319, 2331
+		bEdfu = 'VIII, <' + bEdfu[7:]
+	elif bEdfu == 'E VIII, 0,31, 07; 060, 07':
+		# 1089, 2604
+		bEdfu = 'E VIII, 031, 07; 060, 07'
+	elif bEdfu == 'E VIII, 033, 01; 068, 02; 098, 02; 103; 18; 162, 05':
+		# 1415, 2930
+		bEdfu = 'E VIII, 033, 01; 068, 02; 098, 02; 103, 18; 162, 05'
+	elif bEdfu == 'E VIII, 026, 07; 041, 05; 053, 06; 156,l 15':
+		# 1491
+		bEdfu = 'E VIII, 026, 07; 041, 05; 053, 06; 156, 15'
+	
+	bEdfu = bEdfu.strip('EPON; ')
 	bEdfu = re.sub(r' / V', '; V', bEdfu)
-
-	if bEdfu == u'VII, 237…':
-		# 78
-		bEdfu = 'VII, 237, 1 - 30'
-
+	
 	if BelegstellenEdfu != bEdfu:
 		print "\t".join(["WL", str(PRIMARY), "INFO", u"Änderung BelegstellenEdfu", BelegstellenEdfu, bEdfu])
-
-
+	
 	wb = BelegstellenWb
 	wbID = None
-	anmerkung = None
+	anmerkungWB = None
 	notiz = None
 	
 	if wb == 'nicht im Wb belegt':
 		wbID = 0
 	elif len(wb) > 0:
-		if wb == 'I, 030, 14 - 15?':
-			wb = 'I, 030, 14 - 15'
-			notiz = '?'
-
+		if wb == 'nach II, 123, 12 - 124*':
+			wb = 'nach II, 123, 12 - 124, 1'
+			anmerkungWB = '*'
+		elif wb == 'I, 171, 03 - 12; 18 - 21':
+			# 356
+			wb = 'I, 171, 03 - 12'
+		elif wb == 'II, 429 - 432, 05':
+			# 1358-1361
+			wb = 'II, 429, 01 - 432, 05'
+		elif wb == 'II, 498 - 500, 24':
+			# 1418-1420
+			wb = 'II, 498, 01 - 500, 24'
+		elif wb == 'III, 026 - 027, 19':
+			# 1441
+			wb = 'III, 026,01 - 027, 19'
+		
 		if wb != BelegstellenWb:
-			anmerkung = u'ursprünglich: ' + BelegstellenWb
+			anmerkungWB = u'ursprünglich: ' + BelegstellenWb
 			print "\t".join(["WL", str(PRIMARY), "INFO", u"Änderung BelegstellenWb", BelegstellenWb, wb])
-
+		
+		vornach = 0
 		if wb.find('nach ') == 0 :
-			notiz = 'nach'
+			vornach = 1
 			wb = wb.replace('nach ', '')
 		elif wb.find('vor ') == 0:
-			notiz = 'vor'
+			vornach = -1
 			wb = wb.replace('vor ', '')
 		
-		wb = wb.replace('I, ', '').replace(' -', '-').replace('- ', '-')
+		roemischBand = wb[0:wb.index(',')]
+		wb = wb[wb.index(',') + 1:].strip()
+		band = roemisch[roemischBand]
+		
+		wb = wb.replace(' -', '-').replace('- ', '-')
 		
 		if wb.find('-') != -1:
 			# Range
@@ -1090,13 +1126,14 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 			
 		myWB = {
 			'uid': len(berlin),
-			'band': 1,
+			'band': band,
 			'seite_start': start[0],
 			'seite_stop': stop[0],
 			'zeile_start': start[1],
 			'zeile_stop': stop[1],
+			'vornach': vornach,
 			'notiz': notiz,
-			'anmerkung': anmerkung
+			'anmerkung': anmerkungWB
 		}
 		
 		bereitsVorhanden = False
@@ -1116,7 +1153,7 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 		'transliteration': Transliteration,
 		'weiteres': Weiteres,
 		'uebersetzung': Deutsch,
-		'anmerkung': Anmerkungen,
+		'anmerkung': (anmerkungWL + Anmerkungen).strip(),
 		'hieroglyph': IDS,
         'lemma': None,
 		'wb_berlin_uid': wbID

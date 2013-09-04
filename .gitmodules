@@ -1,3 +1,6 @@
 [submodule "dumps"]
-	path = dumps
+	path = Daten/dumps
 	url = ./Daten/dumps
+[submodule "Daten/dumps"]
+	path = Daten/dumps
+	url = /Users/ssp/Desktop/dumps
