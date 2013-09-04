@@ -326,57 +326,20 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `edfu`.`photo_collection`
+-- Table `edfu`.`formular_has_photo`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `edfu`.`photo_collection` ;
+DROP TABLE IF EXISTS `edfu`.`formular_has_photo` ;
 
-CREATE  TABLE IF NOT EXISTS `edfu`.`photo_collection` (
-  `uid` INT NOT NULL ,
-  `klammern` TINYINT NULL ,
-  `stern` TINYINT NULL ,
-  `kommentar` TEXT NULL ,
-  PRIMARY KEY (`uid`) )
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `edfu`.`formular_has_photo_collection`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `edfu`.`formular_has_photo_collection` ;
-
-CREATE  TABLE IF NOT EXISTS `edfu`.`formular_has_photo_collection` (
+CREATE  TABLE IF NOT EXISTS `edfu`.`formular_has_photo` (
   `uid_local` INT NOT NULL ,
   `uid_foreign` INT NOT NULL ,
+  `kommentar` TEXT NULL ,
   PRIMARY KEY (`uid_local`, `uid_foreign`) ,
-  INDEX `fk_formular_has_photo_collection_photo_collection1_idx` (`uid_foreign` ASC) ,
-  INDEX `fk_formular_has_photo_collection_formular1_idx` (`uid_local` ASC) )
+  INDEX `fk_formular_has_photo_photo1_idx` (`uid_foreign` ASC) ,
+  INDEX `fk_formular_has_photo_formular1_idx` (`uid_local` ASC) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
-
-
--- -----------------------------------------------------
--- Table `edfu`.`photo_collection_has_photo`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `edfu`.`photo_collection_has_photo` ;
-
-CREATE  TABLE IF NOT EXISTS `edfu`.`photo_collection_has_photo` (
-  `uid_local` INT NOT NULL ,
-  `uid_foreign` INT NOT NULL ,
-  PRIMARY KEY (`uid_local`, `uid_foreign`) ,
-  INDEX `fk_photo_collection_has_photo_photo1_idx` (`uid_foreign` ASC) ,
-  INDEX `fk_photo_collection_has_photo_photo_collection1_idx` (`uid_local` ASC) ,
-  CONSTRAINT `fk_photo_collection_has_photo_photo_collection1`
-    FOREIGN KEY (`uid_local` )
-    REFERENCES `edfu`.`photo_collection` (`uid` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_photo_collection_has_photo_photo1`
-    FOREIGN KEY (`uid_foreign` )
-    REFERENCES `edfu`.`photo` (`uid` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
 
 
 

@@ -240,6 +240,7 @@ photoTypDict = {
 	'E. XIII': {'uid': 7, 'name': 'Edfou XIII', 'jahr': 1913},
 	'E. XIV': {'uid': 8, 'name': 'Edfou XIV', 'jahr': 1914},
 } 
+formular_has_photoDict = {}
 formular_has_photo_collection = []
 photo_collection = []
 photo_collection_has_photo = []
@@ -438,7 +439,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 	bildString = Photo
 	klammern = False
 	stern = False
-
+	
 	while len(bildString) > 0:
 		name = ''
 		typ = '---'
@@ -551,8 +552,10 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 				bildString = ''
 			
 			photoID = typ + '-' + name
+			myPhoto = {}
 			if photosDict.has_key(photoID):
-				photosDict[photoID]['count'] += 1
+				myPhoto = photosDict[photoID]
+				myPhoto['count'] += 1
 			else:
 				if typ == 'D05' or typ == 'D03' or typ == 'alt':
 					pfad = typ + '/' + name + '.jpg'
@@ -571,6 +574,14 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 			collection['klammern'] = klammern
 			collection['stern'] = stern
 			collection['kommentar'] = kommentar
+			
+			key = str(PRIMARY) + '-' + str(myPhoto['uid'])
+			if not formular_has_photoDict.has_key(key):
+				formular_has_photoDict[key] = {
+					'uid_local': PRIMARY,
+					'uid_foreign': myPhoto['uid'],
+					'kommentar': kommentar
+				}
 				
 		bildString = bildString.strip(', ')
 	finishCollection(PRIMARY)
@@ -1268,6 +1279,7 @@ photo = photosDict.values()
 photo_typ = photoTypDict.values()
 formular = formularDict.values()
 band = bandDict.values()
+formular_has_photo = formular_has_photoDict.values()
 
 
 
@@ -1422,9 +1434,7 @@ addRecordsToTable(photo_typ, 'photo_typ')
 for p in photo:
 	del(p['count'])
 addRecordsToTable(photo, 'photo')
-addRecordsToTable(photo_collection, 'photo_collection')
-addRecordsToTable(photo_collection_has_photo, 'photo_collection_photo_mm')
-addRecordsToTable(formular_has_photo_collection, 'formular_photo_collection_mm')
+addRecordsToTable(formular_has_photo, 'formular_photo_mm')
 
 addRecordsToTable(gott, 'gott')
 addRecordsToTable(gott_has_stelle, 'gott_stelle_mm')
@@ -1486,18 +1496,11 @@ print u"FL: Transliteration mit Punkt und Folgebuchstaben:"
 pprint.PrettyPrinter().pprint(suffixe)
 
 print ""
-print "FL: Datensätze und Stellen"
+print "FL: Datensätze, Stellen, Bilder"
 print "formular: " + str(len(formular)) 
 print "stelle: " + str(len(stelle))
-print "szene: " + str(len(szene))
-print "szene_has_stelle: " + str(len(szene_has_stelle))
-
-print ""
-print "FL: Bilder, Sammlungen und Relationen"
 print "photo: " + str(len(photo))
-print "photo_collection_has_photo " + str(len(photo_collection_has_photo))
-print "photo_collection " + str(len(photo_collection))
-print "formular_has_photo_collection " + str(len(formular_has_photo_collection))
+print "formular_has_photo " + str(len(formular_has_photo))
 
 print ""
 print "OL"

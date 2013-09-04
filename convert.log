@@ -3649,11 +3649,7 @@ Tabelle »photo_typ«: 9 Datensätze
 
 Tabelle »photo«: 12215 Datensätze
 
-Tabelle »photo_collection«: 4334 Datensätze
-
-Tabelle »photo_collection_photo_mm«: 34918 Datensätze
-
-Tabelle »formular_photo_collection_mm«: 15290 Datensätze
+Tabelle »formular_photo_mm«: 94721 Datensätze
 
 Tabelle »gott«: 9470 Datensätze
 
@@ -3705,17 +3701,11 @@ FL: Transliteration mit Punkt und Folgebuchstaben:
  u'.wj': 1,
  u'.xr': 9}
 
-FL: Datensätze und Stellen
+FL: Datensätze, Stellen, Bilder
 formular: 10372
 stelle: 30309
-szene: 3286
-szene_has_stelle: 693
-
-FL: Bilder, Sammlungen und Relationen
 photo: 12215
-photo_collection_has_photo 34918
-photo_collection 4334
-formular_has_photo_collection 15290
+formular_has_photo 94721
 
 OL
 ort: 1180
