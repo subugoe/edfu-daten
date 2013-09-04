@@ -283,6 +283,8 @@ print "\n\n\n\n**** FL *********************************************************
 query = ("SELECT `PRIMARY`, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Photo, SzenenID, SekLit from FL")
 
 cursor.execute(query)
+re101 = re.compile(r'\wZ')
+re102 = re.compile(r'\w\?\w')
 
 for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Photo, SzenenID, SekLit) in cursor:
 
@@ -292,8 +294,23 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 	}
 	
 	# Felder
-	myFormular['uebersetzung'] = TEXTDEUTSC
 	myFormular['texttyp'] = TEXTTYP
+	myFormular['uebersetzung'] = (TEXTDEUTSC.strip()
+		.replace(u'dZtruit', u'détruit')
+		.replace(u'enti?rement', u'entièrement')
+		.replace(u'moitiZ', u'moitié')
+		.replace(u'premi?re', u'première')
+		.replace(u'placZe', u'placée')
+		.replace(u'dZesse', u'déesse')
+		.replace(u'mutilZs', u'mutilés')
+		.replace(u'fen?tre', u'fenètre')
+		.replace(u'ZtZ gravZe', u'été gravée'))
+
+	if myFormular['uebersetzung'] != TEXTDEUTSC:
+		print "\t".join(["FL", str(PRIMARY), "INFO", u"Übersetzung String verändert", TEXTDEUTSC, myFormular['uebersetzung']])
+	
+	if re101.search(myFormular['uebersetzung']) or re102.search(myFormular['uebersetzung']):
+		print "\t".join(["FL", str(PRIMARY), "WARNUNG", u"Vermutlich kaputte Akzente", myFormular['uebersetzung']])
 
 
 	# Transliteration
