@@ -26,6 +26,36 @@ cursor2 = db2.cursor()
 intToRoman = {1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII', 8: 'VIII'}
 
 
+"""
+	Konversion Römischer Zahlen von:
+	http://code.activestate.com/recipes/81611-roman-numerals/
+"""
+numeral_map = zip(
+	(1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1),
+	('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I')
+)
+
+def int_to_roman(i):
+	result = []
+	for integer, numeral in numeral_map:
+	    count = int(i / integer)
+	    result.append(numeral * count)
+	    i -= integer * count
+	return ''.join(result)
+
+def roman_to_int(n):
+	n = unicode(n).upper()
+
+	i = result = 0
+	for integer, numeral in numeral_map:
+		while n[i:i + len(numeral)] == numeral:
+			result += integer
+			i += len(numeral)
+	return result
+	
+	
+	
+
 def addValueForKeyToDict (value, key, myDict):
 	if not myDict.has_key(key):
 		myDict[key] = []
@@ -302,9 +332,6 @@ WHERE
 	formular_photo.uid_local = %s
 	AND formular_photo.uid_foreign = photo.uid
 	AND photo.photo_typ_uid = photo_typ.uid
-ORDER BY
-	photoJahr DESC,
-	photoName DESC
 """
 
 for (uid,id,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
@@ -313,14 +340,42 @@ for (uid,id,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 	for (beschreibung, detail) in cursor2:
 		literatur += [beschreibung + ' : ' + detail]
 	
+	cursor2.execute(query3, [str(uid)])
+	
+	# Photos sortieren: erst nach Jahr, dann nach Nummer, dabei auch nicht offensichtlich numerische richtig handhaben
+	photosDict = {}
+	for (kommentar, photoName, typName, photoJahr) in cursor2:
+		key = str('%04d' % photoJahr) + '-'
+		try:
+			key += ('%04d' % int(photoName))
+		except ValueError:
+			if photoName[0] == 'G':
+				key += ('%04d' % int(photoName[1:]))
+			elif photoName[0:4] == 'pl. ':
+				try:
+					key += ('%04d' % int(photoName[4:]))
+				except ValueError:
+					key += ('%04d' % roman_to_int(photoName[4:]))
+			else:
+				key += photoName
+		
+		photosDict[key] = {
+			"typName": typName,
+			"photoName": photoName,
+			"photoJahr": photoJahr,
+			"kommentar": kommentar
+		}
+	
+	sortedKeys = sorted(photosDict.keys(), reverse=True)
+	
 	photo = []
 	photo_pfad = []
 	photo_kommentar = []
-	cursor2.execute(query3, [str(uid)])
-	for (kommentar, photoName, typName, photoJahr) in cursor2:
-		photo_pfad += [typName + '/' + photoName]
-		photo += [photoName]
-		photo_kommentar += [kommentar]
+	for key in sortedKeys:
+		photoInfo = photosDict[key]
+		photo += [photoInfo["photoName"]]
+		photo_pfad += [photoInfo["typName"] + '/' + photoInfo["photoName"]]
+		photo_kommentar += [photoInfo["kommentar"]]
 	
 	doc = {
 		"id": "formular-" + str(id),

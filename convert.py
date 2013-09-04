@@ -430,7 +430,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 	re6 = re.compile(r'\([^)]*\)(\s*\**)')
 	re7 = re.compile(r'[DCLXVI]+')
 	re8 = re.compile(r'\)\s*\**')
-	re9 = re.compile(r'G[0-9]+\s*[f.]*') # Z.B. G30 oder G32 ff.
+	re9 = re.compile(r'(G[0-9]+)\s*([f.]*)') # Z.B. G30 oder G32 ff.
 	re10 = re.compile(r'e-onr-[0-9]+')
 	re11 = re.compile(r';*\s*Labrique, Stylistique, (pl. [0-9.]*)')
 	re12 = re.compile(r'\s*\*') # beginnt mit *
@@ -510,10 +510,11 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 			typ = 'e'
 			bildString = bildString[len(name):]
 		elif re9.match(bildString):
-			# Fall 5: name der Form GXXX [ff.]
-			name = re9.match(bildString).group(0)
+			# Fall 5: Name der Form GXXX [ff.]
+			name = re9.match(bildString).group(1)
 			typ = 'G'
-			bildString = bildString[len(name):]
+			kommentar = re9.match(bildString).group(2)
+			bildString = bildString[len(re9.match(bildString).group(0)):]
 		elif re10.match(bildString):
 			# Fall 6: Name der Form e-onr-XXX
 			name = re10.match(bildString).group(0)

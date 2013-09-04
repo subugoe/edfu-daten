@@ -3647,7 +3647,7 @@ Tabelle »formular_literatur_mm«: 26 Datensätze
 
 Tabelle »photo_typ«: 9 Datensätze
 
-Tabelle »photo«: 12215 Datensätze
+Tabelle »photo«: 12207 Datensätze
 
 Tabelle »formular_photo_mm«: 94721 Datensätze
 
@@ -3704,7 +3704,7 @@ FL: Transliteration mit Punkt und Folgebuchstaben:
 FL: Datensätze, Stellen, Bilder
 formular: 10372
 stelle: 30309
-photo: 12215
+photo: 12207
 formular_has_photo 94721
 
 OL
