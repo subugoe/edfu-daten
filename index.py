@@ -290,31 +290,22 @@ WHERE
 
 query3 = """
 SELECT
-	tx_edfu_domain_model_photo.name AS photoName,
-	tx_edfu_domain_model_photo_typ.name AS typName,
-	tx_edfu_domain_model_photo_typ.jahr AS photoJahr,
-	klammern,
-	stern,
-	kommentar,
-	tx_edfu_domain_model_photo_collection.uid AS collectionID
+	formular_photo.kommentar AS kommentar,
+	photo.name AS photoName,
+	photo_typ.name AS typName,
+	photo_typ.jahr AS photoJahr
 FROM
-	tx_edfu_formular_photo_collection_mm,
-	tx_edfu_domain_model_photo_collection,
-	tx_edfu_photo_collection_photo_mm,
-	tx_edfu_domain_model_photo,
-	tx_edfu_domain_model_photo_typ
+	tx_edfu_formular_photo_mm AS formular_photo,
+	tx_edfu_domain_model_photo AS photo,
+	tx_edfu_domain_model_photo_typ AS photo_typ
 WHERE
-	tx_edfu_formular_photo_collection_mm.uid_local = %s
-	AND tx_edfu_formular_photo_collection_mm.uid_foreign = tx_edfu_domain_model_photo_collection.uid
-	AND tx_edfu_photo_collection_photo_mm.uid_local = tx_edfu_domain_model_photo_collection.uid
-	AND tx_edfu_photo_collection_photo_mm.uid_foreign = tx_edfu_domain_model_photo.uid
-	AND tx_edfu_domain_model_photo.photo_typ_uid = tx_edfu_domain_model_photo_typ.uid
+	formular_photo.uid_local = %s
+	AND formular_photo.uid_foreign = photo.uid
+	AND photo.photo_typ_uid = photo_typ.uid
 ORDER BY
-	collectionID ASC,
 	photoJahr DESC,
 	photoName DESC
 """
-
 
 for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 	literatur = []
@@ -322,35 +313,14 @@ for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 	for (beschreibung, detail) in cursor2:
 		literatur += [beschreibung + ' : ' + detail]
 	
-	photoCollections = {}
-	photos = []
+	photo = []
+	photo_pfad = []
+	photo_kommentar = []
 	cursor2.execute(query3, [str(uid)])
-	for (photoName, typName, photoJahr, klammern, stern, kommentar, collectionID) in cursor2:
-		photoPfad = typName + '/' + photoName
-		photos += [photoName]
-		if not photoCollections.has_key(collectionID):
-			photoCollections[collectionID] = {'klammern': klammern, 'stern': stern, 'photos': [], 'photoPfade': [], 'kommentar': kommentar}
-		photoCollections[collectionID]['photoPfade'] += [photoPfad]
-		photoCollections[collectionID]['photos'] += [photoName]
-
-	
-	collectionStrings = []
-	collectionPhotos = []
-	collectionIDs = []
-	collectionKommentare = []
-	for collectionID in photoCollections.iterkeys():
-		collectionIDs += [collectionID]
-		photoCollection = photoCollections[collectionID]
-		collectionKommentare += [photoCollection['kommentar']]
-		photosString = ','.join(photoCollection['photoPfade'])
-		collectionPhotos += [photosString]
-		photoBemerkungString = ', '.join(photoCollection['photos'])
-		if photoCollection['klammern'] == 1:
-			photoBemerkungString = '(' + photoBemerkungString + ')'
-		if photoCollection['stern'] == 1:
-			photoBemerkungString += '*'
-		collectionStrings += [photoBemerkungString]
-
+	for (kommentar, photoName, typName, photoJahr) in cursor2:
+		photo_pfad += [typName + '/' + photoName]
+		photo += [photoName]
+		photo_kommentar += [kommentar]
 	
 	doc = {
 		"id": "formular-" + str(uid),
@@ -363,11 +333,9 @@ for (uid,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 		"texttyp": texttyp,
 		"stelle_id": 'stelle-' + str(stelle_uid),
 		"literatur": literatur,
-		"photo": photos,
-		"photo_collection_photos": collectionPhotos,
-		"photo_collection_string": collectionStrings,
-		"photo_collection_id": collectionIDs,
-		"photo_collection_kommentar": collectionKommentare
+		"photo": photo,
+		"photo_pfad": photo_pfad,
+		"photo_kommentar": photo_kommentar
 	}
 	addStellenTo([stelle_uid], doc)
 	

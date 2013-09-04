@@ -55,10 +55,8 @@
 		<field name="formular_id" type="int" indexed="true" stored="true"/>
 		<field name="texttyp" type="text_de" indexed="true" stored="true"/>
 		<field name="photo" type="text_ws" indexed="true" stored="true" multiValued="true"/>
-		<field name="photo_collection_string" type="text_ws" indexed="true" stored="true" multiValued="true"/>
-		<field name="photo_collection_photos" type="text_ws" indexed="true" stored="true" multiValued="true"/>
-		<field name="photo_collection_id" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="photo_collection_kommentar" type="text_de" indexed="true" stored="true" multiValued="true"/>
+		<field name="photo_pfad" type="string" indexed="true" stored="true" multiValued="true"/>
+		<field name="photo_kommentar" type="text_ws" indexed="true" stored="true" multiValued="true"/>
 		<field name="literatur" type="text_de" indexed="true" stored="true" multiValued="true"/>
 		<field name="ort_id" type="int" indexed="true" stored="true"/>
 		<field name="ortsbeschreibung" type="text_de" indexed="true" stored="true"/>
