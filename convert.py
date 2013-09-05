@@ -871,6 +871,7 @@ re3 = re.compile(r'^\s*([VI]*)\s*,*\s*([0-9]*)\s*,\s*([0-9/ -]*)\s*(.*)$')
 for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 
 	originalSEITEZEILE = SEITEZEILE
+	stelleAnmerkung = ''
 	if SEITEZEILE == '066, 011ff,;':
 		# 84
 		SEITEZEILE = '066, 011ff'
@@ -880,7 +881,7 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 	elif SEITEZEILE == '2,7?':
 		# 1178
 		SEITEZEILE = '2, 7'
-		ANM = '2,7?'
+		stelleAnmerkung = '2,7?'
 	elif SEITEZEILE == '052, 006 und 008;':
 		# 2376
 		SEITEZEILE = '052, 6-8'
@@ -896,14 +897,14 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 	elif SEITEZEILE == '90, 3 (25);':
 		# 4093
 		SEITEZEILE = '90, 3;'
-		ANM = '(25)'
+		stelleAnmerkung = '(25)'
 	elif SEITEZEILE == '39, 11/f.':
 		# 5487
 		SEITEZEILE = '39, 11f.'
 	elif SEITEZEILE == '90,3 (36)':
 		# 5758
 		SEITEZEILE = '90,3'
-		ANM = '(36)'
+		stelleAnmerkung = '(36)'
 	elif SEITEZEILE == '33,14 33,14':
 		# 5791
 		SEITEZEILE = '33, 14'
@@ -954,6 +955,7 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 		'eponym': EPON,
 		'beziehung': BEZ,
 		'funktion': FKT,
+		'anmerkung': ANM
 	}
 	gott += [myGott]
 	
@@ -1037,7 +1039,7 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 				'zeile_stop': stopZeile,
 				'stop_unsicher': stopUnsicher,
 				'zerstoerung': False,
-				'anmerkung': ANM
+				'anmerkung': stelleAnmerkung
 			}
 			stelle += [myStelle]
 

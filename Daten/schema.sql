@@ -99,6 +99,7 @@ CREATE  TABLE IF NOT EXISTS `edfu`.`gott` (
   `funktion` TEXT CHARACTER SET 'utf8' NULL ,
   `beziehung` TEXT CHARACTER SET 'utf8' NULL ,
   `ort` TEXT CHARACTER SET 'utf8' NULL ,
+  `anmerkung` TEXT NULL ,
   PRIMARY KEY (`uid`) ,
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
   INDEX `fk_gott_stelle1_idx` (`stelle_uid` ASC) )

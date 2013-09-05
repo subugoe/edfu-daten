@@ -471,13 +471,13 @@ docs = []
 # GOTT
 query = ("""
 SELECT
-	uid,id,stelle_uid,transliteration,ort,eponym,beziehung,funktion
+	uid,id,stelle_uid,transliteration,ort,eponym,beziehung,funktion,anmerkung
 FROM
 	tx_edfu_domain_model_gott
 """)
 cursor.execute(query)
 
-for (uid,id,stelle_uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
+for (uid,id,stelle_uid,transliteration,ort,eponym,beziehung,funktion,anmerkung) in cursor:
 	stellen = []
 	stelleIDs = []
 	if stelle_uid:
@@ -495,6 +495,7 @@ for (uid,id,stelle_uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
 		"eponym": eponym,
 		"beziehung": beziehung,
 		"funktion": funktion,
+		"anmerkung": anmerkung,
 		"stelle_id": stelleIDs
 	}
 	addStellenTo(stellen, doc)
