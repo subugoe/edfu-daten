@@ -117,8 +117,8 @@ CREATE  TABLE IF NOT EXISTS `edfu`.`ort` (
   `uid` INT NOT NULL AUTO_INCREMENT ,
   `id` INT NOT NULL ,
   `transliteration` TEXT CHARACTER SET 'utf8' NOT NULL ,
-  `uebersetzung` TEXT CHARACTER SET 'utf8' NULL ,
-  `ortsbeschreibung` TEXT CHARACTER SET 'utf8' NULL ,
+  `ort` TEXT CHARACTER SET 'utf8' NULL ,
+  `lokalisation` TEXT CHARACTER SET 'utf8' NULL ,
   `anmerkung` TEXT NULL ,
   PRIMARY KEY (`uid`) ,
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) )

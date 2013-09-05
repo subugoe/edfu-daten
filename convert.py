@@ -776,8 +776,8 @@ for (PRIMARY, STELLE, TRANS, ORT, LOK, ANM) in cursor:
 		'uid': PRIMARY,
 		'id': PRIMARY,
 		'transliteration': TRANS,
-		'uebersetzung': ORT,
-		'ortsbeschreibung': LOK,
+		'ort': ORT,
+		'lokalisation': LOK,
 		'anmerkung': ANM
 	}
 	ort += [myOrt]
@@ -842,7 +842,7 @@ for o in ort[:]:
 	previousTranslit = re.sub(r'[0-9 ]*$', '', previousO['transliteration'])
 	translit = re.sub(r'[0-9 ]*$', '', o['transliteration'])
 
-	if translit == previousTranslit and o['uebersetzung'] == previousO['uebersetzung'] and o['ortsbeschreibung'] == previousO['ortsbeschreibung']:
+	if translit == previousTranslit and o['ort'] == previousO['ort'] and o['lokalisation'] == previousO['lokalisation']:
 		# Orte stimmen überein: alle links dem o Datensatz zuweisen
 		for ohs in ort_has_stelle:
 			if ohs['uid_local'] == previousO['uid']:

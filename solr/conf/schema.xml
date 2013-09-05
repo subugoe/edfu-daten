@@ -59,7 +59,7 @@
 		<field name="photo_kommentar" type="text_ws" indexed="true" stored="true" multiValued="true"/>
 		<field name="literatur" type="text_de" indexed="true" stored="true" multiValued="true"/>
 		<field name="ort_id" type="int" indexed="true" stored="true"/>
-		<field name="ortsbeschreibung" type="text_de" indexed="true" stored="true"/>
+		<field name="lokalisation" type="text_de" indexed="true" stored="true"/>
 		<field name="gott_id" type="int" indexed="true" stored="true"/>
 		<field name="funktion" type="text_de" indexed="true" stored="true"/>
 		<field name="eponym" type="text_de" indexed="true" stored ="true"/>
@@ -150,7 +150,7 @@
 	<copyField source="uebersetzung" dest="text"/>
 	<copyField source="texttyp" dest="text"/>
 	<copyField source="literatur" dest="text"/>
-	<copyField source="ortsbeschreibung" dest="text"/>
+	<copyField source="lokalisation" dest="text"/>
 	<copyField source="eponym" dest="text"/>
 	<copyField source="beziehung" dest="text"/>
 	<copyField source="funktion" dest="text"/>

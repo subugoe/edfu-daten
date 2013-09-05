@@ -414,7 +414,7 @@ docs = []
 
 
 # ORT
-query = ("SELECT uid,id,transliteration,uebersetzung,ortsbeschreibung,anmerkung FROM tx_edfu_domain_model_ort")
+query = ("SELECT uid,id,transliteration,ort,lokalisation,anmerkung FROM tx_edfu_domain_model_ort")
 cursor.execute(query)
 
 query4 = """
@@ -435,7 +435,7 @@ ORDER BY
 	stelle.zeile_start
 """
 
-for (uid,id,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
+for (uid,id,transliteration,ort,lokalisation,anmerkung) in cursor:
 	stelleIDs = []
 	stellen = []
 	cursor2.execute(query4, [str(uid)])
@@ -450,8 +450,8 @@ for (uid,id,transliteration,uebersetzung,ortsbeschreibung,anmerkung) in cursor:
 		"sql_uid": uid,
 		"transliteration": transliteration.replace(':', '.'),
 		"transliteration_nosuffix": removeSuffix(transliteration),
-		"uebersetzung": uebersetzung,
-		"ortsbeschreibung": ortsbeschreibung,
+		"ort": ort,
+		"lokalisation": lokalisation,
 		"anmerkung": anmerkung,
 		"stelle_id": stelleIDs
 	}
