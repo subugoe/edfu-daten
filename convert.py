@@ -883,7 +883,7 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 		ANM = '2,7?'
 	elif SEITEZEILE == '052, 006 und 008;':
 		# 2376
-		SEITEZEILE = '052, 006; 052, 008'
+		SEITEZEILE = '052, 6-8'
 	elif SEITEZEILE == '215, 11 (2x)-216, 1 (1':
 		# 2463
 		SEITEZEILE = '215, 11 - 216, 1'
@@ -909,15 +909,21 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 		SEITEZEILE = '33, 14'
 	elif PRIMARY == 6335:
 		BND = '7'
+	elif SEITEZEILE == '331,6 und 332,1':
+		# 6420
+		SEITEZEILE = '331, 6 - 332, 1'
+	elif SEITEZEILE == '331,9 und 332,5':
+		# 6421
+		SEITEZEILE = '331, 9 - 332, 5'
 	elif SEITEZEILE == '114,4 114,7                                                114,4':
 		# 7603
-		SEITEZEILE = '114,4; 114,7'
+		SEITEZEILE = '114, 4-7'
 	elif SEITEZEILE == '47,5 47,5- 47,5':
 		# 7616
 		SEITEZEILE = '47, 5'
 	elif SEITEZEILE == '24;4':
 		# 7693
-		SEITEZEILE == '24, 4'
+		SEITEZEILE = '24, 4'
 	elif SEITEZEILE == '75,13 75,13 75,13':
 		# 7875
 		SEITEZEILE = '75, 13'
@@ -927,6 +933,15 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 	elif SEITEZEILE == '137, 008-138':
 		# 8337
 		SEITEZEILE = '137, 008 - 138, 10'
+	elif SEITEZEILE == '201; 008':
+		# 8853
+		SEITEZEILE = '201, 008'
+	elif SEITEZEILE == '067; 004':
+		# 8918
+		SEITEZEILE = '067, 004'
+	elif SEITEZEILE == '018; 009':
+		# 8939
+		SEITEZEILE = '018, 009'
 	elif PRIMARY == 9165:
 		BND = '5'
 	
@@ -971,73 +986,72 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 		print "\t".join(["GL", str(PRIMARY), "INFO", u"Änderung SEITEZEILE", originalSEITEZEILE, SEITEZEILE])
 		
 	szs = SEITEZEILE.strip('; ').split(';')
-	if len(SEITEZEILE) > 0:
-		for sz in szs:
-			stopUnsicher = False
-			sz = sz.strip(' ,')
+	if len(szs) == 1 and len(szs[0]) > 1:
+		sz = szs[0]
+		stopUnsicher = False
+		sz = sz.strip(' ,')
+		komponenten = sz.split(',')
+		if len(komponenten) == 1:
+			# nur eine Komponente: nur eine Seitenzahl vorhanden, mit Zeile 0 ergänzen
+			sz = re.sub('([0-9]*)(.*)', '\\1,0\\2', sz)
 			komponenten = sz.split(',')
-			if len(komponenten) == 1:
-				# nur eine Komponente: nur eine Seitenzahl vorhanden, mit Zeile 0 ergänzen
-				sz = re.sub('([0-9]*)(.*)', '\\1,0\\2', sz)
-				komponenten = sz.split(',')
+		
+		if len(komponenten) > 2:
+			sz = sz.replace(' ', '')
+			sz = sz.replace('/', '-')
+			sy = sz.split('-')
+			if len(sy) == 2:
+				start = szSplit(sy[0])
+				stop = szSplit(sy[1])
+				startSeite = start[0]
+				startZeile = start[1]
+				stopSeite = stop[0]
+				stopZeile = stop[1]
+			else:
+				print "\t".join(["GL", str(PRIMARY), "FEHLER", u"SEITEZEILE, falsche Komponentenzahl", sz])
+		else:
+			startSeite = int(komponenten[0])
+			stopSeite = startSeite
+			zeilen = komponenten[1].strip()
+			if zeilen.find('f') != -1:
+				stopUnsicher = True
+				zeilen = re.sub(r'\s*f+\.*', '', zeilen)
 			
-			if len(komponenten) > 2:
-				sz = sz.replace(' ', '')
-				sz = sz.replace('/', '-')
-				sy = sz.split('-')
-				if len(sy) == 2:
-					start = szSplit(sy[0])
-					stop = szSplit(sy[1])
-					startSeite = start[0]
-					startZeile = start[1]
-					stopSeite = stop[0]
-					stopZeile = stop[1]
-				else:
-					print "\t".join(["GL", str(PRIMARY), "FEHLER", u"SEITEZEILE, falsche Komponentenzahl", sz])
+			zeilen = re.sub(r'[ /-]+', '-', zeilen)
+			zs = zeilen.split('-')
+
+			startZeile = int(zs[0])
+			if len(zs) > 1:
+				stopZeile = int(zs[1])
 			else:
-				startSeite = int(komponenten[0])
-				stopSeite = startSeite
-				zeilen = komponenten[1].strip()
-				if zeilen.find('f') != -1:
-					stopUnsicher = True
-					zeilen = re.sub(r'\s*f+\.*', '', zeilen)
-				
-				zeilen = re.sub(r'[ /-]+', '-', zeilen)
-				zs = zeilen.split('-')
-	
-				startZeile = int(zs[0])
-				if len(zs) > 1:
-					stopZeile = int(zs[1])
-				else:
-					stopZeile = startZeile
-	
-			band = int(BND)
-			if startSeite > 0 and band > 0:
-				myStelle = {
-					'uid': len(stelle),
-					'band_uid': band,
-					'seite_start': startSeite,
-					'seite_stop': stopSeite,
-					'zeile_start': startZeile,
-					'zeile_stop': stopZeile,
-					'stop_unsicher': stopUnsicher,
-					'zerstoerung': False,
-					'anmerkung': ANM
-				}
-				stelle += [myStelle]
+				stopZeile = startZeile
 
-				if myStelle['zeile_start'] > 30:
-					print "\t".join(["GL", str(PRIMARY), "FEHLER", "zeile_start > 30", sz])
-				if myStelle['zeile_stop'] > 30:
-					print "\t".join(["GL", str(PRIMARY), "FEHLER", "zeile_stop > 30", sz])
+		band = int(BND)
+		if startSeite > 0 and band > 0:
+			myStelle = {
+				'uid': len(stelle),
+				'band_uid': band,
+				'seite_start': startSeite,
+				'seite_stop': stopSeite,
+				'zeile_start': startZeile,
+				'zeile_stop': stopZeile,
+				'stop_unsicher': stopUnsicher,
+				'zerstoerung': False,
+				'anmerkung': ANM
+			}
+			stelle += [myStelle]
 
-				gott_has_stelle += [{
-					'uid_local': PRIMARY,
-					'uid_foreign': myStelle['uid']
-				}]
-			else:
-				print "\t".join(["GL", str(PRIMARY), "FEHLER", u"startSeite oder Band nicht ermittelbar: Datensatz verwerfen", sz])
+			if myStelle['zeile_start'] > 30:
+				print "\t".join(["GL", str(PRIMARY), "FEHLER", "zeile_start > 30", sz])
+			if myStelle['zeile_stop'] > 30:
+				print "\t".join(["GL", str(PRIMARY), "FEHLER", "zeile_stop > 30", sz])
 
+			myGott['stelle_uid'] = myStelle['uid']
+		else:
+			print "\t".join(["GL", str(PRIMARY), "FEHLER", u"startSeite oder Band nicht ermittelbar: Datensatz verwerfen", sz])
+	else:
+		print "\t".join(["GL", str(PRIMARY), "FEHLER", u"nicht genau eine Stelle in SEITEZEILE: Datensatz verwerfen", SEITEZEILE])
+		
 
 wort = []
 wort_has_stelle = []
@@ -1464,7 +1478,6 @@ addRecordsToTable(photo, 'photo')
 addRecordsToTable(formular_has_photo, 'formular_photo_mm')
 
 addRecordsToTable(gott, 'gott')
-addRecordsToTable(gott_has_stelle, 'gott_stelle_mm')
 
 addRecordsToTable(ort, 'ort')
 addRecordsToTable(ort_has_stelle, 'ort_stelle_mm')
@@ -1495,7 +1508,6 @@ print "ort_has_stelle: " + str(len(ort_has_stelle))
 print ""
 print "GL"
 print "gott: " + str(len(gott))
-print "gott_has_stelle: " + str(len(gott_has_stelle))
 
 print ""
 print "WL"

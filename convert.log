@@ -673,6 +673,7 @@ GL	1776	INFO	Änderung SEITEZEILE	238.8	238, 8
 GL	1777	INFO	Änderung SEITEZEILE	239.8	239, 8
 GL	1778	INFO	Änderung SEITEZEILE	240.1	240, 1
 GL	1779	INFO	Änderung SEITEZEILE	241.8	241, 8
+GL	1780	FEHLER	nicht genau eine Stelle in SEITEZEILE: Datensatz verwerfen	
 GL	1781	INFO	Änderung SEITEZEILE	243.8	243, 8
 GL	1782	INFO	Änderung SEITEZEILE	244.7	244, 7
 GL	1783	INFO	Änderung SEITEZEILE	246.5	246, 5
@@ -693,9 +694,10 @@ GL	1798	INFO	Änderung SEITEZEILE	261.4	261, 4
 GL	1799	INFO	Änderung SEITEZEILE	261.8	261, 8
 GL	1800	INFO	Änderung SEITEZEILE	262.13	262, 13
 GL	1801	INFO	Änderung SEITEZEILE	231.5	231, 5
-GL	2376	INFO	Änderung SEITEZEILE	052, 006 und 008;	052, 006; 052, 008
+GL	2376	INFO	Änderung SEITEZEILE	052, 006 und 008;	052, 6-8
 GL	3266	INFO	Änderung SEITEZEILE	159	159, 0
 GL	3463	INFO	Änderung SEITEZEILE	215, 11 (2x)-216, 1 (1	215, 11 - 216, 1
+GL	3641	FEHLER	nicht genau eine Stelle in SEITEZEILE: Datensatz verwerfen	
 GL	3654	INFO	Änderung SEITEZEILE	149, 3:	149, 3
 GL	4093	INFO	Änderung SEITEZEILE	90, 3 (25);	90, 3;
 GL	4360	INFO	Änderung SEITEZEILE	113.14	113, 14
@@ -873,6 +875,7 @@ GL	6380	INFO	Änderung SEITEZEILE	212.9	212, 9
 GL	6381	INFO	Änderung SEITEZEILE	212.14	212, 14
 GL	6382	INFO	Änderung SEITEZEILE	213.3	213, 3
 GL	6383	INFO	Änderung SEITEZEILE	213.13	213, 13
+GL	6384	FEHLER	nicht genau eine Stelle in SEITEZEILE: Datensatz verwerfen	
 GL	6385	INFO	Änderung SEITEZEILE	214.1	214, 1
 GL	6386	INFO	Änderung SEITEZEILE	214.16	214, 16
 GL	6387	INFO	Änderung SEITEZEILE	215.8	215, 8
@@ -908,8 +911,8 @@ GL	6416	INFO	Änderung SEITEZEILE	321.13	321, 13
 GL	6417	INFO	Änderung SEITEZEILE	323.5	323, 5
 GL	6418	INFO	Änderung SEITEZEILE	323.9	323, 9
 GL	6419	INFO	Änderung SEITEZEILE	325.6	325, 6
-GL	6420	INFO	Änderung SEITEZEILE	331,6 und 332,1	331,6 ; 332,1
-GL	6421	INFO	Änderung SEITEZEILE	331,9 und 332,5	331,9 ; 332,5
+GL	6420	INFO	Änderung SEITEZEILE	331,6 und 332,1	331, 6 - 332, 1
+GL	6421	INFO	Änderung SEITEZEILE	331,9 und 332,5	331, 9 - 332, 5
 GL	6422	INFO	Änderung SEITEZEILE	332.11	332, 11
 GL	6423	INFO	Änderung SEITEZEILE	1.16	1, 16
 GL	6424	INFO	Änderung SEITEZEILE	2.3	2, 3
@@ -1967,7 +1970,7 @@ GL	7599	INFO	Änderung SEITEZEILE	313,3         313,3	313,3
 GL	7600	INFO	Änderung SEITEZEILE	313,11 313,11	313,11
 GL	7601	INFO	Änderung SEITEZEILE	113,14 113,14	113,14
 GL	7602	INFO	Änderung SEITEZEILE	114,1          114,1	114,1
-GL	7603	INFO	Änderung SEITEZEILE	114,4 114,7                                                114,4	114,4; 114,7
+GL	7603	INFO	Änderung SEITEZEILE	114,4 114,7                                                114,4	114, 4-7
 GL	7604	INFO	Änderung SEITEZEILE	114,7 114,7	114,7
 GL	7605	INFO	Änderung SEITEZEILE	191,3 191,3	191,3
 GL	7606	INFO	Änderung SEITEZEILE	191,6         191,6	191,6
@@ -2050,6 +2053,7 @@ GL	7689	INFO	Änderung SEITEZEILE	286.2	286, 2
 GL	7690	INFO	Änderung SEITEZEILE	148.1	148, 1
 GL	7691	INFO	Änderung SEITEZEILE	81.59999999999999	81, 6
 GL	7692	INFO	Änderung SEITEZEILE	121.1	121, 1
+GL	7693	INFO	Änderung SEITEZEILE	24;4	24, 4
 GL	7694	INFO	Änderung SEITEZEILE	83.7	83, 7
 GL	7695	INFO	Änderung SEITEZEILE	64.7	64, 7
 GL	7696	INFO	Änderung SEITEZEILE	131.5	131, 5
@@ -2565,6 +2569,9 @@ GL	8277	INFO	Änderung SEITEZEILE	56.1	56, 1
 GL	8278	INFO	Änderung SEITEZEILE	94.12	94, 12
 GL	8279	INFO	Änderung SEITEZEILE	168.14	168, 14
 GL	8337	INFO	Änderung SEITEZEILE	137, 008-138	137, 008 - 138, 10
+GL	8853	INFO	Änderung SEITEZEILE	201; 008	201, 008
+GL	8918	INFO	Änderung SEITEZEILE	067; 004	067, 004
+GL	8939	INFO	Änderung SEITEZEILE	018; 009	018, 009
 
 
 
@@ -3666,7 +3673,7 @@ Tabelle »tempel«: 1 Datensätze
 
 Tabelle »band«: 8 Datensätze
 
-Tabelle »stelle«: 30309 Datensätze
+Tabelle »stelle«: 30301 Datensätze
 
 Tabelle »szene_bild«: 38 Datensätze
 
@@ -3689,8 +3696,6 @@ Tabelle »photo«: 12207 Datensätze
 Tabelle »formular_photo_mm«: 94721 Datensätze
 
 Tabelle »gott«: 9470 Datensätze
-
-Tabelle »gott_stelle_mm«: 9475 Datensätze
 
 Tabelle »ort«: 1180 Datensätze
 
@@ -3740,7 +3745,7 @@ FL: Transliteration mit Punkt und Folgebuchstaben:
 
 FL: Datensätze, Stellen, Bilder
 formular: 10372
-stelle: 30309
+stelle: 30301
 photo: 12207
 formular_has_photo 94721
 
@@ -3750,7 +3755,6 @@ ort_has_stelle: 5587
 
 GL
 gott: 9470
-gott_has_stelle: 9475
 
 WL
 wort: 3030

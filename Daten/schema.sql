@@ -93,13 +93,15 @@ DROP TABLE IF EXISTS `edfu`.`gott` ;
 CREATE  TABLE IF NOT EXISTS `edfu`.`gott` (
   `uid` INT NOT NULL AUTO_INCREMENT ,
   `id` INT NOT NULL ,
+  `stelle_uid` INT NOT NULL ,
   `transliteration` TEXT CHARACTER SET 'utf8' NOT NULL ,
   `eponym` TEXT CHARACTER SET 'utf8' NULL ,
   `funktion` TEXT CHARACTER SET 'utf8' NULL ,
   `beziehung` TEXT CHARACTER SET 'utf8' NULL ,
   `ort` TEXT CHARACTER SET 'utf8' NULL ,
   PRIMARY KEY (`uid`) ,
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) )
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
+  INDEX `fk_gott_stelle1_idx` (`stelle_uid` ASC) )
 ENGINE = MyISAM
 AUTO_INCREMENT = 9471
 DEFAULT CHARACTER SET = utf8
@@ -274,22 +276,6 @@ CREATE  TABLE IF NOT EXISTS `edfu`.`formular_has_literatur` (
   PRIMARY KEY (`uid_local`, `uid_foreign`) ,
   INDEX `fk_FL_has_literatur_literatur1_idx` (`uid_foreign` ASC) ,
   INDEX `fk_FL_has_literatur_FL1_idx` (`uid_local` ASC) )
-ENGINE = MyISAM
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_unicode_ci;
-
-
--- -----------------------------------------------------
--- Table `edfu`.`gott_has_stelle`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `edfu`.`gott_has_stelle` ;
-
-CREATE  TABLE IF NOT EXISTS `edfu`.`gott_has_stelle` (
-  `uid_local` INT NOT NULL ,
-  `uid_foreign` INT NOT NULL ,
-  PRIMARY KEY (`uid_local`, `uid_foreign`) ,
-  INDEX `fk_gott_has_belegstelle_belegstelle1_idx` (`uid_foreign` ASC) ,
-  INDEX `fk_gott_has_belegstelle_gott1_idx` (`uid_local` ASC) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;

@@ -469,34 +469,20 @@ docs = []
 
 
 # GOTT
-query = ("SELECT uid,id,transliteration,ort,eponym,beziehung,funktion FROM tx_edfu_domain_model_gott")
+query = ("""
+SELECT
+	uid,id,stelle_uid,transliteration,ort,eponym,beziehung,funktion
+FROM
+	tx_edfu_domain_model_gott
+""")
 cursor.execute(query)
 
-query5 = """
-SELECT 
-	uid_foreign,
-	uid_local
-FROM
-	tx_edfu_domain_model_stelle AS stelle,
-	tx_edfu_domain_model_band AS band,
-	tx_edfu_gott_stelle_mm
-WHERE
-	uid_local = %s AND
-	uid_foreign = stelle.uid AND
-	stelle.band_uid = band.uid
-ORDER BY 
-	band.nummer,
-	stelle.seite_start,
-	stelle.zeile_start
-"""
-
-for (uid,id,transliteration,ort,eponym,beziehung,funktion) in cursor:
-	stelleIDs = []
+for (uid,id,stelle_uid,transliteration,ort,eponym,beziehung,funktion) in cursor:
 	stellen = []
-	cursor2.execute(query5, [str(uid)])
-	for (uid_foreign,uid_local) in cursor2:
-		stelleIDs += ['stelle-' + str(uid_foreign)]
-		stellen += [uid_foreign]
+	stelleIDs = []
+	if stelle_uid:
+		stellen = [stelle_uid]
+		stelleIDs = ['stelle-' + str(stelle_uid)]
 		
 	doc = {
 		"id": "gott-" + str(id),
@@ -509,18 +495,19 @@ for (uid,id,transliteration,ort,eponym,beziehung,funktion) in cursor:
 		"eponym": eponym,
 		"beziehung": beziehung,
 		"funktion": funktion,
-		"stelle_id": stellen
+		"stelle_id": stelleIDs
 	}
 	addStellenTo(stellen, doc)
 	
 	doc['sort'] = doc['transliteration']
 	if len(stellen) > 0:
-		doc['sort'] += '--' + str(stellenDict[stellen[0]]['start'])
+		doc['sort'] += '--' + str(stellenDict[stelle_uid]['start'])
 	
 	docs += [doc]
 
 submitDocs(docs, 'Gott')
 docs = []
+
 
 
 # WORT
@@ -566,7 +553,7 @@ for (uid,id,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_
 		"hieroglyph": hieroglyph,
 		"lemma": lemma,
 		"stelle_berlin_id": wb_berlin_uid,
-		"stelle_id": stellen
+		"stelle_id": stelleIDs
 	}
 	addStellenTo(stellen, doc)
 	
