@@ -7,6 +7,18 @@ CREATE SCHEMA IF NOT EXISTS `edfu` DEFAULT CHARACTER SET utf8 ;
 USE `edfu` ;
 
 -- -----------------------------------------------------
+-- Table `edfu`.`tempel`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `edfu`.`tempel` ;
+
+CREATE  TABLE IF NOT EXISTS `edfu`.`tempel` (
+  `uid` INT NOT NULL ,
+  `name` VARCHAR(255) NULL ,
+  PRIMARY KEY (`uid`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `edfu`.`band`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `edfu`.`band` ;
@@ -15,7 +27,15 @@ CREATE  TABLE IF NOT EXISTS `edfu`.`band` (
   `uid` INT NOT NULL ,
   `nummer` INT NULL ,
   `freigegeben` TINYINT NULL ,
-  PRIMARY KEY (`uid`) )
+  `literatur` VARCHAR(255) NULL ,
+  `tempel_uid` INT NOT NULL ,
+  PRIMARY KEY (`uid`) ,
+  INDEX `fk_band_tempel1_idx` (`tempel_uid` ASC) ,
+  CONSTRAINT `fk_band_tempel1`
+    FOREIGN KEY (`tempel_uid` )
+    REFERENCES `edfu`.`tempel` (`uid` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 

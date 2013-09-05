@@ -239,13 +239,22 @@ index.delete_query('*:*')
 stellenDict = {}
 
 query = """
-SELECT tx_edfu_domain_model_stelle.uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,zerstoerung,nummer,freigegeben
-FROM tx_edfu_domain_model_stelle,tx_edfu_domain_model_band
-WHERE tx_edfu_domain_model_stelle.band_uid = tx_edfu_domain_model_band.uid
+SELECT
+	stelle.uid, seite_start, seite_stop, zeile_start, zeile_stop,
+	anmerkung, stop_unsicher, zerstoerung,
+	band.nummer, band.freigegeben,
+	tempel.name
+FROM
+	tx_edfu_domain_model_stelle AS stelle,
+	tx_edfu_domain_model_band AS band,
+	tx_edfu_domain_model_tempel AS tempel
+WHERE
+	stelle.band_uid = band.uid AND
+	band.tempel_uid = tempel.uid
 """
 cursor.execute(query)
 
-for (uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,zerstoerung,band,freigegeben) in cursor:
+for (uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,zerstoerung,band,freigegeben,tempel) in cursor:
 	zeile_start2 = zeile_start
 	if not zeile_start:
 		zeile_start2 = 0
@@ -258,6 +267,7 @@ for (uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,z
 		"typ": "stelle",
 		"sql_tabelle": "tx_edfu_domain_model_stelle",
 		"sql_uid": uid,
+		"tempel": tempel,
 		"band": band,
 		"seite_start": seite_start,
 		"seite_stop": seite_stop,

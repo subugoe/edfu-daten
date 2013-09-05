@@ -143,17 +143,20 @@ roemisch = {
 }
 
 
+tempel = [
+	{'uid': 0, 'name': 'Edfu'}
+]
 
 # Einträge für die 8 Chassinat Bände.
 bandDict = {
-	1: {'uid': 1, 'nummer': 1, 'freigegeben': False},
-	2: {'uid': 2, 'nummer': 2, 'freigegeben': False},
-	3: {'uid': 3, 'nummer': 3, 'freigegeben': False},
-	4: {'uid': 4, 'nummer': 4, 'freigegeben': False},
-	5: {'uid': 5, 'nummer': 5, 'freigegeben': False},
-	6: {'uid': 6, 'nummer': 6, 'freigegeben': False},
-	7: {'uid': 7, 'nummer': 7, 'freigegeben': True},
-	8: {'uid': 8, 'nummer': 8, 'freigegeben': True}
+	1: {'uid': 1, 'nummer': 1, 'freigegeben': False, 'literatur': u'Chassinat, Émile; Le Temple d’Edfou I, 1892.', 'tempel_uid': 0},
+	2: {'uid': 2, 'nummer': 2, 'freigegeben': False, 'literatur': u'Chassinat, Émile; Le Temple d’Edfou II, 1897.', 'tempel_uid': 0},
+	3: {'uid': 3, 'nummer': 3, 'freigegeben': False, 'literatur': u'Chassinat, Émile; Le Temple d’Edfou III, 1928.', 'tempel_uid': 0},
+	4: {'uid': 4, 'nummer': 4, 'freigegeben': False, 'literatur': u'Chassinat, Émile; Le Temple d’Edfou IV, 1929.', 'tempel_uid': 0},
+	5: {'uid': 5, 'nummer': 5, 'freigegeben': False, 'literatur': u'Chassinat, Émile; Le Temple d’Edfou V, 1930.', 'tempel_uid': 0},
+	6: {'uid': 6, 'nummer': 6, 'freigegeben': False, 'literatur': u'Chassinat, Émile; Le Temple d’Edfou VI, 1931.', 'tempel_uid': 0},
+	7: {'uid': 7, 'nummer': 7, 'freigegeben': True, 'literatur': u'Chassinat, Émile; Le Temple d’Edfou VII, 1932.', 'tempel_uid': 0},
+	8: {'uid': 8, 'nummer': 8, 'freigegeben': True, 'literatur': u'Chassinat, Émile; Le Temple d’Edfou VIII, 1933.', 'tempel_uid': 0}
 }
 band = []
 
@@ -1442,6 +1445,7 @@ for result in cursor.execute(schema, multi=True):
 
 db.commit()
 
+addRecordsToTable(tempel, 'tempel')
 addRecordsToTable(band, 'band')
 addRecordsToTable(stelle, 'stelle')
 addRecordsToTable(szene_bild, 'szene_bild')
@@ -1470,48 +1474,6 @@ addRecordsToTable(wort_has_stelle, 'wort_stelle_mm')
 
 cursor.close()
 db.close()	
-
-
-
-
-
-"""
-print "\n\n**** band ****"
-pprint.PrettyPrinter().pprint(band)
-print "\n\n**** formular ****"
-pprint.PrettyPrinter().pprint(formular)
-print "\n\n**** stelle ****"
-pprint.PrettyPrinter().pprint(stelle)
-print "\n\n**** szene ****"
-pprint.PrettyPrinter().pprint(szene)
-print "\n\n**** szene_bild ****"
-pprint.PrettyPrinter().pprint(szene_bild)
-print "\n\n**** szene_has_stelle ****"
-pprint.PrettyPrinter().pprint(szene_has_stelle)
-print "\n\n**** formular_has_photo_collection ****"
-pprint.PrettyPrinter().pprint(formular_has_photo_collection)
-print "\n\n**** photo_collection ****"
-pprint.PrettyPrinter().pprint(photo_collection)
-print "\n\n**** photo_collection_has_photo ****"
-pprint.PrettyPrinter().pprint(photo_collection_has_photo)
-print "\n\n**** photo ****"
-pprint.PrettyPrinter().pprint(photo)
-print "\n\n**** ort ****"
-pprint.PrettyPrinter().pprint(ort)
-print "\n\n**** ort_has_stelle ****"
-pprint.PrettyPrinter().pprint(ort_has_stelle)
-print "\n\n**** gott ****"
-pprint.PrettyPrinter().pprint(gott)
-print "\n\n**** gott_has_stelle ****"
-pprint.PrettyPrinter().pprint(gott_has_stelle)
-print "\n\n**** wort ****"
-pprint.PrettyPrinter().pprint(wort)
-print "\n\n**** wort_has_stelle ****"
-pprint.PrettyPrinter().pprint(wort_has_stelle)
-print "\n\n**** berlin ****"
-pprint.PrettyPrinter().pprint(berlin)
-"""
-
 
 
 print ""
