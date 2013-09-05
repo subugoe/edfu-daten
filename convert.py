@@ -303,7 +303,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 		.replace(u'placZe', u'placée')
 		.replace(u'dZesse', u'déesse')
 		.replace(u'mutilZs', u'mutilés')
-		.replace(u'fen?tre', u'fenètre')
+		.replace(u'fen?tre', u'fenêtre')
 		.replace(u'ZtZ gravZe', u'été gravée'))
 
 	if myFormular['uebersetzung'] != TEXTDEUTSC:
