@@ -78,6 +78,7 @@
 		<field name="berlin_notiz" type="string" indexed="true" stored="true" multiValued="false"/>
 		<field name="berlin_display" type="string" indexed="true" stored="true" multiValued="false"/>
 
+		<field name="stelle_uid" type="int" indexed="true" stored="true" multiValued="true"/>
 		<field name="tempel" type="string" indexed="true" stored="true" multiValued="true"/>
 		<field name="band" type="int" indexed="true" stored="true" multiValued="true"/>
 		<field name="freigegeben" type="boolean" indexed="true" stored="true" multiValued="true"/>

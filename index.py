@@ -123,6 +123,45 @@ def addSzenenForStelleToDocument (stelle, doc):
 			mergeDocIntoDoc(szene, doc)
 		
 
+"""
+	Entfernen des Suffix in Transliterationen.
+	Ist bereits durch : markiert.
+	: danach durch den normalen . ersetzen.
+"""
+suffixremover = re.compile(r'(:[^aeiou][^ ]*)')
+def removeSuffix (transliteration):
+	return suffixremover.sub('', transliteration).replace(':', '.')
+
+
+
+"""
+	Dokumente im Array doc an den Index schicken und den Array leeren.
+"""
+def submitDocs (docs, name):
+	#pprint.pprint(docs)
+	
+	index = solr.Solr('http://localhost:8080/solr/edfu')
+	index.add_many(docs)
+	index.commit()
+
+	index = solr.Solr('http://vlib.sub.uni-goettingen.de/solr/edfu')
+	index.add_many(docs)
+	index.commit()
+	
+	print str(len(docs)) + ' ' + name + u' Dokumente indexiert'
+	
+	
+
+"""
+	Indexe leeren.
+"""
+index = solr.Solr('http://localhost:8080/solr/edfu')
+index.delete_query('*:*')
+index = solr.Solr('http://vlib.sub.uni-goettingen.de/solr/edfu')
+index.delete_query('*:*')
+
+
+
 
 """
 	Szeneninformationen laden und zwischenspeichern.
@@ -170,6 +209,7 @@ cursor.execute(szenenQuery)
 for values in cursor:
 	docSzene = dict(zip(cursor.column_names, values))
 	szeneUID = docSzene['szene_uid']
+	
 	stelleUID = docSzene['stelle_uid']
 	if currentSzeneID != szeneUID:
 		# Neue Szene
@@ -189,50 +229,11 @@ for values in cursor:
 
 
 
-"""
-	Entfernen des Suffix in Transliterationen.
-	Ist bereits durch : markiert.
-	: danach durch den normalen . ersetzen.
-"""
-suffixremover = re.compile(r'(:[^aeiou][^ ]*)')
-def removeSuffix (transliteration):
-	return suffixremover.sub('', transliteration).replace(':', '.')
-
-
-
-"""
-	Dokumente im Array doc an den Index schicken und den Array leeren.
-"""
-def submitDocs (docs, name):
-	#pprint.pprint(docs)
-	
-	index = solr.Solr('http://localhost:8080/solr/edfu')
-	index.add_many(docs)
-	index.commit()
-
-	index = solr.Solr('http://vlib.sub.uni-goettingen.de/solr/edfu')
-	index.add_many(docs)
-	index.commit()
-	
-	print str(len(docs)) + ' ' + name + u' Dokumente indexiert'
-	
-	
-
-"""
-	Indexe leeren.
-"""
-index = solr.Solr('http://localhost:8080/solr/edfu')
-index.delete_query('*:*')
-index = solr.Solr('http://vlib.sub.uni-goettingen.de/solr/edfu')
-index.delete_query('*:*')
-
-
 
 
 """
 	Erstellen von Indexdokumenten für die verschiedenen SQL Tabellen.
 """
-
 
 
 # STELLE
@@ -581,6 +582,15 @@ submitDocs(docs, 'Wort')
 docs = []
 
 submitDocs(stellenDict.values(), 'Stellen')
+
+docs = szenenDict.values()
+for doc in docs:
+	doc['id'] = 'szene-' + str('szene_uid')
+	doc['typ'] = 'szene'
+submitDocs(docs, 'Szene')
+docs = []
+
+
 
 
 # MySQL Verbindungen schließen
