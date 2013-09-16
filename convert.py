@@ -161,34 +161,14 @@ bandDict = {
 band = []
 
 
-# Bislang 5 Szenen genutzt, manuell übertragen.
-szene = [
-	{'uid': 0, 'nummer': 1, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinate_x': None, 'koordinate_y': None, 'blickwinkel': None, 'breite': None, 'prozent_z': None, 'hoehe': None},
-	{'uid': 1, 'nummer': 2, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinate_x': None, 'koordinate_y': None, 'blickwinkel': None, 'breite': None, 'prozent_z': None, 'hoehe': None},
-	{'uid': 2, 'nummer': 3, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinate_x': None, 'koordinate_y': None, 'blickwinkel': None, 'breite': None, 'prozent_z': None, 'hoehe': None},
-	{'uid': 3, 'nummer': 4, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinate_x': None, 'koordinate_y': None, 'blickwinkel': None, 'breite': None, 'prozent_z': None, 'hoehe': None},
-	{'uid': 4, 'nummer': 5, 'beschreibung':'', 'szene_bild_uid': None, 'polygon':'', 'koordinate_x': None, 'koordinate_y': None, 'blickwinkel': None, 'breite': None, 'prozent_z': None, 'hoehe': None},
-]
-
-# Stellenzuweisungen für Szenen.
-szene_has_stelle = [
-	{'uid_local': 0, 'uid_foreign': 0},
-	{'uid_local': 1, 'uid_foreign': 1},
-	{'uid_local': 2, 'uid_foreign': 2},
-	{'uid_local': 3, 'uid_foreign': 3},
-	{'uid_local': 4, 'uid_foreign': 4},
-]
-
-# Einträge: Stellen für Szenen.
-stelle = [
-	{'uid': 0, 'band_uid': 5, 'seite_start': 1, 'zeile_start': 11, 'seite_stop': 4, 'zeile_stop': 6, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
-	{'uid': 1, 'band_uid': 5, 'seite_start': 4, 'zeile_start': 6, 'seite_stop': 7, 'zeile_stop': 4, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
-	{'uid': 2, 'band_uid': 5, 'seite_start': 7, 'zeile_start': 7, 'seite_stop': 9, 'zeile_stop': 8, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
-	{'uid': 3, 'band_uid': 5, 'seite_start': 9, 'zeile_start': 10, 'seite_stop': 10, 'zeile_stop': 16, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
-	{'uid': 4, 'band_uid': 5, 'seite_start': 11, 'zeile_start': 4, 'seite_stop': 12, 'zeile_stop': 4, 'anmerkung': '', 'stop_unsicher': 0, 'zerstoerung': 0},
-]
+# Szeneninformation
+# Momentan nicht übertragen: Szene 5 (V 011,4-012-4)
+szene = []
+szene_has_stelle = []
+stelle = []
 szene_bildDict = {}
 szene_bild = []
+
 formularDict = {}
 formular = []
 suffixe = {}
@@ -1389,15 +1369,23 @@ with open('Daten/uebersicht_bilder.csv', 'rb') as bilderListeCSV:
 							rSzene['polygon'] = row[columnDict['polygon_original']]
 							
 						szene += [rSzene]
+						seiteStart = row[columnDict['page']]
+						seiteStop = seiteStart
+						zeileStart = 0
+						zeileStop = 30
+						if len(row) >= 15:
+							seiteStop = row[columnDict['page-to']]
+							zeileStart = row[columnDict['line']]
+							zeileStop = row[columnDict['line-to']]
 						
 						if row[columnDict['volume']] != '':
 							rStelle = {
 								'uid': stelleID,
 								'band_uid': row[columnDict['volume']],
-								'seite_start': row[columnDict['page']],
-								'zeile_start': 0,
-								'seite_stop': row[columnDict['page']],
-								'zeile_stop': 30,
+								'seite_start': seiteStart,
+								'zeile_start': zeileStart,
+								'seite_stop': seiteStop,
+								'zeile_stop': zeileStop,
 								'anmerkung': '',
 								'stop_unsicher': 0,
 								'zerstoerung': 0

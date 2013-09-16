@@ -3147,13 +3147,13 @@ Tabelle »tempel«: 1 Datensätze
 
 Tabelle »band«: 8 Datensätze
 
-Tabelle »stelle«: 28210 Datensätze
+Tabelle »stelle«: 28209 Datensätze
 
 Tabelle »szene_bild«: 38 Datensätze
 
-Tabelle »szene«: 3286 Datensätze
+Tabelle »szene«: 3281 Datensätze
 
-Tabelle »szene_stelle_mm«: 693 Datensätze
+Tabelle »szene_stelle_mm«: 692 Datensätze
 
 Tabelle »literatur«: 5 Datensätze
 
@@ -3219,7 +3219,7 @@ FL: Transliteration mit Punkt und Folgebuchstaben:
 
 FL: Datensätze, Stellen, Bilder
 formular: 10372
-stelle: 28210
+stelle: 28209
 photo: 12207
 formular_has_photo 94721
 
@@ -3236,6 +3236,6 @@ wort_has_stelle: 2091
 berlin: 781
 
 Szenen
-szene: 3286
+szene: 3281
 szene_bild: 38
-szene_has_stelle: 693
+szene_has_stelle: 692
