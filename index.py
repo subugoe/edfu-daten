@@ -101,11 +101,11 @@ def addStellenTo (stellen, doc):
 					doc['bandseite'] += [bandSeite]
 					bandSeiteZeile = bandSeite + ', '
 					if stelle['seite_stop'] == stelle['seite_start']:
-						bandSeiteZeile += str(stelle['zeile_start'])
+						bandSeiteZeile += ("%02d" % (stelle['zeile_start']))
 						if stelle['zeile_stop'] != stelle['zeile_start']:
-							bandSeiteZeile += '-' + str(stelle['zeile_stop'])
+							bandSeiteZeile += '-' + ("%02d" % (stelle['zeile_stop']))
 					else:
-						bandSeiteZeile += str(stelle['zeile_start']) + ' - ' + ("%03d" % (stelle['seite_stop'])) + ', ' + str(stelle['zeile_stop'])
+						bandSeiteZeile += ("%02d" % (stelle['zeile_start'])) + ' - ' + ("%03d" % (stelle['seite_stop'])) + ', ' + ("%02d" % (stelle['zeile_stop']))
 					
 					doc['bandseitezeile'] += [bandSeiteZeile]
 		
@@ -564,11 +564,11 @@ for (uid,id,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_
 	# WB Berlin Daten hinzufügen
 	if berlinDict.has_key(wb_berlin_uid):
 		berlin = berlinDict[wb_berlin_uid]
-		berlinStart = str(berlin['seite_start']) + '.' + str(berlin['zeile_start'])
-		berlinStop = str(berlin['seite_stop']) + '.' + str(berlin['zeile_stop'])
-		berlinString = str(berlin['band']) + ', ' + berlinStart
+		berlinStart = ("%03d" % (berlin['seite_start'])) + ', ' + ("%02d" % (berlin['zeile_start']))
+		berlinStop = ("%03d" % (berlin['seite_stop'])) + ', ' + ("%02d" % (berlin['zeile_stop']))
+		berlinString = intToRoman[berlin['band']] + ', ' + berlinStart
 		if berlinStart != berlinStop:
-			berlinString += '-' + berlinStop
+			berlinString += ' - ' + berlinStop
 		doc['berlin_display'] = berlinString
 		copyFields = ['band', 'seite_start', 'zeile_start', 'seite_stop', 'zeile_stop', 'notiz']
 		for fieldName in copyFields:
@@ -585,7 +585,7 @@ submitDocs(stellenDict.values(), 'Stellen')
 
 docs = szenenDict.values()
 for doc in docs:
-	doc['id'] = 'szene-' + str('szene_uid')
+	doc['id'] = 'szene-' + str(doc['szene_uid'])
 	doc['typ'] = 'szene'
 submitDocs(docs, 'Szene')
 docs = []
