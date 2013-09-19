@@ -98,7 +98,7 @@ def addStellenTo (stellen, doc):
 				bandNummer = stelle['band']
 				if intToRoman.has_key(bandNummer):
 					bandSeite = intToRoman[bandNummer] + ' ' + ("%03d" % (stelle['seite_start']))
-					doc['bandseite'] += [bandSeite]
+					doc['bandseite'] += [bandSeite.replace(u' ', u' ')]
 					bandSeiteZeile = bandSeite + ', '
 					if stelle['seite_stop'] == stelle['seite_start']:
 						bandSeiteZeile += ("%02d" % (stelle['zeile_start']))
@@ -107,7 +107,7 @@ def addStellenTo (stellen, doc):
 					else:
 						bandSeiteZeile += ("%02d" % (stelle['zeile_start'])) + ' - ' + ("%03d" % (stelle['seite_stop'])) + ', ' + ("%02d" % (stelle['zeile_stop']))
 					
-					doc['bandseitezeile'] += [bandSeiteZeile]
+					doc['bandseitezeile'] += [bandSeiteZeile.replace(u' ', u' ')]
 		
 				addSzenenForStelleToDocument(stelle, doc)
 
@@ -569,7 +569,7 @@ for (uid,id,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_
 		berlinString = intToRoman[berlin['band']] + ', ' + berlinStart
 		if berlinStart != berlinStop:
 			berlinString += ' - ' + berlinStop
-		doc['berlin_display'] = berlinString
+		doc['berlin_display'] = berlinString.replace(u' ', u' ')
 		copyFields = ['band', 'seite_start', 'zeile_start', 'seite_stop', 'zeile_stop', 'notiz']
 		for fieldName in copyFields:
 			doc['berlin_' + fieldName] = berlin[fieldName]
