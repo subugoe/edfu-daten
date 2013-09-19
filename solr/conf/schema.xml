@@ -164,6 +164,7 @@
 
 	<copyField source="photo" dest="text"/>
 	<copyField source="bandseitezeile" dest="text"/>
+	<copyField source="berlin_display" dest="text"/>
 	
 	<copyField source="photo" dest="photo_highlight"/>
 	<copyField source="bandseitezeile" dest="bandseitezeile_highlight"/>
