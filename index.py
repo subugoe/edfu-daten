@@ -166,9 +166,9 @@ index.delete_query('*:*')
 """
 	Szeneninformationen laden und zwischenspeichern.
 """
+szenenDict = {}
 szenenQuery = """
 SELECT
-	stelle_original.uid AS stelle_uid,
 	szene.uid AS szene_uid,
 	szene.nummer AS szene_nummer,
 	szene.beschreibung AS szene_beschreibung,
@@ -188,6 +188,26 @@ SELECT
 	szene.prozent_z AS szene_prozent_z,
 	szene.grau AS szene_grau
 FROM
+	tx_edfu_domain_model_szene AS szene,
+	tx_edfu_domain_model_szene_bild AS szene_bild
+WHERE
+	szene.szene_bild_uid = szene_bild.uid
+"""
+cursor.execute(szenenQuery)
+for values in cursor:
+	docSzene = dict(zip(cursor.column_names, values))
+	docSzene['stelle_uid'] = []
+	szeneUID = docSzene['szene_uid']
+	szenenDict[szeneUID] = docSzene
+
+
+
+stelleSzene = {}
+stelleSzeneQuery = """
+SELECT
+	szene.uid AS szene_uid,
+	stelle_original.uid AS stelle_uid
+FROM
 	tx_edfu_domain_model_stelle AS stelle_original,
 	tx_edfu_domain_model_szene AS szene,
 	tx_edfu_domain_model_szene_bild AS szene_bild,
@@ -202,22 +222,13 @@ WHERE
 	szene_stelle.uid_foreign = stelle.uid 
 """
 
-szenenDict = {}
-stelleSzene = {}
-currentSzeneID = None
-cursor.execute(szenenQuery)
+cursor.execute(stelleSzeneQuery)
 for values in cursor:
 	docSzene = dict(zip(cursor.column_names, values))
+
 	szeneUID = docSzene['szene_uid']
-	
 	stelleUID = docSzene['stelle_uid']
-	if currentSzeneID != szeneUID:
-		# Neue Szene
-		currentSzeneID = szeneUID
-		docSzene['stelle_uid'] = [stelleUID]
-		szenenDict[currentSzeneID] = docSzene
-	else:
-		szenenDict[currentSzeneID]['stelle_uid'] += [stelleUID]
+	szenenDict[szeneUID]['stelle_uid'] += [stelleUID]
 	
 	if not stelleSzene.has_key(stelleUID):
 		stelleSzene[stelleUID] = []
@@ -587,6 +598,7 @@ docs = szenenDict.values()
 for doc in docs:
 	doc['id'] = 'szene-' + str(doc['szene_uid'])
 	doc['typ'] = 'szene'
+	doc['stelle_count'] = len(doc['stelle_uid'])
 submitDocs(docs, 'Szene')
 docs = []
 
