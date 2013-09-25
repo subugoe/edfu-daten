@@ -3151,7 +3151,7 @@ Tabelle »stelle«: 28209 Datensätze
 
 Tabelle »szene_bild«: 38 Datensätze
 
-Tabelle »szene«: 3281 Datensätze
+Tabelle »szene«: 3291 Datensätze
 
 Tabelle »szene_stelle_mm«: 692 Datensätze
 
@@ -3236,6 +3236,6 @@ wort_has_stelle: 2091
 berlin: 781
 
 Szenen
-szene: 3281
+szene: 3291
 szene_bild: 38
 szene_has_stelle: 692
