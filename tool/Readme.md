@@ -2,6 +2,7 @@ EDFU Erfassen von Szenen
 ========================
 
 a) Erfassen von Stellen im Edfu-Tempel anhand von Imagemaps und Bilddateien
+
 b) Umrechnung des Koordinatensystem auf Geokoordinaten
 
 scrape.php
@@ -52,6 +53,7 @@ Das Programm berechnet bisher nur die Koordinaten. Die Berechnung der Breite der
 Alternativ zu dem Skript kann auch die für das konkrete Modell folgende Formel genutzt werden:
 
 X‘= 24.977378 + (X - 56) * -7.249237701047E-8 +  (775-Y) * 1.6273115220484E-6
+
 Y‘= 32.873111 + (X - 56) * 1.8429173177743E-6 +  (775-Y) * 6.4011379800956E-8
 
 
