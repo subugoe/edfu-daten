@@ -18,10 +18,10 @@ Die Edfu Daten liegen in einer MySQL Datenbank bei der GWDG vor. Ziel ist es, si
 * [Daten](Daten):
 	* edfuprojekt.sql: SQL Dump (nicht im Repository)
 	* edfu.mwb (MySQL Workbench Dokument erzeugt die folgenden Dateien), Edfu DB.pdf (Graphik), schema.sql: SQL Schema des normalisierten Datenmodells
-	* szenen: CSV Exporte der Szeneninformationen erzeugt durch das [szenentool](szenentool Skript)
+	* szenen: CSV Exporte der Szeneninformationen erzeugt durch das [szenentool Skript](szenentool)
 	* tempelplan.csv: CSV Datei mit den verschiedenen Teilstücken des gesamten Tempelplans
-* [solr](solr): Konfiguration für den Solr Index
-* [szenentool](szenentool): Skript zum Extrahieren der Szenenrechtecke aus dem [Tempelplan](tempelplan)
+* [solr/config](solr/config): Konfiguration für den Solr Index
+* [szenentool](szenentool): Skript zum Extrahieren der Szenenrechtecke aus dem Tempelplan
 * [tempelplan](tempelplan): Graphiken vom Tempelplan; original und beschnitten
 * [Fonts](Fonts): Verschiedene Transliterationsfonts zum Testen
 * [emf](emf): Versuche, die EMF Dateien mit den Hieroglyphen gut zu konvertieren (erfolglos: jetzt werden vom Projekt SVGs geliefert)
@@ -64,7 +64,7 @@ Das Konversionsskript enthält noch Code für das Beibehalten der Bildgruppierun
 
 
 ### Logging
-Das Importskript loggt Importprobleme, Feldänderungen und allgemeine Informationen zum Datenimport in die Konsole. Das Log liegt als [Daten/convert.log](Daten/convert.log) vor. Importprobleme sind je nach Schwere mit INFO, WARNUNG oder FEHLER versehen.
+Das Importskript loggt Importprobleme, Feldänderungen und allgemeine Informationen zum Datenimport in die Konsole. Das Log liegt als [convert.log](convert.log) vor. Importprobleme sind je nach Schwere mit INFO, WARNUNG oder FEHLER versehen.
 
 
 
