@@ -1,5 +1,14 @@
 #! /usr/bin/env python
 #coding=utf-8
+"""
+Skript zu Import und Normalisierung des Edfu MySQL Dumps
+mit Anpassung an das neue Datenbankschema:
+    * stärkere Normalisiserung
+    * Anpassung an TYPO3 Felder
+
+2013 Sven-S. Porst, SUB Göttingen <porst@sub.uni-goettingen.de>
+"""
+
 
 import re
 import copy
@@ -1307,7 +1316,7 @@ formular_has_photo = formular_has_photoDict.values()
 
 # Szeneninformation aus CSV Dateien (aus Imagemap)
 # csv + Unicode Handhabungscode aus der Anleitung
-with open('Daten/uebersicht_bilder.csv', 'rb') as bilderListeCSV:
+with open('Daten/tempelplan.csv', 'rb') as bilderListeCSV:
 	bilderListeReader = UnicodeReader(bilderListeCSV, delimiter=';')
 	bilderColumnDict = {}
 	for bildRow in bilderListeReader:
@@ -1332,7 +1341,7 @@ with open('Daten/uebersicht_bilder.csv', 'rb') as bilderListeCSV:
 			szene_bildDict[recordSzeneBild['dateiname']] = recordSzeneBild
 			szene_bild_ID = recordSzeneBild['uid']
 			
-			filePath = 'Daten/imagemaps/' + recordSzeneBild['dateiname'].rstrip('.gif') + '.csv'
+			filePath = 'Daten/szenen/' + recordSzeneBild['dateiname'].rstrip('.gif') + '.csv'
 			with open(filePath, 'rb') as csvFile:
 				print u'INFO CSV Datei »' + filePath + u'«'
 				columnDict = {}
