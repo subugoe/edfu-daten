@@ -17,7 +17,7 @@ import pprint
 import glob
 import csv
 import mysql.connector
-db = mysql.connector.connect(user='root', host='127.0.0.1', database='edfuprojekt')
+db = mysql.connector.connect(user='edfu', host='localhost', password='edfu', database='edfuprojekt')
 cursor = db.cursor()
 
 writePrefix = 'edfu`.`tx_edfu_'
@@ -26,9 +26,9 @@ writePrefix = 'edfu`.`tx_edfu_'
 def szSplit (s):
 	parts = s.replace(' ', '').split(',')
 	parts = [int(parts[0]), int(parts[1])]
-	
+
 	return parts
-	
+
 
 
 
@@ -132,17 +132,17 @@ def addRecordsToTable (records, tableName):
 			prefix = writePrefix
 			if tableName[-3:] != '_mm':
 				prefix += 'domain_model_'
-			
+
 				# add default fields to record
 				for fieldName in defaultFields:
 					if not record.has_key(fieldName):
 						record[fieldName] = defaultFields[fieldName]
-			
+
 			fieldNames = '(' + ', '.join(record.keys()) + ')'
 			values = '(%(' + ')s, %('.join(record.keys()) + ')s)'
 			insertStatement = "INSERT INTO `" + prefix + tableName + "` " + fieldNames + " VALUES " + values
 			cursor.execute(insertStatement, record)
-			
+
 		db.commit()
 
 
@@ -210,7 +210,7 @@ formular_has_literatur = [
 	{'uid_local': 17, 'uid_foreign': 1, 'detail': '14, n. 51'},
 ]
 literatur = [
-	{'uid': 1, 'beschreibung': 'Bedier, in: GM 162, 1998'}, 
+	{'uid': 1, 'beschreibung': 'Bedier, in: GM 162, 1998'},
 	{'uid': 2, 'beschreibung': 'Budde/Kurth, in: EB 4, 1994'},
 	{'uid': 3, 'beschreibung': 'Labrique, Stylistique'},
 	{'uid': 4, 'beschreibung': u'Aufrère, L’univers minéral I'},
@@ -231,7 +231,7 @@ photoTypDict = {
 	'Labrique, Stylistique': {'uid': 6, 'name': 'Labrique, Stylistique', 'jahr': 1912},
 	'E. XIII': {'uid': 7, 'name': 'Edfou XIII', 'jahr': 1913},
 	'E. XIV': {'uid': 8, 'name': 'Edfou XIV', 'jahr': 1914},
-} 
+}
 formular_has_photoDict = {}
 formular_has_photo_collection = []
 photo_collection = []
@@ -272,7 +272,7 @@ print "\n\n\n\n**** FL *********************************************************
 
 
 # Tabelle FL
-query = ("SELECT `PRIMARY`, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Photo, SzenenID, SekLit from FL")
+query = ("SELECT ID, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Photo, SzenenID, SekLit from FL")
 
 cursor.execute(query)
 re101 = re.compile(r'\wZ')
@@ -284,7 +284,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 		'uid': PRIMARY,
 		'id': PRIMARY
 	}
-	
+
 	# Felder
 	myFormular['texttyp'] = TEXTTYP
 	myFormular['uebersetzung'] = (TEXTDEUTSC.strip()
@@ -300,7 +300,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 
 	if myFormular['uebersetzung'] != TEXTDEUTSC:
 		print "\t".join(["FL", str(PRIMARY), "INFO", u"Übersetzung String verändert", TEXTDEUTSC, myFormular['uebersetzung']])
-	
+
 	if re101.search(myFormular['uebersetzung']) or re102.search(myFormular['uebersetzung']):
 		print "\t".join(["FL", str(PRIMARY), "WARNUNG", u"Vermutlich kaputte Akzente", myFormular['uebersetzung']])
 
@@ -314,11 +314,11 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 			suffixe[i] = 1
 
 	myFormular['transliteration'] = re.sub(r'\.([^aeiou. ][^.]*)', ':\\1', TEXTMITSUF, re.IGNORECASE | re.UNICODE)
-	
-	
+
+
 	# Photos
 	kommentar = ''
-	
+
 	originalPhoto = Photo
 	if Photo == 'D05_5503, D05_5504, D05_5509, D05_5510, D05_5511, D05_5512: D05_5513, D05_5514, ( 2982, 2983, 2984, 2985 )*':
 		# 263
@@ -383,7 +383,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 		Photo = 'D05_1954, D05_1955, D05_1962, D05_1963, 1409, 1408, e083 (E. XIII, pl. DXXIV, DXXV )*'
 	elif Photo == 'D05_1824, D05_1825, D05_1826, D05_1827, D05_1830, D05_1831, D05_1832, D05_1833, D05-1834, D05_1835, D05_1836, D05_1837, 1425, 1426, 1427, e090 (E. XIII, pl. DXXXVI )*':
 		# 4420
-		Photo = 'D05_1824, D05_1825, D05_1826, D05_1827, D05_1830, D05_1831, D05_1832, D05_1833, D05_1834, D05_1835, D05_1836, D05_1837, 1425, 1426, 1427, e090 (E. XIII, pl. DXXXVI )*'	
+		Photo = 'D05_1824, D05_1825, D05_1826, D05_1827, D05_1830, D05_1831, D05_1832, D05_1833, D05_1834, D05_1835, D05_1836, D05_1837, 1425, 1426, 1427, e090 (E. XIII, pl. DXXXVI )*'
 	elif Photo.find('D05_1061:') != -1:
 		# 4772-4795
 		Photo = re.sub('D05_1061:', 'D05_1061,', Photo)
@@ -450,7 +450,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 	bildString = Photo
 	klammern = False
 	stern = False
-	
+
 	while len(bildString) > 0:
 		name = ''
 		typ = '---'
@@ -462,16 +462,16 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 				kommentar = m15.group(1)
 			else:
 				kommentar = ''
-		
+
 		if re6.match(bildString):
 			finishCollection(PRIMARY)
-		
+
 			# Klammer auf, ggf mit Stern hinter der schließenden Klammer
 			klammern = True
 			if re6.match(bildString).group(1) == '*':
 				stern = True
 			bildString = bildString[1:]
-			
+
 			# Spezialfälle mit Kommentaren
 			m14 = re14.match(bildString)
 			if m14 and PRIMARY < 9000:
@@ -493,7 +493,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 			elif PRIMARY == 9870:
 				kommentar = 'E. VIII, 111, 16'
 				bildString = '114, 115, 116, 117)*'
-			
+
 		elif re8.match(bildString):
 			# Klammer zu
 			klammern = False
@@ -540,7 +540,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 			typ = m.group(1)
 			name = m.group(2)
 			# rest = m.group(3)
-			
+
 			bildString = bildString[len(m.group(0)):].strip(', ')
 			if re7.match(bildString):
 				# Es kommt noch ein Edfou Bild
@@ -549,7 +549,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 		else:
 			print "\t".join(["FL ", str(PRIMARY), u"UNKLAR", bildString])
 			bildString = ''
-		
+
 		if len(name) > 0:
 			if re12.match(bildString):
 				# ist gefolgt von *
@@ -558,11 +558,11 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 			if re13.match(bildString):
 				kommentar = 'teilweise'
 				bildString = bildString[len(re13.match(bildString).group(0)):]
-			
+
 			if PRIMARY == 9910 and bildString.find('103') == -1:
 				kommentar = 'E. VIII, 118, 7'
 				bildString = ''
-			
+
 			photoID = typ + '-' + name
 			myPhoto = {}
 			if photosDict.has_key(photoID):
@@ -573,7 +573,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 					pfad = typ + '/' + name + '.jpg'
 				else:
 					pfad = ''
-			
+
 				myPhoto = {
 					'uid': len(photosDict),
 					'photo_typ_uid': photoTypDict[typ]['uid'],
@@ -581,12 +581,12 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 					'count': 1
 				}
 				photosDict[photoID] = myPhoto
-				
+
 			collection['items'] += [photoID]
 			collection['klammern'] = klammern
 			collection['stern'] = stern
 			collection['kommentar'] = kommentar
-			
+
 			key = str(PRIMARY) + '-' + str(myPhoto['uid'])
 			if not formular_has_photoDict.has_key(key):
 				formular_has_photoDict[key] = {
@@ -594,10 +594,10 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 					'uid_foreign': myPhoto['uid'],
 					'kommentar': kommentar
 				}
-				
+
 		bildString = bildString.strip(', ')
 	finishCollection(PRIMARY)
-	
+
 
 
 	# Textposition
@@ -633,19 +633,19 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 	if SEITEZEILE.find(' / ') != -1:
 		kommentar += [SEITEZEILE[SEITEZEILE.find(' / ') + 3:]]
 		SEITEZEILE = SEITEZEILE[:SEITEZEILE.find(' / ')]
-		
+
 	if szOriginal != SEITEZEILE:
 		print "\t".join(["FL", str(PRIMARY), "INFO", u"Änderung SEITEZEILE", szOriginal, SEITEZEILE])
-	
+
 	if len(kommentar) > 0:
 		print "\t".join(["FL", str(PRIMARY), "INFO", "SEITEZEILE + Kommentar", "; ".join(kommentar)])
-		
+
  	if len(re.findall("[^0-9, -]", SEITEZEILE)) > 0:
 		print "\t".join(["FL", str(PRIMARY), "FEHLER", "SEITEZEILE", SEITEZEILE])
- 	
+
  	myStelle['anmerkung'] = '; '.join(kommentar)
- 		
-	result = []	
+
+	result = []
 	if SEITEZEILE.find(' - ') != -1:
 		# Form »002, 06 - 003, 02«
 		szParts = SEITEZEILE.split(' - ')
@@ -663,7 +663,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 	else:
 		result = [[0,0],[0,0]]
 		print "\t".join(["FL", str(PRIMARY), "FEHLER", "SEITEZEILE", SEITEZEILE])
-	
+
 	if result[0][0] > result[1][0]:
 		print "\t".join(["FL", str(PRIMARY), "FEHLER", "SEITEN absteigend", SEITEZEILE])
 	if result[0][0] == result[1][0] and result[0][1] > result[1][1]:
@@ -686,8 +686,8 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 	myFormular['stelle_uid'] = len(stelle)
 
 	stelle += [myStelle]
-	formularDict[myFormular['uid']] = myFormular	
-	
+	formularDict[myFormular['uid']] = myFormular
+
 
 
 
@@ -756,7 +756,7 @@ for (PRIMARY, STELLE, TRANS, ORT, LOK, ANM) in cursor:
 	elif STELLE == 'VIII, <23, 2>;':
 		# 1198
 		STELLE = 'VIII, 23, 2 (<23, 2>)'
-	
+
 	if STELLE != originalStelle:
 		print "\t".join(["OL", str(PRIMARY), "INFO", u"Änderung STELLE", originalStelle, STELLE])
 
@@ -771,10 +771,10 @@ for (PRIMARY, STELLE, TRANS, ORT, LOK, ANM) in cursor:
 	}
 	ort += [myOrt]
 
-	
+
 	teile = STELLE.strip('; ').split(';')
 	bandNr = 0
-	
+
 	for teil in teile:
 		if len(teil.strip()) > 0:
 			m3 = re3.match(teil)
@@ -823,7 +823,7 @@ for (PRIMARY, STELLE, TRANS, ORT, LOK, ANM) in cursor:
 
 				stelle += [myStelle]
 				ort_has_stelle += [{'uid_local': PRIMARY, 'uid_foreign': myStelle['uid']}]
-			
+
 
 # Doppelte Einträge in OL zusammenführen
 previousO = ort[100]
@@ -839,7 +839,7 @@ for o in ort[:]:
 		o['transliteration'] = translit
 		ort.remove(previousO)
 		print "\t".join(["OL", str(PRIMARY), "INFO", str(o['uid']) + u" Duplikat von " + str(previousO['uid']) + u": mergen", o['transliteration'], previousO['transliteration']])
-		
+
 	previousO = o
 
 
@@ -934,8 +934,8 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 		SEITEZEILE = '018, 009'
 	elif PRIMARY == 9165:
 		BND = '5'
-	
-	
+
+
 	myGott = {
 		'uid': PRIMARY,
 		'id': PRIMARY,
@@ -947,14 +947,14 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 		'anmerkung': ANM
 	}
 	gott += [myGott]
-	
+
 	# gelegentlich ist der Inhalt doppelt vorhanden
 	szsz = SEITEZEILE.replace(' ', '')
 	halbeLaenge = int(round(len(szsz)/2))
 	halberString = szsz[halbeLaenge:]
 	if halberString + halberString == szsz:
 		SEITEZEILE = halberString
-	
+
 	SEITEZEILE = SEITEZEILE.replace('.09999999999999', ', 1')
 	SEITEZEILE = SEITEZEILE.replace('.300000000000001', ', 3')
 	SEITEZEILE = SEITEZEILE.replace('.30000000000001', ', 3')
@@ -972,10 +972,10 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 
 	SEITEZEILE = re.sub(r'([0-9]+)\.([0-9]+)', '\\1, \\2', SEITEZEILE)
 	SEITEZEILE = re.sub(r'und', ';', SEITEZEILE)
-	
+
 	if originalSEITEZEILE != SEITEZEILE:
 		print "\t".join(["GL", str(PRIMARY), "INFO", u"Änderung SEITEZEILE", originalSEITEZEILE, SEITEZEILE])
-		
+
 	szs = SEITEZEILE.strip('; ').split(';')
 	if len(szs) == 1 and len(szs[0]) > 1:
 		sz = szs[0]
@@ -986,7 +986,7 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 			# nur eine Komponente: nur eine Seitenzahl vorhanden, mit Zeile 0 ergänzen
 			sz = re.sub('([0-9]*)(.*)', '\\1,0\\2', sz)
 			komponenten = sz.split(',')
-		
+
 		if len(komponenten) > 2:
 			sz = sz.replace(' ', '')
 			sz = sz.replace('/', '-')
@@ -1007,7 +1007,7 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 			if zeilen.find('f') != -1:
 				stopUnsicher = True
 				zeilen = re.sub(r'\s*f+\.*', '', zeilen)
-			
+
 			zeilen = re.sub(r'[ /-]+', '-', zeilen)
 			zs = zeilen.split('-')
 
@@ -1042,7 +1042,7 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 			print "\t".join(["GL", str(PRIMARY), "FEHLER", u"startSeite oder Band nicht ermittelbar: Datensatz verwerfen", sz])
 	else:
 		print "\t".join(["GL", str(PRIMARY), "FEHLER", u"nicht genau eine Stelle in SEITEZEILE: Datensatz verwerfen", SEITEZEILE])
-		
+
 
 wort = []
 wort_has_stelle = []
@@ -1069,7 +1069,7 @@ re20 = re.compile(r'^\s*([VI]*)\s*,?\s*(<?)([0-9]*)\s*,\s*([0-9/ -]*)(>?\*?)\s*(
 
 for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, BelegstellenWb, Anmerkungen) in cursor:
 	anmerkungWL = ''
-	
+
 	bEdfu = BelegstellenEdfu
 	if bEdfu.find('zum Beispiel') == 0:
 		# 1266, 1296, 2781, 2811
@@ -1087,18 +1087,18 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 	elif bEdfu == 'E VIII, 026, 07; 041, 05; 053, 06; 156,l 15':
 		# 1491
 		bEdfu = 'E VIII, 026, 07; 041, 05; 053, 06; 156, 15'
-	
+
 	bEdfu = bEdfu.strip('EPON; ')
 	bEdfu = re.sub(r' / V', '; V', bEdfu)
-	
+
 	if BelegstellenEdfu != bEdfu:
 		print "\t".join(["WL", str(PRIMARY), "INFO", u"Änderung BelegstellenEdfu", BelegstellenEdfu, bEdfu])
-	
+
 	wb = BelegstellenWb
 	wbID = None
 	anmerkungWB = None
 	notiz = None
-	
+
 	if wb == 'nicht im Wb belegt':
 		wbID = 0
 	elif len(wb) > 0:
@@ -1117,11 +1117,11 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 		elif wb == 'III, 026 - 027, 19':
 			# 1441
 			wb = 'III, 026,01 - 027, 19'
-		
+
 		if wb != BelegstellenWb:
 			anmerkungWB = u'ursprünglich: ' + BelegstellenWb
 			print "\t".join(["WL", str(PRIMARY), "INFO", u"Änderung BelegstellenWb", BelegstellenWb, wb])
-		
+
 		vornach = 0
 		if wb.find('nach ') == 0 :
 			vornach = 1
@@ -1129,13 +1129,13 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 		elif wb.find('vor ') == 0:
 			vornach = -1
 			wb = wb.replace('vor ', '')
-		
+
 		roemischBand = wb[0:wb.index(',')]
 		wb = wb[wb.index(',') + 1:].strip()
 		band = roemisch[roemischBand]
-		
+
 		wb = wb.replace(' -', '-').replace('- ', '-')
-		
+
 		if wb.find('-') != -1:
 			# Range
 			teile = wb.split('-')
@@ -1144,7 +1144,7 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 				seiteStart = int(seiteZeile[0].strip())
 				seiteStop = seiteStart
 				zeileStart = int(seiteZeile[1].strip())
-				
+
 				if teile[1].find(',') != -1:
 					# Komma im zweiten Teil: unterschiedliche Seiten
 					seiteZeile2 = teile[1].split(',')
@@ -1153,18 +1153,18 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 				else:
 					# Range innerhalb einer Seite
 					zeileStop = int(teile[1].strip())
-					
+
 				start = [seiteStart, zeileStart]
 				stop = [seiteStart, zeileStop]
-				
+
 			else:
 				print "\t".join(["WL", str(PRIMARY), "FEHLER", u"BelegstellenWb Formatfehler", BelegstellenWb, wb])
-				
+
 		else:
 			# Nur eine Stelle
 			start = szSplit(wb)
 			stop = start
-			
+
 		myWB = {
 			'uid': len(berlin),
 			'band': band,
@@ -1176,13 +1176,13 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 			'notiz': notiz,
 			'anmerkung': anmerkungWB
 		}
-		
+
 		bereitsVorhanden = False
 		for b in berlin:
 			if b['seite_start'] == myWB['seite_start'] and b['seite_stop'] == myWB['seite_stop'] and b['zeile_start'] == myWB['zeile_start'] and b['zeile_stop'] == myWB['zeile_stop'] and b['notiz'] == myWB['notiz'] and b['anmerkung'] == myWB['anmerkung']:
 				myWB['uid'] = b['uid']
 				bereitsVorhanden = True
-		
+
 		if not bereitsVorhanden:
 			berlin += [myWB]
 		wbID = myWB['uid']
@@ -1201,12 +1201,12 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 		'wb_berlin_uid': wbID
 	}
 	wort += [myWort]
-	
-	
+
+
 	bandNr = 0
 	seiteStart = 0
 	zerstoerung = False
-		
+
 	if len(bEdfu) > 0:
 		belegstellen = bEdfu.split(';')
 		for b in belegstellen:
@@ -1214,7 +1214,7 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 
 			klammer = False
 			stern = False
-			
+
 			if b.find('%') != -1:
 				zerstoerung = True
 				b = b.replace('%', '').replace('&', '')
@@ -1286,7 +1286,7 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 					'schreiber_verbessert': klammer,
 					'chassinat_verbessert': stern
 				}]
-				
+
 			else:
 				print "\t".join(["WL", str(PRIMARY), "FEHLER", u"keine erkennbare Seitenzahl", b])
 
@@ -1304,7 +1304,7 @@ for myCollection in photo_collection:
 		if not entry in photo_collection_has_photo:
 			photo_collection_has_photo += [entry]
 	del myCollection['items']
-	
+
 
 photo = photosDict.values()
 photo_typ = photoTypDict.values()
@@ -1340,12 +1340,12 @@ with open('Daten/tempelplan.csv', 'rb') as bilderListeCSV:
 			}
 			szene_bildDict[recordSzeneBild['dateiname']] = recordSzeneBild
 			szene_bild_ID = recordSzeneBild['uid']
-			
+
 			filePath = 'Daten/szenen/' + recordSzeneBild['dateiname'].rstrip('.gif') + '.csv'
 			with open(filePath, 'rb') as csvFile:
 				print u'INFO CSV Datei »' + filePath + u'«'
 				columnDict = {}
-		
+
 				reader = UnicodeReader(csvFile, delimiter=';')
 				for row in reader:
 					if row[0] == 'description':
@@ -1355,7 +1355,7 @@ with open('Daten/tempelplan.csv', 'rb') as bilderListeCSV:
 					elif len(row) >= 12:
 						szeneID = len(szene)
 						stelleID = len(stelle)
-						
+
 						rSzene = {
 							'uid': szeneID,
 							'nummer': row[columnDict['plate']],
@@ -1371,12 +1371,12 @@ with open('Daten/tempelplan.csv', 'rb') as bilderListeCSV:
 							'hoehe': float(row[columnDict['extent-height-percent']]),
 							'grau': False
 						}
-						
+
 						if columnDict.has_key('areacolor') and row[columnDict['areacolor']] == 2:
 							rSzene['grau'] = True
 						if columnDict.has_key('polygon_original'):
 							rSzene['polygon'] = row[columnDict['polygon_original']]
-							
+
 						szene += [rSzene]
 						seiteStart = row[columnDict['page']]
 						seiteStop = seiteStart
@@ -1386,7 +1386,7 @@ with open('Daten/tempelplan.csv', 'rb') as bilderListeCSV:
 							seiteStop = row[columnDict['page-to']]
 							zeileStart = row[columnDict['line']]
 							zeileStop = row[columnDict['line-to']]
-						
+
 						if row[columnDict['volume']] != '':
 							rStelle = {
 								'uid': stelleID,
@@ -1400,7 +1400,7 @@ with open('Daten/tempelplan.csv', 'rb') as bilderListeCSV:
 								'zerstoerung': 0
 							}
 							stelle += [rStelle]
-							
+
 							szene_has_stelle += [{
 								'uid_local': szeneID,
 								'uid_foreign': stelleID
@@ -1485,7 +1485,7 @@ addRecordsToTable(wort, 'wort')
 addRecordsToTable(wort_has_stelle, 'wort_stelle_mm')
 
 cursor.close()
-db.close()	
+db.close()
 
 
 print ""
@@ -1494,7 +1494,7 @@ pprint.PrettyPrinter().pprint(suffixe)
 
 print ""
 print "FL: Datensätze, Stellen, Bilder"
-print "formular: " + str(len(formular)) 
+print "formular: " + str(len(formular))
 print "stelle: " + str(len(stelle))
 print "photo: " + str(len(photo))
 print "formular_has_photo " + str(len(formular_has_photo))
