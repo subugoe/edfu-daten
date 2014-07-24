@@ -21,8 +21,6 @@ db2 = mysql.connector.connect(user='root', host='127.0.0.1', database='edfu')
 cursor = db.cursor()
 cursor2 = db2.cursor()
 
-
-
 intToRoman = {1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII', 8: 'VIII'}
 
 
@@ -52,9 +50,9 @@ def roman_to_int(n):
 			result += integer
 			i += len(numeral)
 	return result
-	
-	
-	
+
+
+
 
 def addValueForKeyToDict (value, key, myDict):
 	if not myDict.has_key(key):
@@ -88,12 +86,12 @@ def addStellenTo (stellen, doc):
 			if feld == 'band':
 				doc['bandseite'] = []
 				doc['bandseitezeile'] = []
-			
+
 		for stelleID in stellen:
 			stelle = stellenDict[stelleID]
 			stelle['besitzer'] = doc['id']
 			doc[feld] += [stelle[feld]]
-			
+
 			if feld == 'band':
 				bandNummer = stelle['band']
 				if intToRoman.has_key(bandNummer):
@@ -106,9 +104,9 @@ def addStellenTo (stellen, doc):
 							bandSeiteZeile += '-' + ("%02d" % (stelle['zeile_stop']))
 					else:
 						bandSeiteZeile += ("%02d" % (stelle['zeile_start'])) + ' - ' + ("%03d" % (stelle['seite_stop'])) + ', ' + ("%02d" % (stelle['zeile_stop']))
-					
+
 					doc['bandseitezeile'] += [bandSeiteZeile.replace(u' ', u' ')]
-		
+
 				addSzenenForStelleToDocument(stelle, doc)
 
 
@@ -121,7 +119,7 @@ def addSzenenForStelleToDocument (stelle, doc):
 			szene = copy.deepcopy(szenenDict[szeneID])
 			del szene['stelle_uid']
 			mergeDocIntoDoc(szene, doc)
-		
+
 
 """
 	Entfernen des Suffix in Transliterationen.
@@ -139,7 +137,7 @@ def removeSuffix (transliteration):
 """
 def submitDocs (docs, name):
 	#pprint.pprint(docs)
-	
+
 	index = solr.Solr('http://localhost:8080/solr/edfu')
 	index.add_many(docs)
 	index.commit()
@@ -147,10 +145,10 @@ def submitDocs (docs, name):
 	index = solr.Solr('http://vlib.sub.uni-goettingen.de/solr/edfu')
 	index.add_many(docs)
 	index.commit()
-	
+
 	print str(len(docs)) + ' ' + name + u' Dokumente indexiert'
-	
-	
+
+
 
 """
 	Indexe leeren.
@@ -219,7 +217,7 @@ WHERE
 	stelle_original.seite_stop >= stelle.seite_start AND
 	szene.szene_bild_uid = szene_bild.uid AND
 	szene_stelle.uid_local = szene.uid AND
-	szene_stelle.uid_foreign = stelle.uid 
+	szene_stelle.uid_foreign = stelle.uid
 """
 
 cursor.execute(stelleSzeneQuery)
@@ -229,11 +227,11 @@ for values in cursor:
 	szeneUID = docSzene['szene_uid']
 	stelleUID = docSzene['stelle_uid']
 	szenenDict[szeneUID]['stelle_uid'] += [stelleUID]
-	
+
 	if not stelleSzene.has_key(stelleUID):
 		stelleSzene[stelleUID] = []
 	stelleSzene[stelleUID] += [szeneUID]
-	
+
 	# Arrgh! (Ohne kleine Pause bricht die MySQL Verbindung zusammen. Unklar, warum.)
 	time.sleep(0.001)
 
@@ -292,7 +290,7 @@ for (uid,seite_start,seite_stop,zeile_start,zeile_stop,anmerkung,stop_unsicher,z
 		"zerstoerung": zerstoerung,
 		"freigegeben": freigegeben
 	}
-	
+
 	stellenDict[doc['sql_uid']] = doc
 
 
@@ -316,9 +314,9 @@ for (uid,band,seite_start,seite_stop,zeile_start,zeile_stop,notiz) in cursor:
 		"zeile_stop": zeile_stop,
 		"notiz": notiz
 	}
-	
+
 	berlinDict[uid] = doc
-	
+
 docs = berlinDict.values()
 submitDocs(docs, 'WB Berlin')
 docs = []
@@ -361,9 +359,9 @@ for (uid,id,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 	cursor2.execute(query2, [str(uid)])
 	for (beschreibung, detail) in cursor2:
 		literatur += [beschreibung + ' : ' + detail]
-	
+
 	cursor2.execute(query3, [str(uid)])
-	
+
 	# Photos sortieren: erst nach Jahr, dann nach Nummer, dabei auch nicht offensichtlich numerische richtig handhaben
 	photosDict = {}
 	for (kommentar, photoName, typName, photoJahr) in cursor2:
@@ -380,16 +378,16 @@ for (uid,id,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 					key += ('%04d' % roman_to_int(photoName[4:]))
 			else:
 				key += photoName
-		
+
 		photosDict[key] = {
 			"typName": typName,
 			"photoName": photoName,
 			"photoJahr": photoJahr,
 			"kommentar": kommentar
 		}
-	
+
 	sortedKeys = sorted(photosDict.keys(), reverse=True)
-	
+
 	photo = []
 	photo_pfad = []
 	photo_kommentar = []
@@ -398,7 +396,7 @@ for (uid,id,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 		photo += [photoInfo["photoName"]]
 		photo_pfad += [photoInfo["typName"] + '/' + photoInfo["photoName"]]
 		photo_kommentar += [photoInfo["kommentar"]]
-	
+
 	doc = {
 		"id": "formular-" + str(id),
 		"typ": "formular",
@@ -415,9 +413,9 @@ for (uid,id,transliteration,uebersetzung,texttyp,stelle_uid) in cursor:
 		"photo_kommentar": photo_kommentar
 	}
 	addStellenTo([stelle_uid], doc)
-	
+
 	doc['sort'] = stellenDict[stelle_uid]['start']
-	
+
 	docs += [doc]
 
 submitDocs(docs, 'Formular')
@@ -430,7 +428,7 @@ query = ("SELECT uid,id,transliteration,ort,lokalisation,anmerkung FROM tx_edfu_
 cursor.execute(query)
 
 query4 = """
-SELECT 
+SELECT
 	uid_foreign,
 	uid_local
 FROM
@@ -441,7 +439,7 @@ WHERE
 	uid_local = %s AND
 	uid_foreign = stelle.uid AND
 	stelle.band_uid = band.uid
-ORDER BY 
+ORDER BY
 	band.nummer,
 	stelle.seite_start,
 	stelle.zeile_start
@@ -454,7 +452,7 @@ for (uid,id,transliteration,ort,lokalisation,anmerkung) in cursor:
 	for (uid_foreign,uid_local) in cursor2:
 		stelleIDs += ['stelle-' + str(uid_foreign)]
 		stellen += [uid_foreign]
-	
+
 	doc = {
 		"id": "ort-" + str(id),
 		"typ": "ort",
@@ -495,7 +493,7 @@ for (uid,id,stelle_uid,transliteration,ort,eponym,beziehung,funktion,anmerkung) 
 	if stelle_uid:
 		stellen = [stelle_uid]
 		stelleIDs = ['stelle-' + str(stelle_uid)]
-		
+
 	doc = {
 		"id": "gott-" + str(id),
 		"typ": "gott",
@@ -511,11 +509,11 @@ for (uid,id,stelle_uid,transliteration,ort,eponym,beziehung,funktion,anmerkung) 
 		"stelle_id": stelleIDs
 	}
 	addStellenTo(stellen, doc)
-	
+
 	doc['sort'] = doc['transliteration']
 	if len(stellen) > 0:
 		doc['sort'] += '--' + str(stellenDict[stelle_uid]['start'])
-	
+
 	docs += [doc]
 
 submitDocs(docs, 'Gott')
@@ -528,7 +526,7 @@ query = ("SELECT uid,id,transliteration,weiteres,uebersetzung,anmerkung,hierogly
 cursor.execute(query)
 
 query6 = """
-SELECT 
+SELECT
 	uid_foreign,
 	uid_local
 FROM
@@ -539,7 +537,7 @@ WHERE
 	uid_local = %s AND
 	uid_foreign = stelle.uid AND
 	stelle.band_uid = band.uid
-ORDER BY 
+ORDER BY
 	band.nummer,
 	stelle.seite_start,
 	stelle.zeile_start
@@ -552,7 +550,7 @@ for (uid,id,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_
 	for (uid_foreign,uid_local) in cursor2:
 		stelleIDs += ['stelle-' + str(uid_foreign)]
 		stellen += [uid_foreign]
-	
+
 	doc = {
 		"id": "wort-" + str(id),
 		"typ": "wort",
@@ -569,9 +567,9 @@ for (uid,id,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_
 		"stelle_id": stelleIDs
 	}
 	addStellenTo(stellen, doc)
-	
+
 	doc['sort'] = doc['transliteration']
-	
+
 	# WB Berlin Daten hinzufügen
 	if berlinDict.has_key(wb_berlin_uid):
 		berlin = berlinDict[wb_berlin_uid]
@@ -584,9 +582,9 @@ for (uid,id,transliteration,weiteres,uebersetzung,anmerkung,hieroglyph,lemma,wb_
 		copyFields = ['band', 'seite_start', 'zeile_start', 'seite_stop', 'zeile_stop', 'notiz']
 		for fieldName in copyFields:
 			doc['berlin_' + fieldName] = berlin[fieldName]
-			
+
 		doc['sort'] += '--' +  str(berlin['band'] * 1000000 + berlin['seite_start'] * 1000 + berlin['zeile_start'])
-	
+
 	docs += [doc]
 
 submitDocs(docs, 'Wort')

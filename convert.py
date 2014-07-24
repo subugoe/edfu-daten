@@ -1443,7 +1443,7 @@ typo3Felder = """		tstamp           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
 		sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
 		l10n_parent      INT(11) DEFAULT '0'             NOT NULL,
 		l10n_diffsource  MEDIUMBLOB,
-		
+
 		pid              INT(11) DEFAULT '0'             NOT NULL,
 
 		PRIMARY KEY (`uid`)"""
