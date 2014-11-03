@@ -17,18 +17,31 @@ import pprint
 import glob
 import csv
 import mysql.connector
-db = mysql.connector.connect(user='root', host='127.0.0.1', database='edfuprojekt')
+import logging
+from ConfigParser import SafeConfigParser
+
+logger = logging.getLogger(name='convert')
+logging.basicConfig(filename='convert.log', filemode='w', level=logging.ERROR)
+
+parser = SafeConfigParser()
+parser.read('settings.ini')
+
+dbUsername = parser.get('database', 'username')
+dbpassword = parser.get('database', 'password')
+dbHost = parser.get('database', 'host')
+dbDatabase = parser.get('database', 'originDatabase')
+dbTarget = parser.get('database', 'targetDatabase')
+
+db = mysql.connector.connect(user=dbUsername, password=dbpassword, host=dbHost, database=dbDatabase)
 cursor = db.cursor()
 
 writePrefix = 'edfu`.`tx_edfu_'
 
 
 def szSplit (s):
-	parts = s.replace(' ', '').split(',')
-	parts = [int(parts[0]), int(parts[1])]
-	
-	return parts
-	
+    parts = s.replace(' ', '').split(',')
+    parts = [int(parts[0]), int(parts[1])]
+    return parts
 
 
 
@@ -124,7 +137,7 @@ defaultFields = {
 
 def addRecordsToTable (records, tableName):
 	global db, cursor
-	print u"\nTabelle »" + tableName + u"«: " + str(len(records)) + u" Datensätze"
+	logging.info(u"\nTabelle »" + tableName + u"«: " + str(len(records)) + u" Datensätze")
 
 	if len(records) > 0:
 		for record in records:
@@ -266,13 +279,13 @@ def finishCollection (PRIMARY):
 	collection = copy.deepcopy(collectionPrototype)
 
 
-
-print "\n\n\n\n**** FL *******************************************************************\n"
-
+######
+# FL #
+######
 
 
 # Tabelle FL
-query = ("SELECT `PRIMARY`, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Photo, SzenenID, SekLit from FL")
+query = ("SELECT `ID`, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Photo, SzenenID, SekLit from FL")
 
 cursor.execute(query)
 re101 = re.compile(r'\wZ')
@@ -284,7 +297,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 		'uid': PRIMARY,
 		'id': PRIMARY
 	}
-	
+
 	# Felder
 	myFormular['texttyp'] = TEXTTYP
 	myFormular['uebersetzung'] = (TEXTDEUTSC.strip()
@@ -299,10 +312,10 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 		.replace(u'ZtZ gravZe', u'été gravée'))
 
 	if myFormular['uebersetzung'] != TEXTDEUTSC:
-		print "\t".join(["FL", str(PRIMARY), "INFO", u"Übersetzung String verändert", TEXTDEUTSC, myFormular['uebersetzung']])
-	
+		logging.info("\t".join(["FL", str(PRIMARY), u"Übersetzung String verändert", TEXTDEUTSC, myFormular['uebersetzung']]))
+
 	if re101.search(myFormular['uebersetzung']) or re102.search(myFormular['uebersetzung']):
-		print "\t".join(["FL", str(PRIMARY), "WARNUNG", u"Vermutlich kaputte Akzente", myFormular['uebersetzung']])
+		logging.warning("\t".join(["FL", str(PRIMARY), u"Vermutlich kaputte Akzente", myFormular['uebersetzung']]))
 
 
 	# Transliteration
@@ -314,11 +327,11 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 			suffixe[i] = 1
 
 	myFormular['transliteration'] = re.sub(r'\.([^aeiou. ][^.]*)', ':\\1', TEXTMITSUF, re.IGNORECASE | re.UNICODE)
-	
-	
+
+
 	# Photos
 	kommentar = ''
-	
+
 	originalPhoto = Photo
 	if Photo == 'D05_5503, D05_5504, D05_5509, D05_5510, D05_5511, D05_5512: D05_5513, D05_5514, ( 2982, 2983, 2984, 2985 )*':
 		# 263
@@ -383,7 +396,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 		Photo = 'D05_1954, D05_1955, D05_1962, D05_1963, 1409, 1408, e083 (E. XIII, pl. DXXIV, DXXV )*'
 	elif Photo == 'D05_1824, D05_1825, D05_1826, D05_1827, D05_1830, D05_1831, D05_1832, D05_1833, D05-1834, D05_1835, D05_1836, D05_1837, 1425, 1426, 1427, e090 (E. XIII, pl. DXXXVI )*':
 		# 4420
-		Photo = 'D05_1824, D05_1825, D05_1826, D05_1827, D05_1830, D05_1831, D05_1832, D05_1833, D05_1834, D05_1835, D05_1836, D05_1837, 1425, 1426, 1427, e090 (E. XIII, pl. DXXXVI )*'	
+		Photo = 'D05_1824, D05_1825, D05_1826, D05_1827, D05_1830, D05_1831, D05_1832, D05_1833, D05_1834, D05_1835, D05_1836, D05_1837, 1425, 1426, 1427, e090 (E. XIII, pl. DXXXVI )*'
 	elif Photo.find('D05_1061:') != -1:
 		# 4772-4795
 		Photo = re.sub('D05_1061:', 'D05_1061,', Photo)
@@ -427,7 +440,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 		Photo = '( 3909, 3910 )*'
 
 	if Photo != originalPhoto:
-		print "\t".join(["FL", str(PRIMARY), "INFO", u"Photo String verändert", originalPhoto, Photo])
+		logging.info("\t".join(["FL", str(PRIMARY), u"Photo String verändert", originalPhoto, Photo]))
 
 
 
@@ -450,7 +463,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 	bildString = Photo
 	klammern = False
 	stern = False
-	
+
 	while len(bildString) > 0:
 		name = ''
 		typ = '---'
@@ -462,16 +475,16 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 				kommentar = m15.group(1)
 			else:
 				kommentar = ''
-		
+
 		if re6.match(bildString):
 			finishCollection(PRIMARY)
-		
+
 			# Klammer auf, ggf mit Stern hinter der schließenden Klammer
 			klammern = True
 			if re6.match(bildString).group(1) == '*':
 				stern = True
 			bildString = bildString[1:]
-			
+
 			# Spezialfälle mit Kommentaren
 			m14 = re14.match(bildString)
 			if m14 and PRIMARY < 9000:
@@ -493,7 +506,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 			elif PRIMARY == 9870:
 				kommentar = 'E. VIII, 111, 16'
 				bildString = '114, 115, 116, 117)*'
-			
+
 		elif re8.match(bildString):
 			# Klammer zu
 			klammern = False
@@ -540,16 +553,16 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 			typ = m.group(1)
 			name = m.group(2)
 			# rest = m.group(3)
-			
+
 			bildString = bildString[len(m.group(0)):].strip(', ')
 			if re7.match(bildString):
 				# Es kommt noch ein Edfou Bild
 				bildString = typ + ', pl. ' + bildString
 
 		else:
-			print "\t".join(["FL ", str(PRIMARY), u"UNKLAR", bildString])
+			logging.warning("\t".join(["FL ", str(PRIMARY), u"UNKLAR", bildString]))
 			bildString = ''
-		
+
 		if len(name) > 0:
 			if re12.match(bildString):
 				# ist gefolgt von *
@@ -558,11 +571,11 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 			if re13.match(bildString):
 				kommentar = 'teilweise'
 				bildString = bildString[len(re13.match(bildString).group(0)):]
-			
+
 			if PRIMARY == 9910 and bildString.find('103') == -1:
 				kommentar = 'E. VIII, 118, 7'
 				bildString = ''
-			
+
 			photoID = typ + '-' + name
 			myPhoto = {}
 			if photosDict.has_key(photoID):
@@ -573,7 +586,7 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 					pfad = typ + '/' + name + '.jpg'
 				else:
 					pfad = ''
-			
+
 				myPhoto = {
 					'uid': len(photosDict),
 					'photo_typ_uid': photoTypDict[typ]['uid'],
@@ -581,12 +594,12 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 					'count': 1
 				}
 				photosDict[photoID] = myPhoto
-				
+
 			collection['items'] += [photoID]
 			collection['klammern'] = klammern
 			collection['stern'] = stern
 			collection['kommentar'] = kommentar
-			
+
 			key = str(PRIMARY) + '-' + str(myPhoto['uid'])
 			if not formular_has_photoDict.has_key(key):
 				formular_has_photoDict[key] = {
@@ -594,10 +607,10 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 					'uid_foreign': myPhoto['uid'],
 					'kommentar': kommentar
 				}
-				
+
 		bildString = bildString.strip(', ')
 	finishCollection(PRIMARY)
-	
+
 
 
 	# Textposition
@@ -633,19 +646,19 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 	if SEITEZEILE.find(' / ') != -1:
 		kommentar += [SEITEZEILE[SEITEZEILE.find(' / ') + 3:]]
 		SEITEZEILE = SEITEZEILE[:SEITEZEILE.find(' / ')]
-		
+
 	if szOriginal != SEITEZEILE:
-		print "\t".join(["FL", str(PRIMARY), "INFO", u"Änderung SEITEZEILE", szOriginal, SEITEZEILE])
-	
+		logging.info("\t".join(["FL", str(PRIMARY), u"Änderung SEITEZEILE", szOriginal, SEITEZEILE]))
+
 	if len(kommentar) > 0:
-		print "\t".join(["FL", str(PRIMARY), "INFO", "SEITEZEILE + Kommentar", "; ".join(kommentar)])
-		
- 	if len(re.findall("[^0-9, -]", SEITEZEILE)) > 0:
-		print "\t".join(["FL", str(PRIMARY), "FEHLER", "SEITEZEILE", SEITEZEILE])
- 	
- 	myStelle['anmerkung'] = '; '.join(kommentar)
- 		
-	result = []	
+		logging.info("\t".join(["FL", str(PRIMARY), "SEITEZEILE + Kommentar", "; ".join(kommentar)]))
+
+	if len(re.findall("[^0-9, -]", SEITEZEILE)) > 0:
+		logging.error("\t".join(["FL", str(PRIMARY), "SEITEZEILE", SEITEZEILE]))
+
+	myStelle['anmerkung'] = '; '.join(kommentar)
+
+	result = []
 	if SEITEZEILE.find(' - ') != -1:
 		# Form »002, 06 - 003, 02«
 		szParts = SEITEZEILE.split(' - ')
@@ -662,12 +675,12 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 			result = [[seite, zeile], [seite, zeile]]
 	else:
 		result = [[0,0],[0,0]]
-		print "\t".join(["FL", str(PRIMARY), "FEHLER", "SEITEZEILE", SEITEZEILE])
-	
+		logging.error("\t".join(["FL", str(PRIMARY), "SEITEZEILE", SEITEZEILE]))
+
 	if result[0][0] > result[1][0]:
-		print "\t".join(["FL", str(PRIMARY), "FEHLER", "SEITEN absteigend", SEITEZEILE])
+		logging.error("\t".join(["FL", str(PRIMARY), "SEITEN absteigend", SEITEZEILE]))
 	if result[0][0] == result[1][0] and result[0][1] > result[1][1]:
-		print "\t".join(["FL", str(PRIMARY), "FEHLER", "ZEILEN absteigend", SEITEZEILE])
+		logging.error("\t".join(["FL", str(PRIMARY), "ZEILEN absteigend", SEITEZEILE]))
 
 	myStelle['seite_start'] = result[0][0]
 	myStelle['zeile_start'] = result[0][1]
@@ -675,9 +688,9 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 	myStelle['zeile_stop'] = result[1][1]
 
 	if myStelle['zeile_start'] > 30:
-		print "\t".join(["FL", str(PRIMARY), "FEHLER", "zeile_start > 30", SEITEZEILE])
+		logging.error("\t".join(["FL", str(PRIMARY), "zeile_start > 30", SEITEZEILE]))
 	if myStelle['zeile_stop'] > 30:
-		print "\t".join(["FL", str(PRIMARY), "FEHLER", "zeile_stop > 30", SEITEZEILE])
+		logging.error("\t".join(["FL", str(PRIMARY), "zeile_stop > 30", SEITEZEILE]))
 
 	myStelle['stop_unsicher'] = False
 	myStelle['zerstoerung'] = False
@@ -686,13 +699,13 @@ for (PRIMARY, TEXTMITSUF, BAND, SEITEZEILE, TEXTOHNESU, TEXTDEUTSC, TEXTTYP, Pho
 	myFormular['stelle_uid'] = len(stelle)
 
 	stelle += [myStelle]
-	formularDict[myFormular['uid']] = myFormular	
-	
+	formularDict[myFormular['uid']] = myFormular
 
 
 
-print "\n\n\n\n**** OL *******************************************************************\n"
-
+######
+# OL #
+######
 
 ort = []
 ort_has_stelle = []
@@ -756,9 +769,9 @@ for (PRIMARY, STELLE, TRANS, ORT, LOK, ANM) in cursor:
 	elif STELLE == 'VIII, <23, 2>;':
 		# 1198
 		STELLE = 'VIII, 23, 2 (<23, 2>)'
-	
+
 	if STELLE != originalStelle:
-		print "\t".join(["OL", str(PRIMARY), "INFO", u"Änderung STELLE", originalStelle, STELLE])
+		logging.info("\t".join(["OL", str(PRIMARY), u"Änderung STELLE", originalStelle, STELLE]))
 
 
 	myOrt = {
@@ -771,15 +784,15 @@ for (PRIMARY, STELLE, TRANS, ORT, LOK, ANM) in cursor:
 	}
 	ort += [myOrt]
 
-	
+
 	teile = STELLE.strip('; ').split(';')
 	bandNr = 0
-	
+
 	for teil in teile:
 		if len(teil.strip()) > 0:
 			m3 = re3.match(teil)
 			if not m3:
-				print "\t".join(["OL", str(PRIMARY), "FEHLER", u"STELLE", teil])
+				logging.error("\t".join(["OL", str(PRIMARY), u"STELLE", teil]))
 			else:
 				myBand = m3.group(1).strip()
 				if len(myBand) > 0:
@@ -817,13 +830,13 @@ for (PRIMARY, STELLE, TRANS, ORT, LOK, ANM) in cursor:
 				}
 
 				if myStelle['zeile_start'] > 30:
-					print "\t".join(["OL", str(PRIMARY), "FEHLER", "zeile_start > 30: " + str(myStelle['zeile_start']), teil])
+					logging.error("\t".join(["OL", str(PRIMARY), "zeile_start > 30: " + str(myStelle['zeile_start']), teil]))
 				if myStelle['zeile_stop'] > 30:
-					print "\t".join(["OL", str(PRIMARY), "FEHLER", "zeile_stop > 30: " + str(myStelle['zeile_stop']), teil])
+					logging.error("\t".join(["OL", str(PRIMARY), "FEHLER", "zeile_stop > 30: " + str(myStelle['zeile_stop']), teil]))
 
 				stelle += [myStelle]
 				ort_has_stelle += [{'uid_local': PRIMARY, 'uid_foreign': myStelle['uid']}]
-			
+
 
 # Doppelte Einträge in OL zusammenführen
 previousO = ort[100]
@@ -838,15 +851,16 @@ for o in ort[:]:
 				ohs['uid_local'] = o['uid']
 		o['transliteration'] = translit
 		ort.remove(previousO)
-		print "\t".join(["OL", str(PRIMARY), "INFO", str(o['uid']) + u" Duplikat von " + str(previousO['uid']) + u": mergen", o['transliteration'], previousO['transliteration']])
-		
+		logging.info("\t".join(["OL", str(PRIMARY), str(o['uid']) + u" Duplikat von " + str(previousO['uid']) + u": mergen", o['transliteration'], previousO['transliteration']]))
+
 	previousO = o
 
 
 
 
-print "\n\n\n\n**** GL *******************************************************************\n"
-
+######
+# GL #
+######
 
 gott = []
 gott_has_stelle = []
@@ -934,8 +948,8 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 		SEITEZEILE = '018, 009'
 	elif PRIMARY == 9165:
 		BND = '5'
-	
-	
+
+
 	myGott = {
 		'uid': PRIMARY,
 		'id': PRIMARY,
@@ -947,14 +961,14 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 		'anmerkung': ANM
 	}
 	gott += [myGott]
-	
+
 	# gelegentlich ist der Inhalt doppelt vorhanden
 	szsz = SEITEZEILE.replace(' ', '')
 	halbeLaenge = int(round(len(szsz)/2))
 	halberString = szsz[halbeLaenge:]
 	if halberString + halberString == szsz:
 		SEITEZEILE = halberString
-	
+
 	SEITEZEILE = SEITEZEILE.replace('.09999999999999', ', 1')
 	SEITEZEILE = SEITEZEILE.replace('.300000000000001', ', 3')
 	SEITEZEILE = SEITEZEILE.replace('.30000000000001', ', 3')
@@ -972,10 +986,10 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 
 	SEITEZEILE = re.sub(r'([0-9]+)\.([0-9]+)', '\\1, \\2', SEITEZEILE)
 	SEITEZEILE = re.sub(r'und', ';', SEITEZEILE)
-	
+
 	if originalSEITEZEILE != SEITEZEILE:
-		print "\t".join(["GL", str(PRIMARY), "INFO", u"Änderung SEITEZEILE", originalSEITEZEILE, SEITEZEILE])
-		
+		logging.info("\t".join(["GL", str(PRIMARY), u"Änderung SEITEZEILE", originalSEITEZEILE, SEITEZEILE]))
+
 	szs = SEITEZEILE.strip('; ').split(';')
 	if len(szs) == 1 and len(szs[0]) > 1:
 		sz = szs[0]
@@ -986,7 +1000,7 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 			# nur eine Komponente: nur eine Seitenzahl vorhanden, mit Zeile 0 ergänzen
 			sz = re.sub('([0-9]*)(.*)', '\\1,0\\2', sz)
 			komponenten = sz.split(',')
-		
+
 		if len(komponenten) > 2:
 			sz = sz.replace(' ', '')
 			sz = sz.replace('/', '-')
@@ -999,7 +1013,7 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 				stopSeite = stop[0]
 				stopZeile = stop[1]
 			else:
-				print "\t".join(["GL", str(PRIMARY), "FEHLER", u"SEITEZEILE, falsche Komponentenzahl", sz])
+				logging.error("\t".join(["GL", str(PRIMARY), u"SEITEZEILE, falsche Komponentenzahl", sz]))
 		else:
 			startSeite = int(komponenten[0])
 			stopSeite = startSeite
@@ -1007,7 +1021,7 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 			if zeilen.find('f') != -1:
 				stopUnsicher = True
 				zeilen = re.sub(r'\s*f+\.*', '', zeilen)
-			
+
 			zeilen = re.sub(r'[ /-]+', '-', zeilen)
 			zs = zeilen.split('-')
 
@@ -1033,16 +1047,15 @@ for (PRIMARY, NAME, ORT, EPON, BEZ, FKT, BND, SEITEZEILE, ANM) in cursor:
 			stelle += [myStelle]
 
 			if myStelle['zeile_start'] > 30:
-				print "\t".join(["GL", str(PRIMARY), "FEHLER", "zeile_start > 30", sz])
+				logging.error("\t".join(["GL", str(PRIMARY), "zeile_start > 30", sz]))
 			if myStelle['zeile_stop'] > 30:
-				print "\t".join(["GL", str(PRIMARY), "FEHLER", "zeile_stop > 30", sz])
+				logging.error("\t".join(["GL", str(PRIMARY), "zeile_stop > 30", sz]))
 
 			myGott['stelle_uid'] = myStelle['uid']
 		else:
-			print "\t".join(["GL", str(PRIMARY), "FEHLER", u"startSeite oder Band nicht ermittelbar: Datensatz verwerfen", sz])
+			logging.error("\t".join(["GL", str(PRIMARY), u"startSeite oder Band nicht ermittelbar: Datensatz verwerfen", sz]))
 	else:
-		print "\t".join(["GL", str(PRIMARY), "FEHLER", u"nicht genau eine Stelle in SEITEZEILE: Datensatz verwerfen", SEITEZEILE])
-		
+		logging.error( "\t".join(["GL", str(PRIMARY), u"nicht genau eine Stelle in SEITEZEILE: Datensatz verwerfen", SEITEZEILE]))
 
 wort = []
 wort_has_stelle = []
@@ -1058,8 +1071,9 @@ berlin = [{
 }]
 
 
-
-print "\n\n\n\n**** WL *******************************************************************\n"
+######
+# WL #
+######
 
 # Tabelle WL
 query = ("SELECT `PRIMARY`, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, BelegstellenWb, Anmerkungen FROM WL")
@@ -1069,7 +1083,7 @@ re20 = re.compile(r'^\s*([VI]*)\s*,?\s*(<?)([0-9]*)\s*,\s*([0-9/ -]*)(>?\*?)\s*(
 
 for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, BelegstellenWb, Anmerkungen) in cursor:
 	anmerkungWL = ''
-	
+
 	bEdfu = BelegstellenEdfu
 	if bEdfu.find('zum Beispiel') == 0:
 		# 1266, 1296, 2781, 2811
@@ -1087,18 +1101,18 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 	elif bEdfu == 'E VIII, 026, 07; 041, 05; 053, 06; 156,l 15':
 		# 1491
 		bEdfu = 'E VIII, 026, 07; 041, 05; 053, 06; 156, 15'
-	
+
 	bEdfu = bEdfu.strip('EPON; ')
 	bEdfu = re.sub(r' / V', '; V', bEdfu)
-	
+
 	if BelegstellenEdfu != bEdfu:
-		print "\t".join(["WL", str(PRIMARY), "INFO", u"Änderung BelegstellenEdfu", BelegstellenEdfu, bEdfu])
-	
+		logging.info("\t".join(["WL", str(PRIMARY), u"Änderung BelegstellenEdfu", BelegstellenEdfu, bEdfu]))
+
 	wb = BelegstellenWb
 	wbID = None
 	anmerkungWB = None
 	notiz = None
-	
+
 	if wb == 'nicht im Wb belegt':
 		wbID = 0
 	elif len(wb) > 0:
@@ -1117,11 +1131,11 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 		elif wb == 'III, 026 - 027, 19':
 			# 1441
 			wb = 'III, 026,01 - 027, 19'
-		
+
 		if wb != BelegstellenWb:
 			anmerkungWB = u'ursprünglich: ' + BelegstellenWb
-			print "\t".join(["WL", str(PRIMARY), "INFO", u"Änderung BelegstellenWb", BelegstellenWb, wb])
-		
+			logging.info("\t".join(["WL", str(PRIMARY), u"Änderung BelegstellenWb", BelegstellenWb, wb]))
+
 		vornach = 0
 		if wb.find('nach ') == 0 :
 			vornach = 1
@@ -1129,42 +1143,51 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 		elif wb.find('vor ') == 0:
 			vornach = -1
 			wb = wb.replace('vor ', '')
-		
+
 		roemischBand = wb[0:wb.index(',')]
 		wb = wb[wb.index(',') + 1:].strip()
 		band = roemisch[roemischBand]
-		
+
 		wb = wb.replace(' -', '-').replace('- ', '-')
-		
+
 		if wb.find('-') != -1:
 			# Range
 			teile = wb.split('-')
 			if len(teile) == 2:
-				seiteZeile = teile[0].split(',')
-				seiteStart = int(seiteZeile[0].strip())
-				seiteStop = seiteStart
-				zeileStart = int(seiteZeile[1].strip())
-				
+				try:
+					seiteZeile = teile[0].split(',')
+					seiteStart = int(seiteZeile[0].strip())
+					seiteStop = seiteStart
+					zeileStart = int(seiteZeile[1].strip())
+				except IndexError:
+					logging.error("\t".join(['WB', 'list index out of range', str(wbID), teile[0]]))
+
 				if teile[1].find(',') != -1:
 					# Komma im zweiten Teil: unterschiedliche Seiten
-					seiteZeile2 = teile[1].split(',')
-					seiteStop = int(seiteZeile2[0].strip())
-					zeileStop = int(seiteZeile2[1].strip())
+					try:
+						seiteZeile2 = teile[1].split(',')
+						seiteStop = int(seiteZeile2[0].strip())
+						zeileStop = int(seiteZeile2[1].strip())
+					except IndexError:
+						logging.exception("\t".join([teile[1]]))
 				else:
 					# Range innerhalb einer Seite
 					zeileStop = int(teile[1].strip())
-					
+
 				start = [seiteStart, zeileStart]
 				stop = [seiteStart, zeileStop]
-				
+
 			else:
-				print "\t".join(["WL", str(PRIMARY), "FEHLER", u"BelegstellenWb Formatfehler", BelegstellenWb, wb])
-				
+				logging.error("\t".join(["WL", str(PRIMARY), u"BelegstellenWb Formatfehler", BelegstellenWb, wb]))
+
 		else:
 			# Nur eine Stelle
-			start = szSplit(wb)
+			try:
+				start = szSplit(wb)
+			except IndexError:
+				logging.error("\t".join(['WB', 'list index out of range', wb, str(PRIMARY)]))
 			stop = start
-			
+
 		myWB = {
 			'uid': len(berlin),
 			'band': band,
@@ -1176,13 +1199,13 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 			'notiz': notiz,
 			'anmerkung': anmerkungWB
 		}
-		
+
 		bereitsVorhanden = False
 		for b in berlin:
 			if b['seite_start'] == myWB['seite_start'] and b['seite_stop'] == myWB['seite_stop'] and b['zeile_start'] == myWB['zeile_start'] and b['zeile_stop'] == myWB['zeile_stop'] and b['notiz'] == myWB['notiz'] and b['anmerkung'] == myWB['anmerkung']:
 				myWB['uid'] = b['uid']
 				bereitsVorhanden = True
-		
+
 		if not bereitsVorhanden:
 			berlin += [myWB]
 		wbID = myWB['uid']
@@ -1201,12 +1224,12 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 		'wb_berlin_uid': wbID
 	}
 	wort += [myWort]
-	
-	
+
+
 	bandNr = 0
 	seiteStart = 0
 	zerstoerung = False
-		
+
 	if len(bEdfu) > 0:
 		belegstellen = bEdfu.split(';')
 		for b in belegstellen:
@@ -1214,7 +1237,7 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 
 			klammer = False
 			stern = False
-			
+
 			if b.find('%') != -1:
 				zerstoerung = True
 				b = b.replace('%', '').replace('&', '')
@@ -1224,16 +1247,21 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 					b = str(seiteStart) + ', ' + b
 #					print "\t".join(["WL", str(PRIMARY), "INFO", u"Seitenzahl hinzugefügt", b])
 				else:
-					print "\t".join(["WL", str(PRIMARY), "FEHLER", u"keine Seitenzahl", b])
+					logging.error("\t".join(["WL", str(PRIMARY), u"keine Seitenzahl", b]))
 
 			m20 = re20.match(b)
 			if m20:
 				if len(m20.group(1)) > 0:
 					bandNr = roemisch[m20.group(1).strip()]
 				elif bandNr == 0:
-					print "\t".join(["WL", str(PRIMARY), "FEHLER", u"fehlende Bandangabe", b])
+					logging.error("\t".join(["WL", str(PRIMARY), u"fehlende Bandangabe", b]))
 
-				seiteStart = int(m20.group(3))
+				if (m20.group(3)):
+					seiteStart = int(m20.group(3))
+				else:
+					logging.error("\t".join(["WL", str(PRIMARY), u"Irgendwas kaputt in m20", b]))
+
+
 				seiteStop = seiteStart
 				anmerkung = ''
 
@@ -1244,14 +1272,17 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 					zeilenString = m20.group(4)
 					zeilenString = zeilenString.replace('/', '-').replace(' ', '')
 					zeilen = zeilenString.split('-')
-					if len(zeilen) == 1:
-						zeileStart = int(zeilen[0])
+					if len(zeilen) == 1 and zeilen is not u'':
+						try:
+							zeileStart = int(zeilen[0])
+						except ValueError:
+							logging.error('invalid literal for int() with base 10 %s', zeilen[0])
 						zeileStop = zeileStart
 					elif len(zeilen) == 2:
 						zeileStart = int(zeilen[0])
 						zeileStop = int(zeilen[1])
 					else:
-						print "\t".join(["WL", str(PRIMARY), "FEHLER", u"zu viele Komponenten in Zeilenangabe", b])
+						logging.error("\t".join(["WL", str(PRIMARY), u"zu viele Komponenten in Zeilenangabe", b]))
 
 					anmerkung = m20.group(6).strip()
 
@@ -1260,7 +1291,7 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 				elif m20.group(5) == '>*':
 					stern = True
 				elif len(m20.group(5)) > 2:
-						print "\t".join(["WL", str(PRIMARY), "FEHLER", u"m20.group(5) zu lang", b])
+					logging.error("\t".join(["WL", str(PRIMARY), u"m20.group(5) zu lang", b]))
 
 				myStelle = {
 					'uid': len(stelle),
@@ -1276,9 +1307,9 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 				stelle += [myStelle]
 
 				if myStelle['zeile_start'] > 30:
-					print "\t".join(["WL", str(PRIMARY), "FEHLER", "zeile_start > 30", b])
+					logging.error("\t".join(["WL", str(PRIMARY), "zeile_start > 30", b]))
 				if myStelle['zeile_stop'] > 30:
-					print "\t".join(["WL", str(PRIMARY), "FEHLER", "zeile_stop > 30", b])
+					logging.error("\t".join(["WL", str(PRIMARY), "zeile_stop > 30", b]))
 
 				wort_has_stelle += [{
 					'uid_local': PRIMARY,
@@ -1286,9 +1317,9 @@ for (PRIMARY, Transliteration, Deutsch, IDS, Weiteres, BelegstellenEdfu, Belegst
 					'schreiber_verbessert': klammer,
 					'chassinat_verbessert': stern
 				}]
-				
+
 			else:
-				print "\t".join(["WL", str(PRIMARY), "FEHLER", u"keine erkennbare Seitenzahl", b])
+				logging.error("\t".join(["WL", str(PRIMARY), u"keine erkennbare Seitenzahl", b]))
 
 cursor.close()
 db.close()
@@ -1343,7 +1374,7 @@ with open('Daten/tempelplan.csv', 'rb') as bilderListeCSV:
 			
 			filePath = 'Daten/szenen/' + recordSzeneBild['dateiname'].rstrip('.gif') + '.csv'
 			with open(filePath, 'rb') as csvFile:
-				print u'INFO CSV Datei »' + filePath + u'«'
+				logging.info(u'INFO CSV Datei »' + filePath + u'«')
 				columnDict = {}
 		
 				reader = UnicodeReader(csvFile, delimiter=';')
@@ -1406,14 +1437,14 @@ with open('Daten/tempelplan.csv', 'rb') as bilderListeCSV:
 								'uid_foreign': stelleID
 							}]
 					else:
-						print u'Zeile »' + ';'.join(row) + u'« hat weniger als 12 Spalten'
+						logging.error(u'Zeile »' + ';'.join(row) + u'« hat weniger als 12 Spalten')
 
 szene_bild = szene_bildDict.values()
 
 
 
 # In MySQL einfügen
-db = mysql.connector.connect(user='root', host='127.0.0.1', database='edfu')
+db = mysql.connector.connect(user=dbUsername, host=dbHost, password=dbpassword, database=dbTarget)
 cursor = db.cursor()
 
 f = open('Daten/schema.sql')
