@@ -16,8 +16,8 @@ import pprint
 import time
 
 import mysql.connector
-db = mysql.connector.connect(user='root', host='127.0.0.1', database='edfu')
-db2 = mysql.connector.connect(user='root', host='127.0.0.1', database='edfu')
+db = mysql.connector.connect(user='edfu', password='edfu', host='127.0.0.1', database='edfu')
+db2 = mysql.connector.connect(user='edfu', password='edfu', host='127.0.0.1', database='edfu')
 cursor = db.cursor()
 cursor2 = db2.cursor()
 
@@ -140,11 +140,7 @@ def removeSuffix (transliteration):
 def submitDocs (docs, name):
 	#pprint.pprint(docs)
 	
-	index = solr.Solr('http://localhost:8080/solr/edfu')
-	index.add_many(docs)
-	index.commit()
-
-	index = solr.Solr('http://vlib.sub.uni-goettingen.de/solr/edfu')
+	index = solr.Solr('http://awd.dev:8983/solr/edfu')
 	index.add_many(docs)
 	index.commit()
 	
@@ -155,9 +151,7 @@ def submitDocs (docs, name):
 """
 	Indexe leeren.
 """
-index = solr.Solr('http://localhost:8080/solr/edfu')
-index.delete_query('*:*')
-index = solr.Solr('http://vlib.sub.uni-goettingen.de/solr/edfu')
+index = solr.Solr('http://adw.dev:8983/solr/edfu')
 index.delete_query('*:*')
 
 

@@ -3,3 +3,4 @@ solr/data/*
 Daten/edfu.mwb.bak
 Daten/edfuprojekt.sql
 .idea/
+*.pyc
